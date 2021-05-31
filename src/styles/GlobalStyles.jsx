@@ -4,6 +4,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    cursor: default !important
+    min-height: 100vh;
   }
 `;
 
