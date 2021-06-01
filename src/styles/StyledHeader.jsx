@@ -5,6 +5,7 @@ export const StyledHeader = styled.div`
   border: solid 5px #005aff;
   height: 95px;
   padding: 15px;
+  background-color: #005aff;
 `;
 
 export const styledMachin = styled.div``;
