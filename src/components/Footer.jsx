@@ -1,4 +1,4 @@
-import { FooterContainer, FooterContWithBorder } from '../styles/FooterStyle';
+import { FooterContainer, FooterContWithBorder } from '../styles/StyledFooter';
 
 export default function Footer() {
   return (
