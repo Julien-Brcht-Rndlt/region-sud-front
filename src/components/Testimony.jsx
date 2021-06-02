@@ -1,19 +1,19 @@
 // import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import {
+  TestimonyContainer,
+  TestimonyAvatar,
+  TestimonyContent,
+  TestimonyAuthor,
+} from '../styles/StyledTestimony';
 
 export default function Testimony({ avatar, content, author }) {
   return (
-    <div>
-      <div>
-        <img src={avatar} alt="" />
-      </div>
-      <div>
-        <p>{content}</p>
-      </div>
-      <div>
-        <span>{author}</span>
-      </div>
-    </div>
+    <TestimonyContainer>
+      <TestimonyAvatar src={avatar} alt="" />
+      <TestimonyContent>{content}</TestimonyContent>
+      <TestimonyAuthor>{author}</TestimonyAuthor>
+    </TestimonyContainer>
   );
 }
 
