@@ -10,8 +10,12 @@ import {
 export default function Testimony({ avatar, content, author }) {
   return (
     <TestimonyContainer>
-      <TestimonyAvatar src={avatar} alt="" />
+      <div>
+        {' '}
+        <TestimonyAvatar src={avatar} alt="" />{' '}
+      </div>
       <TestimonyContent>{content}</TestimonyContent>
+      <br />
       <TestimonyAuthor>{author}</TestimonyAuthor>
     </TestimonyContainer>
   );

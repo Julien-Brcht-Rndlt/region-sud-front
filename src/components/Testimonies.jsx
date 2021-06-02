@@ -1,5 +1,9 @@
 // import styled from 'styled-components';
 import Testimony from './Testimony';
+import {
+  TestimoniesContainer,
+  TestimoniesTitle,
+} from '../styles/StyledTestimonies';
 
 export default function Testimonies() {
   const testimonies = [
@@ -26,18 +30,18 @@ export default function Testimonies() {
   return (
     <>
       <div>
-        <h1>ILS L&apos;ONT UTILIS&Eacute;</h1>
+        <TestimoniesTitle>ILS L&apos;ONT UTILIS&Eacute;</TestimoniesTitle>
       </div>
-      <div>
+      <TestimoniesContainer>
         {testimonies.map((testimony) => (
-          /*  <Testimony
+          /* <Testimony
             avatar={testimony.avatar}
             content={testimony.content}
             author={testimony.author}
           /> */
           <Testimony {...testimony} />
         ))}
-      </div>
+      </TestimoniesContainer>
     </>
   );
 }
