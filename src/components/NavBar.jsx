@@ -1,5 +1,6 @@
 import { BrowserRouter as Link } from 'react-router-dom';
 import { StyledNavBar } from '../styles/StyledNavBar';
+import SiteName from './SiteName';
 
 export default function NavBar() {
   return (
@@ -18,6 +19,7 @@ export default function NavBar() {
           <Link to="/">M informer</Link>
         </li>
       </ul>
+      <SiteName />
     </StyledNavBar>
   );
 }

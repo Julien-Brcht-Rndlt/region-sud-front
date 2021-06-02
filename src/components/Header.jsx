@@ -1,6 +1,7 @@
 import { StyledHeader } from '../styles/StyledHeader';
 import Logo from './Logo';
 import NavBar from './NavBar';
+import SiteName from './SiteName';
 
 export default function Header() {
   return (
@@ -9,6 +10,7 @@ export default function Header() {
         {Text}
         <Logo />
         <NavBar />
+        <SiteName />
       </StyledHeader>
     </>
   );
