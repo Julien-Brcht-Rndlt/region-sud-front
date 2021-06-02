@@ -1,7 +1,59 @@
-import { FooterContainer, FooterContWithBorder } from '../styles/StyledFooter';
+import {
+  FooterContainer,
+  FooterContWithBorder,
+  FooterTextsContainer,
+} from '../styles/StyledFooter';
+import FooterLinks from './FooterLinks';
+import FooterText from './FooterText';
 import Logo from './Logo';
 
 export default function Footer() {
+  const footerTextContent = [
+    {
+      title: 'CONTACT',
+      lines: [
+        'Service Mer et littoral',
+        'RÉGION SUD',
+        "PROVENCE-ALPES-CÔTE D'AZUR",
+      ],
+    },
+    {
+      title: '',
+      lines: [
+        'Du lundi au vendredi',
+        '10h - 12h et 13h - 17h',
+        '04 91 57 50 57',
+      ],
+    },
+    {
+      title: 'LIENS UTILES',
+      lines: ['Site principal Ma région Sud'],
+    },
+  ];
+
+  const footerLinks = [
+    {
+      label: 'Plan de site',
+      url: '/',
+    },
+    {
+      label: 'Mentions légales',
+      url: '/',
+    },
+    {
+      label: 'Données personnelles',
+      url: '/',
+    },
+    {
+      label: 'Politique des cookies',
+      url: '/',
+    },
+    {
+      label: 'Gestion des cookies',
+      url: '/',
+    },
+  ];
+
   return (
     <FooterContainer>
       <FooterContWithBorder>
@@ -11,8 +63,13 @@ export default function Footer() {
           height="94px"
           alt="Logo Région-Sud dans pieds de page"
         />
-        <div>FooterText components HERE</div>
+        <FooterTextsContainer>
+          {footerTextContent.map((content) => (
+            <FooterText title={content.title} lines={content.lines} />
+          ))}
+        </FooterTextsContainer>
       </FooterContWithBorder>
+      <FooterLinks links={footerLinks} />
     </FooterContainer>
   );
 }
