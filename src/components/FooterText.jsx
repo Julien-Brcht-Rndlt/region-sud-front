@@ -1,10 +1,11 @@
+import PropTypes from 'prop-types';
 import {
   FooterTextContainer,
   FooterTextTitle,
   FooterTextLine,
 } from '../styles/StyledFooter';
 
-export default function FooterText({ title, lines }) {
+export default function FooterText({ title, lines = [] }) {
   return (
     <FooterTextContainer>
       <FooterTextTitle>{title}</FooterTextTitle>
@@ -14,3 +15,13 @@ export default function FooterText({ title, lines }) {
     </FooterTextContainer>
   );
 }
+
+FooterText.propTypes = {
+  title: PropTypes.string,
+  lines: PropTypes.arrayOf(PropTypes.string),
+};
+
+FooterText.defaultProps = {
+  title: null,
+  lines: [],
+};

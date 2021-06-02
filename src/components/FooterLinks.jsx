@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import { FooterLinksList, FooterLinksALink } from '../styles/StyledFooter';
 
-export default function FooterLinks({ links }) {
+export default function FooterLinks({ links = [] }) {
   return (
     <FooterLinksList>
       {links.map((link) => (
@@ -11,3 +12,11 @@ export default function FooterLinks({ links }) {
     </FooterLinksList>
   );
 }
+
+FooterLinks.propTypes = {
+  links: PropTypes.arrayOf(PropTypes.string),
+};
+
+FooterLinks.defaultProps = {
+  links: [],
+};
