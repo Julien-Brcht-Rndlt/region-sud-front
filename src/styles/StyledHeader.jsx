@@ -6,6 +6,8 @@ export const StyledHeader = styled.div`
   height: 95px;
   padding: 15px;
   background-color: #005aff;
+  display: flex;
+  flex-direction: row-reverse;
 `;
 
 export const styledMachin = styled.div``;
