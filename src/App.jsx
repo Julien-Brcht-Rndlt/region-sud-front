@@ -1,7 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
 import Header from './components/Header';
-import { theme } from './styles/theme';
 // import { theme } from './styles/theme';
 import RouterPaf from './RouterPaf';
 import HomePage from './components/HomePage';
