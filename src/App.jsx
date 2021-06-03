@@ -3,6 +3,8 @@ import GlobalStyles from './styles/GlobalStyles';
 import { theme } from './styles/theme';
 import RouterPaf from './RouterPaf';
 import HomePage from './components/HomePage';
+import Testimonies from './components/Testimonies';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <RouterPaf>
           <HomePage />
         </RouterPaf>
+        <Testimonies />
+        <Footer />
       </ThemeProvider>
     </>
   );
