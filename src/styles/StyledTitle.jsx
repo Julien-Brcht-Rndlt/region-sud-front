@@ -12,12 +12,12 @@ export const StyledTitleWrapper = styled.div`
 `;
 
 export const StyledTitleH1 = styled.h1`
-  font-family: Inter, sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: normal;
   color: #005aff;
 `;
 
 export const StyledTitleP = styled.p`
-  font-family: Inter, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 1rem;
 `;
