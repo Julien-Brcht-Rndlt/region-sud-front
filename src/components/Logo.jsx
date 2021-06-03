@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledLogoCont = styled.div`
+  padding: 1px;
   padding: 30px;
 `;
 
