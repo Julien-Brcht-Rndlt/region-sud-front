@@ -1,6 +1,5 @@
-import { BrowserRouter as Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { StyledNavBar } from '../styles/StyledNavBar';
-import SiteName from './SiteName';
 
 export default function NavBar() {
   return (
@@ -16,10 +15,9 @@ export default function NavBar() {
           <Link to="/">Etre accompagné</Link>
         </li>
         <li>
-          <Link to="/">M informer</Link>
+          <Link to="/">M&#39;informer</Link>
         </li>
       </ul>
-      <SiteName />
     </StyledNavBar>
   );
 }

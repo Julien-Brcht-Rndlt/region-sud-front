@@ -1,10 +1,26 @@
-import { StyledLogo } from '../styles/StyledLogo';
-import LOGO from '../assets/LOGO.png';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-export default function Logo() {
+const StyledLogoCont = styled.div`
+  padding: 1px;
+`;
+
+const StyledLogoImg = styled.img`
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
+`;
+
+export default function Logo({ src, width, height, alt }) {
   return (
-    <StyledLogo src={LOGO} alt="logo">
-      {}
-    </StyledLogo>
+    <StyledLogoCont>
+      <StyledLogoImg src={src} width={width} height={height} alt={alt} />
+    </StyledLogoCont>
   );
 }
+
+Logo.propTypes = {
+  src: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  alt: PropTypes.string.isRequired,
+};

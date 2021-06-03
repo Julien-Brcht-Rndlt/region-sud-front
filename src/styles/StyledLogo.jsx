@@ -5,4 +5,4 @@ export const StyledLogo = styled.img`
   display: flex;
 `;
 
-export const styledtruc = styled.div``;
+export const fake = styled.div``;

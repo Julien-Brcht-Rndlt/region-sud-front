@@ -7,7 +7,7 @@ export const StyledHeader = styled.div`
   padding: 15px;
   background-color: #005aff;
   display: flex;
-  flex-direction: row-reverse;
+  align-items: center;
 `;
 
-export const styledMachin = styled.div``;
+export const fake = styled.div``;

@@ -9,6 +9,7 @@ export const StyledNavBar = styled.nav`
   margin: 15px;
   font-size: 25px;
   font-weight: 400;
+  padding: 15px;
 
   ul {
     display: flex;
@@ -16,5 +17,4 @@ export const StyledNavBar = styled.nav`
     list-style: none;
   }
 `;
-
-export const StyledTG = styled.div``;
+export const fake = styled.div``;

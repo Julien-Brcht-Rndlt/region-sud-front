@@ -7,10 +7,14 @@ export default function Header() {
   return (
     <>
       <StyledHeader>
-        {Text}
-        <Logo />
-        <NavBar />
         <SiteName />
+        <NavBar />
+        <Logo
+          src="./assets/Logo_region_sud.png"
+          width={191}
+          height={109}
+          alt="logo région sud"
+        />
       </StyledHeader>
     </>
   );

@@ -13,5 +13,4 @@ export const StyledSiteName = styled.div`
     align-item: center;
   }
 `;
-
-export const Styledfake = styled.div``;
+export const fake = styled.div``;
