@@ -11,7 +11,7 @@ const fontSize = '62.5%';
 
 // setup default theme
 
-export const theme = {
+const theme = {
   // fonts theme
   fonts: {
     fontWeightNormal,
@@ -35,6 +35,8 @@ export const theme = {
   //
   lineHeight: 1.15, // 1.5
 };
+
+export default theme;
 
 // setup responsive breakpoints
 

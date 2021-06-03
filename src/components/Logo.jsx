@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const StyledLogoCont = styled.div`
   padding: 1px;
+  padding: 30px;
 `;
 
 const StyledLogoImg = styled.img`
