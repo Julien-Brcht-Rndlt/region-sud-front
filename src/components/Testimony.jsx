@@ -1,4 +1,3 @@
-// import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {
   TestimonyContainer,
@@ -20,7 +19,6 @@ export default function Testimony({ content, author }) {
 }
 
 Testimony.propTypes = {
-  // avatar: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };

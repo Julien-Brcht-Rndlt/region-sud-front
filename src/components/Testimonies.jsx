@@ -34,11 +34,6 @@ export default function Testimonies() {
       </div>
       <TestimoniesContainer>
         {testimonies.map((testimony) => (
-          /* <Testimony
-            avatar={testimony.avatar}
-            content={testimony.content}
-            author={testimony.author}
-          /> */
           <Testimony {...testimony} />
         ))}
       </TestimoniesContainer>
