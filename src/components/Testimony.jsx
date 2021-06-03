@@ -6,14 +6,12 @@ import {
   TestimonyContent,
   TestimonyAuthor,
 } from '../styles/StyledTestimony';
+import avatar from './avatar.png';
 
-export default function Testimony({ avatar, content, author }) {
+export default function Testimony({ content, author }) {
   return (
     <TestimonyContainer>
-      <div>
-        {' '}
-        <TestimonyAvatar src={avatar} alt="" />{' '}
-      </div>
+      <TestimonyAvatar src={avatar} alt="avatar" />
       <TestimonyContent>{content}</TestimonyContent>
       <br />
       <TestimonyAuthor>{author}</TestimonyAuthor>
@@ -22,7 +20,7 @@ export default function Testimony({ avatar, content, author }) {
 }
 
 Testimony.propTypes = {
-  avatar: PropTypes.string.isRequired,
+  // avatar: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };
