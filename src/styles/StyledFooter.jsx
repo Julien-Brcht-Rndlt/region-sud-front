@@ -37,10 +37,12 @@ export const FooterLinksList = styled.ul`
   display: flex;
   justify-content: space-around;
   width: 60%;
+  background-color: rgb(0, 90, 255);
   list-style-type: none;
   transform: translate(0, -55px);
 `;
 
 export const FooterLinksALink = styled.a`
   color: #fff;
+  text-decoration: none;
 `;
