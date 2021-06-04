@@ -6,5 +6,5 @@ export const StyledImageContainer = styled.div`
 
 export const StyledImageHomePage = styled.img`
   height: 340px;
-  width: 1440px;
+  width: 100%;
 `;
