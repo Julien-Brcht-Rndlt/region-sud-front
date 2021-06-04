@@ -6,4 +6,4 @@ export const StyledHomePage = styled.div`
   align-items: stretch;
   align-content: space-around;
 `;
-export const fake = 'fake';
+export const WrapperHomePage = styled.div``;
