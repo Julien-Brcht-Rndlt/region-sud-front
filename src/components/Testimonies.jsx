@@ -3,7 +3,7 @@ import Testimony from './Testimony';
 import {
   TestimoniesContainer,
   TestimoniesTitle,
-} from '../styles/StyledTestimonies';
+} from '../assets/styles/StyledTestimonies';
 
 export default function Testimonies() {
   const testimonies = [

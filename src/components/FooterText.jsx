@@ -3,7 +3,7 @@ import {
   FooterTextContainer,
   FooterTextTitle,
   FooterTextLine,
-} from '../styles/StyledFooter';
+} from '../assets/styles/StyledFooter';
 
 export default function FooterText({ title, lines = [] }) {
   return (

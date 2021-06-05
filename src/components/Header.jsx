@@ -1,7 +1,17 @@
-import { StyledHeader } from '../styles/StyledHeader';
+import styled from 'styled-components';
 import Logo from './Logo';
 import NavBar from './NavBar';
 import SiteName from './SiteName';
+
+export const StyledHeader = styled.div`
+  width: auto;
+  border: solid 5px #005aff;
+  height: 95px;
+  padding: 15px;
+  background-color: #005aff;
+  display: flex;
+  align-items: center;
+`;
 
 export default function Header() {
   return (
