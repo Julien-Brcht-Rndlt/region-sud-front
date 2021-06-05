@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { StyledNavBar } from '../styles/StyledNavBar';
+import { StyledNavBar } from '../assets/styles/StyledNavBar';
 
 export default function NavBar() {
   return (
