@@ -3,6 +3,7 @@ import ElementEmi from './ElementsEmi';
 import ImageNeederEmi from './ImageNeederEmi';
 import NeederEmi from './NeederEmi';
 import TitleEmiHome from './TitleEmiHome';
+import YoutubeEmi from './YoutubeEmi';
 
 export const StyledContainerEmiHome = styled.div``;
 
@@ -19,6 +20,7 @@ export default function ContainerEmiHome() {
       <TitleEmiHome />
       <NeederEmi />
       <ImageNeederEmi />
+      <YoutubeEmi />
       <ElementEmi />
     </>
   );

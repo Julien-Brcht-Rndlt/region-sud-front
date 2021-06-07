@@ -3,9 +3,6 @@ import image from './image.jpg';
 
 export const StyledImageContainer = styled.div`
   display: flex;
-  border: solid 5px green;
-  justify-content: center;
-  width: 50%;
 `;
 
 export const StyledImageHomePage = styled.img`
