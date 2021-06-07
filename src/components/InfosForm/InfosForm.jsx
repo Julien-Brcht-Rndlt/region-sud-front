@@ -19,7 +19,7 @@ export default function InfosForm() {
         <InfosInputForm label="Type d'activité sportive" />
       </div>
       <div>
-        <Button />
+        <Button label="Suivant" />
       </div>
     </div>
   );
