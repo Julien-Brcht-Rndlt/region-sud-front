@@ -3,6 +3,8 @@ import ImageHomePage from './ImageHomePage';
 import Title from './Title';
 import MapHome from './MapHome';
 import Testimonies from './Testimonies';
+import ThemeList from './funnel/ThemeList';
+//
 
 export const StyledHomePage = styled.div`
   display: flex;
@@ -21,6 +23,7 @@ export default function HomePage() {
         <MapHome />
       </StyledHomePage>
       <Testimonies />
+      <ThemeList />
     </WrapperHomePage>
   );
 }
