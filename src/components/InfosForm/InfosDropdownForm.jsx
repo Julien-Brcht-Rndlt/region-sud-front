@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import {
+  StyledInfosDropdownLabel,
+  StyledInfosDropdown,
+} from '../../assets/styles/StyledInfosDropdownForm';
 
 export default function InfosDropdownForm({ label, options = [] }) {
   const [selectedItem, setSelectedItem] = useState();
@@ -11,8 +15,8 @@ export default function InfosDropdownForm({ label, options = [] }) {
 
   return (
     <div>
-      <span>{label}</span>
-      <select
+      <StyledInfosDropdownLabel>{label}</StyledInfosDropdownLabel>
+      <StyledInfosDropdown
         value={selectedItem}
         onChange={(event) => handleSelectedOption(event)}
       >
@@ -22,7 +26,7 @@ export default function InfosDropdownForm({ label, options = [] }) {
             {option}
           </option>
         ))}
-      </select>
+      </StyledInfosDropdown>
     </div>
   );
 }
