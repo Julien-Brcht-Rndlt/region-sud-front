@@ -21,7 +21,6 @@ export const StyledNavBar = styled.nav`
 export const StyledLink = styled(Link)`
   color: ${(props) => props.theme.secondaryFeatureColor};
   text-decoration: none;
-  font-family: ${(props) => props.theme.fontFamilyNormal};
 `;
 
 export const fake = styled.div``;
