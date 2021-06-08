@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const StyledTitleEmiHome = styled.div`
   display: block;
-  border: solid 5px yellow;
   height: 60px;
+  margin: 15px;
 `;
 
 export default function TitleEmiHome() {

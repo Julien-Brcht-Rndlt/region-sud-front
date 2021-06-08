@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import clock from '../Group59.png';
 import folder from '../Vector.png';
+import ButtonEmpty from '../ButtonEmpty';
+import Button from '../Button';
 
 export const StyledClockNeederEmi = styled.img`
   height: 50px;
@@ -27,6 +29,15 @@ export const StyledBoxElementEmi = styled.div`
   justify-content: space-between;
   flex-direction: column;
   width: 65%;
+
+  ul li {
+    line-height: 4;
+  }
+`;
+export const StyledBoxButtonElement = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
 `;
 
 export default function ElementEmi() {
@@ -36,11 +47,20 @@ export default function ElementEmi() {
         <StyledFolderNeederEmi src={folder} alt="dossier" />
         <StyledClockNeederEmi src={clock} alt="horloge" />
       </StyledSpaceBetterNeederEmi>
-      <p>Estimation de la consommation d&#39;eau pendant la manifestation</p>
-      <p>Elément nécessaire</p>
-      <p>Elément nécessaire</p>
-      <p>Elément nécessaire</p>
-      <p>Elément nécessaire</p>
+
+      <ul>
+        <li>
+          Estimation de la consommation d&#39;eau pendant la manifestation
+        </li>
+        <li>Elément nécessaire</li>
+        <li>Elément nécessaire</li>
+        <li>Elément nécessaire</li>
+        <li>Elément nécessaire</li>
+      </ul>
+      <StyledBoxButtonElement>
+        <Button text="C'est parti !" />
+        <ButtonEmpty text="Où trouver toutes ces pièces ?" />
+      </StyledBoxButtonElement>
     </StyledBoxElementEmi>
   );
 }
