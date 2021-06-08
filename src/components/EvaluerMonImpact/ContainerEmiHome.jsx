@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import ElementEmi from './ElementsEmi';
-import ImageNeederEmi from './ImageNeederEmi';
 import NeederEmi from './NeederEmi';
 import TitleEmiHome from './TitleEmiHome';
 import YoutubeEmi from './YoutubeEmi';
@@ -19,9 +17,7 @@ export default function ContainerEmiHome() {
       <WrapperStyledTitleEmiHome />
       <TitleEmiHome />
       <NeederEmi />
-      <ImageNeederEmi />
       <YoutubeEmi />
-      <ElementEmi />
     </>
   );
 }
