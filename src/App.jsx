@@ -1,13 +1,17 @@
+import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './assets/styles/GlobalStyles';
 import RouterPaf from './RouterPaf';
 import theme from './assets/styles/theme';
 import FunnelContext from './components/context/funnel-context';
+import datatest from './mockdata/datatest.json';
 
 function App() {
+  const [funnel, setFunnel] = useState(datatest);
+
   return (
     <>
-      <FunnelContext.Provider>
+      <FunnelContext.Provider value={{ funnel, setFunnel }}>
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           <RouterPaf />
