@@ -1,9 +1,8 @@
-// import styled from 'styled-components';
 import Testimony from './Testimony';
 import {
   TestimonialsContainer,
   TestimonialsTitle,
-} from '../styles/StyledTestimonials';
+} from '../assets/styles/StyledTestimonials';
 
 export default function Testimonials() {
   const testimonials = [

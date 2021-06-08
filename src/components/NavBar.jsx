@@ -1,21 +1,20 @@
-import { Link } from 'react-router-dom';
-import { StyledNavBar } from '../styles/StyledNavBar';
+import { StyledNavBar, StyledLink } from '../assets/styles/StyledNavBar';
 
 export default function NavBar() {
   return (
     <StyledNavBar>
       <ul>
         <li>
-          <Link to="/">Acceuil</Link>
+          <StyledLink to="/">Acceuil</StyledLink>
         </li>
         <li>
-          <Link to="/">Evaluer mon impact environnemental</Link>
+          <StyledLink to="/">Evaluer mon impact environnemental</StyledLink>
         </li>
         <li>
-          <Link to="/">Etre accompagné</Link>
+          <StyledLink to="/">Etre accompagné</StyledLink>
         </li>
         <li>
-          <Link to="/">M&#39;informer</Link>
+          <StyledLink to="/">M&#39;informer</StyledLink>
         </li>
       </ul>
     </StyledNavBar>

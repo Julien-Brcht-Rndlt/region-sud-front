@@ -1,9 +1,9 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const StyledNavBar = styled.nav`
   display: inline-block;
   width: 75%;
-  color: white;
   font-size: 15px;
   text-decoration: none;
   margin: 15px;
@@ -15,6 +15,12 @@ export const StyledNavBar = styled.nav`
     display: flex;
     justify-content: space-between;
     list-style: none;
+    color: white;
   }
 `;
+export const StyledLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+`;
+
 export const fake = styled.div``;

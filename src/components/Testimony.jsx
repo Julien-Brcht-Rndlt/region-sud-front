@@ -4,7 +4,7 @@ import {
   TestimonyAvatar,
   TestimonyContent,
   TestimonyAuthor,
-} from '../styles/StyledTestimony';
+} from '../assets/styles/StyledTestimony';
 import avatar from './avatar.png';
 
 export default function Testimony({ content, author }) {
