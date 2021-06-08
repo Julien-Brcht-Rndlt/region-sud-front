@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './components/homepage/HomePage';
-import Header from './components/homepage/Header';
+import Header from './components/Header';
 import Footer from './components/Footer';
 
 export default function RouterPaf() {

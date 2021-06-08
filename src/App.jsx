@@ -7,11 +7,11 @@ import FunnelContext from './components/context/funnel-context';
 import datatest from './mockdata/datatest.json';
 
 function App() {
-  const [funnel, setFunnel] = useState(datatest);
+  const [funnel] = useState(datatest);
 
   return (
     <>
-      <FunnelContext.Provider value={{ funnel, setFunnel }}>
+      <FunnelContext.Provider value={{ funnel }}>
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           <RouterPaf />
