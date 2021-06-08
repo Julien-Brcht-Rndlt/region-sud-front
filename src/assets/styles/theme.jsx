@@ -31,7 +31,7 @@ export const fontFamilyNavBar = "'Nunito',sans-serif'";
 
 export const fontWeightNormal = 400;
 export const fontWeightBold = 700;
-const mainTextColor = '005aff';
+const mainTextColor = '#005aff';
 
 const theme = {
   // fonts
@@ -40,12 +40,12 @@ const theme = {
   fontFamilyNavBar: "'Nunito',sans-serif'",
 
   // color
-  blueFeatureColor: '005aff',
-  secondaryFeatureColor: 'fff',
-  lightGreyFeatureColor: 'ebebeb',
-  greyFeatureColor: 'e5e5e5',
-  darkGreyFeatureColor: '1d1d1d',
-  yellowFeatureColor: 'feca5a',
+  blueFeatureColor: '#005aff',
+  secondaryFeatureColor: '#fff',
+  lightGreyFeatureColor: '#ebebeb',
+  greyFeatureColor: '#e5e5e5',
+  darkGreyFeatureColor: '#1d1d1d',
+  yellowFeatureColor: '#feca5a',
 
   // lines
   lineHeight: 1.5,

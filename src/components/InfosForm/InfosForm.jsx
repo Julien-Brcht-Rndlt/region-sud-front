@@ -1,4 +1,9 @@
 import StyledSubTitle from '../../assets/styles/genericStyles/StyledSubTitle';
+import {
+  StyledInfosFormsContainer,
+  StyledInfosFormsColsContainer,
+} from '../../assets/styles/StyledInfosForms';
+import { FlexJustCenter } from '../../assets/styles/genericStyles/StyledContainer';
 import InfosInputForm from './InfosInputForm';
 import Button from '../Button';
 import InfosCheckBoxForm from './InfosCheckBoxForm';
@@ -10,28 +15,36 @@ export default function InfosForm() {
   const sportLevels = ['Amateur', 'Expert'];
 
   return (
-    <div>
-      <div>
-        <span>Informations préalables</span>
-        <StyledSubTitle title="La structure organisatrice" />
-        <InfosInputForm label="Nom de la structure" />
-        <InfosInputForm label="Nombre de personnes composant la structure" />
-      </div>
-      <div>
-        <StyledSubTitle title="La manifestation sportive" />
-        <InfosInputForm label="Nom de la manisfestation sportive" />
-        <InfosInputForm label="Adresse" />
-        <InfosDropdownForm label="Lieu" options={locations} />
-        <InfosCheckBoxForm label="Montrer la carte" />
-        <InfosInputForm label="Nombre de participants" />
-        <InfosDatePickerForm label="Date de début" />
-        <InfosDatePickerForm label="Date de fin" />
-        <InfosInputForm label="Type d'activité sportive" />
-        <InfosDropdownForm label="Niveau sportif" options={sportLevels} />
-      </div>
+    <StyledInfosFormsContainer>
+      <span>Informations préalables</span>
+      <StyledInfosFormsColsContainer>
+        <div>
+          <StyledSubTitle subtitle="La structure organisatrice" />
+          <InfosInputForm label="Nom de la structure" />
+          <InfosInputForm label="Nombre de personnes composant la structure" />
+        </div>
+        <div>
+          <StyledSubTitle subtitle="La manifestation sportive" />
+          <InfosInputForm label="Nom de la manisfestation sportive" />
+          <FlexJustCenter>
+            <InfosInputForm label="Nombre de participants" />
+            <InfosInputForm label="Adresse" />
+          </FlexJustCenter>
+          <FlexJustCenter>
+            <InfosDropdownForm label="Lieu" options={locations} />
+            <InfosCheckBoxForm label="Montrer la carte" />
+          </FlexJustCenter>
+          <FlexJustCenter>
+            <InfosDatePickerForm label="Date de début" />
+            <InfosDatePickerForm label="Date de fin" />
+          </FlexJustCenter>
+          <InfosInputForm label="Type d'activité sportive" />
+          <InfosDropdownForm label="Niveau sportif" options={sportLevels} />
+        </div>
+      </StyledInfosFormsColsContainer>
       <div>
         <Button label="Suivant" />
       </div>
-    </div>
+    </StyledInfosFormsContainer>
   );
 }
