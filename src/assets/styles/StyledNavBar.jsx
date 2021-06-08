@@ -15,12 +15,13 @@ export const StyledNavBar = styled.nav`
     display: flex;
     justify-content: space-between;
     list-style: none;
-    color: white;
+    color: ${(props) => props.theme.secondaryFeatureColor};
   }
 `;
 export const StyledLink = styled(Link)`
-  color: white;
+  color: ${(props) => props.theme.secondaryFeatureColor};
   text-decoration: none;
+  font-family: ${(props) => props.theme.fontFamilyNormal};
 `;
 
 export const fake = styled.div``;

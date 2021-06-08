@@ -4,7 +4,7 @@ export const StyledSiteName = styled.div`
   display: flex;
   float: left;
   width: 30%;
-  color: white;
+  color: ${(props) => props.theme.secondaryFeatureColor};
   flex-direction: top;
 
   h1 {

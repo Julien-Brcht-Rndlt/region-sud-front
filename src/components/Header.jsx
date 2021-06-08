@@ -5,12 +5,13 @@ import SiteName from './SiteName';
 
 export const StyledHeader = styled.div`
   width: auto;
-  border: solid 5px #005aff;
+  border: solid 5px ${(props) => props.theme.blueFeatureColor};
   height: 95px;
   padding: 15px;
-  background-color: #005aff;
+  background-color: ${(props) => props.theme.blueFeatureColor};
   display: flex;
   align-items: center;
+  font-family: ${(props) => props.theme.fontFamilyNormal};
 `;
 
 export default function Header() {
