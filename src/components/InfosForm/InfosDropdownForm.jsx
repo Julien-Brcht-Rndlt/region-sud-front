@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { StyledFormItem } from '../../assets/styles/genericStyles/StyledFormItem';
 import {
-  StyledInfosDropdownLabel,
   StyledInfosDropdown,
+  StyledInfosDropdownLabel,
 } from '../../assets/styles/StyledInfosDropdownForm';
 
 export default function InfosDropdownForm({ label, options = [] }) {
@@ -14,8 +15,10 @@ export default function InfosDropdownForm({ label, options = [] }) {
   };
 
   return (
-    <div>
-      <StyledInfosDropdownLabel>{label}</StyledInfosDropdownLabel>
+    <StyledFormItem>
+      <StyledInfosDropdownLabel htmlFor={label}>
+        {label}
+      </StyledInfosDropdownLabel>
       <StyledInfosDropdown
         value={selectedItem}
         onChange={(event) => handleSelectedOption(event)}
@@ -27,7 +30,7 @@ export default function InfosDropdownForm({ label, options = [] }) {
           </option>
         ))}
       </StyledInfosDropdown>
-    </div>
+    </StyledFormItem>
   );
 }
 

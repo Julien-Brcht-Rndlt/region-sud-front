@@ -20,15 +20,18 @@ export default function InfosForm() {
       <StyledInfosFormsColsContainer>
         <div>
           <StyledSubTitle subtitle="La structure organisatrice" />
-          <InfosInputForm label="Nom de la structure" />
-          <InfosInputForm label="Nombre de personnes composant la structure" />
+          <InfosInputForm label="Nom de la structure" wide />
+          <InfosInputForm
+            label="Nombre de personnes composant la structure"
+            wide
+          />
         </div>
         <div>
           <StyledSubTitle subtitle="La manifestation sportive" />
-          <InfosInputForm label="Nom de la manisfestation sportive" />
+          <InfosInputForm label="Nom de la manisfestation sportive" wide />
           <FlexJustCenter>
             <InfosInputForm label="Nombre de participants" />
-            <InfosInputForm label="Adresse" />
+            <InfosInputForm label="Adresse de la manifestation" />
           </FlexJustCenter>
           <FlexJustCenter>
             <InfosDropdownForm label="Lieu" options={locations} />
@@ -38,8 +41,10 @@ export default function InfosForm() {
             <InfosDatePickerForm label="Date de début" />
             <InfosDatePickerForm label="Date de fin" />
           </FlexJustCenter>
-          <InfosInputForm label="Type d'activité sportive" />
-          <InfosDropdownForm label="Niveau sportif" options={sportLevels} />
+          <FlexJustCenter>
+            <InfosInputForm label="Type d'activité sportive" />
+            <InfosDropdownForm label="Niveau sportif" options={sportLevels} />
+          </FlexJustCenter>
         </div>
       </StyledInfosFormsColsContainer>
       <div>

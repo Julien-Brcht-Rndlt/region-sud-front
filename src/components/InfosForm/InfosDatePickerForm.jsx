@@ -1,13 +1,17 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
+import {
+  StyledFormItem,
+  StyledFormItemLabel,
+} from '../../assets/styles/genericStyles/StyledFormItem';
 
 export default function InfosDatePickerForm({ label }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   return (
-    <div>
-      <label htmlFor={label}>{label}</label>
+    <StyledFormItem>
+      <StyledFormItemLabel htmlFor={label}>{label}</StyledFormItemLabel>
       <DatePicker
         id={label}
         selected={selectedDate}
@@ -16,7 +20,7 @@ export default function InfosDatePickerForm({ label }) {
         timeFormat="HH:mm"
         dateFormat="LLL"
       />
-    </div>
+    </StyledFormItem>
   );
 }
 

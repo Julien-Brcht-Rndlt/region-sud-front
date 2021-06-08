@@ -1,30 +1,32 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { StyledFormItem } from '../../assets/styles/genericStyles/StyledFormItem';
 import {
   StyledInfosInputLabel,
   StyledInfosInput,
 } from '../../assets/styles/StyledInfosInputForm';
 
-export default function InfosInputForm({ label }) {
+export default function InfosInputForm({ label, wide }) {
   const [input, setInput] = useState();
 
   return (
-    <div>
-      <StyledInfosInputLabel>
-        {label}
-        <StyledInfosInput
-          value={input}
-          onChange={(event) => setInput(event.target.value)}
-        />
-      </StyledInfosInputLabel>
-    </div>
+    <StyledFormItem>
+      <StyledInfosInputLabel>{label}</StyledInfosInputLabel>
+      <StyledInfosInput
+        value={input}
+        onChange={(event) => setInput(event.target.value)}
+        wide={wide}
+      />
+    </StyledFormItem>
   );
 }
 
 InfosInputForm.propTypes = {
   label: PropTypes.string,
+  wide: PropTypes.bool,
 };
 
 InfosInputForm.defaultProps = {
   label: '',
+  wide: false,
 };
