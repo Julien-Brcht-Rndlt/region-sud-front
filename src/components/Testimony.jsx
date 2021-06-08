@@ -12,7 +12,6 @@ export default function Testimony({ content, author }) {
     <TestimonyContainer>
       <TestimonyAvatar src={avatar} alt="avatar" />
       <TestimonyContent>{content}</TestimonyContent>
-      <br />
       <TestimonyAuthor>{author}</TestimonyAuthor>
     </TestimonyContainer>
   );

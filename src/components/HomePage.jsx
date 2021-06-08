@@ -2,7 +2,7 @@ import ImageHomePage from './ImageHomePage';
 import Title from './Title';
 import MapHome from './MapHome';
 import { StyledHomePage, WrapperHomePage } from '../styles/StyledHomePage';
-import Testimonies from './Testimonies';
+import Testimonials from './Testimonials';
 
 export default function HomePage() {
   return (
@@ -12,7 +12,7 @@ export default function HomePage() {
         <Title />
         <MapHome />
       </StyledHomePage>
-      <Testimonies />
+      <Testimonials />
     </WrapperHomePage>
   );
 }
