@@ -3,6 +3,7 @@ import InfosInputForm from './InfosInputForm';
 import Button from '../Button';
 import InfosCheckBoxForm from './InfosCheckBoxForm';
 import InfosDropdownForm from './InfosDropdownForm';
+import InfosDatePickerForm from './InfosDatePickerForm';
 
 export default function InfosForm() {
   const locations = ['Abries', 'Marseille', 'Toulon', 'Hyeres'];
@@ -23,6 +24,8 @@ export default function InfosForm() {
         <InfosDropdownForm label="Lieu" options={locations} />
         <InfosCheckBoxForm label="Montrer la carte" />
         <InfosInputForm label="Nombre de participants" />
+        <InfosDatePickerForm label="Date de début" />
+        <InfosDatePickerForm label="Date de fin" />
         <InfosInputForm label="Type d'activité sportive" />
         <InfosDropdownForm label="Niveau sportif" options={sportLevels} />
       </div>

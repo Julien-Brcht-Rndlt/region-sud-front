@@ -12,6 +12,9 @@ export default function InfosDatePickerForm({ label }) {
         id={label}
         selected={selectedDate}
         onChange={(date) => setSelectedDate(date)}
+        showTimeSelect
+        timeFormat="HH:mm"
+        dateFormat="LLL"
       />
     </div>
   );
