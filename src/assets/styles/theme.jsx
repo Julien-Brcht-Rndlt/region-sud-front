@@ -25,27 +25,27 @@ export const device = {
 
 // setup fonts
 
-export const fontFamilyNormal = "'Dosis',sans-serif'";
-export const fontFamilyFeature = "'Fira Sans, ,sans-serif'";
-export const fontFamilyNavBar = "'Nunito',sans-serif'";
+export const fontFamilyNormal = "Roboto,'Dosis',sans-serif'";
+export const fontFamilyFeature = "Roboto,'Fira Sans, ,sans-serif'";
+export const fontFamilyNavBar = "Roboto,'Nunito',sans-serif'";
 
 export const fontWeightNormal = 400;
 export const fontWeightBold = 700;
-const mainTextColor = '005aff';
+const mainTextColor = '#005aff';
 
 const theme = {
   // fonts
-  fontFamilyNormal: "'Dosis',sans-serif'",
-  fontFamilyFeature: "'Fira Sans, ,sans-serif'",
-  fontFamilyNavBar: "'Nunito',sans-serif'",
+  fontFamilyNormal: "Roboto,'Dosis', sans-serif'",
+  fontFamilyFeature: "Roboto,'Fira Sans, sans-serif'",
+  fontFamilyNavBar: "Roboto, 'Nunito',sans-serif'",
 
   // color
-  blueFeatureColor: '005aff',
-  secondaryFeatureColor: 'fff',
-  lightGreyFeatureColor: 'ebebeb',
-  greyFeatureColor: 'e5e5e5',
-  darkGreyFeatureColor: '1d1d1d',
-  yellowFeatureColor: 'feca5a',
+  blueFeatureColor: '#005aff',
+  secondaryFeatureColor: '#fff',
+  lightGreyFeatureColor: '#ebebeb',
+  greyFeatureColor: '#e5e5e5',
+  darkGreyFeatureColor: '#1d1d1d',
+  yellowFeatureColor: '#feca5a',
 
   // lines
   lineHeight: 1.5,

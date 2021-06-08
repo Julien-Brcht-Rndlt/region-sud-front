@@ -12,12 +12,12 @@ export const StyledTitleWrapper = styled.div`
 `;
 
 export const StyledTitleH1 = styled.h1`
-  font-family: Roboto, sans-serif;
-  font-weight: normal;
-  color: #005aff;
+  font-family: ${(props) => props.theme.fontFamilyNormal};
+  font-weight: ${(props) => props.theme.fontWeightNormal};
+  color: ${(props) => props.theme.blueFeatureColor};
 `;
 
 export const StyledTitleP = styled.p`
-  font-family: Roboto, sans-serif;
+  font-family: ${(props) => props.theme.fontFamilyNormal};
   font-size: 1rem;
 `;
