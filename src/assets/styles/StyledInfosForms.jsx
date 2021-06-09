@@ -7,4 +7,11 @@ export const StyledInfosFormsContainer = styled(Block)`
 
 export const StyledInfosFormsColsContainer = styled(FlexJustStart)`
   background-color: ${(props) => props.theme.greyFeatureColor};
+  width: 80%;
+  height: 25rem;
+`;
+
+export const StyledInfosFormsColContainer = styled.div`
+  width: 50rem;
+  height: 25rem;
 `;
