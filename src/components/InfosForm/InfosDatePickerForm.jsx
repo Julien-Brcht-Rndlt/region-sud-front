@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -7,13 +8,18 @@ import {
   StyledFormItemLabel,
 } from '../../assets/styles/genericStyles/StyledFormItem';
 
+const StyledDatePickerInfosForm = styled(DatePicker)`
+  padding: 15px;
+  border: 1px solid ${(props) => props.theme.blueFeatureColor};
+`;
+
 export default function InfosDatePickerForm({ label }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   return (
     <StyledFormItem>
       <StyledFormItemLabel htmlFor={label}>{label}</StyledFormItemLabel>
-      <DatePicker
+      <StyledDatePickerInfosForm
         id={label}
         selected={selectedDate}
         onChange={(date) => setSelectedDate(date)}
