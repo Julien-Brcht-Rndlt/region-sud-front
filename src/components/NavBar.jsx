@@ -5,7 +5,7 @@ export default function NavBar() {
     <StyledNavBar>
       <ul>
         <li>
-          <StyledLink to="/">Acceuil</StyledLink>
+          <StyledLink to="/">Accueil</StyledLink>
         </li>
         <li>
           <StyledLink to="/EmiHome">
