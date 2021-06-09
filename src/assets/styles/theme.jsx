@@ -40,12 +40,16 @@ const theme = {
   fontFamilyFeature: "'Roboto','Fira Sans',sans-serif",
   fontFamilyNavBar: "'Roboto','Nunito',sans-serif",
 
+  // fonts weight
+  fontWeightFeature: 700,
+
   // color
   blueFeatureColor: '#005aff',
   secondaryFeatureColor: '#fff',
   lightGreyFeatureColor: '#ebebeb',
   greyFeatureColor: '#e5e5e5',
   darkGreyFeatureColor: '#1d1d1d',
+  darkBlueGreyFeatureColor: '#2f4f4f',
   yellowFeatureColor: '#feca5a',
 
   // lines
@@ -56,6 +60,11 @@ const theme = {
     font-family: ${fontFamilyNormal},
     font-size: 1rem,
     color: ${mainTextColor},
+  `,
+
+  textBlockFont: css`
+    font-family: ${fontFamilyFeature},
+    font-weight: ${fontWeightBold},
   `,
 };
 

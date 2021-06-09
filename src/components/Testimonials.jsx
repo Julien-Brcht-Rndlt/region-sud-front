@@ -1,4 +1,4 @@
-import Testimony from './Testimony';
+import Testimonial from './Testimonial';
 import {
   TestimonialsContainer,
   TestimonialsTitle,
@@ -33,7 +33,7 @@ export default function Testimonials() {
       </div>
       <TestimonialsContainer>
         {testimonials.map((testimony) => (
-          <Testimony {...testimony} />
+          <Testimonial {...testimony} />
         ))}
       </TestimonialsContainer>
     </>
