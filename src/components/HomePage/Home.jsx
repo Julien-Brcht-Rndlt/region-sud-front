@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import ImageHomePage from './ImageHomePage';
-import Title from './Title';
+import ImageHome from './ImageHome';
+import TitleHome from './TitleHome';
 import MapHome from './MapHome';
 import Testimonials from './Testimonials';
 
@@ -12,12 +12,12 @@ export const StyledHomePage = styled.div`
 `;
 export const WrapperHomePage = styled.div``;
 
-export default function HomePage() {
+export default function Home() {
   return (
     <WrapperHomePage>
-      <ImageHomePage />
+      <ImageHome />
       <StyledHomePage>
-        <Title />
+        <TitleHome />
         <MapHome />
       </StyledHomePage>
       <Testimonials />

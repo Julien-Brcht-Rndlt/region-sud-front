@@ -4,8 +4,8 @@ import {
   TestimonialAvatar,
   TestimonialContent,
   TestimonialAuthor,
-} from '../assets/styles/StyledTestimonial';
-import avatar from './avatar.png';
+} from '../../assets/styles/StyledTestimonial';
+import avatar from '../../assets/img/avatar.png';
 
 export default function Testimonial({ content, author }) {
   return (
