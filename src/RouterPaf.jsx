@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import HomePage from './components/home/Home';
+import Home from './components/home/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import EmiHome from './components/EvaluerMonImpact/EmiHome';
@@ -10,7 +10,7 @@ export default function RouterPaf() {
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={Home} />
           <Route path="/EmiHome" component={EmiHome} />
           <Route path="#" component="" />
           <Route path="#" component="" />
