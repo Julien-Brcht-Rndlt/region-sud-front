@@ -46,6 +46,7 @@ const theme = {
   lightGreyFeatureColor: '#ebebeb',
   greyFeatureColor: '#e5e5e5',
   darkGreyFeatureColor: '#1d1d1d',
+  darkBlutGreyFeatureColor: '#2f4f4f',
   yellowFeatureColor: '#feca5a',
 
   // lines
@@ -56,6 +57,11 @@ const theme = {
     font-family: ${fontFamilyNormal},
     font-size: 1rem,
     color: ${mainTextColor},
+  `,
+
+  textBlockFont: css`
+    font-family: ${fontFamilyFeature},
+    font-weight: ${fontWeightBold},
   `,
 };
 
