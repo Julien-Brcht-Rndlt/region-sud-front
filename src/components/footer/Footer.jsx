@@ -2,10 +2,10 @@ import {
   FooterContainer,
   FooterContWithBorder,
   FooterTextsContainer,
-} from '../assets/styles/StyledFooter';
+} from '../../assets/styles/StyledFooter';
 import FooterLinks from './FooterLinks';
 import FooterText from './FooterText';
-import Logo from './Logo';
+import Logo from '../Logo';
 
 export default function Footer() {
   const footerTextContent = [
