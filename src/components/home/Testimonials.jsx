@@ -2,7 +2,7 @@ import Testimonial from './Testimonial';
 import {
   TestimonialsContainer,
   TestimonialsTitle,
-} from '../assets/styles/StyledTestimonials';
+} from '../../assets/styles/StyledTestimonials';
 
 export default function Testimonials() {
   const testimonials = [
