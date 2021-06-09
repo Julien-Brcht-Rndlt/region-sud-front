@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import image from '../../assets/img/image.jpg';
+import image from '../../assets/img/top_image.jpg';
 
 export const StyledImageContainer = styled.div`
   display: flex;
 `;
 
-export const StyledImageHomePage = styled.img`
+export const StyledImageHome = styled.img`
   height: 340px;
   width: 100%;
 `;
@@ -13,7 +13,7 @@ export const StyledImageHomePage = styled.img`
 export default function ImageHome() {
   return (
     <StyledImageContainer>
-      <StyledImageHomePage src={image} alt="régate de voiliers" />
+      <StyledImageHome src={image} alt="régate de voiliers" />
     </StyledImageContainer>
   );
 }

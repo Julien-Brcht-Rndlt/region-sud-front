@@ -4,23 +4,23 @@ import TitleHome from './TitleHome';
 import MapHome from './MapHome';
 import Testimonials from './Testimonials';
 
-export const StyledHomePage = styled.div`
+export const StyledHome = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: stretch;
   align-content: space-around;
 `;
-export const WrapperHomePage = styled.div``;
+export const WrapperHome = styled.div``;
 
 export default function Home() {
   return (
-    <WrapperHomePage>
+    <WrapperHome>
       <ImageHome />
-      <StyledHomePage>
+      <StyledHome>
         <TitleHome />
         <MapHome />
-      </StyledHomePage>
+      </StyledHome>
       <Testimonials />
-    </WrapperHomePage>
+    </WrapperHome>
   );
 }

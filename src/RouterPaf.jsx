@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/HomePage/Home';
+import Home from './components/home/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import EmiHome from './components/EvaluerMonImpact/EmiHome';
