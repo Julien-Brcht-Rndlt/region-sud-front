@@ -27,7 +27,7 @@ export default function Footer() {
     },
     {
       title: 'LIENS UTILES',
-      lines: ['Site principal Ma région Sud'],
+      lines: ['Site principal Ma Région Sud'],
     },
   ];
 
