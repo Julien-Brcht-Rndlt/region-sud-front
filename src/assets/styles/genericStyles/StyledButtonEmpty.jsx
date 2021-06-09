@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledButtonEmpty = styled.button`
+const StyledButtonEmpty = styled.button`
   color: black;
   background-color: white;
   padding: 20px 25px 20px 25px;
@@ -15,4 +15,4 @@ export const StyledButtonEmpty = styled.button`
   }
 `;
 
-export const fake = 'fake';
+export default StyledButtonEmpty;

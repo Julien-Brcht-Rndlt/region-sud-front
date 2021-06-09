@@ -1,16 +1,12 @@
 import PropTypes from 'prop-types';
-import {
-  FooterTextContainer,
-  FooterTextTitle,
-  FooterTextLine,
-} from '../assets/styles/StyledFooter';
+import { FooterTextContainer } from '../assets/styles/StyledFooter';
 
 export default function FooterText({ title, lines = [] }) {
   return (
     <FooterTextContainer>
-      <FooterTextTitle>{title}</FooterTextTitle>
+      <h4>{title}</h4>
       {lines.map((line) => (
-        <FooterTextLine>{line}</FooterTextLine>
+        <div>{line}</div>
       ))}
     </FooterTextContainer>
   );
