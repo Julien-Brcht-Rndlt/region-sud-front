@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import clock from '../Group59.png';
 import folder from '../Vector.png';
-import ButtonEmpty from '../ButtonEmpty';
-import Button from '../Button';
+import {
+  StyledButtonEmpty,
+  StyledButtonFilled,
+} from '../../assets/styles/genericStyles/StyledButton';
 
 export const StyledClockNeederEmi = styled.img`
   height: 50px;
@@ -58,8 +60,8 @@ export default function ElementEmi() {
         <li>Elément nécessaire</li>
       </ul>
       <StyledBoxButtonElement>
-        <Button text="C'est parti !" />
-        <ButtonEmpty text="Où trouver toutes ces pièces ?" />
+        <StyledButtonFilled>C&#39;est parti !</StyledButtonFilled>
+        <StyledButtonEmpty>Où trouver toutes ces pièces ?</StyledButtonEmpty>
       </StyledBoxButtonElement>
     </StyledBoxElementEmi>
   );
