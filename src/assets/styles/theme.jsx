@@ -40,13 +40,16 @@ const theme = {
   fontFamilyFeature: "'Roboto','Fira Sans',sans-serif",
   fontFamilyNavBar: "'Roboto','Nunito',sans-serif",
 
+  // fonts weight
+  fontWeightFeature: 700,
+
   // color
   blueFeatureColor: '#005aff',
   secondaryFeatureColor: '#fff',
   lightGreyFeatureColor: '#ebebeb',
   greyFeatureColor: '#e5e5e5',
   darkGreyFeatureColor: '#1d1d1d',
-  darkBlutGreyFeatureColor: '#2f4f4f',
+  darkBlueGreyFeatureColor: '#2f4f4f',
   yellowFeatureColor: '#feca5a',
 
   // lines
