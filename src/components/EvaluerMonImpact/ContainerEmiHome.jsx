@@ -3,8 +3,6 @@ import NeederEmi from './NeederEmi';
 import TitleEmiHome from './TitleEmiHome';
 import YoutubeEmi from './YoutubeEmi';
 
-export const StyledContainerEmiHome = styled.div``;
-
 export const WrapperStyledTitleEmiHome = styled.div`
   display: block;
   width: 100%;

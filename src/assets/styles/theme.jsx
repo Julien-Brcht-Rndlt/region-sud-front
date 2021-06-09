@@ -25,11 +25,9 @@ export const device = {
 
 // setup fonts
 
-
 export const fontFamilyNormal = "Roboto,'Dosis',sans-serif'";
 export const fontFamilyFeature = "Roboto,'Fira Sans, ,sans-serif'";
 export const fontFamilyNavBar = "Roboto,'Nunito',sans-serif'";
-
 
 export const fontWeightNormal = 400;
 export const fontWeightBold = 700;
@@ -41,7 +39,6 @@ const theme = {
   fontFamilyNormal: "Roboto,'Dosis', sans-serif'",
   fontFamilyFeature: "Roboto,'Fira Sans, sans-serif'",
   fontFamilyNavBar: "Roboto, 'Nunito',sans-serif'",
-
 
   // color
   blueFeatureColor: '#005aff',

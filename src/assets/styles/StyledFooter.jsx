@@ -29,10 +29,6 @@ export const FooterTextContainer = styled.div`
   text-align: center;
 `;
 
-export const FooterTextTitle = styled.h4``;
-
-export const FooterTextLine = styled.div``;
-
 export const FooterLinksList = styled.ul`
   display: flex;
   justify-content: space-around;
