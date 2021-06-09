@@ -5,6 +5,7 @@ export const StyledSubTitleH2 = styled.h2`
   font-family: ${(props) => props.theme.fontFamilyFeature};
   font-weight: ${(props) => props.theme.fontWeightBold};
   color: ${(props) => props.theme.blueFeatureColor};
+  font-size: 2rem;
 `;
 
 export default function StyledSubTitle({ subtitle }) {

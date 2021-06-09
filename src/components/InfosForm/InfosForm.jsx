@@ -1,8 +1,11 @@
 import StyledSubTitle from '../../assets/styles/genericStyles/StyledSubTitle';
+import StyledPreSubTitle from '../../assets/styles/StyledPreSubTitle';
 import {
   StyledInfosFormsContainer,
   StyledInfosFormsColsContainer,
   StyledInfosFormsColContainer,
+  StyledButtonContainer,
+  StyledInfosFormsColLeftContainer,
 } from '../../assets/styles/StyledInfosForms';
 import { FlexJustStart } from '../../assets/styles/genericStyles/StyledContainer';
 import InfosInputForm from './InfosInputForm';
@@ -17,9 +20,9 @@ export default function InfosForm() {
 
   return (
     <StyledInfosFormsContainer>
-      <span>Informations préalables</span>
+      <StyledPreSubTitle content="Informations préalables" />
       <StyledInfosFormsColsContainer>
-        <StyledInfosFormsColContainer>
+        <StyledInfosFormsColLeftContainer>
           <div>
             <StyledSubTitle subtitle="La structure organisatrice" />
             <InfosInputForm label="Nom de la structure" wide />
@@ -28,29 +31,31 @@ export default function InfosForm() {
               wide
             />
           </div>
-        </StyledInfosFormsColContainer>
+        </StyledInfosFormsColLeftContainer>
         <StyledInfosFormsColContainer>
           <StyledSubTitle subtitle="La manifestation sportive" />
           <InfosInputForm label="Nom de la manisfestation sportive" wide />
           <InfosInputForm label="Nombre de participants" />
           <FlexJustStart>
             <InfosInputForm label="Adresse de la manifestation" />
-            <InfosDropdownForm label="Lieu" options={locations} />
-            <InfosCheckBoxForm label="Montrer la carte" />
           </FlexJustStart>
           <FlexJustStart>
-            <InfosDatePickerForm label="Date de début" />
-            <InfosDatePickerForm label="Date de fin" />
+            <InfosDropdownForm label="Lieu" options={locations} />
+            <InfosCheckBoxForm label="Montrer la carte" />
           </FlexJustStart>
           <FlexJustStart>
             <InfosInputForm label="Type d'activité sportive" />
             <InfosDropdownForm label="Niveau sportif" options={sportLevels} />
           </FlexJustStart>
+          <FlexJustStart>
+            <InfosDatePickerForm label="Date de début" />
+            <InfosDatePickerForm label="Date de fin" />
+          </FlexJustStart>
         </StyledInfosFormsColContainer>
       </StyledInfosFormsColsContainer>
-      <div>
+      <StyledButtonContainer>
         <Button label="Suivant" />
-      </div>
+      </StyledButtonContainer>
     </StyledInfosFormsContainer>
   );
 }
