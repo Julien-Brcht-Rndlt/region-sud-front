@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import ContainerEmiHome from './ContainerEmiHome';
-import InfosForm from '../InfosForm/InfosForm';
 
 export const StyledEmiHome = styled.div`
   width: auto;
@@ -13,7 +12,6 @@ export default function EmiHome() {
   return (
     <StyledEmiHome>
       <ContainerEmiHome />
-      <InfosForm />
     </StyledEmiHome>
   );
 }
