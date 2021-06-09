@@ -8,7 +8,9 @@ export default function NavBar() {
           <StyledLink to="/">Acceuil</StyledLink>
         </li>
         <li>
-          <StyledLink to="/">Evaluer mon impact environnemental</StyledLink>
+          <StyledLink to="/EmiHome">
+            Evaluer mon impact environnemental
+          </StyledLink>
         </li>
         <li>
           <StyledLink to="/">Etre accompagné</StyledLink>

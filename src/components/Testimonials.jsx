@@ -1,17 +1,16 @@
-// import styled from 'styled-components';
 import Testimony from './Testimony';
 import {
-  TestimoniesContainer,
-  TestimoniesTitle,
-} from '../assets/styles/StyledTestimonies';
+  TestimonialsContainer,
+  TestimonialsTitle,
+} from '../assets/styles/StyledTestimonials';
 
-export default function Testimonies() {
-  const testimonies = [
+export default function Testimonials() {
+  const testimonials = [
     {
       avatar: '',
       content:
         'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum exercitationem accusantium eligendi repellendus est sed non nemo adipisci. Et laudantium aperiam temporibus dolorem voluptatem nihil, obcaecati exercitationem facere animi necessitatibus.',
-      author: "M. Régate, Anoi club de voile d'Istres",
+      author: "M. Régate,  Anoi club de voile d'Istres",
     },
     {
       avatar: '',
@@ -30,13 +29,13 @@ export default function Testimonies() {
   return (
     <>
       <div>
-        <TestimoniesTitle>ILS L&apos;ONT UTILIS&Eacute;</TestimoniesTitle>
+        <TestimonialsTitle>ILS L&apos;ONT UTILIS&Eacute;</TestimonialsTitle>
       </div>
-      <TestimoniesContainer>
-        {testimonies.map((testimony) => (
+      <TestimonialsContainer>
+        {testimonials.map((testimony) => (
           <Testimony {...testimony} />
         ))}
-      </TestimoniesContainer>
+      </TestimonialsContainer>
     </>
   );
 }

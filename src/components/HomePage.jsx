@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import ImageHomePage from './ImageHomePage';
 import Title from './Title';
 import MapHome from './MapHome';
-import Testimonies from './Testimonies';
+import Testimonials from './Testimonials';
 
 export const StyledHomePage = styled.div`
   display: flex;
@@ -20,7 +20,7 @@ export default function HomePage() {
         <Title />
         <MapHome />
       </StyledHomePage>
-      <Testimonies />
+      <Testimonials />
     </WrapperHomePage>
   );
 }

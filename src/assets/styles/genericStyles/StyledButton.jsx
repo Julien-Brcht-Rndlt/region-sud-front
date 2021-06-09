@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledButton = styled.button`
+const StyledButton = styled.button`
   color: #ffffff;
   background-color: #005aff;
   padding: 20px 25px 20px 25px;
@@ -12,5 +12,5 @@ export const StyledButton = styled.button`
     transition: 0.4s;
   }
 `;
-export const fake = 'fake';
-// a corriger!
+
+export default StyledButton;

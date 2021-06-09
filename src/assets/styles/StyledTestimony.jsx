@@ -16,7 +16,7 @@ export const TestimonyAvatar = styled.img`
   padding: 20px;
 `;
 
-export const TestimonyContent = styled.div`
+export const TestimonyContent = styled.p`
   color: #2f4f4f;
   font-weight: bold;
   font-family: Roboto, sans-serif;

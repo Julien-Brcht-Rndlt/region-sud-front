@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TestimoniesContainer = styled.div`
+export const TestimonialsContainer = styled.div`
   display: flex;
   justify-content: space-around;
   background-color: #ebebeb;
@@ -9,7 +9,7 @@ export const TestimoniesContainer = styled.div`
   align-items: center;
 `;
 
-export const TestimoniesTitle = styled.h2`
+export const TestimonialsTitle = styled.h2`
   color: #005aff;
   background-color: #ebebeb;
   margin: 0;
