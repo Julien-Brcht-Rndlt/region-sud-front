@@ -4,6 +4,7 @@ import Title from './Title';
 import MapHome from './MapHome';
 import Testimonies from './Testimonies';
 import ThemeList from '../funnel/ThemeList';
+import QuestList from '../funnel/QuestlList';
 
 export const StyledHomePage = styled.div`
   display: flex;
@@ -23,6 +24,7 @@ export default function HomePage() {
       </StyledHomePage>
       <Testimonies />
       <ThemeList />
+      <QuestList />
     </WrapperHomePage>
   );
 }

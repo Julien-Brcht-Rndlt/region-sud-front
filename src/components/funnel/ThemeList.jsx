@@ -3,16 +3,17 @@ import FunnelContext from '../context/funnel-context';
 
 const ThemeList = () => {
   const { funnel } = React.useContext(FunnelContext);
-  console.log(funnel);
 
   return (
     <>
       <h1>Funnel</h1>
-      <ul>
-        {funnel.themes.map((funn) => (
-          <li key={funn.id}>{funn.title}</li>
+      <div>
+        {funnel.themes.map((theme) => (
+          <div key={theme.id}>
+            <h1>{theme.title}</h1>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 };

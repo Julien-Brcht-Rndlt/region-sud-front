@@ -1,3 +1,7 @@
-export default function QuestList() {
-  return <>{/* mappage des questions ici */}</>;
-}
+import React from 'react';
+
+const QuestList = () => {
+  return <></>;
+};
+
+export default QuestList;
