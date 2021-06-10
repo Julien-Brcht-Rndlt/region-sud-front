@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import StyledButtonEmpty from '../assets/styles/genericStyles/StyledButtonEmpty';
+import StyledButtonEmpty from '../assets/styles/genericStyles/StyledButton';
 
 export default function Button({ text }) {
   return <StyledButtonEmpty src="#">{text}</StyledButtonEmpty>;
