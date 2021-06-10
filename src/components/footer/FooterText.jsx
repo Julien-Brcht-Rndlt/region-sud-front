@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { FooterTextContainer } from '../../assets/styles/StyledFooter';
+import { FooterTextContainer } from '../../styles/StyledFooter';
 
 export default function FooterText({ title, lines = [] }) {
   return (

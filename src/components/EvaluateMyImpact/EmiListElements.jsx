@@ -5,7 +5,7 @@ import plus from '../../assets/img/plusPictureEmi.png';
 import {
   StyledButtonEmpty,
   StyledButtonFilled,
-} from '../../assets/styles/genericStyles/StyledButton';
+} from '../../styles/genericStyles/StyledButton';
 
 export const StyledClockNeederEmi = styled.img`
   height: 50px;

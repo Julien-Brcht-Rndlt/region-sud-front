@@ -25,3 +25,23 @@ export const TestimonialContent = styled.p`
 export const TestimonialAuthor = styled.span`
   color: ${(props) => props.theme.darkBlueGreyFeatureColor};
 `;
+
+export const TestimonialOpeningQuote = styled.img`
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: 10px;
+  left: -5px;
+`;
+
+export const TestimonialClosingQuote = styled.img`
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: -25px;
+  left: 140px;
+`;
+
+export const TestimonialAlignQuotes = styled.div`
+  display: flex;
+`;
