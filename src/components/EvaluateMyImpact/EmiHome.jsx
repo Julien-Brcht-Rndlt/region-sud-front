@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ContainerEmiHome from './ContainerEmiHome';
+import EmiContainerHome from './EmiContainerHome';
 
 export const StyledEmiHome = styled.div`
   width: auto;
@@ -11,7 +11,7 @@ export const StyledEmiHome = styled.div`
 export default function EmiHome() {
   return (
     <StyledEmiHome>
-      <ContainerEmiHome />
+      <EmiContainerHome />
     </StyledEmiHome>
   );
 }
