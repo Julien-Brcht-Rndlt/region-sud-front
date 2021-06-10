@@ -1,11 +1,11 @@
 import { ThemeProvider } from 'styled-components';
-import RouterPaf from './RouterPaf';
-import theme from './assets/styles/theme';
+import EmiRouter from './EmiRouter';
+import theme from './styles/theme';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <RouterPaf />
+      <EmiRouter />
     </ThemeProvider>
   );
 }

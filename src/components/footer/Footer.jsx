@@ -2,7 +2,7 @@ import {
   FooterContainer,
   FooterContWithBorder,
   FooterTextsContainer,
-} from '../../assets/styles/StyledFooter';
+} from '../../styles/StyledFooter';
 import FooterLinks from './FooterLinks';
 import FooterText from './FooterText';
 import Logo from '../Logo';
