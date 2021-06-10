@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import clock from '../Group59.png';
-import folder from '../Vector.png';
-import plus from '../plus.png';
+import clock from '../../assets/img/clockPictureEmi.png';
+import folder from '../../assets/img/folderPictureEmi.png';
+import plus from '../../assets/img/plusPictureEmi.png';
 import {
   StyledButtonEmpty,
   StyledButtonFilled,
@@ -59,7 +59,7 @@ export const StyledBoxButtonElement = styled.div`
   width: 50%;
 `;
 
-export default function ElementEmi() {
+export default function EmiListElements() {
   return (
     <StyledBoxElementEmi>
       <StyledSpaceBetterNeederEmi>
