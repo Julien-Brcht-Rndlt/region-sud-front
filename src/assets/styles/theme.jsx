@@ -57,9 +57,9 @@ const theme = {
   smallLineHeight: 1.15,
 
   mainFont: css`
-    font-family: ${fontFamilyNormal},
-    font-size: 1rem,
-    color: ${mainTextColor},
+    font-family: ${fontFamilyNormal};
+    font-size: 1rem;
+    color: ${mainTextColor};
   `,
 
   textBlockFont: css`

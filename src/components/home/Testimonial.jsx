@@ -7,10 +7,10 @@ import {
   TestimonialOpeningQuote,
   TestimonialClosingQuote,
   TestimonialAlignQuotes,
-} from '../assets/styles/StyledTestimonial';
-import avatar from './avatar.png';
-import openingQuotes from '../assets/styles/img/opening_quotes.png';
-import closingQuotes from '../assets/styles/img/closing_quotes.png';
+} from '../../assets/styles/StyledTestimonial';
+import avatar from '../../assets/img/avatar.png';
+import openingQuotes from '../../assets/img/opening_quotes.png';
+import closingQuotes from '../../assets/img/closing_quotes.png';
 
 export default function Testimonial({ content, author }) {
   return (

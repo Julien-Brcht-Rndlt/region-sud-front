@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 import clock from '../Group59.png';
 import folder from '../Vector.png';
-import ButtonEmpty from '../ButtonEmpty';
-import Button from '../Button';
+import plus from '../plus.png';
+import {
+  StyledButtonEmpty,
+  StyledButtonFilled,
+} from '../../assets/styles/genericStyles/StyledButton';
 
 export const StyledClockNeederEmi = styled.img`
   height: 50px;
@@ -13,6 +16,22 @@ export const StyledFolderNeederEmi = styled.img`
   height: 50px;
   width: 50px;
 `;
+
+export const StyledPlusNeederEmi = styled.img`
+  padding: 10px;
+  height: 25px;
+  width: 25px;
+`;
+
+export const StyledFiveTeenNeederEmi = styled.p`
+  display: flex;
+  padding: 5px;
+  border: solid 1px black;
+  width: auto;
+  float: left;
+  color: black;
+`;
+
 export const StyledSpaceNeederEmi = styled.div`
   width: 50px;
   display: flex;
@@ -45,7 +64,9 @@ export default function ElementEmi() {
     <StyledBoxElementEmi>
       <StyledSpaceBetterNeederEmi>
         <StyledFolderNeederEmi src={folder} alt="dossier" />
+        <StyledPlusNeederEmi src={plus} alt="plus" />
         <StyledClockNeederEmi src={clock} alt="horloge" />
+        <StyledFiveTeenNeederEmi>15min</StyledFiveTeenNeederEmi>
       </StyledSpaceBetterNeederEmi>
 
       <ul>
@@ -58,8 +79,8 @@ export default function ElementEmi() {
         <li>Elément nécessaire</li>
       </ul>
       <StyledBoxButtonElement>
-        <Button text="C'est parti !" />
-        <ButtonEmpty text="Où trouver toutes ces pièces ?" />
+        <StyledButtonFilled>C&#39;est parti !</StyledButtonFilled>
+        <StyledButtonEmpty>Où trouver toutes ces pièces ?</StyledButtonEmpty>
       </StyledBoxButtonElement>
     </StyledBoxElementEmi>
   );
