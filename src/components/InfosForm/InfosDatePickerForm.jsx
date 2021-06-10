@@ -16,13 +16,18 @@ const StyledDatePickerInfosForm = styled(DatePicker)`
 export default function InfosDatePickerForm({ label }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
+  const handleChange = (date) => {
+    console.log(date);
+    setSelectedDate(date);
+  };
+
   return (
     <StyledFormItem>
       <StyledFormItemLabel htmlFor={label}>{label}</StyledFormItemLabel>
       <StyledDatePickerInfosForm
         id={label}
         selected={selectedDate}
-        onChange={(date) => setSelectedDate(date)}
+        onChange={(date) => handleChange(date)}
         showTimeSelect
         timeFormat="HH:mm"
         dateFormat="LLL"
