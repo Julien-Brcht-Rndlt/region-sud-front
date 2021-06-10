@@ -7,7 +7,7 @@ import {
   TestimonialOpeningQuote,
   TestimonialClosingQuote,
   TestimonialAlignQuotes,
-} from '../../assets/styles/StyledTestimonial';
+} from '../../styles/StyledTestimonial';
 import avatar from '../../assets/img/avatar.png';
 import openingQuotes from '../../assets/img/opening_quotes.png';
 import closingQuotes from '../../assets/img/closing_quotes.png';

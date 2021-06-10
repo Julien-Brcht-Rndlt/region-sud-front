@@ -1,8 +1,5 @@
 import PropTypes from 'prop-types';
-import {
-  FooterLinksList,
-  FooterLinksALink,
-} from '../../assets/styles/StyledFooter';
+import { FooterLinksList, FooterLinksALink } from '../../styles/StyledFooter';
 
 export default function FooterLinks({ links = [] }) {
   return (

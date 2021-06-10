@@ -1,7 +1,7 @@
 import YouTube from 'react-youtube';
 import styled from 'styled-components';
 import ElementsEmi from './ElementsEmi';
-import { StyledButtonEmpty } from '../../assets/styles/genericStyles/StyledButton';
+import { StyledButtonEmpty } from '../../styles/genericStyles/StyledButton';
 
 export const StyledBoxYoutubeEtElementsEmi = styled.div`
   display: flex;

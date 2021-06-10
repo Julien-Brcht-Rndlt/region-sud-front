@@ -2,7 +2,7 @@ import {
   StyledTitleH1,
   StyledTitleP,
   StyledTitleWrapper,
-} from '../../assets/styles/genericStyles/StyledTitle';
+} from '../../styles/genericStyles/StyledTitle';
 import Button from '../Button';
 
 export default function TitleHome() {
