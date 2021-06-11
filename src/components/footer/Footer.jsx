@@ -2,10 +2,10 @@ import {
   FooterContainer,
   FooterContWithBorder,
   FooterTextsContainer,
-} from '../assets/styles/StyledFooter';
+} from '../../styles/StyledFooter';
 import FooterLinks from './FooterLinks';
 import FooterText from './FooterText';
-import Logo from './Logo';
+import Logo from '../Logo';
 
 export default function Footer() {
   const footerTextContent = [
@@ -27,7 +27,7 @@ export default function Footer() {
     },
     {
       title: 'LIENS UTILES',
-      lines: ['Site principal Ma région Sud'],
+      lines: ['Site principal Ma Région Sud'],
     },
   ];
 

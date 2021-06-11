@@ -2,10 +2,10 @@ import {
   StyledTitleH1,
   StyledTitleP,
   StyledTitleWrapper,
-} from '../assets/styles/genericStyles/StyledTitle';
-import Button from './Button';
+} from '../../styles/genericStyles/StyledTitle';
+import Button from '../Button';
 
-export default function Title() {
+export default function TitleHome() {
   return (
     <StyledTitleWrapper>
       <StyledTitleH1> Lorem ipsum dolor sit amet?</StyledTitleH1>

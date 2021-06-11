@@ -25,9 +25,9 @@ export const device = {
 
 // setup fonts
 
-export const fontFamilyNormal = "Roboto,'Dosis',sans-serif'";
-export const fontFamilyFeature = "Roboto,'Fira Sans, ,sans-serif'";
-export const fontFamilyNavBar = "Roboto,'Nunito',sans-serif'";
+export const fontFamilyNormal = "'Roboto','Dosis',sans-serif";
+export const fontFamilyFeature = "'Roboto','Fira Sans',sans-serif";
+export const fontFamilyNavBar = "'Roboto','Nunito',sans-serif";
 
 export const fontWeightNormal = 400;
 export const fontWeightBold = 700;
@@ -36,9 +36,12 @@ const mainTextColor = '#005aff';
 const theme = {
   // fonts
 
-  fontFamilyNormal: "Roboto,'Dosis', sans-serif'",
-  fontFamilyFeature: "Roboto,'Fira Sans, sans-serif'",
-  fontFamilyNavBar: "Roboto, 'Nunito',sans-serif'",
+  fontFamilyNormal: "'Roboto','Dosis',sans-serif",
+  fontFamilyFeature: "'Roboto','Fira Sans',sans-serif",
+  fontFamilyNavBar: "'Roboto','Nunito',sans-serif",
+
+  // fonts weight
+  fontWeightFeature: 700,
 
   // color
   blueFeatureColor: '#005aff',
@@ -46,19 +49,22 @@ const theme = {
   lightGreyFeatureColor: '#ebebeb',
   greyFeatureColor: '#e5e5e5',
   darkGreyFeatureColor: '#1d1d1d',
+  darkBlueGreyFeatureColor: '#2f4f4f',
   yellowFeatureColor: '#feca5a',
 
   // lines
   lineHeight: 1.5,
   smallLineHeight: 1.15,
 
-  /* font-weight: ${(props) =>
-    props.bold ? fontWeightNormal : fontWeightNormal}; */
-
   mainFont: css`
     font-family: ${fontFamilyNormal};
     font-size: 1rem;
     color: ${mainTextColor};
+  `,
+
+  textBlockFont: css`
+    font-family: ${fontFamilyFeature},
+    font-weight: ${fontWeightBold},
   `,
 };
 

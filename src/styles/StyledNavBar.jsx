@@ -22,5 +22,3 @@ export const StyledLink = styled(Link)`
   color: ${(props) => props.theme.secondaryFeatureColor};
   text-decoration: none;
 `;
-
-export const fake = styled.div``;

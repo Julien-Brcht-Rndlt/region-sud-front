@@ -1,8 +1,8 @@
-import Testimony from './Testimony';
+import Testimonial from './Testimonial';
 import {
   TestimonialsContainer,
   TestimonialsTitle,
-} from '../assets/styles/StyledTestimonials';
+} from '../../styles/StyledTestimonials';
 
 export default function Testimonials() {
   const testimonials = [
@@ -33,7 +33,7 @@ export default function Testimonials() {
       </div>
       <TestimonialsContainer>
         {testimonials.map((testimony) => (
-          <Testimony {...testimony} />
+          <Testimonial {...testimony} />
         ))}
       </TestimonialsContainer>
     </>

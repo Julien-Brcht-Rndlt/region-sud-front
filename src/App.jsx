@@ -1,13 +1,13 @@
 import { ThemeProvider } from 'styled-components';
-import RouterPaf from './RouterPaf';
-import theme from './assets/styles/theme';
 import InfosForm from './components/InfosForm/InfosForm';
+import EmiRouter from './EmiRouter';
+import theme from './styles/theme';
 
 function App() {
   console.log(theme);
   return (
     <ThemeProvider theme={theme}>
-      <RouterPaf />
+      <EmiRouter />
       <InfosForm />
     </ThemeProvider>
   );

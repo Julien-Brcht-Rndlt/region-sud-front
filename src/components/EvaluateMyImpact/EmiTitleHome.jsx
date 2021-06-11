@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
-export const StyledTitleEmiHome = styled.div`
+export const StyledEmiTitleHome = styled.div`
   display: block;
   height: 60px;
   margin: 15px;
 `;
 
-export default function TitleEmiHome() {
+export default function EmiTitleHome() {
   return (
-    <StyledTitleEmiHome>
+    <StyledEmiTitleHome>
       <h1>Avant de commencer l&#39;évaluation de mon évènement :</h1>
-    </StyledTitleEmiHome>
+    </StyledEmiTitleHome>
   );
 }
