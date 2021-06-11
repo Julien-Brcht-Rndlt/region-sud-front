@@ -21,9 +21,7 @@ export const StyledInfosFormsColContainer = styled.div`
   width: 90%;
 `;
 
-export const StyledInfosFormsColLeftContainer = styled(
-  StyledInfosFormsColContainer
-)`
+export const StyledInfosFormsColLeftContainer = styled(StyledInfosFormsColContainer)`
   width: 55%;
 `;
 
