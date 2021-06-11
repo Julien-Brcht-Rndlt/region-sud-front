@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import QuestionList from './QuestionList';
-import StyledButton from '../../styles/genericStyles/StyledButtons';
+import { StyledButton } from '../../styles/genericStyles/StyledButtons';
 
 export const ThemeContainer = styled.div`
   background-color: #ffffff;
