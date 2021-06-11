@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import clock from '../../assets/img/clockPictureEmi.png';
 import folder from '../../assets/img/folderPictureEmi.png';
 import plus from '../../assets/img/plusPictureEmi.png';
-import { StyledRoundedButton } from '../../assets/styles/genericStyles/StyledButtons';
+import { StyledRoundedButton } from '../../styles/genericStyles/StyledButtons';
 
 export const StyledClockNeederEmi = styled.img`
   height: 50px;
