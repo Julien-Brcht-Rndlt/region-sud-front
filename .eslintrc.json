@@ -3,7 +3,7 @@
     "browser": true,
     "es6": true
   },
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "extends": ["airbnb"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -16,12 +16,6 @@
     "indent": 0,
     "linebreak-style": [0],
     "react/jsx-props-no-spreading": "off",
-    "react/react-in-jsx-scope": "off",
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ]
+    "react/react-in-jsx-scope": "off"
   }
 }
