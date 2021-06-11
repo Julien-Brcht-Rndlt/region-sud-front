@@ -4,7 +4,6 @@ import EmiRouter from './EmiRouter';
 import theme from './styles/theme';
 
 function App() {
-  console.log(theme);
   return (
     <ThemeProvider theme={theme}>
       <EmiRouter />

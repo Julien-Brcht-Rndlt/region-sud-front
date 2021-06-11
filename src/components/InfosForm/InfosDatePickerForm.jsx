@@ -35,7 +35,6 @@ export default function InfosDatePickerForm({ label }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleChange = (date) => {
-    console.log(date);
     setSelectedDate(date);
   };
 

@@ -10,8 +10,7 @@ export default function InfosDropdownForm({ label, options = [] }) {
   const [selectedItem, setSelectedItem] = useState();
 
   const handleSelectedOption = (event) => {
-    console.log(`event.target.value:${event.target.value}`);
-    setSelectedItem(event.target.value); // event.label
+    setSelectedItem(event.target.value);
   };
 
   return (
