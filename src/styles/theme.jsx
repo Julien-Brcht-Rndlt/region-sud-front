@@ -51,6 +51,7 @@ const theme = {
   darkGreyFeatureColor: '#1d1d1d',
   darkBlueGreyFeatureColor: '#2f4f4f',
   yellowFeatureColor: '#feca5a',
+  NavyBlueFeatureColor: '#000080',
 
   // lines
   lineHeight: 1.5,
@@ -63,8 +64,8 @@ const theme = {
   `,
 
   textBlockFont: css`
-    font-family: ${fontFamilyFeature},
-    font-weight: ${fontWeightBold},
+    font-family: ${fontFamilyFeature};
+    font-weight: ${fontWeightBold};
   `,
 };
 
