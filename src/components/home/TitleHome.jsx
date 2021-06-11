@@ -3,7 +3,7 @@ import {
   StyledTitleP,
   StyledTitleWrapper,
 } from '../../styles/genericStyles/StyledTitle';
-import { StyledButton } from '../../assets/styles/genericStyles/StyledButtons';
+import { StyledButton } from '../../styles/genericStyles/StyledButtons';
 
 export default function TitleHome() {
   return (
