@@ -30,17 +30,11 @@ export default function Theme({ title, icon, questions }) {
       <img src={`../../assets/img-temp/${icon}`} alt={icon} />
       <StyledTitleTheme>{title}</StyledTitleTheme>
       <QuestionList questions={questions} />
-      <Button>Je ne m&apos;en sors pas !</Button>
-      <Button>Précédent</Button>
-      <Button>Suivant</Button>
+      <Button text="Je ne m en sors pas !" />
+      <Button text="Précédent" />
+      <Button text="Suivant" />
     </>
   );
-
-  /* <StyledThemeContainer>
-      <QuestionListContainer>
-        <QuestionList />
-      </QuestionListContainer>
-    </StyledThemeContainer> */
 }
 
 Theme.propTypes = {

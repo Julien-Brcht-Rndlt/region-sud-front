@@ -1,53 +1,37 @@
 {
     "themes":[
   {
-  "id": 0,
-  "title": "Gestion et valorisation des déchets",
-  "icon":"theme-0.png",
-  "questions": [
-    {
-      "id": 0,
-      "title": "question #1",
-      "anwsers": [
-        {
+    "id": 0,
+    "title": "Gestion et valorisation des déchets",
+    "icon":"theme-0.png",
+    "questions": [
+          {
           "id": 0,
-          "label": "choix #1",
-          "answ_type": "multiple_choice"
-        },
-        {
-          "id": 1,
-          "label": "choix #2",
-          "answ_type": "multiple_choice"
-        },
-        {
-          "id": 2,
-          "label": "choix #3",
-          "answ_type": "multiple_choice"
-        },
-        {
-          "id": 3,
-          "label": "choix #4",
-          "answ_type": "multiple_choice"
-        }
+          "title": "question #1",
+          "answers": [
+            {
+              "id": 0,
+              "label": "choix #1",
+              "answ_type": "multiple_choice"
+            },
+            {
+              "id": 1,
+              "label": "choix #2",
+              "answ_type": "multiple_choice"
+            },
+            {
+              "id": 2,
+              "label": "choix #3",
+              "answ_type": "input_answer"
+            },
+            {
+              "id": 3,
+              "label": "choix #4",
+              "answ_type": "multiple_choice"
+            }
       ]
-    },
-    {
-      "id": 1,
-      "title": "question #2"
-    },
-    {
-      "id": 2,
-      "title": "question #3"
-    },
-    {
-      "id": 3,
-      "title": "question #4"
-    },
-    {
-      "id": 4,
-      "title": "question #5"
     }
   ]
-}
-    ]
+  }
+]
 }

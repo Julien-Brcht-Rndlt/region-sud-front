@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import QuestionTitle from './QuestionTitle';
 import AnswerList from './AnswerList';
 
@@ -11,17 +12,16 @@ export const StyledQuestionTitle = styled.h2`
   color: ${(props) => props.theme.blueFeatureColor};
 `;
 
-export default function Question(id, title, answers) {
+export default function Question({ title, answers }) {
   return (
-    <div>
+    <StyledQuestionContainer>
       <QuestionTitle title={title} />
       <AnswerList answers={answers} />
-    </div>
+    </StyledQuestionContainer>
   );
-  /* <StyledQuestionContainer>
-      <StyledQuestionTitle>
-        <QuestionTitle title="" />
-      </StyledQuestionTitle>
-     
-    </StyledQuestionContainer> */
 }
+
+Question.propTypes = {
+  title: PropTypes.string.isRequired,
+  answers: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

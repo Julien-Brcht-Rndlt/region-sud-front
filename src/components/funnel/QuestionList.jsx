@@ -14,5 +14,5 @@ const QuestionList = ({ questions }) => {
 export default QuestionList;
 
 QuestionList.propTypes = {
-  questions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  questions: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
