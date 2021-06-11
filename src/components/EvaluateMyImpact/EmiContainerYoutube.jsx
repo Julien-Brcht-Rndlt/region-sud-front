@@ -1,7 +1,7 @@
 import YouTube from 'react-youtube';
 import styled from 'styled-components';
 import EmiListElements from './EmiListElements';
-import { StyledButtonEmpty } from '../../styles/genericStyles/StyledButton';
+import { StyledRoundedButton } from '../../assets/styles/genericStyles/StyledButtons';
 
 export const StyledBoxYoutubeEtElementsEmi = styled.div`
   display: flex;
@@ -18,7 +18,9 @@ export default function EmiContainerYoutube() {
       <StyledBoxTitleEtYoutube>
         <h3>Comment cela va se passer :</h3>
         <YouTube videoId="aP0_xJE_bgU" />
-        <StyledButtonEmpty>Voir les questions fréquentes</StyledButtonEmpty>
+        <StyledRoundedButton glassy>
+          Voir les questions fréquentes
+        </StyledRoundedButton>
       </StyledBoxTitleEtYoutube>
     </StyledBoxYoutubeEtElementsEmi>
   );

@@ -3,7 +3,7 @@ import {
   StyledTitleP,
   StyledTitleWrapper,
 } from '../../styles/genericStyles/StyledTitle';
-import Button from '../Button';
+import { StyledButton } from '../../assets/styles/genericStyles/StyledButtons';
 
 export default function TitleHome() {
   return (
@@ -15,7 +15,7 @@ export default function TitleHome() {
           <li>Lorem ipsum dolor sit amet</li>
           <li>sit amet, consectetur adipiscing elit</li>
         </ul>
-        <Button text="J'évalue mon événement" />
+        <StyledButton>J&#39;évalue mon évènement</StyledButton>
       </StyledTitleP>
     </StyledTitleWrapper>
   );

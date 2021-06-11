@@ -2,10 +2,7 @@ import styled from 'styled-components';
 import clock from '../../assets/img/clockPictureEmi.png';
 import folder from '../../assets/img/folderPictureEmi.png';
 import plus from '../../assets/img/plusPictureEmi.png';
-import {
-  StyledButtonEmpty,
-  StyledButtonFilled,
-} from '../../styles/genericStyles/StyledButton';
+import { StyledRoundedButton } from '../../assets/styles/genericStyles/StyledButtons';
 
 export const StyledClockNeederEmi = styled.img`
   height: 50px;
@@ -79,8 +76,10 @@ export default function EmiListElements() {
         <li>Elément nécessaire</li>
       </ul>
       <StyledBoxButtonElement>
-        <StyledButtonFilled>C&#39;est parti !</StyledButtonFilled>
-        <StyledButtonEmpty>Où trouver toutes ces pièces ?</StyledButtonEmpty>
+        <StyledRoundedButton>C&#39;est parti !</StyledRoundedButton>
+        <StyledRoundedButton glassy>
+          Où trouver toutes ces pièces ?
+        </StyledRoundedButton>
       </StyledBoxButtonElement>
     </StyledBoxElementEmi>
   );
