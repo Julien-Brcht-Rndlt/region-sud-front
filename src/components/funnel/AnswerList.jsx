@@ -1,17 +1,15 @@
 import PropTypes from 'prop-types';
 import Answer from './Answer';
 
-const AnswerList = ({ answers }) => {
-  return (
-    <>
-      {answers.map((answer) => (
-        <Answer key={answer.id} />
-      ))}
-    </>
-  );
-};
+const AnswerList = ({ answers }) => (
+  <>
+    {answers.map((answer) => (
+      <Answer key={answer.id} answer={answer} />
+    ))}
+  </>
+);
 
-/* 
+/*
 
 const AnswerList = () => {
   const { themes } = useContext(FunnelContext);

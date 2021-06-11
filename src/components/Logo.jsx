@@ -11,7 +11,12 @@ const StyledLogoImg = styled.img`
   height: ${(props) => props.height}px;
 `;
 
-export default function Logo({ src, width, height, alt }) {
+export default function Logo({
+  src,
+  width,
+  height,
+  alt,
+}) {
   return (
     <StyledLogoCont>
       <StyledLogoImg src={src} width={width} height={height} alt={alt} />
