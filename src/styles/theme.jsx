@@ -25,15 +25,9 @@ export const device = {
 
 // setup fonts
 
-<<<<<<< HEAD:src/assets/styles/theme.jsx
-export const fontFamilyNormal = "'Dosis',sans-serif";
-export const fontFamilyFeature = "'Fira Sans', ,sans-serif";
-export const fontFamilyNavBar = "'Nunito',sans-serif";
-=======
 export const fontFamilyNormal = "'Roboto','Dosis',sans-serif";
 export const fontFamilyFeature = "'Roboto','Fira Sans',sans-serif";
 export const fontFamilyNavBar = "'Roboto','Nunito',sans-serif";
->>>>>>> 93f67938b2025c6f3349f9f680d8fa251abbfffa:src/styles/theme.jsx
 
 export const fontWeightNormal = 400;
 export const fontWeightBold = 700;
@@ -41,11 +35,6 @@ const mainTextColor = '#005aff';
 
 const theme = {
   // fonts
-<<<<<<< HEAD:src/assets/styles/theme.jsx
-  fontFamilyNormal: "'Dosis',sans-serif",
-  fontFamilyFeature: "'Fira Sans', ,sans-serif",
-  fontFamilyNavBar: "'Nunito',sans-serif",
-=======
 
   fontFamilyNormal: "'Roboto','Dosis',sans-serif",
   fontFamilyFeature: "'Roboto','Fira Sans',sans-serif",
@@ -53,7 +42,6 @@ const theme = {
 
   // fonts weight
   fontWeightFeature: 700,
->>>>>>> 93f67938b2025c6f3349f9f680d8fa251abbfffa:src/styles/theme.jsx
 
   // color
   blueFeatureColor: '#005aff',
@@ -61,13 +49,9 @@ const theme = {
   lightGreyFeatureColor: '#ebebeb',
   greyFeatureColor: '#e5e5e5',
   darkGreyFeatureColor: '#1d1d1d',
-<<<<<<< HEAD:src/assets/styles/theme.jsx
-  yellowFeatureColor: '#feca5a',
-=======
   darkBlueGreyFeatureColor: '#2f4f4f',
   yellowFeatureColor: '#feca5a',
   NavyBlueFeatureColor: '#000080',
->>>>>>> 93f67938b2025c6f3349f9f680d8fa251abbfffa:src/styles/theme.jsx
 
   // lines
   lineHeight: 1.5,

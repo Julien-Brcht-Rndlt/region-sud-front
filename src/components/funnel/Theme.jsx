@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import QuestionList from './QuestionList';
-import Button from '../Button';
+import StyledButton from '../../styles/genericStyles/StyledButtons';
 
 export const ThemeContainer = styled.div`
   background-color: #ffffff;
@@ -30,9 +30,9 @@ export default function Theme({ title, icon, questions }) {
       <img src={`../../assets/img-temp/${icon}`} alt={icon} />
       <StyledTitleTheme>{title}</StyledTitleTheme>
       <QuestionList questions={questions} />
-      <Button text="Je ne m en sors pas !" />
-      <Button text="Précédent" />
-      <Button text="Suivant" />
+      <StyledButton>Je ne m en sors pas !</StyledButton>
+      <StyledButton>Précédent</StyledButton>
+      <StyledButton>Suivant</StyledButton>
     </>
   );
 }
