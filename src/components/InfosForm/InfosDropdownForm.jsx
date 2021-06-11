@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { StyledFormItem } from '../../assets/styles/genericStyles/StyledFormItem';
+import { StyledFormItem } from '../../styles/genericStyles/StyledFormItem';
 import {
   StyledInfosDropdown,
   StyledInfosDropdownLabel,
-} from '../../assets/styles/StyledInfosDropdownForm';
+} from '../../styles/StyledInfosDropdownForm';
 
 export default function InfosDropdownForm({ label, options = [] }) {
   const [selectedItem, setSelectedItem] = useState();

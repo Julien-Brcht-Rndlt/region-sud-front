@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker';
 import {
   StyledFormItem,
   StyledFormItemLabel,
-} from '../../assets/styles/genericStyles/StyledFormItem';
+} from '../../styles/genericStyles/StyledFormItem';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const StyledDatePickerInfosForm = styled(DatePicker)`

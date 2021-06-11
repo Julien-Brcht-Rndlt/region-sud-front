@@ -1,13 +1,13 @@
-import StyledSubTitle from '../../assets/styles/genericStyles/StyledSubTitle';
-import StyledPreSubTitle from '../../assets/styles/StyledPreSubTitle';
+import StyledSubTitle from '../../styles/genericStyles/StyledSubTitle';
+import StyledPreSubTitle from '../../styles/StyledPreSubTitle';
 import {
   StyledInfosFormsContainer,
   StyledInfosFormsColsContainer,
   StyledInfosFormsColContainer,
   StyledButtonContainer,
   StyledInfosFormsColLeftContainer,
-} from '../../assets/styles/StyledInfosForms';
-import { FlexJustStart } from '../../assets/styles/genericStyles/StyledContainer';
+} from '../../styles/StyledInfosForms';
+import { FlexJustStart } from '../../styles/genericStyles/StyledContainer';
 import InfosInputForm from './InfosInputForm';
 import Button from '../Button';
 import InfosCheckBoxForm from './InfosCheckBoxForm';

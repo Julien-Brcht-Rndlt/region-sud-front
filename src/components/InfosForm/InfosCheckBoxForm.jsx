@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { StyledFormItem } from '../../assets/styles/genericStyles/StyledFormItem';
+import { StyledFormItem } from '../../styles/genericStyles/StyledFormItem';
 import {
   StyledInfosCheckBoxLabel,
   StyledInfosCheckBox,
-} from '../../assets/styles/StyledInfosCheckBoxForm';
+} from '../../styles/StyledInfosCheckBoxForm';
 
 export default function InfosCheckBoxForm({ label, checked }) {
   const [isChecked, setIsChecked] = useState(checked);

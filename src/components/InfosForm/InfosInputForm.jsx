@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { StyledFormItem } from '../../assets/styles/genericStyles/StyledFormItem';
+import { StyledFormItem } from '../../styles/genericStyles/StyledFormItem';
 import {
   StyledInfosInputLabel,
   StyledInfosInput,
-} from '../../assets/styles/StyledInfosInputForm';
+} from '../../styles/StyledInfosInputForm';
 
 export default function InfosInputForm({ label, wide }) {
   const [input, setInput] = useState();
