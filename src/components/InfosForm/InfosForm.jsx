@@ -9,7 +9,7 @@ import {
 } from '../../styles/StyledInfosForms';
 import { FlexJustStart } from '../../styles/genericStyles/StyledContainer';
 import InfosInputForm from './InfosInputForm';
-import Button from '../Button';
+import { StyledButton } from '../../styles/genericStyles/StyledButtons';
 import InfosCheckBoxForm from './InfosCheckBoxForm';
 import InfosDropdownForm from './InfosDropdownForm';
 import InfosDatePickerForm from './InfosDatePickerForm';
@@ -54,7 +54,7 @@ export default function InfosForm() {
         </StyledInfosFormsColContainer>
       </StyledInfosFormsColsContainer>
       <StyledButtonContainer>
-        <Button label="Suivant" />
+        <StyledButton>Suivant</StyledButton>
       </StyledButtonContainer>
     </StyledInfosFormsContainer>
   );
