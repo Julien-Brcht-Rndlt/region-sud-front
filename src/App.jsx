@@ -1,10 +1,12 @@
-import RemoveMe from './components/RemoveMe';
+import { ThemeProvider } from 'styled-components';
+import EmiRouter from './EmiRouter';
+import theme from './styles/theme';
 
 function App() {
   return (
-    <div className="App">
-      <RemoveMe />
-    </div>
+    <ThemeProvider theme={theme}>
+      <EmiRouter />
+    </ThemeProvider>
   );
 }
 
