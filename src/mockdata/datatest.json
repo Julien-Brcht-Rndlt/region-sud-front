@@ -5,32 +5,63 @@
     "title": "Gestion et valorisation des déchets",
     "icon":"theme-0.png",
     "questions": [
-          {
+            {
+            "id": 0,
+            "title": "Quelles actions de réduction des déchets sont mises en place? ",
+            "answers": [
+              {
+                "id": 0,
+                "label": "choix #1",
+                "answ_type": "multiple_choice"
+              },
+              {
+                "id": 1,
+                "label": "choix #2",
+                "answ_type": "multiple_choice"
+              },
+              {
+                "id": 2,
+                "label": "choix #3",
+                "answ_type": "multiple_choice"
+              },
+              {
+                "id": 3,
+                "label": "choix #4",
+                "answ_type": "multiple_choice"
+              }
+          ]
+    
+    },
+    {
+      "id": 1,
+      "title": "Actions et valorisation de déchets sportifs ?",
+      "answers": [
+        {
           "id": 0,
-          "title": "question #1",
-          "answers": [
-            {
-              "id": 0,
-              "label": "choix #1",
-              "answ_type": "multiple_choice"
-            },
-            {
-              "id": 1,
-              "label": "choix #2",
-              "answ_type": "multiple_choice"
-            },
-            {
-              "id": 2,
-              "label": "choix #3",
-              "answ_type": "input_answer"
-            },
-            {
-              "id": 3,
-              "label": "choix #4",
-              "answ_type": "multiple_choice"
-            }
-      ]
-    }
+          "label": "oui",
+          "answ_type": "one_choice"
+        },
+        {
+          "id": 1,
+          "label": "non",
+          "answ_type": "one_choice"
+        }
+       
+    ]
+
+},
+{
+  "id": 1,
+      "title": "test de question input?",
+      "answers": [
+        {
+          "id": 0,
+          "label": "mettre ici votre réponse",
+          "answ_type": "input_answ"
+        }
+       
+    ]
+}
   ]
   }
 ]

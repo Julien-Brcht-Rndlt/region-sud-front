@@ -24,6 +24,7 @@ export const StyledsubtitleTheme = styled.h4`
 `;
 
 export default function Theme({ title, icon, questions }) {
+  /* const [theme] = useState(funnel.themes[id]); */
   return (
     <>
       <StyledsubtitleTheme>Evaluer mon événement</StyledsubtitleTheme>
