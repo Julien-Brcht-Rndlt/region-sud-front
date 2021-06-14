@@ -1,8 +1,7 @@
 import styled from 'styled-components';
+import { FlexCol, Center } from './genericStyles/GenericContainers';
 
-export const FooterContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+export const FooterContainer = styled(FlexCol)`
   justify-content: space-around;
   align-items: center;
   background-color: rgb(0, 90, 255);
@@ -11,22 +10,17 @@ export const FooterContainer = styled.div`
   color: #fff;
 `;
 
-export const FooterContWithBorder = styled.div`
+export const FooterContWithBorder = styled(Center)`
   border: 2px solid white;
   outline-offset: 0.1rem;
   height: 424px;
   width: 60%;
   padding: 25px;
-  text-align: center;
 `;
 
 export const FooterTextsContainer = styled.div`
   display: flex;
   justify-content: space-around;
-`;
-
-export const FooterTextContainer = styled.div`
-  text-align: center;
 `;
 
 export const FooterLinksList = styled.ul`

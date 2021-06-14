@@ -12,9 +12,7 @@ export const StyledTitleWrapper = styled.div`
 `;
 
 export const StyledTitleH1 = styled.h1`
-  font-family: ${(props) => props.theme.fontFamilyNormal};
-  font-weight: ${(props) => props.theme.fontWeightNormal};
-  color: ${(props) => props.theme.blueFeatureColor};
+  ${(props) => props.theme.titleFont};
 `;
 
 export const StyledTitleP = styled.p`

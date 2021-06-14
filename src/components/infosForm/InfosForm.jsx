@@ -7,7 +7,7 @@ import {
   StyledButtonContainer,
   StyledInfosFormsColLeftContainer,
 } from '../../styles/StyledInfosForms';
-import { FlexJustStart } from '../../styles/genericStyles/StyledContainer';
+import { Flex } from '../../styles/genericStyles/GenericContainers';
 import InfosInputForm from './InfosInputForm';
 import { StyledButton } from '../../styles/genericStyles/StyledButtons';
 import InfosCheckBoxForm from './InfosCheckBoxForm';
@@ -36,21 +36,21 @@ export default function InfosForm() {
           <StyledSubTitle subtitle="La manifestation sportive" />
           <InfosInputForm label="Nom de la manisfestation sportive" wide />
           <InfosInputForm label="Nombre de participants" />
-          <FlexJustStart>
+          <Flex start>
             <InfosInputForm label="Adresse de la manifestation" />
-          </FlexJustStart>
-          <FlexJustStart>
+          </Flex>
+          <Flex start>
             <InfosDropdownForm label="Lieu" options={locations} />
             <InfosCheckBoxForm label="Montrer la carte" />
-          </FlexJustStart>
-          <FlexJustStart>
+          </Flex>
+          <Flex start>
             <InfosInputForm label="Type d'activité sportive" />
             <InfosDropdownForm label="Niveau sportif" options={sportLevels} />
-          </FlexJustStart>
-          <FlexJustStart>
+          </Flex>
+          <Flex start>
             <InfosDatePickerForm label="Date de début" />
             <InfosDatePickerForm label="Date de fin" />
-          </FlexJustStart>
+          </Flex>
         </StyledInfosFormsColContainer>
       </StyledInfosFormsColsContainer>
       <StyledButtonContainer>

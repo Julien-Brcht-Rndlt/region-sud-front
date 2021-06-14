@@ -1,9 +1,6 @@
 import styled from 'styled-components';
+import { Flex } from '../../styles/genericStyles/GenericContainers';
 import image from '../../assets/img/top_image.jpg';
-
-export const StyledImageContainer = styled.div`
-  display: flex;
-`;
 
 export const StyledImageHome = styled.img`
   height: 340px;
@@ -12,8 +9,8 @@ export const StyledImageHome = styled.img`
 
 export default function ImageHome() {
   return (
-    <StyledImageContainer>
+    <Flex>
       <StyledImageHome src={image} alt="régate de voiliers" />
-    </StyledImageContainer>
+    </Flex>
   );
 }

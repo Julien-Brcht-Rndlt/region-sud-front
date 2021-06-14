@@ -1,15 +1,13 @@
 import styled from 'styled-components';
+import { FlexCol } from './genericStyles/GenericContainers';
+import { IconeImg } from './genericStyles/GenericComponents';
 
-export const TestimonialContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+export const TestimonialContainer = styled(FlexCol)`
   width: 350px;
   background-color: ${(props) => props.theme.lightGreyFeatureColor};
 `;
 
-export const TestimonialAvatar = styled.img`
-  width: 50px;
-  height: 50px;
+export const TestimonialAvatar = styled(IconeImg)`
   border-radius: 50%;
   align-items: center;
   margin-left: 120px;
@@ -26,22 +24,10 @@ export const TestimonialAuthor = styled.span`
   color: ${(props) => props.theme.darkBlueGreyFeatureColor};
 `;
 
-export const TestimonialOpeningQuote = styled.img`
+export const TestimonialQuote = styled.img`
   width: 15px;
   height: 15px;
   position: relative;
-  top: 10px;
-  left: -5px;
-`;
-
-export const TestimonialClosingQuote = styled.img`
-  width: 15px;
-  height: 15px;
-  position: relative;
-  top: -25px;
-  left: 140px;
-`;
-
-export const TestimonialAlignQuotes = styled.div`
-  display: flex;
+  top: ${(props) => (props.opening ? '10px' : '-25px')};
+  left: ${(props) => (props.opening ? '-5px' : '140px')};
 `;

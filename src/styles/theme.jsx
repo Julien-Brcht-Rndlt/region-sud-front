@@ -67,6 +67,12 @@ const theme = {
     font-family: ${fontFamilyFeature};
     font-weight: ${fontWeightBold};
   `,
+
+  titleFont: css`
+    font-family: ${fontFamilyNormal};
+    font-weight: ${fontWeightNormal};
+    color: ${mainTextColor};
+  `,
 };
 
 export default theme;

@@ -9,22 +9,6 @@ const AnswerList = ({ answers }) => (
   </>
 );
 
-/*
-
-const AnswerList = () => {
-  const { themes } = useContext(FunnelContext);
-
-  return (
-    <>
-      {themes.answers.map((answer) => (
-        <Answer key={answer.id} {...answer} />
-      ))}
-    </>
-  );
-};
-
-*/
-
 export default AnswerList;
 
 AnswerList.propTypes = {

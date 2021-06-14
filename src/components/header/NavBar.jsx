@@ -1,24 +1,34 @@
-import { StyledNavBar, StyledLink } from '../../styles/StyledNavBar';
+import { StyledNavBar } from '../../styles/StyledNavBar';
+import NavBarItem from './NavBarItem';
 
 export default function NavBar() {
+  const navbarLinks = [
+    {
+      id: 1,
+      content: 'Accueil',
+      path: '/',
+    },
+    {
+      id: 2,
+      content: 'Evaluer mon impact environnemental',
+      path: '/EmiHome',
+    },
+    {
+      id: 3,
+      content: 'Etre accompagné',
+      path: '/',
+    },
+    {
+      id: 4,
+      content: "M'informer",
+      path: '/',
+    },
+  ];
   return (
     <StyledNavBar>
-      <ul>
-        <li>
-          <StyledLink to="/">Accueil</StyledLink>
-        </li>
-        <li>
-          <StyledLink to="/EmiHome">
-            Evaluer mon impact environnemental
-          </StyledLink>
-        </li>
-        <li>
-          <StyledLink to="/">Etre accompagné</StyledLink>
-        </li>
-        <li>
-          <StyledLink to="/">M&#39;informer</StyledLink>
-        </li>
-      </ul>
+      {navbarLinks.map((link) => (
+        <NavBarItem id={link.id} path={link.path} content={link.content} />
+      ))}
     </StyledNavBar>
   );
 }
