@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
-import { FooterTextContainer } from '../../styles/StyledFooter';
+import { Center } from '../../styles/genericStyles/GenericContainers';
 
 export default function FooterText({ title, lines = [] }) {
   return (
-    <FooterTextContainer>
+    <Center>
       <h4>{title}</h4>
       {lines.map((line) => (
         <div>{line}</div>
       ))}
-    </FooterTextContainer>
+    </Center>
   );
 }
 

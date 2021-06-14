@@ -1,6 +1,6 @@
 export default function Funnel() {
-  return <>
-  
-  
-  </>;
+  return (
+    <>
+    </>
+  );
 }

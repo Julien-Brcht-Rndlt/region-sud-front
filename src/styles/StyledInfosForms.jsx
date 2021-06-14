@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import {
-  FlexJustStart,
+  Flex,
   Block,
-  FlexJustCenter,
-} from './genericStyles/StyledContainer';
+} from './genericStyles/GenericContainers';
 
 export const StyledInfosFormsContainer = styled(Block)`
   background-color: ${(props) => props.theme.greyFeatureColor};
@@ -12,7 +11,8 @@ export const StyledInfosFormsContainer = styled(Block)`
   padding-bottom: 7rem;
 `;
 
-export const StyledInfosFormsColsContainer = styled(FlexJustStart)`
+export const StyledInfosFormsColsContainer = styled(Flex)`
+  justify-content: flex-start;
   background-color: ${(props) => props.theme.greyFeatureColor};
   width: 100%;
 `;
@@ -25,8 +25,8 @@ export const StyledInfosFormsColLeftContainer = styled(StyledInfosFormsColContai
   width: 55%;
 `;
 
-export const StyledButtonContainer = styled(FlexJustCenter)`
+export const StyledButtonContainer = styled(Flex)`
+  justify-content: center;
   padding-top: 30px;
-  display: flex;
   width: 80%;
 `;
