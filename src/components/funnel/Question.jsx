@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import AnswerList from './AnswerList';
-import { StyledSubTitleH3 } from '../../styles/genericStyles/StyledSubTitle';
+import { StyledTitleH3 } from '../../styles/genericStyles/GenericTitles';
 import { Flex } from '../../styles/genericStyles/GenericContainers';
 
 export const StyledQuestionContainer = styled(Flex)`
@@ -17,7 +17,7 @@ export const StyledQuestionContainer = styled(Flex)`
 export default function Question({ title, answers }) {
   return (
     <StyledQuestionContainer start>
-      <StyledSubTitleH3>{title}</StyledSubTitleH3>
+      <StyledTitleH3>{title}</StyledTitleH3>
       <AnswerList answers={answers} />
     </StyledQuestionContainer>
   );

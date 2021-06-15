@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { StyledSubTitleH3, StyledSubTitleH4 } from '../../styles/genericStyles/GenericTitles';
+import { StyledTitleH3, StyledTitleH4 } from '../../styles/genericStyles/GenericTitles';
 
 export const StyledSubtitleH4 = styled.h4`
   color: ${(props) => props.theme.blueFeatureColor};
@@ -11,8 +11,8 @@ export const StyledSubtitleH4 = styled.h4`
 export default function EvalThemeScoring({ themeTitle, themeScore, scoreIcone }) {
     return (
       <div>
-        <StyledSubTitleH3>Votre indice</StyledSubTitleH3>
-        <StyledSubTitleH4>{themeTitle}</StyledSubTitleH4>
+        <StyledTitleH3>Votre indice</StyledTitleH3>
+        <StyledTitleH4>{themeTitle}</StyledTitleH4>
         {
           themeScore > 0 && <div><img src={scoreIcone} alt="" /></div>
         }

@@ -5,10 +5,8 @@ export const StyledTitleH1 = styled.h1`
 `;
 
 export const StyledTitleH2 = styled.h2`
-  font-family: ${(props) => props.theme.fontFamilyFeature};
-  font-weight: ${(props) => props.theme.fontWeightBold};
-  color: ${(props) => props.theme.blueFeatureColor};
-  font-size: 2rem;
+ ${(props) => props.theme.titleFont};
+ font-size: 1.7rem;
 `;
 
 export const StyledTitleH3 = styled.h3`
