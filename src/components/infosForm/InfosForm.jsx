@@ -18,44 +18,50 @@ export default function InfosForm() {
   const locations = ['Abries', 'Marseille', 'Toulon', 'Hyeres'];
   const sportLevels = ['Amateur', 'Expert'];
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <StyledInfosFormsContainer>
-      <StyledPreSubTitle content="Informations préalables" />
-      <StyledInfosFormsColsContainer>
-        <StyledInfosFormsColLeftContainer>
-          <div>
-            <StyledSubTitle subtitle="La structure organisatrice" />
-            <InfosInputForm label="Nom de la structure" wide />
-            <InfosInputForm
-              label="Nombre de personnes composant la structure"
-              wide
-            />
-          </div>
-        </StyledInfosFormsColLeftContainer>
-        <StyledInfosFormsColContainer>
-          <StyledSubTitle subtitle="La manifestation sportive" />
-          <InfosInputForm label="Nom de la manisfestation sportive" wide />
-          <InfosInputForm label="Nombre de participants" />
-          <Flex start>
-            <InfosInputForm label="Adresse de la manifestation" />
-          </Flex>
-          <Flex start>
-            <InfosDropdownForm label="Lieu" options={locations} />
-            <InfosCheckBoxForm label="Montrer la carte" />
-          </Flex>
-          <Flex start>
-            <InfosInputForm label="Type d'activité sportive" />
-            <InfosDropdownForm label="Niveau sportif" options={sportLevels} />
-          </Flex>
-          <Flex start>
-            <InfosDatePickerForm label="Date de début" />
-            <InfosDatePickerForm label="Date de fin" />
-          </Flex>
-        </StyledInfosFormsColContainer>
-      </StyledInfosFormsColsContainer>
-      <StyledButtonContainer>
-        <StyledButton>Suivant</StyledButton>
-      </StyledButtonContainer>
+      <form onSubmit={(event) => handleSubmit(event)}>
+        <StyledPreSubTitle content="Informations préalables" />
+        <StyledInfosFormsColsContainer>
+          <StyledInfosFormsColLeftContainer>
+            <div>
+              <StyledSubTitle subtitle="La structure organisatrice" />
+              <InfosInputForm label="Nom de la structure" wide />
+              <InfosInputForm
+                label="Nombre de personnes composant la structure"
+                wide
+              />
+            </div>
+          </StyledInfosFormsColLeftContainer>
+          <StyledInfosFormsColContainer>
+            <StyledSubTitle subtitle="La manifestation sportive" />
+            <InfosInputForm label="Nom de la manisfestation sportive" wide />
+            <InfosInputForm label="Nombre de participants" />
+            <Flex start>
+              <InfosInputForm label="Adresse de la manifestation" />
+            </Flex>
+            <Flex start>
+              <InfosDropdownForm label="Lieu" options={locations} />
+              <InfosCheckBoxForm label="Montrer la carte" />
+            </Flex>
+            <Flex start>
+              <InfosInputForm label="Type d'activité sportive" />
+              <InfosDropdownForm label="Niveau sportif" options={sportLevels} />
+            </Flex>
+            <Flex start>
+              <InfosDatePickerForm label="Date de début" />
+              {/* <InfosDatePickerForm label="Date de fin" /> */}
+            </Flex>
+          </StyledInfosFormsColContainer>
+        </StyledInfosFormsColsContainer>
+        <StyledButtonContainer>
+          <StyledButton type="submit" width="25rem" height="4rem">Suivant</StyledButton>
+        </StyledButtonContainer>
+      </form>
     </StyledInfosFormsContainer>
   );
 }
