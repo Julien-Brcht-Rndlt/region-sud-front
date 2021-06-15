@@ -179,20 +179,8 @@
       
     ]
 
-},
-    {
-      "id": 1,
-          "title": "test de question input?",
-          "answers": [
-            {
-              "id": 0,
-              "label": "mettre ici votre réponse",
-              "answ_type": "input_answ",
-              "research":"Si vous ne trouvez pas la réponse, vous pouvez vous renseigner ici"
-            }
-          
-        ]
-    }
+}
+    
       ]
       }
     ]
