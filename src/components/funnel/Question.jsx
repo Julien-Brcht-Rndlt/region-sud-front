@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import AnswerList from './AnswerList';
-import { StyledTitleH3 } from '../../styles/genericStyles/GenericTitles';
-import { Block } from '../../styles/genericStyles/GenericContainers';
+import { StyledTitleH3 } from '../../styles/generics/GenericTitles';
+import { Block } from '../../styles/generics/GenericContainers';
 
 export const StyledQuestionContainer = styled(Block)`
   background-color: #e7ecf4;

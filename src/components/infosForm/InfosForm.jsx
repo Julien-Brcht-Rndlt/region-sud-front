@@ -5,10 +5,10 @@ import {
   StyledButtonContainer,
   StyledInfosFormsColLeftContainer,
 } from '../../styles/StyledInfosForms';
-import { Flex } from '../../styles/genericStyles/GenericContainers';
-import { StyledTitleH2, StyledTitleH4 } from '../../styles/genericStyles/GenericTitles';
+import { Flex } from '../../styles/generics/GenericContainers';
+import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import InfosInputForm from './InfosInputForm';
-import { StyledButton } from '../../styles/genericStyles/StyledButtons';
+import { StyledButton } from '../../styles/generics/GenericButtons';
 import InfosCheckBoxForm from './InfosCheckBoxForm';
 import InfosDropdownForm from './InfosDropdownForm';
 import InfosDatePickerForm from './InfosDatePickerForm';

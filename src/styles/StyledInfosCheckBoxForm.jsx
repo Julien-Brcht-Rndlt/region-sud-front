@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { StyledFormItemLabel } from './genericStyles/StyledFormItem';
+import { StyledFormItemLabel } from './generics/StyledFormItem';
 
 export const StyledInfosCheckBoxLabel = styled(StyledFormItemLabel)`
   font-weight: 600;
