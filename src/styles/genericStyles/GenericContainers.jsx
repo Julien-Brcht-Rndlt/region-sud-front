@@ -10,6 +10,10 @@ export const Flex = styled.div`
   align-items: ${(props) => (props.valign)};
 `;
 
+export const FlexWrap = styled(Flex)`
+  flex-wrap: wrap;
+`;
+
 export const FlexSpace = styled(Flex)`
   justify-content: ${(props) => (props.between && 'space-between') || (props.around && 'space-around') || (props.evenly && 'space-evenly')};
 `;
