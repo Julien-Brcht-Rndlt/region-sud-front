@@ -45,7 +45,7 @@ export default function Theme({ title, questions, icon }) {
     <>
       <ContainersubtitleTheme>
         <IconeImg src={icon} alt="logo" />
-        <StyledsubtitleTheme>Evaluer mon événement</StyledsubtitleTheme>
+        <StyledSubtitleTheme>Evaluer mon événement</StyledSubtitleTheme>
       </ContainersubtitleTheme>
       <FlexCol>
         <StyledTitleTheme>{title}</StyledTitleTheme>

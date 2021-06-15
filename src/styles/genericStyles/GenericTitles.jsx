@@ -26,7 +26,6 @@ export const StyledTitleH4 = styled.h4`
   color: ${(props) => props.theme.blueFeatureColor};
   font-family: ${(props) => props.theme.fontFamilyNormal};
   font-weight: ${(props) => props.theme.fontWeightNormal};
-  font-size: 1rem;
 `;
 
 export const StyledTitleP = styled.p`
