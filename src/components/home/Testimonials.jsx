@@ -1,8 +1,14 @@
+import styled from 'styled-components';
+import { Flex } from '../../styles/genericStyles/GenericContainers';
 import Testimonial from './Testimonial';
-import {
-  TestimonialsContainer,
-  TestimonialsTitle,
-} from '../../styles/StyledTestimonials';
+import { StyledButton } from '../../styles/genericStyles/StyledButtons';
+import { TestimonialsContainer, TestimonialsTitle } from '../../styles/StyledTestimonials';
+
+export const StyledButtonTestimonial = styled(Flex)`
+  height: 60px;
+  background-color: ${(props) => props.theme.lightGreyFeatureColor};
+  padding: 50px;
+`;
 
 export default function Testimonials() {
   const testimonials = [
@@ -36,6 +42,9 @@ export default function Testimonials() {
           <Testimonial {...testimony} />
         ))}
       </TestimonialsContainer>
+      <StyledButtonTestimonial center>
+        <StyledButton>Je m&apos;engage moi aussi !</StyledButton>
+      </StyledButtonTestimonial>
     </>
   );
 }
