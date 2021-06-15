@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import {
   StyledTitleH1,
   StyledTitleP,
@@ -27,7 +26,9 @@ export default function TitleHome() {
           <li>Lorem ipsum dolor sit amet</li>
           <li>sit amet, consectetur adipiscing elit</li>
         </ul>
-        <StyledButton>J&#39;évalue mon évènement</StyledButton>
+        <StyledButton width="20rem" height="60px">
+          J&#39;évalue mon évènement
+        </StyledButton>
       </StyledTitleP>
     </StyledTitleWrapper>
   );
