@@ -5,13 +5,14 @@ import { StyledSubTitleH3 } from '../../styles/genericStyles/StyledSubTitle';
 
 export const StyledQuestionContainer = styled.div`
   background-color: #e7ecf4;
-  height: 250px;
+  height: 210px;
   margin-bottom:30px;
   margin-left:40px;
-  width:70%;
+  width:60%;
   padding:15px;
   display:flex;
   flex-wrap:wrap;
+  justify-content:flex-start;
 `;
 
 export default function Question({ title, answers }) {

@@ -11,37 +11,37 @@
             "answers": [
               {
                 "id": 0,
-                "label": "choix #1",
+                "label": "Bacon ipsum dolor amet short ribs brisket",
                 "answ_type": "multiple_choice"
               },
               {
                 "id": 1,
-                "label": "choix #2",
+                "label": "Bacon ipsum dolor amet short ribs",
                 "answ_type": "multiple_choice"
               },
               {
                 "id": 2,
-                "label": "choix #3",
+                "label": "Bacon ipsum dolor amet short ribs brisket",
                 "answ_type": "multiple_choice"
               },
               {
                 "id": 3,
-                "label": "choix #4",
+                "label": "Bacon ipsum dolor amet short ribs",
                 "answ_type": "multiple_choice"
               },
               {
                 "id": 4,
-                "label": "choix #5",
+                "label": "Bacon ipsum dolor amet short ribs brisket",
                 "answ_type": "multiple_choice"
               },
               {
                 "id": 5,
-                "label": "choix #6",
+                "label": "Bacon ipsum dolor amet",
                 "answ_type": "multiple_choice"
               },
               {
                 "id": 6,
-                "label": "choix #7",
+                "label": "Bacon ipsum dolor amet short ribs brisket",
                 "answ_type": "multiple_choice"
               },
               {
@@ -58,27 +58,27 @@
       "answers": [
         {
           "id": 0,
-          "label": "choix #1",
+          "label": "Yolo ipsum dolor sit amet, consectetur adipiscing",
           "answ_type": "multiple_choice"
         },
         {
           "id": 1,
-          "label": "choix #2",
+          "label": "Yolo ipsum dolor sit amet, consec",
           "answ_type": "multiple_choice"
         },
         {
           "id": 2,
-          "label": "choix #3",
+          "label": "Yolo ipsum dolor sit amet, consec",
           "answ_type": "multiple_choice"
         },
         {
           "id": 3,
-          "label": "choix #4",
+          "label": "Yolo ipsum dolor sit amet",
           "answ_type": "multiple_choice"
         },
         {
           "id": 4,
-          "label": "choix #5",
+          "label": "Yolo ipsum dolor sit amet",
           "answ_type": "multiple_choice"
         },
         {
@@ -95,27 +95,27 @@
       "answers": [
         {
           "id": 0,
-          "label": "choix #1",
+          "label": "Yolo ipsum dolor sit amet, consectetur adipiscing",
           "answ_type": "multiple_choice"
         },
         {
           "id": 1,
-          "label": "choix #2",
+          "label": "Yolo ipsum dolor",
           "answ_type": "multiple_choice"
         },
         {
           "id": 2,
-          "label": "choix #3",
+          "label": "Yolo ipsum dolor sit amet, consectetur adipiscing",
           "answ_type": "multiple_choice"
         },
         {
           "id": 3,
-          "label": "choix #4",
+          "label": "Yolo ipsum dolor sit ",
           "answ_type": "multiple_choice"
         },
         {
           "id": 4,
-          "label": "choix #5",
+          "label": "Yolo ipsum dolor sit amet, consectetur",
           "answ_type": "multiple_choice"
         },
         {
@@ -187,7 +187,8 @@
             {
               "id": 0,
               "label": "mettre ici votre réponse",
-              "answ_type": "input_answ"
+              "answ_type": "input_answ",
+              "research":"Si vous ne trouvez pas la réponse, vous pouvez vous renseigner ici"
             }
           
         ]

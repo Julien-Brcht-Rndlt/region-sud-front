@@ -1,30 +1,34 @@
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { StyledTitleP } from '../../styles/genericStyles/StyledTitle';
+
+export const AnswerComponent = styled.div`
+  margin:10px;
+`;
 
 const MultipleChoiceAnswer = ({ label }) => (
   <>
-    <label htmlFor="multiansw">{label}</label>
     <input id="multiansw" type="checkbox" value="" />
+    <label htmlFor="multiansw">{label}</label>
   </>
  );
 
 const OneChoiceAnswer = ({ label }) => (
-  <>
-    <label htmlFor="oneansw">{label}</label>
+  <div>
     <input id="oneansw" type="radio" value="" />
-  </>
+    <label htmlFor="oneansw">{label}</label>
+  </div>
 );
 
  const InputAnswer = ({ label }) => (
    <>
-     <label htmlFor="inansw">{label}</label>
      <input id="inansw" type="text" value="" />
+     <label htmlFor="inansw">{label}</label>
    </>
 );
 
 export default function Answer({ answer }) {
   return (
-    <StyledTitleP>
+    <AnswerComponent>
       {
         answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer label={answer.label} />
       }
@@ -34,7 +38,7 @@ export default function Answer({ answer }) {
       {
         answer.answ_type === 'input_answ' && <InputAnswer label={answer.label} />
       }
-    </StyledTitleP>
+    </AnswerComponent>
   );
 }
 
