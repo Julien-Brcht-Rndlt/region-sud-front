@@ -30,11 +30,6 @@ export const CompButton = styled.div`
  margin-left:40px;
 `;
 
-export const CompButtonNext = styled.div`
-display:flex;
-justify-content:center;
-`;
-
 export const MicroImg = styled.img`
 height:30px;
 `;
@@ -57,10 +52,10 @@ export default function Theme({ title, questions }) {
           Je ne m&#39;en sors pas !
         </StyledButton>
       </CompButton>
-      <CompButtonNext>
+      <Flex center>
         <StyledButton>Précédent</StyledButton>
         <StyledButton>Suivant</StyledButton>
-      </CompButtonNext>
+      </Flex>
     </>
   );
 }
