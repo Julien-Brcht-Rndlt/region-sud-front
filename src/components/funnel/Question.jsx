@@ -1,21 +1,23 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import QuestionTitle from './QuestionTitle';
 import AnswerList from './AnswerList';
+import { StyledSubTitleH3 } from '../../styles/genericStyles/StyledSubTitle';
 
 export const StyledQuestionContainer = styled.div`
   background-color: #e7ecf4;
-  height: 200px;
-`;
-
-export const StyledQuestionTitle = styled.h2`
-  color: ${(props) => props.theme.blueFeatureColor};
+  height: 250px;
+  margin-bottom:30px;
+  margin-left:40px;
+  width:70%;
+  padding:15px;
+  display:flex;
+  flex-wrap:wrap;
 `;
 
 export default function Question({ title, answers }) {
   return (
     <StyledQuestionContainer>
-      <QuestionTitle title={title} />
+      <StyledSubTitleH3>{title}</StyledSubTitleH3>
       <AnswerList answers={answers} />
     </StyledQuestionContainer>
   );

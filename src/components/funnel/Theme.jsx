@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import QuestionList from './QuestionList';
 import { StyledButton } from '../../styles/genericStyles/StyledButtons';
+import { Flex, FlexCol } from '../../styles/genericStyles/GenericContainers';
+import theme0 from '../../assets/img/theme0.png';
+import { IconeImg } from '../../styles/genericStyles/GenericComponents';
 
 export const ThemeContainer = styled.div`
   background-color: #ffffff;
@@ -23,23 +26,27 @@ export const StyledsubtitleTheme = styled.h4`
   font-size: 1rem;
 `;
 
-export default function Theme({ title, icon, questions }) {
+export default function Theme({ title, questions }) {
   /* const [theme] = useState(funnel.themes[id]); */
   return (
     <>
-      <StyledsubtitleTheme>Evaluer mon événement</StyledsubtitleTheme>
-      <img src={`../../assets/img-temp/${icon}`} alt={icon} />
-      <StyledTitleTheme>{title}</StyledTitleTheme>
-      <QuestionList questions={questions} />
-      <StyledButton>Je ne m en sors pas !</StyledButton>
-      <StyledButton>Précédent</StyledButton>
-      <StyledButton>Suivant</StyledButton>
+      <Flex>
+        <StyledsubtitleTheme>Evaluer mon événement</StyledsubtitleTheme>
+        <IconeImg src={theme0} alt={title} />
+      </Flex>
+      <FlexCol>
+        <StyledTitleTheme>{title}</StyledTitleTheme>
+        <QuestionList questions={questions} />
+        <StyledButton>Je ne m en sors pas !</StyledButton>
+        <StyledButton>Précédent</StyledButton>
+        <StyledButton>Suivant</StyledButton>
+      </FlexCol>
     </>
   );
 }
 
 Theme.propTypes = {
   title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
+//  icon: PropTypes.string.isRequired,
   questions: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { StyledTitleP } from '../../styles/genericStyles/StyledTitle';
 
 const MultipleChoiceAnswer = ({ label }) => (
   <>
@@ -23,7 +24,7 @@ const OneChoiceAnswer = ({ label }) => (
 
 export default function Answer({ answer }) {
   return (
-    <div>
+    <StyledTitleP>
       {
         answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer label={answer.label} />
       }
@@ -33,7 +34,7 @@ export default function Answer({ answer }) {
       {
         answer.answ_type === 'input_answ' && <InputAnswer label={answer.label} />
       }
-    </div>
+    </StyledTitleP>
   );
 }
 

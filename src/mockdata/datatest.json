@@ -3,7 +3,7 @@
   {
     "id": 0,
     "title": "Gestion et valorisation des déchets",
-    "icon":"theme-0.png",
+    "icon":"/src/assets/img-temp/theme-0.png",
     "questions": [
             {
             "id": 0,
