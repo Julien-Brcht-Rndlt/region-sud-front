@@ -179,9 +179,53 @@
       
     ]
 
-}
+  }
     
       ]
+},
+{
+  "id": 1,
+  "title": "Sensibilisation à l'écoresponsabilité",
+  "icon":"/src/assets/img-temp/theme-1.png",
+  "questions": [
+          {
+          "id": 0,
+          "title": "Mettez vous en place une campagne de sensibilisation grand public sur site ? ",
+          "answers": [
+            {
+              "id": 0,
+              "label": "oui",
+              "answ_type": "one_choice"
+            },
+            {
+              "id": 1,
+              "label": "non",
+              "answ_type": "one_choice"
+            }
+            
+        ]
+  
+  },
+  {
+    "id": 1,
+    "title": "Menez vous des actions auprès des personnels d'organisation ?",
+    "answers": [
+      {
+        "id": 0,
+        "label": "oui",
+        "answ_type": "one_choice"
+      },
+      {
+        "id": 1,
+        "label": "non",
+        "answ_type": "one_choice"
       }
+  ]
+
+}
+  
+  
+    ]
+}
     ]
     }
