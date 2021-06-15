@@ -1,8 +1,4 @@
-import {
-  StyledTitleH1,
-  StyledTitleP,
-  StyledTitleWrapper,
-} from '../../styles/genericStyles/StyledTitle';
+import { StyledTitleH1, StyledTitleP, StyledTitleWrapper } from '../../styles/genericStyles/StyledTitle';
 import { StyledButton } from '../../styles/genericStyles/StyledButtons';
 
 export default function TitleHome() {
@@ -15,7 +11,9 @@ export default function TitleHome() {
           <li>Lorem ipsum dolor sit amet</li>
           <li>sit amet, consectetur adipiscing elit</li>
         </ul>
-        <StyledButton>J&#39;évalue mon évènement</StyledButton>
+        <StyledButton width="20rem" height="60px">
+          J&#39;évalue mon évènement
+        </StyledButton>
       </StyledTitleP>
     </StyledTitleWrapper>
   );
