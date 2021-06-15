@@ -1,8 +1,15 @@
+import styled from 'styled-components';
 import Testimonial from './Testimonial';
-import {
-  TestimonialsContainer,
-  TestimonialsTitle,
-} from '../../styles/StyledTestimonials';
+import { StyledButton } from '../../styles/genericStyles/StyledButtons';
+import { TestimonialsContainer, TestimonialsTitle } from '../../styles/StyledTestimonials';
+
+export const StyledButtonTestimonial = styled.div`
+  display: flex;
+  height: 60px;
+  background-color: ${(props) => props.theme.lightGreyFeatureColor};
+  justify-content: center;
+  padding: 50px;
+`;
 
 export default function Testimonials() {
   const testimonials = [
@@ -36,6 +43,9 @@ export default function Testimonials() {
           <Testimonial {...testimony} />
         ))}
       </TestimonialsContainer>
+      <StyledButtonTestimonial>
+        <StyledButton>Je m&apos;engage moi aussi !</StyledButton>
+      </StyledButtonTestimonial>
     </>
   );
 }
