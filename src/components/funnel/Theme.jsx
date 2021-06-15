@@ -4,6 +4,7 @@ import QuestionList from './QuestionList';
 import { StyledButton } from '../../styles/genericStyles/StyledButtons';
 import { Flex, FlexCol } from '../../styles/genericStyles/GenericContainers';
 import { IconeImg } from '../../styles/genericStyles/GenericComponents';
+import { StyledTitleH1, StyledTitleH4 } from '../../styles/genericStyles/GenericTitles';
 import help from '../../assets/img/help.png';
 
 export const ThemeContainer = styled.div`
@@ -16,14 +17,11 @@ export const QuestionListContainer = styled.div`
   flex-wrap: nowrap;
 `;
 
-export const StyledTitleTheme = styled.h1`
+export const StyledTitleTheme = styled(StyledTitleH1)`
   color: ${(props) => props.theme.blueFeatureColor};
 `;
 
-export const StyledsubtitleTheme = styled.h4`
-  color: ${(props) => props.theme.blueFeatureColor};
-  font-family: ${(props) => props.theme.fontFamilyNormal};
-  font-size: 1rem;
+export const StyledSubtitleTheme = styled(StyledTitleH4)`
   margin-left:5px;
 `;
 export const CompButton = styled.div`
@@ -40,7 +38,7 @@ export default function Theme({ title, questions }) {
     <>
       <Flex>
         <IconeImg src="" alt="logo" />
-        <StyledsubtitleTheme>Evaluer mon événement</StyledsubtitleTheme>
+        <StyledSubtitleTheme>Evaluer mon événement</StyledSubtitleTheme>
       </Flex>
       <FlexCol>
         <StyledTitleTheme>{title}</StyledTitleTheme>

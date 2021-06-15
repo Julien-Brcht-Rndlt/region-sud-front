@@ -1,5 +1,4 @@
 import StyledSubTitle from '../../styles/genericStyles/StyledSubTitle';
-import StyledPreSubTitle from '../../styles/StyledPreSubTitle';
 import {
   StyledInfosFormsContainer,
   StyledInfosFormsColsContainer,
@@ -8,6 +7,7 @@ import {
   StyledInfosFormsColLeftContainer,
 } from '../../styles/StyledInfosForms';
 import { Flex } from '../../styles/genericStyles/GenericContainers';
+import { StyledTitleH4 } from '../../styles/genericStyles/GenericTitles';
 import InfosInputForm from './InfosInputForm';
 import { StyledButton } from '../../styles/genericStyles/StyledButtons';
 import InfosCheckBoxForm from './InfosCheckBoxForm';
@@ -25,7 +25,7 @@ export default function InfosForm() {
   return (
     <StyledInfosFormsContainer>
       <form onSubmit={(event) => handleSubmit(event)}>
-        <StyledPreSubTitle content="Informations préalables" />
+        <StyledTitleH4>Informations préalables</StyledTitleH4>
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>
             <div>

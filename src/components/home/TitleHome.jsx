@@ -1,9 +1,21 @@
+import styled from 'styled-components';
+
 import {
   StyledTitleH1,
   StyledTitleP,
-  StyledTitleWrapper,
-} from '../../styles/genericStyles/StyledTitle';
+} from '../../styles/genericStyles/GenericTitles';
 import { StyledButton } from '../../styles/genericStyles/StyledButtons';
+
+export const StyledTitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  margin-left: 50px;
+  max-width: 500px;
+`;
 
 export default function TitleHome() {
   return (
