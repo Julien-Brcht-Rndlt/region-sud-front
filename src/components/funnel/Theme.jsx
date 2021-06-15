@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import QuestionList from './QuestionList';
-import { StyledButton } from '../../styles/genericStyles/StyledButtons';
-import { Flex, FlexCol } from '../../styles/genericStyles/GenericContainers';
-import { IconeImg } from '../../styles/genericStyles/GenericComponents';
-import { StyledTitleH1, StyledTitleH4 } from '../../styles/genericStyles/GenericTitles';
+import { StyledButton } from '../../styles/generics/GenericButtons';
+import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
+import { IconeImg } from '../../styles/generics/GenericComponents';
+import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import help from '../../assets/img/help.png';
 
 export const ThemeContainer = styled.div`

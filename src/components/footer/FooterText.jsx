@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Center } from '../../styles/genericStyles/GenericContainers';
+import { Center } from '../../styles/generics/GenericContainers';
 
 export default function FooterText({ title, lines = [] }) {
   return (

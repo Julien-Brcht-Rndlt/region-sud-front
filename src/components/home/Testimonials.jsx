@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Flex } from '../../styles/genericStyles/GenericContainers';
+import { Flex } from '../../styles/generics/GenericContainers';
 import Testimonial from './Testimonial';
-import { StyledButton } from '../../styles/genericStyles/StyledButtons';
+import { StyledButton } from '../../styles/generics/GenericButtons';
 import { TestimonialsContainer, TestimonialsTitle } from '../../styles/StyledTestimonials';
 
 export const StyledButtonTestimonial = styled(Flex)`

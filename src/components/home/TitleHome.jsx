@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import {
   StyledTitleH1,
   StyledTitleP,
-} from '../../styles/genericStyles/GenericTitles';
-import { StyledButton } from '../../styles/genericStyles/StyledButtons';
+} from '../../styles/generics/GenericTitles';
+import { StyledButton } from '../../styles/generics/GenericButtons';
 
 export const StyledTitleWrapper = styled.div`
   display: flex;

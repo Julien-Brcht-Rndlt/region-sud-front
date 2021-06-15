@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { StyledFormItemLabel } from './genericStyles/StyledFormItem';
+import { StyledFormItemLabel } from './generics/StyledFormItem';
 
 export const StyledInfosInputLabel = styled(StyledFormItemLabel)`
   color: ${(props) => props.theme.blueFeatureColor};
