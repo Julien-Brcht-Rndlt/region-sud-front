@@ -1,13 +1,11 @@
 import styled from 'styled-components';
-import { FlexCol } from '../../styles/genericStyles/GenericContainers';
+import { Flex } from '../../styles/genericStyles/GenericContainers';
 import RequireInfos from './RequireInfos';
 import RequireYoutube from './RequireYoutube';
 
-export const StyledRequireContainer = styled(FlexCol)`
-  display: flex;
+export const StyledRequireContainer = styled(Flex)`
   width: auto;
   height: 900px;
-  flex-direction: row;
   padding: 35px;
 `;
 
