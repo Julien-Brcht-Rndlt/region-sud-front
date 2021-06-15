@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import FunnelContext from '../context/funnel-context';
+import FunnelContext from '../../contexts/funnel-context';
 import Theme from './Theme';
 
 export const StyledTitleTheme = styled.h1`
@@ -10,7 +10,6 @@ export const StyledTitleTheme = styled.h1`
 
 const ThemeList = () => {
   const { funnel } = React.useContext(FunnelContext);
-
   return (
     <>
       <div>

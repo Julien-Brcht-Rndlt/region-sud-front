@@ -3,35 +3,197 @@
   {
     "id": 0,
     "title": "Gestion et valorisation des déchets",
-    "icon":"theme-0.png",
+    "icon":"/src/assets/img-temp/theme-0.png",
     "questions": [
-          {
+            {
+            "id": 0,
+            "title": "Quelles actions de réduction des déchets sont mises en place? ",
+            "answers": [
+              {
+                "id": 0,
+                "label": "Bacon ipsum dolor amet short ribs brisket",
+                "answ_type": "multiple_choice"
+              },
+              {
+                "id": 1,
+                "label": "Bacon ipsum dolor amet short ribs",
+                "answ_type": "multiple_choice"
+              },
+              {
+                "id": 2,
+                "label": "Bacon ipsum dolor amet short ribs brisket",
+                "answ_type": "multiple_choice"
+              },
+              {
+                "id": 3,
+                "label": "Bacon ipsum dolor amet short ribs",
+                "answ_type": "multiple_choice"
+              },
+              {
+                "id": 4,
+                "label": "Bacon ipsum dolor amet short ribs brisket",
+                "answ_type": "multiple_choice"
+              },
+              {
+                "id": 5,
+                "label": "Bacon ipsum dolor amet",
+                "answ_type": "multiple_choice"
+              },
+              {
+                "id": 6,
+                "label": "Bacon ipsum dolor amet short ribs brisket",
+                "answ_type": "multiple_choice"
+              },
+              {
+                "id": 7,
+                "label": "aucune",
+                "answ_type": "multiple_choice"
+              }
+          ]
+    
+    },
+    {
+      "id": 0,
+      "title": "Quelles actions de tri sélectif sont mises en place ?",
+      "answers": [
+        {
           "id": 0,
-          "title": "question #1",
+          "label": "Yolo ipsum dolor sit amet, consectetur adipiscing",
+          "answ_type": "multiple_choice"
+        },
+        {
+          "id": 1,
+          "label": "Yolo ipsum dolor sit amet, consec",
+          "answ_type": "multiple_choice"
+        },
+        {
+          "id": 2,
+          "label": "Yolo ipsum dolor sit amet, consec",
+          "answ_type": "multiple_choice"
+        },
+        {
+          "id": 3,
+          "label": "Yolo ipsum dolor sit amet",
+          "answ_type": "multiple_choice"
+        },
+        {
+          "id": 4,
+          "label": "Yolo ipsum dolor sit amet",
+          "answ_type": "multiple_choice"
+        },
+        {
+          "id": 5,
+          "label": "aucune",
+          "answ_type": "multiple_choice"
+        }
+    ]
+
+},
+    {
+      "id": 0,
+      "title": "Comment sont collectés et traités les autres déchets?",
+      "answers": [
+        {
+          "id": 0,
+          "label": "Yolo ipsum dolor sit amet, consectetur adipiscing",
+          "answ_type": "multiple_choice"
+        },
+        {
+          "id": 1,
+          "label": "Yolo ipsum dolor",
+          "answ_type": "multiple_choice"
+        },
+        {
+          "id": 2,
+          "label": "Yolo ipsum dolor sit amet, consectetur adipiscing",
+          "answ_type": "multiple_choice"
+        },
+        {
+          "id": 3,
+          "label": "Yolo ipsum dolor sit ",
+          "answ_type": "multiple_choice"
+        },
+        {
+          "id": 4,
+          "label": "Yolo ipsum dolor sit amet, consectetur",
+          "answ_type": "multiple_choice"
+        },
+        {
+          "id": 5,
+          "label": "aucune",
+          "answ_type": "multiple_choice"
+        }
+    ]
+
+    },
+        {
+          "id": 1,
+          "title": "Actions et valorisation de déchets sportifs ?",
           "answers": [
             {
               "id": 0,
-              "label": "choix #1",
-              "answ_type": "multiple_choice"
+              "label": "oui",
+              "answ_type": "one_choice"
             },
             {
               "id": 1,
-              "label": "choix #2",
-              "answ_type": "multiple_choice"
-            },
-            {
-              "id": 2,
-              "label": "choix #3",
-              "answ_type": "input_answer"
-            },
-            {
-              "id": 3,
-              "label": "choix #4",
-              "answ_type": "multiple_choice"
+              "label": "non",
+              "answ_type": "one_choice"
             }
-      ]
+          
+        ]
+
+    },
+        {
+          "id": 1,
+          "title": "Actions et valorisation de déchets sportifs ?",
+          "answers": [
+            {
+              "id": 0,
+              "label": "oui",
+              "answ_type": "one_choice"
+            },
+            {
+              "id": 1,
+              "label": "non",
+              "answ_type": "one_choice"
+            }
+          
+        ]
+
+    },
+    {
+      "id": 1,
+      "title": "Il y a t'il une restauration prévue sur place ?",
+      "answers": [
+        {
+          "id": 0,
+          "label": "oui",
+          "answ_type": "one_choice"
+        },
+        {
+          "id": 1,
+          "label": "non",
+          "answ_type": "one_choice"
+        }
+      
+    ]
+
+},
+    {
+      "id": 1,
+          "title": "test de question input?",
+          "answers": [
+            {
+              "id": 0,
+              "label": "mettre ici votre réponse",
+              "answ_type": "input_answ",
+              "research":"Si vous ne trouvez pas la réponse, vous pouvez vous renseigner ici"
+            }
+          
+        ]
     }
-  ]
-  }
-]
-}
+      ]
+      }
+    ]
+    }
