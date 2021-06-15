@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { StyledFormItem, StyledFormItemLabel } from '../../styles/genericStyles/StyledFormItem';
+import { StyledFormItem, StyledFormItemLabel } from '../../styles/generics/StyledFormItem';
 
 export const StyledInfosInputLabel = styled(StyledFormItemLabel)`
   color: ${(props) => props.theme.blueFeatureColor};
