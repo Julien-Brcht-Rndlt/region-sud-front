@@ -9,13 +9,11 @@ export const StyledNavBarItem = styled.div`
 export default function NavBarItem({ id, content, path }) {
   return (
     <StyledNavBarItem>
-      <ul>
-        <li>
-          <StyledLink key={id} to={path}>
-            {content}
-          </StyledLink>
-        </li>
-      </ul>
+      <li>
+        <StyledLink key={id} to={path}>
+          {content}
+        </StyledLink>
+      </li>
     </StyledNavBarItem>
   );
 }
