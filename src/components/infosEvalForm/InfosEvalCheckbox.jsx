@@ -1,10 +1,17 @@
 import { useState } from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { StyledFormItem } from '../../styles/genericStyles/StyledFormItem';
-import {
-  StyledInfosCheckBoxLabel,
-  StyledInfosCheckBox,
-} from '../../styles/StyledInfosCheckBoxForm';
+import { StyledFormItem, StyledFormItemLabel } from '../../styles/genericStyles/StyledFormItem';
+
+export const StyledInfosCheckBoxLabel = styled(StyledFormItemLabel)`
+  font-weight: 600;
+  font-family: ${(props) => props.theme.fontFamilyNormal};
+  margin-bottom: 10px;
+`;
+
+export const StyledInfosCheckBox = styled.input.attrs({ type: 'checkbox' })`
+  border: 1px solid ${(props) => props.theme.blueFeatureColor};
+`;
 
 export default function InfosCheckBoxForm({ label, checked }) {
   const [isChecked, setIsChecked] = useState(checked);
