@@ -5,7 +5,8 @@ import { StyledButton } from '../../styles/genericStyles/StyledButtons';
 import { TestimonialsContainer, TestimonialsTitle } from '../../styles/StyledTestimonials';
 
 export const StyledButtonTestimonial = styled(Flex)`
-  height: 60px;
+  height: 90px;
+  width: auto;
   background-color: ${(props) => props.theme.lightGreyFeatureColor};
   padding: 50px;
 `;
@@ -43,7 +44,9 @@ export default function Testimonials() {
         ))}
       </TestimonialsContainer>
       <StyledButtonTestimonial center>
-        <StyledButton>Je m&apos;engage moi aussi !</StyledButton>
+        <StyledButton width="20rem" height="60px">
+          Je m&apos;engage moi aussi !
+        </StyledButton>
       </StyledButtonTestimonial>
     </>
   );
