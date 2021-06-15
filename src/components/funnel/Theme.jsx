@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import QuestionList from './QuestionList';
 import { StyledButton } from '../../styles/genericStyles/StyledButtons';
 import { Flex, FlexCol } from '../../styles/genericStyles/GenericContainers';
-import theme0 from '../../assets/img/theme0.png';
 import { IconeImg } from '../../styles/genericStyles/GenericComponents';
+import help from '../../assets/img/help.png';
 
 export const ThemeContainer = styled.div`
   background-color: #ffffff;
@@ -24,6 +24,19 @@ export const StyledsubtitleTheme = styled.h4`
   color: ${(props) => props.theme.blueFeatureColor};
   font-family: ${(props) => props.theme.fontFamilyNormal};
   font-size: 1rem;
+  margin-left:5px;
+`;
+export const CompButton = styled.div`
+ margin-left:40px;
+`;
+
+export const CompButtonNext = styled.div`
+display:flex;
+justify-content:center;
+`;
+
+export const MicroImg = styled.img`
+height:30px;
 `;
 
 export default function Theme({ title, questions }) {
@@ -31,16 +44,23 @@ export default function Theme({ title, questions }) {
   return (
     <>
       <Flex>
+        <IconeImg src="" alt="logo" />
         <StyledsubtitleTheme>Evaluer mon événement</StyledsubtitleTheme>
-        <IconeImg src={theme0} alt={title} />
       </Flex>
       <FlexCol>
         <StyledTitleTheme>{title}</StyledTitleTheme>
         <QuestionList questions={questions} />
-        <StyledButton>Je ne m en sors pas !</StyledButton>
+      </FlexCol>
+      <CompButton>
+        <StyledButton>
+          <MicroImg src={help} />
+          Je ne m&#39;en sors pas !
+        </StyledButton>
+      </CompButton>
+      <CompButtonNext>
         <StyledButton>Précédent</StyledButton>
         <StyledButton>Suivant</StyledButton>
-      </FlexCol>
+      </CompButtonNext>
     </>
   );
 }
