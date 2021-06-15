@@ -1,15 +1,20 @@
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { StyledLink } from '../../styles/StyledNavBar';
 
+export const StyledNavBarItem = styled.div`
+  display: inline-block;
+`;
+
 export default function NavBarItem({ id, content, path }) {
   return (
-    <ul>
+    <StyledNavBarItem>
       <li>
         <StyledLink key={id} to={path}>
           {content}
         </StyledLink>
       </li>
-    </ul>
+    </StyledNavBarItem>
   );
 }
 
