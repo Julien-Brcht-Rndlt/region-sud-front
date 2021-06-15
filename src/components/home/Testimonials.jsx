@@ -1,13 +1,12 @@
 import styled from 'styled-components';
+import { Flex } from '../../styles/genericStyles/GenericContainers';
 import Testimonial from './Testimonial';
 import { StyledButton } from '../../styles/genericStyles/StyledButtons';
 import { TestimonialsContainer, TestimonialsTitle } from '../../styles/StyledTestimonials';
 
-export const StyledButtonTestimonial = styled.div`
-  display: flex;
+export const StyledButtonTestimonial = styled(Flex)`
   height: 60px;
   background-color: ${(props) => props.theme.lightGreyFeatureColor};
-  justify-content: center;
   padding: 50px;
 `;
 
@@ -43,7 +42,7 @@ export default function Testimonials() {
           <Testimonial {...testimony} />
         ))}
       </TestimonialsContainer>
-      <StyledButtonTestimonial>
+      <StyledButtonTestimonial center>
         <StyledButton>Je m&apos;engage moi aussi !</StyledButton>
       </StyledButtonTestimonial>
     </>
