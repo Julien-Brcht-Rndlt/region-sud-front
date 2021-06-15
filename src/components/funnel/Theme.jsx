@@ -18,12 +18,14 @@ export const QuestionListContainer = styled.div`
 
 export const StyledTitleTheme = styled.h1`
   color: ${(props) => props.theme.blueFeatureColor};
+  margin-left:40px;
+  font-size:1.9rem;
 `;
 
 export const StyledsubtitleTheme = styled.h4`
   color: ${(props) => props.theme.blueFeatureColor};
   font-family: ${(props) => props.theme.fontFamilyNormal};
-  font-size: 1rem;
+  font-size: 1.4rem;
   margin-left:5px;
 `;
 export const CompButton = styled.div`
@@ -34,14 +36,19 @@ export const MicroImg = styled.img`
 height:30px;
 `;
 
-export default function Theme({ title, questions }) {
+export const ContainersubtitleTheme = styled(Flex)`
+margin-left:40px;
+margin-top:20px;
+`;
+
+export default function Theme({ title, questions, icon }) {
   /* const [theme] = useState(funnel.themes[id]); */
   return (
     <>
-      <Flex>
-        <IconeImg src="" alt="logo" />
+      <ContainersubtitleTheme>
+        <IconeImg src={icon} alt="logo" />
         <StyledsubtitleTheme>Evaluer mon événement</StyledsubtitleTheme>
-      </Flex>
+      </ContainersubtitleTheme>
       <FlexCol>
         <StyledTitleTheme>{title}</StyledTitleTheme>
         <QuestionList questions={questions} />
@@ -62,6 +69,6 @@ export default function Theme({ title, questions }) {
 
 Theme.propTypes = {
   title: PropTypes.string.isRequired,
-//  icon: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
   questions: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
