@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { StyledTitleH1 } from '../../styles/genericStyles/StyledTitle';
+import { StyledTitleH1 } from '../../styles/genericStyles/GenericTitles';
 import { FlexSpace } from '../../styles/genericStyles/GenericContainers';
 import { StyledRoundedButton } from '../../styles/genericStyles/StyledButtons';
 import RequireElmtsList from './RequireElmtsList';

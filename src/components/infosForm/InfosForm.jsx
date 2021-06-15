@@ -1,5 +1,3 @@
-import StyledSubTitle from '../../styles/genericStyles/StyledSubTitle';
-import StyledPreSubTitle from '../../styles/StyledPreSubTitle';
 import {
   StyledInfosFormsContainer,
   StyledInfosFormsColsContainer,
@@ -8,6 +6,7 @@ import {
   StyledInfosFormsColLeftContainer,
 } from '../../styles/StyledInfosForms';
 import { Flex } from '../../styles/genericStyles/GenericContainers';
+import { StyledTitleH2, StyledTitleH4 } from '../../styles/genericStyles/GenericTitles';
 import InfosInputForm from './InfosInputForm';
 import { StyledButton } from '../../styles/genericStyles/StyledButtons';
 import InfosCheckBoxForm from './InfosCheckBoxForm';
@@ -25,11 +24,11 @@ export default function InfosForm() {
   return (
     <StyledInfosFormsContainer>
       <form onSubmit={(event) => handleSubmit(event)}>
-        <StyledPreSubTitle content="Informations préalables" />
+        <StyledTitleH4>Informations préalables</StyledTitleH4>
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>
             <div>
-              <StyledSubTitle subtitle="La structure organisatrice" />
+              <StyledTitleH2>LA STRUCTURE ORGANISATRICE</StyledTitleH2>
               <InfosInputForm label="Nom de la structure" wide />
               <InfosInputForm
                 label="Nombre de personnes composant la structure"
@@ -38,7 +37,7 @@ export default function InfosForm() {
             </div>
           </StyledInfosFormsColLeftContainer>
           <StyledInfosFormsColContainer>
-            <StyledSubTitle subtitle="La manifestation sportive" />
+            <StyledTitleH2>LA MANIFESTATION SPORTIVE</StyledTitleH2>
             <InfosInputForm label="Nom de la manisfestation sportive" wide />
             <InfosInputForm label="Nombre de participants" />
             <Flex start>
