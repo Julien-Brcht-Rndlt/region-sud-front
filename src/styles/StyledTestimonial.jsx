@@ -28,6 +28,6 @@ export const TestimonialQuote = styled.img`
   width: 15px;
   height: 15px;
   position: relative;
-  top: ${(props) => (props.opening ? '10px' : '-25px')};
-  left: ${(props) => (props.opening ? '-5px' : '140px')};
+  top: ${(props) => (props.opening ? '10px' : '-20px')};
+  left: ${(props) => (props.opening ? '-5px' : '280px')};
 `;
