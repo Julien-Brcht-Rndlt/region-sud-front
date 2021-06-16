@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import FaqHeader from './FaqHeader';
-import FaqFooter from './FaqFooter';
 
 export const StyledFaqHomeContainer = styled.div`
   display: flex;
@@ -14,7 +13,6 @@ export default function FaqFome() {
     <>
       <FaqHeader />
       <StyledFaqHomeContainer />
-      <FaqFooter />
     </>
   );
 }
