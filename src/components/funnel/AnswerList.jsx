@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Answer from './Answer';
-import { FlexCol, FlexWrap } from '../../styles/genericStyles/GenericContainers';
+import { FlexCol, FlexWrap } from '../../styles/generics/GenericContainers';
 
 const AnswerList = ({ answers }) => (
   <>

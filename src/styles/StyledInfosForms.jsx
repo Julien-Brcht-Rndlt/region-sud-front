@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {
   Flex,
   Block,
-} from './genericStyles/GenericContainers';
+} from './generics/GenericContainers';
 
 export const StyledInfosFormsContainer = styled(Block)`
   background-color: ${(props) => props.theme.greyFeatureColor};

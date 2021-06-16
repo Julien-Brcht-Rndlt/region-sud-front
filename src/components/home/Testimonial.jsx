@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Flex } from '../../styles/genericStyles/GenericContainers';
+import { Flex } from '../../styles/generics/GenericContainers';
 import {
   TestimonialContainer,
   TestimonialAvatar,
