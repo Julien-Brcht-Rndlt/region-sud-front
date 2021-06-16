@@ -8,9 +8,9 @@ export const StyledSiteName = styled.div`
   flex-direction: top;
 
   h1 {
-    font-size: 45px;
+    font-size: 40px;
     padding: 1px;
-    align-item: center;
+    align-items: center;
   }
 `;
 

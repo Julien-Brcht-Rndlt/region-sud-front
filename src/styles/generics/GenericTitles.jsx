@@ -13,6 +13,7 @@ export const StyledTitleH3 = styled.h3`
   color: ${(props) => props.theme.blueFeatureColor};
   font-family: ${(props) => props.theme.fontFamilyFeature};
   font-weight: ${(props) => props.theme.fontWeightBold};
+  font-size:18px;
 `;
 
 /* export const StyledSubTitleH3 = styled.h3`
@@ -26,6 +27,7 @@ export const StyledTitleH4 = styled.h4`
   color: ${(props) => props.theme.blueFeatureColor};
   font-family: ${(props) => props.theme.fontFamilyNormal};
   font-weight: ${(props) => props.theme.fontWeightNormal};
+  font-size: 15px;
 `;
 
 export const StyledTitleP = styled.p`

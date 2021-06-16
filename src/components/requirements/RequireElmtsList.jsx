@@ -27,11 +27,12 @@ export const StyledRequireIconesWrapper = styled(FlexSpace)`
 `;
 
 export const StyledRequireWrapper = styled(FlexCol)`
-  width: 65%;
+  width: 70%;
 
   ul li {
-    line-height: 3;
-    font-size: 20px;
+    line-height: 2.3;
+    font-size: 1em;
+    font-family:${(props) => props.theme.fontFamilyFeature}; ;
   }
 `;
 

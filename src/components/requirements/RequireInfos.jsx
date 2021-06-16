@@ -1,18 +1,20 @@
 import styled from 'styled-components';
-import { StyledTitleH1 } from '../../styles/generics/GenericTitles';
+import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import { FlexSpace } from '../../styles/generics/GenericContainers';
 import { StyledRoundedButton } from '../../styles/generics/GenericButtons';
 import RequireElmtsList from './RequireElmtsList';
 
-const StyledTitleH4 = styled.h4`
-  font-size: 20px;
+/*  const StyledTitleH4 = styled.h4`
+  font-size: 15px;
   padding: 25px;
   color: ${(props) => props.theme.blueFeatureColor};
-`;
+  font-family: ${(props) => props.theme.fontFamilyNormal};
+`;  */
 
 export const StyledBorderH1 = styled.div`
   border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
   width: 80px;
+  margin-top:50px;
 `;
 
 export const StyledColumnElmts = styled.div`
@@ -26,6 +28,7 @@ export const StyledBoxButtonElement = styled(FlexSpace)`
 
 export const StyledReqTitleH1 = styled(StyledTitleH1)`
   height: 15px;
+  font-size:25px;
 `;
 
 export default function RequireInfos() {
