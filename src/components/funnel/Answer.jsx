@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { StyledInfosInput } from '../../styles/StyledInfosInputForm';
+import { StyledInfosInput } from '../../styles/StyledInfosForms';
 
 export const AnswerComponent = styled.div`
   margin:10px;
