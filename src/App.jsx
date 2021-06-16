@@ -21,7 +21,7 @@ function App() {
         <OrgContext.Provider value={{ organization }}>
           <EventContext.Provider value={{ orgEvent }}>
             <EvalContext.Provider value={{ eventEval }}>
-            <EmiRouter />
+              <EmiRouter />
             </EvalContext.Provider>
           </EventContext.Provider>
         </OrgContext.Provider>

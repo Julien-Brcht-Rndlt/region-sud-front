@@ -11,8 +11,8 @@ export const StyledSubtitleH4 = styled.h4`
 `;
 
 export default function EvalThemeScoring({ themeTitle, themeScore, scoreIcone }) {
-  const { eventEval } = useContext(EvalContext);
-  if (eventEval) { console.log('eval context loaded'); }
+  const { evalContext } = useContext(EvalContext);
+  if (evalContext) { console.log('eval context loaded'); }
     return (
       <div>
         <StyledTitleH3>Votre indice</StyledTitleH3>

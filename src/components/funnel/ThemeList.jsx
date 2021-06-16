@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import FunnelContext from '../../contexts/funnel-context';
+import FunnelContext from '../../contexts/FunnelContext';
 import Theme from './Theme';
 
 export const StyledTitleTheme = styled.h1`

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import EvalContext from '../../contexts/EvalContext';
 
 export default function ThemeEvalShouldList({ shouldTitle, shouldList }) {
-  const { eventEval } = useContext(EvalContext);
-  if (eventEval) { console.log('eval context loaded'); }
+  const { evalContext } = useContext(EvalContext);
+  if (evalContext) { console.log('eval context loaded'); }
   return (
     <div>
       <h5>{shouldTitle}</h5>
