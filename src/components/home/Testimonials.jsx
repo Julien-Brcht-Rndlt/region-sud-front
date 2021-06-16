@@ -15,7 +15,7 @@ export const StyledBorderYellowH1 = styled.div`
   height: 10px;
   padding-right: 90px;
   margin: 65px;
-  margin-left: 140px;
+  margin-left: 145px;
   position: absolute;
 `;
 
