@@ -13,7 +13,7 @@ export const StyledInfosCheckBox = styled.input.attrs({ type: 'checkbox' })`
   border: 1px solid ${(props) => props.theme.blueFeatureColor};
 `;
 
-export default function InfosCheckBoxForm({ label, checked }) {
+export default function InfosEvalCheckBox({ label, checked }) {
   const [isChecked, setIsChecked] = useState(checked);
 
   return (
@@ -30,12 +30,12 @@ export default function InfosCheckBoxForm({ label, checked }) {
   );
 }
 
-InfosCheckBoxForm.propTypes = {
+InfosEvalCheckBox.propTypes = {
   label: PropTypes.string,
   checked: PropTypes.bool,
 };
 
-InfosCheckBoxForm.defaultProps = {
+InfosEvalCheckBox.defaultProps = {
   label: '',
   checked: false,
 };

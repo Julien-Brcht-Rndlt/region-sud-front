@@ -18,11 +18,16 @@ export const StyledInfosDropdown = styled.select`
   margin-bottom: 25px;
 `;
 
-export default function InfosDropdownForm({ label, options = [] }) {
-  const [selectedItem, setSelectedItem] = useState();
+export default function InfosEvalDropdown({
+  label,
+  options = [],
+  elmtFormName,
+  infosForms,
+  }) {
+  const [infos, setInfos] = useState(infosForms);
 
   const handleSelectedOption = (event) => {
-    setSelectedItem(event.target.value);
+    setInfos({ ...infos, elmtFormName: event.target.value });
   };
 
   return (
@@ -31,10 +36,11 @@ export default function InfosDropdownForm({ label, options = [] }) {
         {label}
       </StyledInfosDropdownLabel>
       <StyledInfosDropdown
-        value={selectedItem}
+        name={elmtFormName}
+        value={infos.elmtFormName}
         onChange={(event) => handleSelectedOption(event)}
       >
-        {/* change event is triggered on the <select> element */}
+        {/* "change" event is triggered on the <select> element */}
         {options.map((option) => (
           <option key={option} value={option}>
             {option}
@@ -45,12 +51,14 @@ export default function InfosDropdownForm({ label, options = [] }) {
   );
 }
 
-InfosDropdownForm.propTypes = {
+InfosEvalDropdown.propTypes = {
   label: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.string),
+  elmtFormName: PropTypes.string.isRequired,
+  infosForms: PropTypes.objectOf.isRequired,
 };
 
-InfosDropdownForm.defaultProps = {
+InfosEvalDropdown.defaultProps = {
   label: '',
   options: [],
 };
