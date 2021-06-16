@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
 import {
   StyledInfosFormsContainer,
@@ -9,6 +10,8 @@ import {
 import { Flex } from '../../styles/generics/GenericContainers';
 import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import { StyledButton } from '../../styles/generics/GenericButtons';
+import OrgContext from '../../contexts/OrgContext';
+import EventContext from '../../contexts/EventContext';
 import InfosEvalInput from './InfosEvalInput';
 import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';
@@ -34,6 +37,10 @@ export const StyledSpaceBetween = styled.div`
 export default function InfosForm() {
   const locations = ['Abries', 'Marseille', 'Toulon', 'Hyeres'];
   const sportLevels = ['Amateur', 'Expert'];
+  const { orgContext } = useContext(OrgContext);
+  if (orgContext) { console.log('org context loaded'); }
+  const { eventContext } = useContext(EventContext);
+  if (eventContext) { console.log('event context loaded'); }
 
   const handleSubmit = (event) => {
     event.preventDefault();
