@@ -98,14 +98,20 @@ export default function InfosForm() {
             />
             <Flex start>
               <InfosEvalInput
-                inputName="eventLoc"
+                inputName="eventAddr"
                 infosForm={eventForm}
                 setInfosForm={setEventForm}
                 label="Adresse de la manifestation"
               />
             </Flex>
             <Flex start>
-              <InfosEvalDropdown label="Lieu" options={locations} />
+              <InfosEvalDropdown
+                elmtFormName="eventLoc"
+                infosForm={eventForm}
+                setInfosForm={setEventForm}
+                label="Lieu"
+                options={locations}
+              />
               <InfosEvalCheckbox label="Montrer la carte" />
             </Flex>
             <Flex start>
@@ -115,7 +121,13 @@ export default function InfosForm() {
                 setInfosForm={setEventForm}
                 label="Type d'activité sportive"
               />
-              <InfosEvalDropdown label="Niveau sportif" options={sportLevels} />
+              <InfosEvalDropdown
+                elmtFormName="sportLevels"
+                infosForm={eventForm}
+                setInfosForm={setEventForm}
+                label="Niveau sportif"
+                options={sportLevels}
+              />
             </Flex>
             <Flex start>
               <InfosEvalDatepicker label="Date de début" />
