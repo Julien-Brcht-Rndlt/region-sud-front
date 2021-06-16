@@ -43,6 +43,7 @@ export default function InfosForm() {
   if (eventContext) { console.log('event context loaded'); }
 
   const [orgForm, setOrgForm] = useState(orgContext);
+  const [eventForm, setEventForm] = useState(eventContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -82,17 +83,38 @@ export default function InfosForm() {
               <StyledBorderYellowH1 />
             </StyledContainerYellow>
             <StyledSpaceBetween />
-            <InfosEvalInput label="Nom de la manisfestation sportive" wide />
-            <InfosEvalInput label="Nombre de participants" />
+            <InfosEvalInput
+              inputName="eventName"
+              infosForm={eventForm}
+              setInfosForm={setEventForm}
+              label="Nom de la manisfestation sportive"
+              wide
+            />
+            <InfosEvalInput
+              inputName="eventStaff"
+              infosForm={eventForm}
+              setInfosForm={setEventForm}
+              label="Nombre de participants"
+            />
             <Flex start>
-              <InfosEvalInput label="Adresse de la manifestation" />
+              <InfosEvalInput
+                inputName="eventLoc"
+                infosForm={eventForm}
+                setInfosForm={setEventForm}
+                label="Adresse de la manifestation"
+              />
             </Flex>
             <Flex start>
               <InfosEvalDropdown label="Lieu" options={locations} />
               <InfosEvalCheckbox label="Montrer la carte" />
             </Flex>
             <Flex start>
-              <InfosEvalInput label="Type d'activité sportive" />
+              <InfosEvalInput
+                inputName="activity"
+                infosForm={eventForm}
+                setInfosForm={setEventForm}
+                label="Type d'activité sportive"
+              />
               <InfosEvalDropdown label="Niveau sportif" options={sportLevels} />
             </Flex>
             <Flex start>
