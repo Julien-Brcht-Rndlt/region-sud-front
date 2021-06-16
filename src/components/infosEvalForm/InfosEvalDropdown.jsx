@@ -37,7 +37,7 @@ export default function InfosEvalDropdown({
       </StyledInfosDropdownLabel>
       <StyledInfosDropdown
         name={elmtFormName}
-        value={infos.elmtFormName}
+        value=""/* {infos.elmtFormName} */
         onChange={(event) => handleSelectedOption(event)}
       >
         {/* "change" event is triggered on the <select> element */}
