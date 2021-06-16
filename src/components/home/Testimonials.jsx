@@ -10,6 +10,20 @@ export const StyledButtonTestimonial = styled(Flex)`
   background-color: ${(props) => props.theme.lightGreyFeatureColor};
   padding: 50px;
 `;
+export const StyledBorderYellowH1 = styled.div`
+  border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+  height: 10px;
+  padding-right: 90px;
+  margin: 65px;
+  margin-left: 140px;
+  position: absolute;
+`;
+
+export const StyledContainerYellow = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
 
 export default function Testimonials() {
   const testimonials = [
@@ -35,9 +49,10 @@ export default function Testimonials() {
 
   return (
     <>
-      <div>
+      <StyledContainerYellow>
         <TestimonialsTitle>ILS L&apos;ONT UTILIS&Eacute;</TestimonialsTitle>
-      </div>
+        <StyledBorderYellowH1 />
+      </StyledContainerYellow>
       <TestimonialsContainer>
         {testimonials.map((testimony) => (
           <Testimonial {...testimony} />
