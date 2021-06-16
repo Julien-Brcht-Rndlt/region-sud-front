@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {
   Flex,
   Block,
-} from './genericStyles/GenericContainers';
+} from './generics/GenericContainers';
 
 export const StyledInfosFormsContainer = styled(Block)`
   background-color: ${(props) => props.theme.greyFeatureColor};
@@ -23,6 +23,7 @@ export const StyledInfosFormsColContainer = styled.div`
 
 export const StyledInfosFormsColLeftContainer = styled(StyledInfosFormsColContainer)`
   width: 55%;
+  height: 60px;
 `;
 
 export const StyledButtonContainer = styled(Flex)`

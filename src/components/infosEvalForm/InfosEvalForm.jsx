@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import {
   StyledInfosFormsContainer,
   StyledInfosFormsColsContainer,
@@ -5,13 +6,30 @@ import {
   StyledButtonContainer,
   StyledInfosFormsColLeftContainer,
 } from '../../styles/StyledInfosForms';
-import { Flex } from '../../styles/genericStyles/GenericContainers';
-import { StyledTitleH2, StyledTitleH4 } from '../../styles/genericStyles/GenericTitles';
+import { Flex } from '../../styles/generics/GenericContainers';
 import InfosEvalInput from './InfosEvalInput';
-import { StyledButton } from '../../styles/genericStyles/StyledButtons';
+import { StyledButton } from '../../styles/generics/GenericButtons';
 import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';
 import InfosEvalDatepicker from './InfosEvalDatepicker';
+import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
+
+export const StyledBorderYellowH1 = styled.div`
+  border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+  width: 80px;
+`;
+
+export const StyledTitleH2Form = styled(StyledTitleH2)`
+  height: 10px;
+`;
+export const StyledContainerYellow = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+export const StyledSpaceBetween = styled.div`
+  height: 20px;
+`;
 
 export default function InfosForm() {
   const locations = ['Abries', 'Marseille', 'Toulon', 'Hyeres'];
@@ -28,7 +46,11 @@ export default function InfosForm() {
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>
             <div>
-              <StyledTitleH2>LA STRUCTURE ORGANISATRICE</StyledTitleH2>
+              <StyledContainerYellow>
+                <StyledTitleH2Form>LA STRUCTURE ORGANISATRICE</StyledTitleH2Form>
+                <StyledBorderYellowH1 />
+              </StyledContainerYellow>
+              <StyledSpaceBetween />
               <InfosEvalInput label="Nom de la structure" wide />
               <InfosEvalInput
                 label="Nombre de personnes composant la structure"
@@ -37,7 +59,11 @@ export default function InfosForm() {
             </div>
           </StyledInfosFormsColLeftContainer>
           <StyledInfosFormsColContainer>
-            <StyledTitleH2>LA MANIFESTATION SPORTIVE</StyledTitleH2>
+            <StyledContainerYellow>
+              <StyledTitleH2Form>LA MANIFESTATION SPORTIVE</StyledTitleH2Form>
+              <StyledBorderYellowH1 />
+            </StyledContainerYellow>
+            <StyledSpaceBetween />
             <InfosEvalInput label="Nom de la manisfestation sportive" wide />
             <InfosEvalInput label="Nombre de participants" />
             <Flex start>
@@ -58,7 +84,9 @@ export default function InfosForm() {
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
         <StyledButtonContainer>
-          <StyledButton type="submit" width="25rem" height="4rem">Suivant</StyledButton>
+          <StyledButton type="submit" width="25rem" height="4rem">
+            Suivant
+          </StyledButton>
         </StyledButtonContainer>
       </form>
     </StyledInfosFormsContainer>

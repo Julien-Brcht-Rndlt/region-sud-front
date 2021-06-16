@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Flex, FlexSpace, FlexCol } from '../../styles/genericStyles/GenericContainers';
-import { IconeImg } from '../../styles/genericStyles/GenericComponents';
+import { Flex, FlexSpace, FlexCol } from '../../styles/generics/GenericContainers';
+import { IconeImg } from '../../styles/generics/GenericComponents';
 import clock from '../../assets/img/clockPictureEmi.png';
 import folder from '../../assets/img/folderPictureEmi.png';
 import plus from '../../assets/img/plusPictureEmi.png';

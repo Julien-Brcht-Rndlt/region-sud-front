@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { StyledFormItem, StyledFormItemLabel } from '../../styles/genericStyles/StyledFormItem';
+import { StyledFormItem, StyledFormItemLabel } from '../../styles/generics/StyledFormItem';
 
 export const StyledInfosCheckBoxLabel = styled(StyledFormItemLabel)`
   font-weight: 600;

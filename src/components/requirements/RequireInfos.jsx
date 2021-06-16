@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { StyledTitleH1 } from '../../styles/genericStyles/GenericTitles';
-import { FlexSpace } from '../../styles/genericStyles/GenericContainers';
-import { StyledRoundedButton } from '../../styles/genericStyles/StyledButtons';
+import { StyledTitleH1 } from '../../styles/generics/GenericTitles';
+import { FlexSpace } from '../../styles/generics/GenericContainers';
+import { StyledRoundedButton } from '../../styles/generics/GenericButtons';
 import RequireElmtsList from './RequireElmtsList';
 
 const StyledTitleH4 = styled.h4`
@@ -24,11 +24,15 @@ export const StyledBoxButtonElement = styled(FlexSpace)`
   padding: 70px;
 `;
 
+export const StyledReqTitleH1 = styled(StyledTitleH1)`
+  height: 15px;
+`;
+
 export default function RequireInfos() {
   return (
     <>
       <StyledColumnElmts>
-        <StyledTitleH1>Avant de commencer l&#39;évaluation de mon évènement :</StyledTitleH1>
+        <StyledReqTitleH1>Avant de commencer l&#39;évaluation de mon évènement :</StyledReqTitleH1>
         <StyledBorderH1 />
         <StyledTitleH4> J&#39;aurais besoin de :</StyledTitleH4>
         <RequireElmtsList />

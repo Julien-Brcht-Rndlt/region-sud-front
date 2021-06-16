@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Flex } from '../../styles/genericStyles/GenericContainers';
+import { Flex } from '../../styles/generics/GenericContainers';
 import Logo from '../Logo';
 import NavBar from './NavBar';
 import SiteName from './SiteName';
