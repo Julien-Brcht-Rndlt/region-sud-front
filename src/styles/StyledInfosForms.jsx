@@ -31,3 +31,11 @@ export const StyledButtonContainer = styled(Flex)`
   padding-top: 30px;
   width: 80%;
 `;
+
+export const StyledInfosInput = styled.input`
+  border: 1px solid #005aff;
+  background: ${(props) => props.theme.secondaryFeatureColor};
+  padding: 10px 15px 15px 15px;
+  width: ${(props) => (props.wide ? '100%' : '70%')};
+  margin-bottom: 20px;
+`;

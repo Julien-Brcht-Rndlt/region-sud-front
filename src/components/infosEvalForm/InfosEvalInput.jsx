@@ -1,7 +1,8 @@
-import { useState } from 'react';
 import styled from 'styled-components';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { StyledFormItem, StyledFormItemLabel } from '../../styles/genericStyles/StyledFormItem';
+import { StyledFormItem, StyledFormItemLabel } from '../../styles/generics/StyledFormItem';
+import { StyledInfosInput } from '../../styles/StyledInfosForms';
 
 export const StyledInfosInputLabel = styled(StyledFormItemLabel)`
   color: ${(props) => props.theme.blueFeatureColor};
@@ -10,23 +11,21 @@ export const StyledInfosInputLabel = styled(StyledFormItemLabel)`
   width: 30rem;
 `;
 
-export const StyledInfosInput = styled.input`
-  border: 1px solid #005aff;
-  background: ${(props) => props.theme.secondaryFeatureColor};
-  padding: 10px 15px 15px 15px;
-  width: ${(props) => (props.wide ? '100%' : '70%')};
-  margin-bottom: 20px;
-`;
-
-export default function InfosEvalInput({ label, wide }) {
-  const [input, setInput] = useState();
+export default function InfosEvalInput({
+  label,
+  wide,
+  inputName,
+  infosForms,
+  }) {
+  const [infos, setInfos] = useState(infosForms);
 
   return (
     <StyledFormItem>
       <StyledInfosInputLabel>{label}</StyledInfosInputLabel>
       <StyledInfosInput
-        value={input}
-        onChange={(event) => setInput(event.target.value)}
+        name={inputName}
+        value={infos.inputName}
+        onChange={(event) => setInfos({ ...infos, inputName: event.target.value })}
         wide={wide}
       />
     </StyledFormItem>
@@ -36,6 +35,8 @@ export default function InfosEvalInput({ label, wide }) {
 InfosEvalInput.propTypes = {
   label: PropTypes.string,
   wide: PropTypes.bool,
+  inputName: PropTypes.string.isRequired,
+  infosForms: PropTypes.objectOf.isRequired,
 };
 
 InfosEvalInput.defaultProps = {

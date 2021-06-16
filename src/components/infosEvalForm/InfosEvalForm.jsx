@@ -7,12 +7,12 @@ import {
   StyledInfosFormsColLeftContainer,
 } from '../../styles/StyledInfosForms';
 import { Flex } from '../../styles/generics/GenericContainers';
-import InfosEvalInput from './InfosEvalInput';
+import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import { StyledButton } from '../../styles/generics/GenericButtons';
+import InfosEvalInput from './InfosEvalInput';
 import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';
 import InfosEvalDatepicker from './InfosEvalDatepicker';
-import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 
 export const StyledBorderYellowH1 = styled.div`
   border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
