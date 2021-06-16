@@ -16,7 +16,7 @@ export default function NavBar() {
     {
       id: 3,
       content: 'Etre accompagné',
-      path: '/',
+      path: '/FaqHome',
     },
     {
       id: 4,
