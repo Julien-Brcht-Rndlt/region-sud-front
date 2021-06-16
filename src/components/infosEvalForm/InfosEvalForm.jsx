@@ -130,8 +130,18 @@ export default function InfosForm() {
               />
             </Flex>
             <Flex start>
-              <InfosEvalDatepicker label="Date de début" />
-              {/* <InfosDatePickerForm label="Date de fin" /> */}
+              <InfosEvalDatepicker
+                elmtFormName="eventStart"
+                infosForm={eventForm}
+                setInfosForm={setEventForm}
+                label="Date de début"
+              />
+              <InfosEvalDatepicker
+                elmtFormName="eventEnd"
+                infosForm={eventForm}
+                setInfosForm={setEventForm}
+                label="Date de fin"
+              />
             </Flex>
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
