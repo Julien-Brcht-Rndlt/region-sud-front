@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FlexCol, Center } from './genericStyles/GenericContainers';
+import { FlexCol, Center } from './generics/GenericContainers';
 
 export const FooterContainer = styled(FlexCol)`
   justify-content: space-around;

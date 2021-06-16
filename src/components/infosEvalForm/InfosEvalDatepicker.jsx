@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker';
 import {
   StyledFormItem,
   StyledFormItemLabel,
-} from '../../styles/genericStyles/StyledFormItem';
+} from '../../styles/generics/StyledFormItem';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const StyledDatePickerInfosForm = styled(DatePicker)`
@@ -38,3 +38,13 @@ export default function InfosDatePickerForm({ label }) {
 InfosDatePickerForm.propTypes = {
   label: PropTypes.string.isRequired,
 };
+
+/*  <DateRangeInput
+      onDatesChange={(data) => dispatch({ type: 'dateChange', payload: data })}
+      onFocusChange={(focusedInput) =>
+        dispatch({ type: 'focusChange', payload: focusedInput })
+      }
+      startDate={state.startDate} // Date or null
+      endDate={state.endDate} // Date or null
+      focusedInput={state.focusedInput} // START_DATE, END_DATE or null
+    /> */

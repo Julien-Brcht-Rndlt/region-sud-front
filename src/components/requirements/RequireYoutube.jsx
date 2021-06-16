@@ -1,7 +1,7 @@
 import YouTube from 'react-youtube';
 import styled from 'styled-components';
-import { FlexCol } from '../../styles/genericStyles/GenericContainers';
-import { StyledRoundedButton } from '../../styles/genericStyles/StyledButtons';
+import { FlexCol } from '../../styles/generics/GenericContainers';
+import { StyledRoundedButton } from '../../styles/generics/GenericButtons';
 
 export const StyledYoutubeBox = styled(FlexCol)`
   width: auto;

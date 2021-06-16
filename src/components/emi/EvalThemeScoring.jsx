@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import EvalContext from '../../contexts/EvalContext';
-import { StyledTitleH3, StyledTitleH4 } from '../../styles/genericStyles/GenericTitles';
+import { StyledTitleH3, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 
 export const StyledSubtitleH4 = styled.h4`
   color: ${(props) => props.theme.blueFeatureColor};

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import QuestionList from './QuestionList';
-import { StyledButton } from '../../styles/genericStyles/StyledButtons';
-import { Flex, FlexCol } from '../../styles/genericStyles/GenericContainers';
-import { IconeImg } from '../../styles/genericStyles/GenericComponents';
-import { StyledTitleH1, StyledTitleH4 } from '../../styles/genericStyles/GenericTitles';
+import { StyledButton } from '../../styles/generics/GenericButtons';
+import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
+import { IconeImg } from '../../styles/generics/GenericComponents';
+import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import help from '../../assets/img/help.png';
 
 export const ThemeContainer = styled.div`
@@ -19,24 +19,38 @@ export const QuestionListContainer = styled.div`
 
 export const StyledTitleTheme = styled(StyledTitleH1)`
   color: ${(props) => props.theme.blueFeatureColor};
-  margin-left:40px;
-  font-size:1.9rem;
+  margin-left: 40px;
+  font-size: 1.9rem;
 `;
 
 export const StyledSubtitleTheme = styled(StyledTitleH4)`
-  margin-left:5px;
+  margin-left: 5px;
 `;
 export const CompButton = styled.div`
- margin-left:40px;
+  margin-left: 40px;
 `;
 
 export const MicroImg = styled.img`
-height:30px;
+  height: 30px;
 `;
 
 export const ContainersubtitleTheme = styled(Flex)`
-margin-left:40px;
-margin-top:20px;
+  margin-left: 40px;
+  margin-top: 20px;
+`;
+
+export const StyledBorderYellow = styled.div`
+  display: flex;
+  border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+  width: 50px;
+  padding-right: 30px;
+  margin: 65px;
+  margin-left: 45px;
+  position: absolute;
+`;
+export const StyledContainerYellow = styled.div`
+  display: flex;
+  padding: 15px;
 `;
 
 export default function Theme({ title, questions, icon }) {
@@ -48,7 +62,10 @@ export default function Theme({ title, questions, icon }) {
         <StyledSubtitleTheme>Evaluer mon événement</StyledSubtitleTheme>
       </ContainersubtitleTheme>
       <FlexCol>
-        <StyledTitleTheme>{title}</StyledTitleTheme>
+        <StyledContainerYellow>
+          <StyledTitleTheme>{title}</StyledTitleTheme>
+          <StyledBorderYellow />
+        </StyledContainerYellow>
         <QuestionList questions={questions} />
       </FlexCol>
       <CompButton>
