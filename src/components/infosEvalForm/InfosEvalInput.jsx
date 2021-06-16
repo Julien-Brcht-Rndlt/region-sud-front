@@ -24,7 +24,7 @@ export default function InfosEvalInput({
       <StyledInfosInputLabel>{label}</StyledInfosInputLabel>
       <StyledInfosInput
         name={inputName}
-        value={infos.inputName}
+        value=""/* {infos.inputName} */
         onChange={(event) => setInfos({ ...infos, inputName: event.target.value })}
         wide={wide}
       />
