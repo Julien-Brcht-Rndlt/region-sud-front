@@ -23,6 +23,7 @@ export const StyledInfosFormsColContainer = styled.div`
 
 export const StyledInfosFormsColLeftContainer = styled(StyledInfosFormsColContainer)`
   width: 55%;
+  height: 60px;
 `;
 
 export const StyledButtonContainer = styled(Flex)`

@@ -12,6 +12,7 @@ export const TestimonialsContainer = styled.div`
 export const TestimonialsTitle = styled.h2`
   color: ${(props) => props.theme.blueFeatureColor};
   background-color: ${(props) => props.theme.lightGreyFeatureColor};
+  height: 50px;
   margin: 0;
   padding-left: 9rem;
   padding-top: 40px;

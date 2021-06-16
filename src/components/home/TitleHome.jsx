@@ -15,11 +15,21 @@ export const StyledTitleWrapper = styled.div`
   margin-left: 50px;
   max-width: 500px;
 `;
+export const StyledBorderYellowH1 = styled.div`
+  border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+  width: 80px;
+  height: 10px;
+  padding-right: 15px;
+`;
+export const StyledTitleHomeH1 = styled(StyledTitleH1)`
+  height: 10px;
+`;
 
 export default function TitleHome() {
   return (
     <StyledTitleWrapper>
-      <StyledTitleH1> Lorem ipsum dolor sit amet?</StyledTitleH1>
+      <StyledTitleHomeH1> Lorem ipsum dolor sit amet?</StyledTitleHomeH1>
+      <StyledBorderYellowH1 />
       <StyledTitleP>
         <ul>
           <li>Lorem ipsum dolor sit amet</li>

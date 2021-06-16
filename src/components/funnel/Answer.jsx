@@ -1,28 +1,37 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { StyledInfosInput } from '../../styles/StyledInfosInputForm';
 
 export const AnswerComponent = styled.div`
   margin:10px;
 `;
 
+export const StyledAnswerLabel = styled.span`
+font-family: ${(props) => props.theme.fontFamilyFeature};
+padding-left:6px;`;
+
+export const StyledAnswerInput = styled(StyledInfosInput)`
+width:60px;
+`;
+
 const MultipleChoiceAnswer = ({ label }) => (
   <>
     <input id="multiansw" type="checkbox" value="" />
-    <label htmlFor="multiansw">{label}</label>
+    <StyledAnswerLabel htmlFor="multiansw">{label}</StyledAnswerLabel>
   </>
  );
 
 const OneChoiceAnswer = ({ label }) => (
   <div>
     <input id="oneansw" type="radio" value="" />
-    <label htmlFor="oneansw">{label}</label>
+    <StyledAnswerLabel htmlFor="oneansw">{label}</StyledAnswerLabel>
   </div>
 );
 
  const InputAnswer = ({ label }) => (
    <>
-     <input id="inansw" type="text" value="" />
-     <label htmlFor="inansw">{label}</label>
+     <StyledAnswerInput id="inansw" type="text" value="" />
+     <StyledAnswerLabel htmlFor="inansw">{label}</StyledAnswerLabel>
    </>
 );
 

@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import {
   StyledInfosFormsContainer,
   StyledInfosFormsColsContainer,
@@ -12,6 +13,23 @@ import { StyledButton } from '../../styles/generics/GenericButtons';
 import InfosCheckBoxForm from './InfosCheckBoxForm';
 import InfosDropdownForm from './InfosDropdownForm';
 import InfosDatePickerForm from './InfosDatePickerForm';
+
+export const StyledBorderYellowH1 = styled.div`
+  border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+  width: 80px;
+`;
+
+export const StyledTitleH2Form = styled(StyledTitleH2)`
+  height: 10px;
+`;
+export const StyledContainerYellow = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+export const StyledSpaceBetween = styled.div`
+  height: 20px;
+`;
 
 export default function InfosForm() {
   const locations = ['Abries', 'Marseille', 'Toulon', 'Hyeres'];
@@ -28,16 +46,19 @@ export default function InfosForm() {
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>
             <div>
-              <StyledTitleH2>LA STRUCTURE ORGANISATRICE</StyledTitleH2>
+              <StyledContainerYellow>
+                <StyledTitleH2Form>LA STRUCTURE ORGANISATRICE</StyledTitleH2Form>
+                <StyledBorderYellowH1 />
+              </StyledContainerYellow>
+              <StyledSpaceBetween />
               <InfosInputForm label="Nom de la structure" wide />
-              <InfosInputForm
-                label="Nombre de personnes composant la structure"
-                wide
-              />
+              <InfosInputForm label="Nombre de personnes composant la structure" wide />
             </div>
           </StyledInfosFormsColLeftContainer>
           <StyledInfosFormsColContainer>
-            <StyledTitleH2>LA MANIFESTATION SPORTIVE</StyledTitleH2>
+            <StyledTitleH2Form>LA MANIFESTATION SPORTIVE</StyledTitleH2Form>
+            <StyledBorderYellowH1 />
+            <StyledSpaceBetween />
             <InfosInputForm label="Nom de la manisfestation sportive" wide />
             <InfosInputForm label="Nombre de participants" />
             <Flex start>
@@ -58,7 +79,9 @@ export default function InfosForm() {
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
         <StyledButtonContainer>
-          <StyledButton type="submit" width="25rem" height="4rem">Suivant</StyledButton>
+          <StyledButton type="submit" width="25rem" height="4rem">
+            Suivant
+          </StyledButton>
         </StyledButtonContainer>
       </form>
     </StyledInfosFormsContainer>
