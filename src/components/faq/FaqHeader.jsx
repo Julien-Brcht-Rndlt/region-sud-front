@@ -16,7 +16,7 @@ export const StyledHeadPicture = styled.img`
 `;
 
 export const StyledTitleHelp = styled.h1`
-  color: ${(props) => props.theme.blueFeatureColor};
+  color: black;
 `;
 
 export default function FaqHeader() {
