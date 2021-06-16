@@ -7,12 +7,12 @@ import {
   StyledInfosFormsColLeftContainer,
 } from '../../styles/StyledInfosForms';
 import { Flex } from '../../styles/generics/GenericContainers';
-import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
-import InfosInputForm from './InfosInputForm';
+import InfosEvalInput from './InfosEvalInput';
 import { StyledButton } from '../../styles/generics/GenericButtons';
-import InfosCheckBoxForm from './InfosCheckBoxForm';
-import InfosDropdownForm from './InfosDropdownForm';
-import InfosDatePickerForm from './InfosDatePickerForm';
+import InfosEvalCheckbox from './InfosEvalCheckbox';
+import InfosEvalDropdown from './InfosEvalDropdown';
+import InfosEvalDatepicker from './InfosEvalDatepicker';
+import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 
 export const StyledBorderYellowH1 = styled.div`
   border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
@@ -51,29 +51,34 @@ export default function InfosForm() {
                 <StyledBorderYellowH1 />
               </StyledContainerYellow>
               <StyledSpaceBetween />
-              <InfosInputForm label="Nom de la structure" wide />
-              <InfosInputForm label="Nombre de personnes composant la structure" wide />
+              <InfosEvalInput label="Nom de la structure" wide />
+              <InfosEvalInput
+                label="Nombre de personnes composant la structure"
+                wide
+              />
             </div>
           </StyledInfosFormsColLeftContainer>
           <StyledInfosFormsColContainer>
-            <StyledTitleH2Form>LA MANIFESTATION SPORTIVE</StyledTitleH2Form>
-            <StyledBorderYellowH1 />
+            <StyledContainerYellow>
+              <StyledTitleH2Form>LA MANIFESTATION SPORTIVE</StyledTitleH2Form>
+              <StyledBorderYellowH1 />
+            </StyledContainerYellow>
             <StyledSpaceBetween />
-            <InfosInputForm label="Nom de la manisfestation sportive" wide />
-            <InfosInputForm label="Nombre de participants" />
+            <InfosEvalInput label="Nom de la manisfestation sportive" wide />
+            <InfosEvalInput label="Nombre de participants" />
             <Flex start>
-              <InfosInputForm label="Adresse de la manifestation" />
+              <InfosEvalInput label="Adresse de la manifestation" />
             </Flex>
             <Flex start>
-              <InfosDropdownForm label="Lieu" options={locations} />
-              <InfosCheckBoxForm label="Montrer la carte" />
+              <InfosEvalDropdown label="Lieu" options={locations} />
+              <InfosEvalCheckbox label="Montrer la carte" />
             </Flex>
             <Flex start>
-              <InfosInputForm label="Type d'activité sportive" />
-              <InfosDropdownForm label="Niveau sportif" options={sportLevels} />
+              <InfosEvalInput label="Type d'activité sportive" />
+              <InfosEvalDropdown label="Niveau sportif" options={sportLevels} />
             </Flex>
             <Flex start>
-              <InfosDatePickerForm label="Date de début" />
+              <InfosEvalDatepicker label="Date de début" />
               {/* <InfosDatePickerForm label="Date de fin" /> */}
             </Flex>
           </StyledInfosFormsColContainer>
