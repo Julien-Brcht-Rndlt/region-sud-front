@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import styled from 'styled-components';
 import {
   StyledInfosFormsContainer,
@@ -42,6 +42,9 @@ export default function InfosForm() {
   const { eventContext } = useContext(EventContext);
   if (eventContext) { console.log('event context loaded'); }
 
+  const [orgForm, setOrgForm] = useState(orgContext);
+  const [eventForm, setEventForm] = useState(eventContext);
+
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -58,8 +61,17 @@ export default function InfosForm() {
                 <StyledBorderYellowH1 />
               </StyledContainerYellow>
               <StyledSpaceBetween />
-              <InfosEvalInput label="Nom de la structure" wide />
               <InfosEvalInput
+                inputName="orgName"
+                infosForm={orgForm}
+                setInfosForm={setOrgForm}
+                label="Nom de la structure"
+                wide
+              />
+              <InfosEvalInput
+                inputName="orgMembers"
+                infosForm={orgForm}
+                setInfosForm={setOrgForm}
                 label="Nombre de personnes composant la structure"
                 wide
               />
@@ -71,22 +83,65 @@ export default function InfosForm() {
               <StyledBorderYellowH1 />
             </StyledContainerYellow>
             <StyledSpaceBetween />
-            <InfosEvalInput label="Nom de la manisfestation sportive" wide />
-            <InfosEvalInput label="Nombre de participants" />
+            <InfosEvalInput
+              inputName="eventName"
+              infosForm={eventForm}
+              setInfosForm={setEventForm}
+              label="Nom de la manisfestation sportive"
+              wide
+            />
+            <InfosEvalInput
+              inputName="eventStaff"
+              infosForm={eventForm}
+              setInfosForm={setEventForm}
+              label="Nombre de participants"
+            />
             <Flex start>
-              <InfosEvalInput label="Adresse de la manifestation" />
+              <InfosEvalInput
+                inputName="eventAddr"
+                infosForm={eventForm}
+                setInfosForm={setEventForm}
+                label="Adresse de la manifestation"
+              />
             </Flex>
             <Flex start>
-              <InfosEvalDropdown label="Lieu" options={locations} />
+              <InfosEvalDropdown
+                elmtFormName="eventLoc"
+                infosForm={eventForm}
+                setInfosForm={setEventForm}
+                label="Lieu"
+                options={locations}
+              />
               <InfosEvalCheckbox label="Montrer la carte" />
             </Flex>
             <Flex start>
-              <InfosEvalInput label="Type d'activité sportive" />
-              <InfosEvalDropdown label="Niveau sportif" options={sportLevels} />
+              <InfosEvalInput
+                inputName="activity"
+                infosForm={eventForm}
+                setInfosForm={setEventForm}
+                label="Type d'activité sportive"
+              />
+              <InfosEvalDropdown
+                elmtFormName="sportLevels"
+                infosForm={eventForm}
+                setInfosForm={setEventForm}
+                label="Niveau sportif"
+                options={sportLevels}
+              />
             </Flex>
             <Flex start>
-              <InfosEvalDatepicker label="Date de début" />
-              {/* <InfosDatePickerForm label="Date de fin" /> */}
+              <InfosEvalDatepicker
+                elmtFormName="eventStart"
+                infosForm={eventForm}
+                setInfosForm={setEventForm}
+                label="Date de début"
+              />
+              <InfosEvalDatepicker
+                elmtFormName="eventEnd"
+                infosForm={eventForm}
+                setInfosForm={setEventForm}
+                label="Date de fin"
+              />
             </Flex>
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>

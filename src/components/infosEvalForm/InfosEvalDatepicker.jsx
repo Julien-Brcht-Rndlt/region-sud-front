@@ -13,10 +13,16 @@ const StyledDatePickerInfosForm = styled(DatePicker)`
   border: 1px solid ${(props) => props.theme.blueFeatureColor};
 `;
 
-export default function InfosDatePickerForm({ label }) {
+export default function InfosEvalDatePicker({
+  label,
+  elmtFormName,
+  infosForm,
+  setInfosForm,
+  }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleChange = (date) => {
+    setInfosForm(({ ...infosForm, [elmtFormName]: date }));
     setSelectedDate(date);
   };
 
@@ -24,7 +30,8 @@ export default function InfosDatePickerForm({ label }) {
     <StyledFormItem>
       <StyledFormItemLabel htmlFor={label}>{label}</StyledFormItemLabel>
       <StyledDatePickerInfosForm
-        id={label}
+        id={elmtFormName}
+        name={elmtFormName}
         selected={selectedDate}
         onChange={(date) => handleChange(date)}
         showTimeSelect
@@ -35,8 +42,15 @@ export default function InfosDatePickerForm({ label }) {
   );
 }
 
-InfosDatePickerForm.propTypes = {
-  label: PropTypes.string.isRequired,
+InfosEvalDatePicker.propTypes = {
+  label: PropTypes.string,
+  elmtFormName: PropTypes.string.isRequired,
+  infosForm: PropTypes.objectOf.isRequired,
+  setInfosForm: PropTypes.func.isRequired,
+};
+
+InfosEvalDatePicker.defaultProps = {
+  label: '',
 };
 
 /*  <DateRangeInput
