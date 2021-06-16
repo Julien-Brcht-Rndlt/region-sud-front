@@ -15,17 +15,23 @@ export default function InfosEvalInput({
   label,
   wide,
   inputName,
-  infosForms,
+  infosForm,
+  setInfosForm,
   }) {
-  const [infos, setInfos] = useState(infosForms);
+  const [input, setInput] = useState('');
+
+  const handleInputChange = (event) => {
+    setInfosForm(({ ...infosForm, [event.target.name]: event.target.value }));
+    setInput(event.target.value);
+  };
 
   return (
     <StyledFormItem>
       <StyledInfosInputLabel>{label}</StyledInfosInputLabel>
       <StyledInfosInput
         name={inputName}
-        value=""/* {infos.inputName} */
-        onChange={(event) => setInfos({ ...infos, inputName: event.target.value })}
+        value={input}
+        onChange={(event) => handleInputChange(event)}
         wide={wide}
       />
     </StyledFormItem>
@@ -36,7 +42,8 @@ InfosEvalInput.propTypes = {
   label: PropTypes.string,
   wide: PropTypes.bool,
   inputName: PropTypes.string.isRequired,
-  infosForms: PropTypes.objectOf.isRequired,
+  infosForm: PropTypes.objectOf.isRequired,
+  setInfosForm: PropTypes.func.isRequired,
 };
 
 InfosEvalInput.defaultProps = {

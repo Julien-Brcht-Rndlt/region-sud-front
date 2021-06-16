@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import styled from 'styled-components';
 import {
   StyledInfosFormsContainer,
@@ -42,6 +42,8 @@ export default function InfosForm() {
   const { eventContext } = useContext(EventContext);
   if (eventContext) { console.log('event context loaded'); }
 
+  const [orgForm, setOrgForm] = useState(orgContext);
+
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -58,8 +60,17 @@ export default function InfosForm() {
                 <StyledBorderYellowH1 />
               </StyledContainerYellow>
               <StyledSpaceBetween />
-              <InfosEvalInput label="Nom de la structure" wide />
               <InfosEvalInput
+                inputName="orgName"
+                infosForm={orgForm}
+                setInfosForm={setOrgForm}
+                label="Nom de la structure"
+                wide
+              />
+              <InfosEvalInput
+                inputName="orgMembers"
+                infosForm={orgForm}
+                setInfosForm={setOrgForm}
                 label="Nombre de personnes composant la structure"
                 wide
               />
