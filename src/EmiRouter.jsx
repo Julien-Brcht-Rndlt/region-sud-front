@@ -11,7 +11,7 @@ export default function EmiRouter() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/EmiHome" component={EvaluateImpact} />
-        <Route path="#" component="" />
+        <Route path="/FaqHome" component="" />
         <Route path="#" component="" />
       </Switch>
       <Footer />
