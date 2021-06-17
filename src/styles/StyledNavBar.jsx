@@ -7,7 +7,7 @@ export const StyledNavBar = styled.nav`
   font-size: 15px;
   text-decoration: none;
   margin: 15px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 400;
   padding: 15px;
 
