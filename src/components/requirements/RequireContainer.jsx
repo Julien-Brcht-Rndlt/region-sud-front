@@ -19,8 +19,11 @@ export const StyledRequireContainer = styled(Flex)`
 
    @media ${device.laptop}{
   width: auto;
-  height: 1000px;
+  height: 900px;
   padding: 35px;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
   }
 `;
 

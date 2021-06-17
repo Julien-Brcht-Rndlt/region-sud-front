@@ -1,10 +1,10 @@
 import YouTube from 'react-youtube';
 import styled from 'styled-components';
-//  import { FlexCol } from '../../styles/generics/GenericContainers';
+import { FlexCol } from '../../styles/generics/GenericContainers';
 import { StyledRoundedButton } from '../../styles/generics/GenericButtons';
 import { StyledTitleH4 } from '../../styles/generics/GenericTitles';
 
-export const StyledYoutubeBox = styled.div`
+export const StyledYoutubeBox = styled(FlexCol)`
   width: auto;
   height: auto;
   padding: 140px;
@@ -13,8 +13,8 @@ export const StyledYoutubeBox = styled.div`
 `;
 
 const opts = {
-   height: '430',
-   width: '360',
+   height: '100',
+   width: '100',
 };
 
 export default function RequireYoutube() {
