@@ -42,12 +42,12 @@ const mandatoryFields = ['orgName',
 'eventAddr',
 'eventLoc',
 'eventLoc',
-/* 'eventStart',
-'eventEnd', */
+'eventStart',
+'eventEnd',
 ];
 
 export default function InfosForm() {
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
   const locations = ['Abries', 'Marseille', 'Toulon', 'Hyeres'];
   const sportLevels = ['Amateur', 'Expert'];
   const { org, dispatch } = useContext(OrgContext);
@@ -71,7 +71,6 @@ export default function InfosForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('submit form');
     dispatch({ type: ADD_INFOS, payload: { org: orgForm, orgEvent: orgEventForm } });
   };
 
