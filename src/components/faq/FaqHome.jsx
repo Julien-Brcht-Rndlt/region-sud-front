@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import FaqHeader from './FaqHeader';
 import FaqFooter from './FaqFooter';
-import { StyledTitleH6Black } from '../../styles/genericStyles/GenericTitles';
+import { StyledTitleH6Black } from '../../styles/generics/GenericTitles';
 import FaqQuestionsList from './FaqQuestionsList';
 
 export const StyledFaqContainerQuestions = styled.div`

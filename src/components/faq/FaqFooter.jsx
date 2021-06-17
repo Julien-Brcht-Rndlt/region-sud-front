@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Flex, FlexCol } from '../../styles/genericStyles/GenericContainers';
+import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
 import Phone from '../../assets/img/FaqPhonePicture.png';
 import Mail from '../../assets/img/FaqLetterPicture.png';
-import { StyledTitleH6Black } from '../../styles/genericStyles/GenericTitles';
+import { StyledTitleH6Black } from '../../styles/generics/GenericTitles';
 
 export const StyledContainerCol = styled(Flex)`
   width: auto;
@@ -14,7 +14,7 @@ export const StyledColContact = styled(FlexCol)`
   width: 40%;
   height: 250px;
   font-size: 20px;
- margin-left: 25px;
+  margin-left: 25px;
 `;
 
 export const StyledColPhone = styled(FlexCol)`
