@@ -18,6 +18,7 @@ import InfosEvalInput from './InfosEvalInput';
 import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';
 import InfosEvalDatepicker from './InfosEvalDatepicker';
+import { device } from '../../styles/theme';
 
 export const StyledBorderYellowH1 = styled.div`
   border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
@@ -25,7 +26,7 @@ export const StyledBorderYellowH1 = styled.div`
 `;
 
 export const StyledTitleH2Form = styled(StyledTitleH2)`
-  height: 10px;
+//  height: 10px;
 `;
 export const StyledContainerYellow = styled.div`
   display: flex;
@@ -34,6 +35,21 @@ export const StyledContainerYellow = styled.div`
 `;
 export const StyledSpaceBetween = styled.div`
   height: 20px;
+`;
+
+export const ContainerDatePicker = styled(Flex)`
+  @media ${device.mobileS}{
+    flex-direction:column;
+    ;
+  }
+
+  @media ${device.tablet}{
+    flex-direction:column;
+  }
+
+@media ${device.tablet}{
+  flex-direction:row; 
+}
 `;
 
 const mandatoryFields = ['orgName',
@@ -154,7 +170,7 @@ export default function InfosForm() {
                 options={sportLevels}
               />
             </Flex>
-            <Flex start>
+            <ContainerDatePicker>
               <InfosEvalDatepicker
                 elmtFormName="eventStart"
                 infosForm={infosForm.orgEvent}
@@ -167,7 +183,7 @@ export default function InfosForm() {
                 setInfosForm={setEventForm}
                 label="Date de fin"
               />
-            </Flex>
+            </ContainerDatePicker>
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
         <StyledButtonContainer>
