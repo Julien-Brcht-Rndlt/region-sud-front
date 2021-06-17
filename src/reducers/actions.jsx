@@ -1,3 +1,2 @@
-export const ADD_ORG = 'add-org';
-export const ADD_ORG_EVENT = 'add-event';
+export const ADD_INFOS = 'add-infos';
 export const COMPLETE = 'complete';
