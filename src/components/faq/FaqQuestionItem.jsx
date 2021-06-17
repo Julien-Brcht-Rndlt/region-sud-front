@@ -1,15 +1,27 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 export const StyledContainerQuestions = styled.div`
-  width: 100%;
-  height: 400px;
-  border: 5px solid orange;
+  margin-left: 25px;
+  padding: 8px;
+`;
+export const StyledLinesQuestions = styled.div`
+  width: 80%;
+  border: solid 1px black;
 `;
 
-export default function FaqQuestionItem() {
+export default function FaqQuestionItem({ title }) {
   return (
-    <>
-      <StyledContainerQuestions />
-    </>
+    <StyledContainerQuestions>
+      <h5>{title}</h5>
+      <StyledLinesQuestions />
+    </StyledContainerQuestions>
   );
 }
+FaqQuestionItem.propTypes = {
+  title: PropTypes.string,
+};
+
+FaqQuestionItem.defaultProps = {
+  title: '',
+};

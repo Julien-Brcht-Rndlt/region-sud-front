@@ -7,7 +7,7 @@ import { StyledTitleH2Black } from '../../styles/genericStyles/GenericTitles';
 export const StyledContainerCol = styled(Flex)`
   width: auto;
   height: 250px;
-  border: 5px solid black;
+  margin-left: 50px;
 `;
 
 export const StyledColContact = styled.div`
@@ -15,18 +15,15 @@ export const StyledColContact = styled.div`
   height: 250px;
   padding: 25px;
   font-size: 20px;
-  border: 5px solid black;
 `;
 
 export const StyledColPhone = styled(FlexCol)`
   width: 30%;
-  border: 5px solid black;
 `;
 
 export const StyledColMail = styled(FlexCol)`
   width: 30%;
   height: 130px;
-  border: 5px solid black;
   margin: top;
 `;
 

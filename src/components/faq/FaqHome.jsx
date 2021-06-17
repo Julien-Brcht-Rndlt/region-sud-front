@@ -2,23 +2,29 @@ import styled from 'styled-components';
 import FaqHeader from './FaqHeader';
 import FaqFooter from './FaqFooter';
 import { StyledTitleH2Black } from '../../styles/genericStyles/GenericTitles';
-import FaqQuestionItem from './FaqQuestionItem';
+import FaqQuestionsList from './FaqQuestionsList';
 
 export const StyledFaqHomeContainer = styled.div`
   display: flex;
-  padding: 25px;
-  border: 5px solid red;
   width: 100%;
   height: 600px;
+`;
+
+export const StyledFaqTitleH2Container = styled.div`
+  padding: 25px;
+  height: 30px;
+  margin-left: 50px;
 `;
 
 export default function FaqFome() {
   return (
     <>
       <FaqHeader />
-      <StyledFaqHomeContainer>
+      <StyledFaqTitleH2Container>
         <StyledTitleH2Black>Foire aux questions</StyledTitleH2Black>
-        <FaqQuestionItem />
+      </StyledFaqTitleH2Container>
+      <StyledFaqHomeContainer>
+        <FaqQuestionsList />
       </StyledFaqHomeContainer>
       <FaqFooter />
     </>

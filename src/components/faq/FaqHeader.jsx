@@ -3,14 +3,14 @@ import FaqHeadPicture from '../../assets/img/FaqHeadPicture.png';
 
 export const StyledFaqHeaderContainer = styled.div`
   display: flex;
-  border: 5px solid green;
   width: auto;
-  height: 100px;
+  height: 80px;
   align-items: center;
+  margin-left: 50px;
 `;
 
 export const StyledHeadPicture = styled.img`
-  padding: 60px;
+  padding: 20px;
   height: 60px;
   width: 60px;
 `;
