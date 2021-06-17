@@ -8,7 +8,7 @@ export const StyledRequireContainer = styled(Flex)`
   @media ${device.mobileS}{
     flex-direction:column;
     display:flex;
-    width:300px;
+    width:320px;
   }
 
   @media ${device.tablet}{

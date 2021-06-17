@@ -3,18 +3,27 @@ import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitle
 import { FlexSpace } from '../../styles/generics/GenericContainers';
 import { StyledRoundedButton } from '../../styles/generics/GenericButtons';
 import RequireElmtsList from './RequireElmtsList';
-
-/*  const StyledTitleH4 = styled.h4`
-  font-size: 15px;
-  padding: 25px;
-  color: ${(props) => props.theme.blueFeatureColor};
-  font-family: ${(props) => props.theme.fontFamilyNormal};
-`;  */
+import { device } from '../../styles/theme';
 
 export const StyledBorderH1 = styled.div`
+    @media ${device.mobileS}{
+    width:10px;
+  }
+
+ @media ${device.tablet}{
   border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
   width: 80px;
   margin-top:50px;
+ }
+
+ @media ${device.laptop}{
+  border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+  width: 80px;
+  margin-top:50px;
+ }
+
+
+
 `;
 
 export const StyledColumnElmts = styled.div`
@@ -23,12 +32,23 @@ export const StyledColumnElmts = styled.div`
 
 export const StyledBoxButtonElement = styled(FlexSpace)`
   width: 60%;
-  padding: 70px;
+  padding: 20px;
 `;
 
 export const StyledReqTitleH1 = styled(StyledTitleH1)`
+  @media ${device.mobileS}{
+  height: 60px;
+  font-size:20px;
+   }
+   @media ${device.tablet}{
   height: 15px;
   font-size:25px;
+   }
+
+   @media ${device.laptop}{
+  height: 15px;
+  font-size:25px;
+   }
 `;
 
 export default function RequireInfos() {
