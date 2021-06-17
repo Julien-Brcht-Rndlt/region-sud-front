@@ -3,9 +3,9 @@ import FaqHeader from './FaqHeader';
 import FaqFooter from './FaqFooter';
 import { StyledTitleH6Black } from '../../styles/generics/GenericTitles';
 import FaqQuestionsList from './FaqQuestionsList';
+import { Flex } from '../../styles/generics/GenericContainers';
 
-export const StyledFaqContainerQuestions = styled.div`
-  display: flex;
+export const StyledFaqContainerQuestions = styled(Flex)`
   width: 100%;
   height: 410px;
 `;

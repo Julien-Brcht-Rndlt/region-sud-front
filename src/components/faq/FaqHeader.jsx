@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 import FaqHeadPicture from '../../assets/img/FaqHeadPicture.png';
+import { Flex } from '../../styles/generics/GenericContainers';
 
-export const StyledFaqHeaderContainer = styled.div`
-  display: flex;
+export const StyledFaqHeaderContainer = styled(Flex)`
   width: auto;
   height: 80px;
-  align-items: center;
   margin-left: 50px;
 `;
 
@@ -21,7 +20,7 @@ export const StyledTitleHelp = styled.h1`
 
 export default function FaqHeader() {
   return (
-    <StyledFaqHeaderContainer>
+    <StyledFaqHeaderContainer start>
       <StyledHeadPicture src={FaqHeadPicture} alt="HeadPciture" />
       <StyledTitleHelp>Aide</StyledTitleHelp>
     </StyledFaqHeaderContainer>
