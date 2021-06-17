@@ -59,7 +59,7 @@ export default function Testimonials() {
         ))}
       </TestimonialsContainer>
       <StyledButtonTestimonial center>
-        <StyledButton width="20rem" height="60px">
+        <StyledButton width="15%" height="70%">
           Je m&apos;engage moi aussi !
         </StyledButton>
       </StyledButtonTestimonial>

@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import {
   StyledInfosFormsContainer,
@@ -12,6 +12,8 @@ import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitle
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import OrgContext from '../../contexts/OrgContext';
 import EventContext from '../../contexts/EventContext';
+/* import formReducer from '../../reducers/formReducer'; */
+import { ADD_INFOS /* , COMPLETE */ } from '../../reducers/actions';
 import InfosEvalInput from './InfosEvalInput';
 import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';
@@ -34,24 +36,47 @@ export const StyledSpaceBetween = styled.div`
   height: 20px;
 `;
 
+const mandatoryFields = ['orgName',
+'orgMembers',
+'eventName',
+'eventAddr',
+'eventLoc',
+'eventLoc',
+'eventStart',
+'eventEnd',
+];
+
 export default function InfosForm() {
+  const [active, setActive] = useState(false);
   const locations = ['Abries', 'Marseille', 'Toulon', 'Hyeres'];
   const sportLevels = ['Amateur', 'Expert'];
-  const { orgContext } = useContext(OrgContext);
-  if (orgContext) { console.log('org context loaded'); }
-  const { eventContext } = useContext(EventContext);
-  if (eventContext) { console.log('event context loaded'); }
+  const { org, dispatch } = useContext(OrgContext);
+  const { orgEvent } = useContext(EventContext);
+  const [orgForm, setOrgForm] = useState(org);
+  const [orgEventForm, setEventForm] = useState(orgEvent);
 
-  const [orgForm, setOrgForm] = useState(orgContext);
-  const [eventForm, setEventForm] = useState(eventContext);
+  const infosForm = {
+    org: orgForm,
+    orgEvent: orgEventForm,
+    active,
+    setActive,
+  };
+
+  useEffect(() => {
+    const filledFields = Object.keys(orgForm).concat(Object.keys(orgEventForm));
+    if (mandatoryFields.every((field) => filledFields.includes(field))) {
+      setActive(true);
+    }
+  }, [orgForm, orgEventForm]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    dispatch({ type: ADD_INFOS, payload: { org: orgForm, orgEvent: orgEventForm } });
   };
 
   return (
     <StyledInfosFormsContainer>
-      <form onSubmit={(event) => handleSubmit(event)}>
+      <form onSubmit={() => handleSubmit()}>
         <StyledTitleH4>Informations préalables</StyledTitleH4>
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>
@@ -63,14 +88,14 @@ export default function InfosForm() {
               <StyledSpaceBetween />
               <InfosEvalInput
                 inputName="orgName"
-                infosForm={orgForm}
+                infosForm={infosForm.org}
                 setInfosForm={setOrgForm}
                 label="Nom de la structure"
                 wide
               />
               <InfosEvalInput
                 inputName="orgMembers"
-                infosForm={orgForm}
+                infosForm={infosForm.org}
                 setInfosForm={setOrgForm}
                 label="Nombre de personnes composant la structure"
                 wide
@@ -85,21 +110,21 @@ export default function InfosForm() {
             <StyledSpaceBetween />
             <InfosEvalInput
               inputName="eventName"
-              infosForm={eventForm}
+              infosForm={infosForm.orgEvent}
               setInfosForm={setEventForm}
               label="Nom de la manisfestation sportive"
               wide
             />
             <InfosEvalInput
               inputName="eventStaff"
-              infosForm={eventForm}
+              infosForm={infosForm.orgEvent}
               setInfosForm={setEventForm}
               label="Nombre de participants"
             />
             <Flex start>
               <InfosEvalInput
                 inputName="eventAddr"
-                infosForm={eventForm}
+                infosForm={infosForm.orgEvent}
                 setInfosForm={setEventForm}
                 label="Adresse de la manifestation"
               />
@@ -107,7 +132,7 @@ export default function InfosForm() {
             <Flex start>
               <InfosEvalDropdown
                 elmtFormName="eventLoc"
-                infosForm={eventForm}
+                infosForm={infosForm.orgEvent}
                 setInfosForm={setEventForm}
                 label="Lieu"
                 options={locations}
@@ -117,13 +142,13 @@ export default function InfosForm() {
             <Flex start>
               <InfosEvalInput
                 inputName="activity"
-                infosForm={eventForm}
+                infosForm={infosForm.orgEvent}
                 setInfosForm={setEventForm}
                 label="Type d'activité sportive"
               />
               <InfosEvalDropdown
                 elmtFormName="sportLevels"
-                infosForm={eventForm}
+                infosForm={infosForm.orgEvent}
                 setInfosForm={setEventForm}
                 label="Niveau sportif"
                 options={sportLevels}
@@ -132,13 +157,13 @@ export default function InfosForm() {
             <Flex start>
               <InfosEvalDatepicker
                 elmtFormName="eventStart"
-                infosForm={eventForm}
+                infosForm={infosForm.orgEvent}
                 setInfosForm={setEventForm}
                 label="Date de début"
               />
               <InfosEvalDatepicker
                 elmtFormName="eventEnd"
-                infosForm={eventForm}
+                infosForm={infosForm.orgEvent}
                 setInfosForm={setEventForm}
                 label="Date de fin"
               />
@@ -146,7 +171,7 @@ export default function InfosForm() {
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
         <StyledButtonContainer>
-          <StyledButton type="submit" width="25rem" height="4rem">
+          <StyledButton onClick={(event) => handleSubmit(event)} type="submit" width="25rem" height="4rem" disabled={!active}>
             Suivant
           </StyledButton>
         </StyledButtonContainer>

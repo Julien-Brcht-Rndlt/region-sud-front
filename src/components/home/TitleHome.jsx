@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-import {
-  StyledTitleH1,
-  StyledTitleP,
-} from '../../styles/generics/GenericTitles';
+import { StyledTitleH1, StyledTitleP } from '../../styles/generics/GenericTitles';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 
 export const StyledTitleWrapper = styled.div`
@@ -36,7 +33,7 @@ export default function TitleHome() {
           <li>Lorem ipsum dolor sit amet</li>
           <li>sit amet, consectetur adipiscing elit</li>
         </ul>
-        <StyledButton width="20rem" height="60px">
+        <StyledButton width="15em" height="">
           J&#39;évalue mon évènement
         </StyledButton>
       </StyledTitleP>

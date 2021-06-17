@@ -5,8 +5,14 @@ export const StyledTitleH1 = styled.h1`
 `;
 
 export const StyledTitleH2 = styled.h2`
- ${(props) => props.theme.titleFont};
- font-size: 1.7rem;
+  ${(props) => props.theme.titleFont};
+  font-size: 1.7rem;
+`;
+
+export const StyledTitleH6Black = styled.h6`
+  ${(props) => props.theme.titleFont};
+  font-size: 1.7rem;
+  color: ${(props) => props.theme.blackFeatureColor};
 `;
 
 export const StyledTitleH3 = styled.h3`
