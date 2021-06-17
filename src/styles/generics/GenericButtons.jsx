@@ -9,7 +9,7 @@ export const StyledButton = styled.button`
   border: ${(props) => (props.glassy ? `solid 1px ${props.theme.blueFeatureColor}` : 'none')};
   font-size: 1.2em;
   cursor: pointer;
-  margin:10px;
+  margin: 10px;
   &:hover {
     background-color: ${(props) => (props.glassy ? props.theme.blueFeatureColor : props.theme.NavyBlueFeatureColor)};
     color: ${(props) => (props.glassy ? props.theme.secondaryFeatureColor : props.theme.yellowFeatureColor)};
@@ -19,4 +19,6 @@ export const StyledButton = styled.button`
 
 export const StyledRoundedButton = styled(StyledButton)`
   border-radius: 10px;
+  width: 315px;
+  height: 60px;
 `;

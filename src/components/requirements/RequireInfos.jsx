@@ -20,8 +20,8 @@ export const StyledColumnElmts = styled.div`
 `;
 
 export const StyledBoxButtonElement = styled(FlexSpace)`
-  width: 60%;
   padding: 70px;
+  width: auto;
 `;
 
 export const StyledReqTitleH1 = styled(StyledTitleH1)`
