@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useReducer } from 'react';
 import styled from 'styled-components';
 import {
   StyledInfosFormsContainer,
@@ -12,6 +12,8 @@ import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitle
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import OrgContext from '../../contexts/OrgContext';
 import EventContext from '../../contexts/EventContext';
+import formReducer from '../../reducers/formReducer';
+import { ADD_ORG, ADD_ORG_EVENT, COMPLETE } from '../../reducers/actions';
 import InfosEvalInput from './InfosEvalInput';
 import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';
@@ -38,15 +40,22 @@ export default function InfosForm() {
   const locations = ['Abries', 'Marseille', 'Toulon', 'Hyeres'];
   const sportLevels = ['Amateur', 'Expert'];
   const { orgContext } = useContext(OrgContext);
-  if (orgContext) { console.log('org context loaded'); }
   const { eventContext } = useContext(EventContext);
-  if (eventContext) { console.log('event context loaded'); }
 
   const [orgForm, setOrgForm] = useState(orgContext);
-  const [eventForm, setEventForm] = useState(eventContext);
+  const [orgEventForm, setEventForm] = useState(eventContext);
+
+  const infosForm = {
+    org: orgContext,
+    event: eventContext,
+  };
+
+  const [dispatch] = useReducer(formReducer, infosForm);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    dispatch({ type: ADD_ORG, payload: orgForm });
+    dispatch({ type: ADD_ORG_EVENT, payload: orgEventForm });
   };
 
   return (
@@ -85,21 +94,21 @@ export default function InfosForm() {
             <StyledSpaceBetween />
             <InfosEvalInput
               inputName="eventName"
-              infosForm={eventForm}
+              infosForm={orgEventForm}
               setInfosForm={setEventForm}
               label="Nom de la manisfestation sportive"
               wide
             />
             <InfosEvalInput
               inputName="eventStaff"
-              infosForm={eventForm}
+              infosForm={orgEventForm}
               setInfosForm={setEventForm}
               label="Nombre de participants"
             />
             <Flex start>
               <InfosEvalInput
                 inputName="eventAddr"
-                infosForm={eventForm}
+                infosForm={orgEventForm}
                 setInfosForm={setEventForm}
                 label="Adresse de la manifestation"
               />
@@ -107,7 +116,7 @@ export default function InfosForm() {
             <Flex start>
               <InfosEvalDropdown
                 elmtFormName="eventLoc"
-                infosForm={eventForm}
+                infosForm={orgEventForm}
                 setInfosForm={setEventForm}
                 label="Lieu"
                 options={locations}
@@ -117,13 +126,13 @@ export default function InfosForm() {
             <Flex start>
               <InfosEvalInput
                 inputName="activity"
-                infosForm={eventForm}
+                infosForm={orgEventForm}
                 setInfosForm={setEventForm}
                 label="Type d'activité sportive"
               />
               <InfosEvalDropdown
                 elmtFormName="sportLevels"
-                infosForm={eventForm}
+                infosForm={orgEventForm}
                 setInfosForm={setEventForm}
                 label="Niveau sportif"
                 options={sportLevels}
@@ -132,13 +141,13 @@ export default function InfosForm() {
             <Flex start>
               <InfosEvalDatepicker
                 elmtFormName="eventStart"
-                infosForm={eventForm}
+                infosForm={orgEventForm}
                 setInfosForm={setEventForm}
                 label="Date de début"
               />
               <InfosEvalDatepicker
                 elmtFormName="eventEnd"
-                infosForm={eventForm}
+                infosForm={orgEventForm}
                 setInfosForm={setEventForm}
                 label="Date de fin"
               />
