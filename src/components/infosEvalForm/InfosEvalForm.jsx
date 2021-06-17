@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import {
   StyledInfosFormsContainer,
@@ -36,24 +36,38 @@ export const StyledSpaceBetween = styled.div`
   height: 20px;
 `;
 
+const mandatoryFields = ['orgName',
+'orgMembers',
+'eventName',
+'eventAddr',
+'eventLoc',
+'eventLoc',
+/* 'eventStart',
+'eventEnd', */
+];
+
 export default function InfosForm() {
   const [active, setActive] = useState(true);
-  const [count, setCount] = useState(0);
   const locations = ['Abries', 'Marseille', 'Toulon', 'Hyeres'];
   const sportLevels = ['Amateur', 'Expert'];
   const { org, dispatch } = useContext(OrgContext);
   const { orgEvent } = useContext(EventContext);
-
   const [orgForm, setOrgForm] = useState(org);
   const [orgEventForm, setEventForm] = useState(orgEvent);
 
   const infosForm = {
     org: orgForm,
     orgEvent: orgEventForm,
-    requiredFields,
     active,
     setActive,
   };
+
+  useEffect(() => {
+    const filledFields = Object.keys(orgForm).concat(Object.keys(orgEventForm));
+    if (mandatoryFields.every((field) => filledFields.includes(field))) {
+      setActive(true);
+    }
+  }, [orgForm, orgEventForm]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
