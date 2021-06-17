@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { FlexCol } from './genericStyles/GenericContainers';
-import { IconeImg } from './genericStyles/GenericComponents';
+import { FlexCol } from './generics/GenericContainers';
+import { IconeImg } from './generics/GenericComponents';
 
 export const TestimonialContainer = styled(FlexCol)`
   width: 350px;

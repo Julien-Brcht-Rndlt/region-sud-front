@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { StyledTitleH1 } from '../../styles/genericStyles/GenericTitles';
-import { FlexSpace } from '../../styles/genericStyles/GenericContainers';
-import { StyledRoundedButton } from '../../styles/genericStyles/StyledButtons';
+import { StyledTitleH1 } from '../../styles/generics/GenericTitles';
+import { FlexSpace } from '../../styles/generics/GenericContainers';
+import { StyledRoundedButton } from '../../styles/generics/GenericButtons';
 import RequireElmtsList from './RequireElmtsList';
 
 const StyledTitleH4 = styled.h4`

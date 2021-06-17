@@ -1,6 +1,8 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { StyledTitleH3, StyledTitleH4 } from '../../styles/genericStyles/GenericTitles';
+import EvalContext from '../../contexts/EvalContext';
+import { StyledTitleH3, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 
 export const StyledSubtitleH4 = styled.h4`
   color: ${(props) => props.theme.blueFeatureColor};
@@ -9,6 +11,8 @@ export const StyledSubtitleH4 = styled.h4`
 `;
 
 export default function EvalThemeScoring({ themeTitle, themeScore, scoreIcone }) {
+  const { evalContext } = useContext(EvalContext);
+  if (evalContext) { console.log('eval context loaded'); }
     return (
       <div>
         <StyledTitleH3>Votre indice</StyledTitleH3>
