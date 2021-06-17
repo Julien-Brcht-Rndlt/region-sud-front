@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import FaqHeader from './FaqHeader';
 import FaqFooter from './FaqFooter';
-import { StyledTitleH2Black } from '../../styles/genericStyles/GenericTitles';
+import { StyledTitleH6Black } from '../../styles/genericStyles/GenericTitles';
 import FaqQuestionsList from './FaqQuestionsList';
 
-export const StyledFaqHomeContainer = styled.div`
+export const StyledFaqContainerQuestions = styled.div`
   display: flex;
   width: 100%;
-  height: 600px;
+  height: 410px;
 `;
 
 export const StyledFaqTitleH2Container = styled.div`
   padding: 25px;
-  height: 30px;
+  height: 100px;
   margin-left: 50px;
 `;
 
@@ -21,11 +21,11 @@ export default function FaqFome() {
     <>
       <FaqHeader />
       <StyledFaqTitleH2Container>
-        <StyledTitleH2Black>Foire aux questions</StyledTitleH2Black>
+        <StyledTitleH6Black>Foire aux questions</StyledTitleH6Black>
       </StyledFaqTitleH2Container>
-      <StyledFaqHomeContainer>
+      <StyledFaqContainerQuestions>
         <FaqQuestionsList />
-      </StyledFaqHomeContainer>
+      </StyledFaqContainerQuestions>
       <FaqFooter />
     </>
   );

@@ -4,6 +4,8 @@ import FaqQuestionItem, { StyledContainerQuestions } from './FaqQuestionItem';
 export const StyledContainerQuestionsList = styled.div`
   width: 100%;
   height: auto;
+  overflow: hidden;
+  overflow-y: scroll;
 `;
 
 export default function FaqQuestionsList() {

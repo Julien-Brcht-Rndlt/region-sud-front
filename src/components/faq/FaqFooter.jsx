@@ -2,28 +2,29 @@ import styled from 'styled-components';
 import { Flex, FlexCol } from '../../styles/genericStyles/GenericContainers';
 import Phone from '../../assets/img/FaqPhonePicture.png';
 import Mail from '../../assets/img/FaqLetterPicture.png';
-import { StyledTitleH2Black } from '../../styles/genericStyles/GenericTitles';
+import { StyledTitleH6Black } from '../../styles/genericStyles/GenericTitles';
 
 export const StyledContainerCol = styled(Flex)`
   width: auto;
-  height: 250px;
+  height: 300px;
   margin-left: 50px;
 `;
 
-export const StyledColContact = styled.div`
+export const StyledColContact = styled(FlexCol)`
   width: 40%;
   height: 250px;
-  padding: 25px;
   font-size: 20px;
+ margin-left: 25px;
 `;
 
 export const StyledColPhone = styled(FlexCol)`
   width: 30%;
+  height: 390px;
 `;
 
 export const StyledColMail = styled(FlexCol)`
   width: 30%;
-  height: 130px;
+  height: 285px;
   margin: top;
 `;
 
@@ -31,8 +32,8 @@ export default function FaqFooter() {
   return (
     <>
       <StyledContainerCol>
-        <StyledColContact>
-          <StyledTitleH2Black>Contactez nous !</StyledTitleH2Black>
+        <StyledColContact stretch>
+          <StyledTitleH6Black>Contactez nous !</StyledTitleH6Black>
           <p>Vous ne trouvez pas la réponse à votre question ?</p>
           <p>Contactez nous.</p>
         </StyledColContact>

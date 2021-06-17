@@ -1,5 +1,14 @@
+/* import React, { useState } from 'react'; */
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import 'react-accessible-accordion/dist/fancy-example.css';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
 
 export const StyledContainerQuestions = styled.div`
   margin-left: 25px;
@@ -9,13 +18,26 @@ export const StyledLinesQuestions = styled.div`
   width: 80%;
   border: solid 1px black;
 `;
+export const SyledAccordionContainer = styled.div`
+  display: block;
+`;
 
 export default function FaqQuestionItem({ title }) {
   return (
-    <StyledContainerQuestions>
-      <h5>{title}</h5>
-      <StyledLinesQuestions />
-    </StyledContainerQuestions>
+    <SyledAccordionContainer>
+      <Accordion allowZeroExpanded>
+        <AccordionItem>
+          <AccordionItemHeading>
+            <AccordionItemButton>
+              {title}
+            </AccordionItemButton>
+          </AccordionItemHeading>
+          <AccordionItemPanel>
+            <p>Exercitation in fugiat est ut ad ea cupida.</p>
+          </AccordionItemPanel>
+        </AccordionItem>
+      </Accordion>
+    </SyledAccordionContainer>
   );
 }
 FaqQuestionItem.propTypes = {

@@ -9,7 +9,7 @@ export const StyledTitleH2 = styled.h2`
   font-size: 1.7rem;
 `;
 
-export const StyledTitleH2Black = styled.h2`
+export const StyledTitleH6Black = styled.h6`
   ${(props) => props.theme.titleFont};
   font-size: 1.7rem;
   color: ${(props) => props.theme.blackFeatureColor};
