@@ -18,13 +18,10 @@ export const StyledLinesQuestions = styled.div`
   width: 80%;
   border: solid 1px black;
 `;
-export const SyledAccordionContainer = styled(Block)`
-  display: block;
-`;
 
 export default function FaqQuestionItem({ title }) {
   return (
-    <SyledAccordionContainer>
+    <Block>
       <Accordion allowZeroExpanded>
         <AccordionItem>
           <AccordionItemHeading>
@@ -35,7 +32,7 @@ export default function FaqQuestionItem({ title }) {
           </AccordionItemPanel>
         </AccordionItem>
       </Accordion>
-    </SyledAccordionContainer>
+    </Block>
   );
 }
 FaqQuestionItem.propTypes = {
