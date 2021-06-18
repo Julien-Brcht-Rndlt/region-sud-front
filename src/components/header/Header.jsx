@@ -3,6 +3,7 @@ import { Flex } from '../../styles/generics/GenericContainers';
 import Logo from '../Logo';
 import NavBar from './NavBar';
 import SiteName from './SiteName';
+import logoRegion from '../../assets/img/logoRegion.png';
 
 export const StyledHeader = styled(Flex)`
   width: auto;
@@ -19,12 +20,7 @@ export default function Header() {
       <StyledHeader valign="center">
         <SiteName />
         <NavBar />
-        <Logo
-          src="./assets/Logo_region_sud.png"
-          width={191}
-          height={109}
-          alt="logo région sud"
-        />
+        <Logo src={logoRegion} width={191} height={109} alt="logo région sud" />
       </StyledHeader>
     </>
   );
