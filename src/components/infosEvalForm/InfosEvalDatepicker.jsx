@@ -7,10 +7,18 @@ import {
   StyledFormItemLabel,
 } from '../../styles/generics/StyledFormItem';
 import 'react-datepicker/dist/react-datepicker.css';
+import { device } from '../../styles/theme';
 
 const StyledDatePickerInfosForm = styled(DatePicker)`
+  @media ${device.mobileS}{
+  padding: 5px;
+  border: 1px solid ${(props) => props.theme.blueFeatureColor};
+  }
+
+  @media ${device.laptop}{
   padding: 15px;
   border: 1px solid ${(props) => props.theme.blueFeatureColor};
+  }
 `;
 
 export default function InfosEvalDatePicker({

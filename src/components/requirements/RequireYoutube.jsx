@@ -6,10 +6,17 @@ import { StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import { device } from '../../styles/theme';
 
 export const StyledYoutubeBox = styled(FlexCol)`
+  @media ${device.laptopL}{
+  width: auto;
+  height: auto;
+ // padding-top: 100px;
+  padding-left: 10px;
+  }
+
   @media ${device.laptop}{
   width: auto;
   height: auto;
-  padding-top: 100px;
+ // padding-top: 100px;
   padding-left: 10px;
   }
 
@@ -47,6 +54,12 @@ export const FrameContainer = styled.iframe`
     }
 
     @media ${device.laptop}{
+    width: 600px;
+    height: 450px;
+    padding-left: 0px;
+    }
+
+    @media ${device.laptopL}{
     width: 600px;
     height: 450px;
     padding-left: 0px;
