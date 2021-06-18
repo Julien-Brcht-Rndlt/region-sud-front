@@ -26,7 +26,27 @@ export const StyledBorderYellowH1 = styled.div`
 `;
 
 export const StyledTitleH2Form = styled(StyledTitleH2)`
-//  height: 10px;
+ @media ${device.mobileS}{
+      font-size:13px;
+      width:200px;
+    }
+
+    @media ${device.mobileM}{
+      font-size:13px;
+      width:230px;
+    }
+
+    @media ${device.mobileL}{
+      font-size:16px;
+      width:280px;
+    }
+    @media ${device.tablet}{
+      font-size:23px;
+    }
+
+    @media ${device.desktop}{
+      font-size:25px;
+    }
 `;
 export const StyledContainerYellow = styled.div`
   display: flex;
