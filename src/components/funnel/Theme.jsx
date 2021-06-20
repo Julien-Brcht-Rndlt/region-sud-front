@@ -9,12 +9,10 @@ import help from '../../assets/img/help.png';
 import { device } from '../../styles/theme';
 
 export const ThemeContainer = styled.div`
-  background-color: #ffffff;
+  background-color: ${(props) => props.theme.secondaryFeatureColor};
 `;
 
-export const QuestionListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+export const QuestionListContainer = styled(FlexCol)`
   flex-wrap: nowrap;
 `;
 
@@ -74,12 +72,12 @@ export const StyledBorderYellow = styled.div`
 
   @media ${device.laptop}{
     display: flex;
-  border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
-  width: 50px;
-  padding-right: 30px;
-  margin: 65px;
-  margin-left: 45px;
-  position: absolute;
+    border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+    width: 50px;
+    padding-right: 30px;
+    margin: 65px;
+    margin-left: 45px;
+    position: absolute;
   }  
 `;
 
@@ -96,7 +94,6 @@ export const StyledContainerYellow = styled.div`
 `;
 
 export default function Theme({ title, questions, icon }) {
-  /* const [theme] = useState(funnel.themes[id]); */
   return (
     <>
       <ContainersubtitleTheme>

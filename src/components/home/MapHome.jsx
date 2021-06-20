@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import { Flex } from '../../styles/generics/GenericContainers';
 
-export const StyledMapHome = styled.div`
-  display: flex;
+export const StyledMapHome = styled(Flex)`
   margin: 10px 0 10px 50px;
 `;
 export const StyledIframe = styled.iframe`

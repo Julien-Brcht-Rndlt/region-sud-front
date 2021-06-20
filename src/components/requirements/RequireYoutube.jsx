@@ -1,4 +1,3 @@
-//  import YouTube from 'react-youtube';
 import styled from 'styled-components';
 import { FlexCol } from '../../styles/generics/GenericContainers';
 import { StyledRoundedButton } from '../../styles/generics/GenericButtons';
@@ -9,14 +8,12 @@ export const StyledYoutubeBox = styled(FlexCol)`
   @media ${device.laptopL}{
   width: auto;
   height: auto;
- // padding-top: 100px;
   padding-left: 10px;
   }
 
   @media ${device.laptop}{
   width: auto;
   height: auto;
- // padding-top: 100px;
   padding-left: 10px;
   }
 

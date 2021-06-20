@@ -11,13 +11,11 @@ export const StyledTitleTheme = styled.h1`
 const ThemeList = () => {
   const { funnel } = React.useContext(FunnelContext);
   return (
-    <>
-      <div>
-        {funnel.themes.map((theme) => (
-          <Theme key={theme.id} {...theme} />
-        ))}
-      </div>
-    </>
+    <div>
+      {funnel.themes.map((theme) => (
+        <Theme key={theme.id} {...theme} />
+      ))}
+    </div>
   );
 };
 
