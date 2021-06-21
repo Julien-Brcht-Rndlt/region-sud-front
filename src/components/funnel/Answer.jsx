@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import { StyledInfosInput } from '../../styles/StyledInfosForms';
 
 export const AnswerComponent = styled.div`
-  margin:10px;
+  margin: 10px;
 `;
 
 export const StyledAnswerLabel = styled.span`
-font-family: ${(props) => props.theme.fontFamilyFeature};
-padding-left:6px;`;
+  font-family: ${(props) => props.theme.fontFamilyFeature};
+  padding-left: 6px;
+`;
 
 export const StyledAnswerInput = styled(StyledInfosInput)`
-width:60px;
+  width: 60px;
 `;
 
 const MultipleChoiceAnswer = ({ label }) => (
@@ -19,7 +20,7 @@ const MultipleChoiceAnswer = ({ label }) => (
     <input id="multiansw" type="checkbox" value="" />
     <StyledAnswerLabel htmlFor="multiansw">{label}</StyledAnswerLabel>
   </>
- );
+);
 
 const OneChoiceAnswer = ({ label }) => (
   <div>
@@ -28,25 +29,19 @@ const OneChoiceAnswer = ({ label }) => (
   </div>
 );
 
- const InputAnswer = ({ label }) => (
-   <>
-     <StyledAnswerInput id="inansw" type="text" value="" />
-     <StyledAnswerLabel htmlFor="inansw">{label}</StyledAnswerLabel>
-   </>
+const InputAnswer = ({ label }) => (
+  <>
+    <StyledAnswerInput id="inansw" type="text" value="" />
+    <StyledAnswerLabel htmlFor="inansw">{label}</StyledAnswerLabel>
+  </>
 );
 
 export default function Answer({ answer }) {
   return (
     <AnswerComponent>
-      {
-        answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer label={answer.label} />
-      }
-      {
-        answer.answ_type === 'one_choice' && <OneChoiceAnswer label={answer.label} />
-      }
-      {
-        answer.answ_type === 'input_answ' && <InputAnswer label={answer.label} />
-      }
+      {answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer label={answer.label} />}
+      {answer.answ_type === 'one_choice' && <OneChoiceAnswer label={answer.label} />}
+      {answer.answ_type === 'input_answ' && <InputAnswer label={answer.label} />}
     </AnswerComponent>
   );
 }

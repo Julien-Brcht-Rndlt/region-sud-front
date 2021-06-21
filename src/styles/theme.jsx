@@ -53,6 +53,7 @@ const theme = {
   yellowFeatureColor: '#feca5a',
   NavyBlueFeatureColor: '#000080',
   blackFeatureColor: '#000000',
+  whiteFeatureColor: '#e7ecf4',
 
   // lines
   lineHeight: 1.5,

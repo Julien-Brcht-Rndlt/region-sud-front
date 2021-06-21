@@ -27,8 +27,6 @@ export const StyledRequireContainer = styled(Flex)`
   }
 `;
 
-export const StyledRequireContainerRigth = styled.div``;
-
 export default function RequireContainer() {
   return (
     <StyledRequireContainer>
