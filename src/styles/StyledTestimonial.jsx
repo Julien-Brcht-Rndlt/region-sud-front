@@ -5,22 +5,18 @@ import { device } from './theme';
 
 export const TestimonialContainer = styled(FlexCol)`
 @media ${device.mobileS}{
- //   width: 320px;
     background-color: ${(props) => props.theme.lightGreyFeatureColor};
     }
 
 @media ${device.mobileM}{
-  //   width: 380px;
      background-color: ${(props) => props.theme.lightGreyFeatureColor};
     }
 
     @media ${device.mobileL}{
-    //  width: 429px;
       background-color: ${(props) => props.theme.lightGreyFeatureColor};
     }
 
     @media ${device.tablet}{
-    //  width: 540px;
       background-color: ${(props) => props.theme.lightGreyFeatureColor};
     }
 
@@ -28,7 +24,6 @@ export const TestimonialContainer = styled(FlexCol)`
       width: 350px;
     background-color: ${(props) => props.theme.lightGreyFeatureColor};
     }  
-
 `;
 
 export const TestimonialAvatar = styled(IconeImg)`
