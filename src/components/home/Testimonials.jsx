@@ -1,8 +1,27 @@
+import styled from 'styled-components';
+import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
 import Testimonial from './Testimonial';
-import {
-  TestimonialsContainer,
-  TestimonialsTitle,
-} from '../../styles/StyledTestimonials';
+import { StyledButton } from '../../styles/generics/GenericButtons';
+import { TestimonialsContainer, TestimonialsTitle } from '../../styles/StyledTestimonials';
+
+export const StyledButtonTestimonial = styled(Flex)`
+  height: 90px;
+  width: auto;
+  background-color: ${(props) => props.theme.lightGreyFeatureColor};
+  padding: 50px;
+`;
+export const StyledBorderYellowH1 = styled.div`
+  border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+  height: 10px;
+  padding-right: 90px;
+  margin: 65px;
+  margin-left: 145px;
+  position: absolute;
+`;
+
+export const StyledContainerYellow = styled(FlexCol)`
+  width: 100%;
+`;
 
 export default function Testimonials() {
   const testimonials = [
@@ -28,14 +47,20 @@ export default function Testimonials() {
 
   return (
     <>
-      <div>
+      <StyledContainerYellow>
         <TestimonialsTitle>ILS L&apos;ONT UTILIS&Eacute;</TestimonialsTitle>
-      </div>
+        <StyledBorderYellowH1 />
+      </StyledContainerYellow>
       <TestimonialsContainer>
         {testimonials.map((testimony) => (
           <Testimonial {...testimony} />
         ))}
       </TestimonialsContainer>
+      <StyledButtonTestimonial center>
+        <StyledButton width="15%" height="70%">
+          Je m&apos;engage moi aussi !
+        </StyledButton>
+      </StyledButtonTestimonial>
     </>
   );
 }

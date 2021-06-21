@@ -16,7 +16,7 @@ export default function NavBar() {
     {
       id: 3,
       content: 'Etre accompagné',
-      path: '/',
+      path: '/FaqHome',
     },
     {
       id: 4,
@@ -26,9 +26,11 @@ export default function NavBar() {
   ];
   return (
     <StyledNavBar>
-      {navbarLinks.map((link) => (
-        <NavBarItem id={link.id} path={link.path} content={link.content} />
-      ))}
+      <ul>
+        {navbarLinks.map((link) => (
+          <NavBarItem id={link.id} path={link.path} content={link.content} />
+        ))}
+      </ul>
     </StyledNavBar>
   );
 }

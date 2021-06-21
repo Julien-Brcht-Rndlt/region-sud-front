@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../theme';
 
 export const StyledButton = styled.button`
   color: ${(props) => (props.glassy ? props.theme.blueFeatureColor : props.theme.secondaryFeatureColor)};
@@ -9,10 +10,45 @@ export const StyledButton = styled.button`
   border: ${(props) => (props.glassy ? `solid 1px ${props.theme.blueFeatureColor}` : 'none')};
   font-size: 1.2em;
   cursor: pointer;
+  margin: 10px;
   &:hover {
     background-color: ${(props) => (props.glassy ? props.theme.blueFeatureColor : props.theme.NavyBlueFeatureColor)};
     color: ${(props) => (props.glassy ? props.theme.secondaryFeatureColor : props.theme.yellowFeatureColor)};
     transition: 0.4s;
+  }
+  @media ${device.mobileS} {
+    width: 260px;
+    height: 50px;
+    font-size: 12px;
+    padding: 5px;
+  }
+  @media ${device.mobileM} {
+    width: 350px;
+    height: 60px;
+    font-size: 15px;
+    padding: 5px;
+  }
+  @media ${device.mobileL} {
+    height: 50px;
+    font-size: 15px;
+    padding: 5px;
+  }
+  @media ${device.tablet} {
+    height: 50px;
+    font-size: 18px;
+    padding: 5px;
+  }
+  @media ${device.laptop} {
+    height: 65px;
+    font-size: 20px;
+  }
+  @media ${device.laptopL} {
+    height: 70px;
+    font-size: 20px;
+  }
+  @media ${device.desktop} {
+    height: 70px;
+    font-size: 20px;
   }
 `;
 

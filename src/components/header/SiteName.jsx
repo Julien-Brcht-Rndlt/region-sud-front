@@ -1,16 +1,16 @@
 import styled from 'styled-components';
+import { Flex } from '../../styles/generics/GenericContainers';
 
-export const StyledSiteName = styled.div`
-  display: flex;
+export const StyledSiteName = styled(Flex)`
   float: left;
   width: 30%;
   color: ${(props) => props.theme.secondaryFeatureColor};
   flex-direction: top;
 
   h1 {
-    font-size: 45px;
+    font-size: 40px;
     padding: 1px;
-    align-item: center;
+    align-items: center;
   }
 `;
 

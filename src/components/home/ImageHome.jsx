@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Flex } from '../../styles/genericStyles/GenericContainers';
+import { Flex } from '../../styles/generics/GenericContainers';
 import image from '../../assets/img/top_image.jpg';
 
 export const StyledImageHome = styled.img`

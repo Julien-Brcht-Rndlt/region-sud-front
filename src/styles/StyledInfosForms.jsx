@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import {
-  Flex,
-  Block,
-} from './genericStyles/GenericContainers';
+import { Flex, Block } from './generics/GenericContainers';
+import { device } from './theme';
 
 export const StyledInfosFormsContainer = styled(Block)`
   background-color: ${(props) => props.theme.greyFeatureColor};
@@ -12,9 +10,22 @@ export const StyledInfosFormsContainer = styled(Block)`
 `;
 
 export const StyledInfosFormsColsContainer = styled(Flex)`
-  justify-content: flex-start;
-  background-color: ${(props) => props.theme.greyFeatureColor};
-  width: 100%;
+  @media ${device.mobileS} {
+    flex-direction: column;
+    width: 320px;
+  }
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    width: 70%;
+  }
+
+  @media ${device.laptop} {
+    justify-content: flex-start;
+    flex-direction: row;
+    background-color: ${(props) => props.theme.greyFeatureColor};
+    width: 100%;
+  }
 `;
 
 export const StyledInfosFormsColContainer = styled.div`
@@ -22,11 +33,38 @@ export const StyledInfosFormsColContainer = styled.div`
 `;
 
 export const StyledInfosFormsColLeftContainer = styled(StyledInfosFormsColContainer)`
-  width: 55%;
+  @media ${device.mobileS} {
+    width: 300px;
+  }
+
+  @media ${device.tablet} {
+    width: 70%;
+  }
+
+  @media ${device.laptop} {
+    width: 55%;
+  }
 `;
 
 export const StyledButtonContainer = styled(Flex)`
   justify-content: center;
   padding-top: 30px;
   width: 80%;
+`;
+
+export const StyledInfosInput = styled.input`
+  border: 1px solid ${(props) => props.theme.blueFeatureColor};
+  background: ${(props) => props.theme.secondaryFeatureColor};
+  margin-bottom: 20px;
+
+  @media ${device.mobileS} {
+    padding: 5px 5px 5px 5px;
+    width: ${(props) => (props.wide ? '50%' : '40%')};
+    flex-wrap: wrap;
+  }
+  @media ${device.laptop} {
+    padding: 10px 15px 15px 15px;
+    width: ${(props) => (props.wide ? '100%' : '70%')};
+    margin-bottom: 20px;
+  }
 `;

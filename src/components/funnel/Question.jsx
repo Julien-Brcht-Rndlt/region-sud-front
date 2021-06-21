@@ -1,21 +1,53 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import QuestionTitle from './QuestionTitle';
 import AnswerList from './AnswerList';
+import { StyledTitleH3 } from '../../styles/generics/GenericTitles';
+import { Block } from '../../styles/generics/GenericContainers';
+import { device } from '../../styles/theme';
 
-export const StyledQuestionContainer = styled.div`
-  background-color: #e7ecf4;
-  height: 200px;
-`;
+export const StyledQuestionContainer = styled(Block)`
+  background-color: ${(props) => props.theme.whiteFeatureColor};
 
-export const StyledQuestionTitle = styled.h2`
-  color: ${(props) => props.theme.blueFeatureColor};
+  @media ${device.mobileS} {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 290px;
+    padding: 10px;
+  }
+
+  @media ${device.mobileL} {
+    margin-bottom: 12px;
+    margin-left: 12px;
+    width: 380px;
+    padding: 15px;
+  }
+
+  @media ${device.tablet} {
+    margin-bottom: 15px;
+    margin-left: 15px;
+    width: 700px;
+    padding: 15px;
+  }
+
+  @media ${device.laptop} {
+    margin-bottom: 30px;
+    margin-left: 40px;
+    width: 900px;
+    padding: 25px;
+  }
+
+  @media ${device.desktop} {
+    margin-bottom: 50px;
+    margin-left: 40px;
+    width: 1200px;
+    padding: 45px;
+  }
 `;
 
 export default function Question({ title, answers }) {
   return (
     <StyledQuestionContainer>
-      <QuestionTitle title={title} />
+      <StyledTitleH3>{title}</StyledTitleH3>
       <AnswerList answers={answers} />
     </StyledQuestionContainer>
   );

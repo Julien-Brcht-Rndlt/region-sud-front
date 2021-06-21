@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import RequireContainer from '../requirements/RequireContainer';
-import InfosForm from '../infosForm/InfosForm';
+import InfosEvalForm from '../infosEvalForm/InfosEvalForm';
+import Funnel from '../funnel/Funnel';
 
 export const StyledEvaluateImpactContainer = styled.div``;
 
@@ -8,7 +9,8 @@ export default function EvaluateImpact() {
   return (
     <StyledEvaluateImpactContainer>
       <RequireContainer />
-      <InfosForm />
+      <InfosEvalForm />
+      <Funnel />
     </StyledEvaluateImpactContainer>
   );
 }

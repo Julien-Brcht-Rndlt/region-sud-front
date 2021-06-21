@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 // setup responsive breakpoints
 
-const size = {
+export const size = {
   mobileS: '320px',
   mobileM: '375px',
   mobileL: '425px',
@@ -52,6 +52,8 @@ const theme = {
   darkBlueGreyFeatureColor: '#2f4f4f',
   yellowFeatureColor: '#feca5a',
   NavyBlueFeatureColor: '#000080',
+  blackFeatureColor: '#000000',
+  whiteFeatureColor: '#e7ecf4',
 
   // lines
   lineHeight: 1.5,
