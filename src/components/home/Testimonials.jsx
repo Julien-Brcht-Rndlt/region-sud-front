@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Flex } from '../../styles/generics/GenericContainers';
+import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
 import Testimonial from './Testimonial';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import { TestimonialsContainer, TestimonialsTitle } from '../../styles/StyledTestimonials';
@@ -44,9 +44,7 @@ export const StyledBorderYellowH1 = styled.div`
   }
 `;
 
-export const StyledContainerYellow = styled.div`
-  display: flex;
-  flex-direction: column;
+export const StyledContainerYellow = styled(FlexCol)`
   width: 100%;
 `;
 

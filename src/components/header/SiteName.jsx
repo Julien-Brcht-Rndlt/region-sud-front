@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import { Flex } from '../../styles/generics/GenericContainers';
 
-export const StyledSiteName = styled.div`
-  display: flex;
+export const StyledSiteName = styled(Flex)`
   float: left;
   width: 30%;
   color: ${(props) => props.theme.secondaryFeatureColor};

@@ -1,34 +1,31 @@
 import styled from 'styled-components';
 import { device } from '../../styles/theme';
+import { Flex } from '../../styles/generics/GenericContainers';
 
-export const StyledMapHome = styled.div`
-@media ${device.mobileS}{
-    display: flex;
+export const StyledMapHome = styled(Flex)`
+ 
+  @media ${device.mobileS}{
     margin-left:7px;
     margin-bottom:10px;
     }
 
-@media ${device.mobileM}{
-  display: flex;
+  @media ${device.mobileM}{
     margin-left:8px;
     margin-bottom:10px;
     }
 
-    @media ${device.mobileL}{
-      display: flex;
-    margin-left:9px;
-    margin-bottom:10px;
+  @media ${device.mobileL}{
+      margin-left:9px;
+      margin-bottom:10px;
     }
 
-    @media ${device.tablet}{
-      display: flex;
-    margin: 10px 8px 10px 20px;
+  @media ${device.tablet}{
+      margin: 10px 8px 10px 20px;
     }
 
-    @media ${device.laptop}{
-      display: flex;
-    margin: 10px 0 10px 50px;
-    }  
+  @media ${device.laptop}{
+      margin: 10px 0 10px 50px;
+    }
 `;
 
 export const StyledIframe = styled.iframe`

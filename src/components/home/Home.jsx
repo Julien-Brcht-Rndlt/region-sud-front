@@ -1,15 +1,18 @@
 import styled from 'styled-components';
+import { FlexSpace } from '../../styles/generics/GenericContainers';
 import ImageHome from './ImageHome';
 import TitleHome from './TitleHome';
 import MapHome from './MapHome';
 import Testimonials from './Testimonials';
 import { device } from '../../styles/theme';
-import { FlexCol, Flex } from '../../styles/generics/GenericContainers';
+import { FlexCol } from '../../styles/generics/GenericContainers';
 
-export const StyledHome = styled(Flex)`
+export const StyledHome = styled(FlexSpace)`
+
  @media ${device.mobileS}{
     flex-direction: column;
   }
+
   @media ${device.tablet}{
     flex-direction:row;
     justify-content: space-around;
@@ -18,10 +21,8 @@ export const StyledHome = styled(Flex)`
   }
   
   @media ${device.desktop}{
-  flex-direction:row;
-  justify-content: space-around;
-  align-items: stretch;
-  align-content: space-around;
+    align-items: stretch;
+    align-content: space-around;
   }
 `;
 
@@ -32,7 +33,7 @@ export default function Home() {
   return (
     <WrapperHome>
       <ImageHome />
-      <StyledHome>
+      <StyledHome space-around>
         <TitleHome />
         <MapHome />
       </StyledHome>
