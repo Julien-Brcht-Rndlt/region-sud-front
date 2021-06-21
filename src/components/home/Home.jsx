@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { FlexSpace } from '../../styles/generics/GenericContainers';
+import { FlexSpace, FlexCol } from '../../styles/generics/GenericContainers';
 import ImageHome from './ImageHome';
 import TitleHome from './TitleHome';
 import MapHome from './MapHome';
 import Testimonials from './Testimonials';
 import { device } from '../../styles/theme';
-import { FlexCol } from '../../styles/generics/GenericContainers';
 
 export const StyledHome = styled(FlexSpace)`
 
