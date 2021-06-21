@@ -25,27 +25,27 @@ export const StyledBorderYellowH1 = styled.div`
 `;
 
 export const StyledTitleH2Form = styled(StyledTitleH2)`
- @media ${device.mobileS}{
-      font-size:13px;
-      width:200px;
-    }
+  @media ${device.mobileS} {
+    font-size: 13px;
+    width: 200px;
+  }
 
-    @media ${device.mobileM}{
-      font-size:13px;
-      width:230px;
-    }
+  @media ${device.mobileM} {
+    font-size: 13px;
+    width: 230px;
+  }
 
-    @media ${device.mobileL}{
-      font-size:16px;
-      width:280px;
-    }
-    @media ${device.tablet}{
-      font-size:23px;
-    }
+  @media ${device.mobileL} {
+    font-size: 16px;
+    width: 280px;
+  }
+  @media ${device.tablet} {
+    font-size: 23px;
+  }
 
-    @media ${device.desktop}{
-      font-size:25px;
-    }
+  @media ${device.desktop} {
+    font-size: 25px;
+  }
 `;
 export const StyledContainerYellow = styled.div`
   display: flex;
@@ -57,29 +57,20 @@ export const StyledSpaceBetween = styled.div`
 `;
 
 export const ContainerDatePicker = styled(Flex)`
-  @media ${device.mobileS}{
-    flex-direction:column;
-    ;
+  @media ${device.mobileS} {
+    flex-direction: column;
   }
 
-  @media ${device.tablet}{
-    flex-direction:column;
+  @media ${device.tablet} {
+    flex-direction: column;
   }
 
-@media ${device.tablet}{
-  flex-direction:row; 
-}
+  @media ${device.tablet} {
+    flex-direction: row;
+  }
 `;
 
-const mandatoryFields = ['orgName',
-'orgMembers',
-'eventName',
-'eventAddr',
-'eventLoc',
-'eventLoc',
-'eventStart',
-'eventEnd',
-];
+const mandatoryFields = ['orgName', 'orgMembers', 'eventName', 'eventAddr', 'eventLoc', 'eventLoc', 'eventStart', 'eventEnd'];
 
 export default function InfosForm() {
   const [active, setActive] = useState(false);
@@ -121,13 +112,7 @@ export default function InfosForm() {
                 <StyledBorderYellowH1 />
               </StyledContainerYellow>
               <StyledSpaceBetween />
-              <InfosEvalInput
-                inputName="orgName"
-                infosForm={infosForm.org}
-                setInfosForm={setOrgForm}
-                label="Nom de la structure"
-                wide
-              />
+              <InfosEvalInput inputName="orgName" infosForm={infosForm.org} setInfosForm={setOrgForm} label="Nom de la structure" wide />
               <InfosEvalInput
                 inputName="orgMembers"
                 infosForm={infosForm.org}
@@ -150,19 +135,9 @@ export default function InfosForm() {
               label="Nom de la manisfestation sportive"
               wide
             />
-            <InfosEvalInput
-              inputName="eventStaff"
-              infosForm={infosForm.orgEvent}
-              setInfosForm={setEventForm}
-              label="Nombre de participants"
-            />
+            <InfosEvalInput inputName="eventStaff" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label="Nombre de participants" />
             <Flex start>
-              <InfosEvalInput
-                inputName="eventAddr"
-                infosForm={infosForm.orgEvent}
-                setInfosForm={setEventForm}
-                label="Adresse de la manifestation"
-              />
+              <InfosEvalInput inputName="eventAddr" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label="Adresse de la manifestation" />
             </Flex>
             <Flex start>
               <InfosEvalDropdown
@@ -175,12 +150,7 @@ export default function InfosForm() {
               <InfosEvalCheckbox label="Montrer la carte" />
             </Flex>
             <Flex start>
-              <InfosEvalInput
-                inputName="activity"
-                infosForm={infosForm.orgEvent}
-                setInfosForm={setEventForm}
-                label="Type d'activité sportive"
-              />
+              <InfosEvalInput inputName="activity" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label="Type d'activité sportive" />
               <InfosEvalDropdown
                 elmtFormName="sportLevels"
                 infosForm={infosForm.orgEvent}
@@ -190,18 +160,8 @@ export default function InfosForm() {
               />
             </Flex>
             <ContainerDatePicker>
-              <InfosEvalDatepicker
-                elmtFormName="eventStart"
-                infosForm={infosForm.orgEvent}
-                setInfosForm={setEventForm}
-                label="Date de début"
-              />
-              <InfosEvalDatepicker
-                elmtFormName="eventEnd"
-                infosForm={infosForm.orgEvent}
-                setInfosForm={setEventForm}
-                label="Date de fin"
-              />
+              <InfosEvalDatepicker elmtFormName="eventStart" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label="Date de début" />
+              <InfosEvalDatepicker elmtFormName="eventEnd" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label="Date de fin" />
             </ContainerDatePicker>
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>

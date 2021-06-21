@@ -5,63 +5,58 @@ import { StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import { device } from '../../styles/theme';
 
 export const StyledYoutubeBox = styled(FlexCol)`
-  @media ${device.laptopL}{
   width: auto;
   height: auto;
-  padding-left: 10px;
+  @media ${device.laptopL} {
+    padding-left: 10px;
   }
 
-  @media ${device.laptop}{
-  width: auto;
-  height: auto;
-  padding-left: 10px;
+  @media ${device.laptop} {
+    padding-left: 10px;
   }
 
-  @media ${device.tablet}{
-  width: auto;
-  height: auto;
-  padding-left: 20px;
+  @media ${device.tablet} {
+    padding-left: 20px;
   }
 `;
 
 export const FrameContainer = styled.iframe`
-
-@media ${device.mobileS}{
+  @media ${device.mobileS} {
     width: 300px;
     height: 170px;
     margin-left: 4px;
-    }
+  }
 
-@media ${device.mobileM}{
+  @media ${device.mobileM} {
     width: 340px;
     height: 200px;
     margin-left: 10px;
-    }
+  }
 
-    @media ${device.mobileL}{
+  @media ${device.mobileL} {
     width: 360px;
     height: 250px;
     margin-left: 10px;
-    }
+  }
 
-    @media ${device.tablet}{
+  @media ${device.tablet} {
     width: 550px;
     height: 350px;
     margin-left: 20px;
-    }
+  }
 
-    @media ${device.laptop}{
+  @media ${device.laptop} {
     width: 600px;
     height: 450px;
     padding-left: 0px;
-    }
+  }
 
-    @media ${device.laptopL}{
+  @media ${device.laptopL} {
     width: 600px;
     height: 450px;
     padding-left: 0px;
-    }
-  `;
+  }
+`;
 
 export default function RequireYoutube() {
   return (
