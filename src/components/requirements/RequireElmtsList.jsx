@@ -30,41 +30,37 @@ export const StyledRequireIconesWrapper = styled(FlexSpace)`
 export const StyledRequireWrapper = styled(FlexCol)`
   width: 70%;
 
-ul {
-  @media ${device.mobileS}{
-  width:260px;
-  padding-left:2px;
-  }
+  ul {
+    @media ${device.mobileS} {
+      width: 260px;
+      padding-left: 2px;
+    }
 
-  @media ${device.mobileL}{
-  width:300px;
-  padding-left:2px;
-  }
+    @media ${device.mobileL} {
+      width: 300px;
+      padding-left: 2px;
+    }
 
-  @media ${device.tablet}{
-  width:300px;
+    @media ${device.tablet} {
+      width: 300px;
+    }
+    @media ${device.laptop} {
+      width: 400px;
+    }
   }
-  @media ${device.laptop}{
-  width:400px;
-  }
-}
 
   ul li {
-    @media ${device.mobileS}{
-  line-height:1.4;    
-  font-family:${(props) => props.theme.fontFamilyFeature}; ;
-  }
-
-  @media ${device.tablet}{
-    line-height:1.6;
-    font-family:${(props) => props.theme.fontFamilyFeature}; ;
-  }
-
-    @media ${device.laptop}{
-    line-height: 2.3;
-    font-size: 1em;
-    font-family:${(props) => props.theme.fontFamilyFeature}; ;
-  }
+    font-family: ${(props) => props.theme.fontFamilyFeature};
+    @media ${device.mobileS} {
+      line-height: 1.4;
+    }
+    @media ${device.tablet} {
+      line-height: 1.6;
+    }
+    @media ${device.laptop} {
+      line-height: 2.3;
+      font-size: 1em;
+    }
   }
 `;
 

@@ -2,35 +2,27 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
-import {
-  StyledFormItem,
-  StyledFormItemLabel,
-} from '../../styles/generics/StyledFormItem';
+import { StyledFormItem, StyledFormItemLabel } from '../../styles/generics/StyledFormItem';
 import 'react-datepicker/dist/react-datepicker.css';
 import { device } from '../../styles/theme';
 
 const StyledDatePickerInfosForm = styled(DatePicker)`
-  @media ${device.mobileS}{
-  padding: 5px;
   border: 1px solid ${(props) => props.theme.blueFeatureColor};
+
+  @media ${device.mobileS} {
+    padding: 5px;
   }
 
-  @media ${device.laptop}{
-  padding: 15px;
-  border: 1px solid ${(props) => props.theme.blueFeatureColor};
+  @media ${device.laptop} {
+    padding: 15px;
   }
 `;
 
-export default function InfosEvalDatePicker({
-  label,
-  elmtFormName,
-  infosForm,
-  setInfosForm,
-  }) {
+export default function InfosEvalDatePicker({ label, elmtFormName, infosForm, setInfosForm }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleChange = (date) => {
-    setInfosForm(({ ...infosForm, [elmtFormName]: date }));
+    setInfosForm({ ...infosForm, [elmtFormName]: date });
     setSelectedDate(date);
   };
 
