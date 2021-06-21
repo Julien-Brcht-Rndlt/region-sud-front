@@ -1,12 +1,63 @@
 import styled from 'styled-components';
+import { device } from '../../styles/theme';
 import { Flex } from '../../styles/generics/GenericContainers';
 
 export const StyledMapHome = styled(Flex)`
-  margin: 10px 0 10px 50px;
+ 
+  @media ${device.mobileS}{
+    margin-left:7px;
+    margin-bottom:10px;
+    }
+
+  @media ${device.mobileM}{
+    margin-left:8px;
+    margin-bottom:10px;
+    }
+
+  @media ${device.mobileL}{
+      margin-left:9px;
+      margin-bottom:10px;
+    }
+
+  @media ${device.tablet}{
+      margin: 10px 8px 10px 20px;
+    }
+
+  @media ${device.laptop}{
+      margin: 10px 0 10px 50px;
+    }
 `;
+
 export const StyledIframe = styled.iframe`
-  width: 30rem;
-  height: 25rem;
+ @media ${device.mobileS}{
+    width: 300px;
+    height: 170px;
+    margin-left: 0;
+    }
+
+@media ${device.mobileM}{
+    width: 340px;
+    height: 200px;
+    margin-left: 10px;
+    }
+
+    @media ${device.mobileL}{
+    width: 360px;
+    height: 250px;
+    margin-left: 10px;
+    }
+
+    @media ${device.tablet}{
+    width: 380px;
+    height: 350px;
+    margin-left: 20px;
+    }
+
+    @media ${device.laptop}{
+    width: 600px;
+    height: 450px;
+    padding-left: 0px;
+    }
 `;
 
 export default function MapHome() {
