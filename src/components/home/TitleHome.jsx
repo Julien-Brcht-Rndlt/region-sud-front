@@ -13,6 +13,7 @@ export const StyledTitleWrapper = styled.div`
   margin-left: 50px;
   max-width: 500px;
 `;
+
 export const StyledBorderYellowH1 = styled.div`
 
  @media ${device.mobileS}{
@@ -64,6 +65,28 @@ export const StyledTitleHomeH1 = styled(StyledTitleH1)`
   }
 `;
 
+export const StyledButtonHP = styled(StyledButton)`
+@media ${device.mobileS}{
+   font-size:1em;
+    padding: 5px 5px 5px 5px;
+  }
+
+  @media ${device.mobileM}{
+   font-size:1.2em;
+    padding: 8px 8px 8px 8px;
+  }
+ 
+ @media ${device.tablet}{
+   font-size:1.3em;
+   padding: 10px 10px 10px 10px;
+  }
+
+@media ${device.desktop}{
+   font-size:30px;
+   padding:15 15px 15px 15px;
+  }
+`;
+
 export default function TitleHome() {
   return (
     <StyledTitleWrapper>
@@ -75,9 +98,9 @@ export default function TitleHome() {
           <li>Lorem ipsum dolor sit amet</li>
           <li>sit amet, consectetur adipiscing elit</li>
         </ul>
-        <StyledButton width="15em" height="">
+        <StyledButtonHP width="11em" height="">
           J&#39;évalue mon évènement
-        </StyledButton>
+        </StyledButtonHP>
       </StyledTitleP>
     </StyledTitleWrapper>
   );
