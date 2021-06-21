@@ -20,8 +20,9 @@ export const StyledHome = styled(FlexSpace)`
   }
   
   @media ${device.desktop}{
-    align-items: stretch;
-    align-content: space-around;
+  flex-direction:row;
+  align-items: stretch;
+  align-content: space-around;
   }
 `;
 
