@@ -1,13 +1,12 @@
 import styled from 'styled-components';
+import { FlexCol } from '../../styles/generics/GenericContainers';
 import { StyledTitleH1, StyledTitleP } from '../../styles/generics/GenericTitles';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 
-export const StyledTitleWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+export const StyledTitleWrapper = styled(FlexCol)`
   align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
   align-content: stretch;
   margin-left: 50px;
   max-width: 500px;
@@ -24,7 +23,7 @@ export const StyledTitleHomeH1 = styled(StyledTitleH1)`
 
 export default function TitleHome() {
   return (
-    <StyledTitleWrapper>
+    <StyledTitleWrapper stretch>
       <StyledTitleHomeH1> Lorem ipsum dolor sit amet?</StyledTitleHomeH1>
       <StyledBorderYellowH1 />
       <StyledTitleP>

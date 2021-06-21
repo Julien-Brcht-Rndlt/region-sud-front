@@ -27,7 +27,6 @@ export default function InfosEvalDropdown({
   }) {
   const [selected, setSelected] = useState();
 
-  /* "change" event is triggered on the <select> element */
   const handleSelectedOption = (event) => {
     setInfosForm(({ ...infosForm, [event.target.name]: event.target.value }));
     setSelected(event.target.value);

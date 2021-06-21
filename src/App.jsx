@@ -17,7 +17,6 @@ function App() {
 
   const [formState, dispatch] = useReducer(formReducer, { org: organization, orgEvent });
 
-  /* console.log(funnel); */
   return (
     <ThemeProvider theme={theme}>
       <FunnelContext.Provider value={{ funnel }}>

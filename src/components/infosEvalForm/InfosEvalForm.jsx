@@ -12,8 +12,7 @@ import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitle
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import OrgContext from '../../contexts/OrgContext';
 import EventContext from '../../contexts/EventContext';
-/* import formReducer from '../../reducers/formReducer'; */
-import { ADD_INFOS /* , COMPLETE */ } from '../../reducers/actions';
+import { ADD_INFOS } from '../../reducers/actions';
 import InfosEvalInput from './InfosEvalInput';
 import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';

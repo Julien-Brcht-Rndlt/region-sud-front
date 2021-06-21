@@ -1,12 +1,11 @@
 import styled from 'styled-components';
+import { FlexSpace } from '../../styles/generics/GenericContainers';
 import ImageHome from './ImageHome';
 import TitleHome from './TitleHome';
 import MapHome from './MapHome';
 import Testimonials from './Testimonials';
 
-export const StyledHome = styled.div`
-  display: flex;
-  justify-content: space-around;
+export const StyledHome = styled(FlexSpace)`
   align-items: stretch;
   align-content: space-around;
 `;
@@ -16,7 +15,7 @@ export default function Home() {
   return (
     <WrapperHome>
       <ImageHome />
-      <StyledHome>
+      <StyledHome space-around>
         <TitleHome />
         <MapHome />
       </StyledHome>

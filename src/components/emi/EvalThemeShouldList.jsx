@@ -4,7 +4,7 @@ import EvalContext from '../../contexts/EvalContext';
 
 export default function ThemeEvalShouldList({ shouldTitle, shouldList }) {
   const { evalContext } = useContext(EvalContext);
-  if (evalContext) { console.log('eval context loaded'); }
+  evalContext.score = 0;
   return (
     <div>
       <h5>{shouldTitle}</h5>
