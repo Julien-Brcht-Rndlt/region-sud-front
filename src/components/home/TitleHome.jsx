@@ -14,23 +14,22 @@ export const StyledTitleWrapper = styled(FlexCol)`
 `;
 
 export const StyledBorderYellowH1 = styled.div`
-
- @media ${device.mobileS}{
-  border-bottom: 0;
+  @media ${device.mobileS} {
+    border-bottom: 0;
   }
 
-  @media ${device.mobileM}{
-    border-bottom:0;
+  @media ${device.mobileM} {
+    border-bottom: 0;
   }
 
-  @media ${device.mobileL}{
+  @media ${device.mobileL} {
     border-bottom: 2px solid ${(props) => props.theme.yellowFeatureColor};
     width: 80px;
     height: 5px;
-    padding-right: 15px
+    padding-right: 15px;
   }
 
-  @media ${device.tablet}{
+  @media ${device.tablet} {
     border-bottom: 5px solid #feca5a;
     width: 80px;
     height: 2px;
@@ -38,51 +37,51 @@ export const StyledBorderYellowH1 = styled.div`
     padding-left: 50px;
     margin-left: 25px;
   }
-  @media ${device.desktop}{
-  border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
-  width: 80px;
-  height: 10px;
-  padding-right: 15px;
+  @media ${device.desktop} {
+    border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+    width: 80px;
+    height: 10px;
+    padding-right: 15px;
   }
-  `;
+`;
 
 export const StyledTitleHomeH1 = styled(StyledTitleH1)`
-  @media ${device.mobileS}{
-   font-size:1.4em;
-    padding-top:5px;
-  }
- 
- @media ${device.tablet}{
-   font-size:1.6em;
-   padding-left:25px;
+  @media ${device.mobileS} {
+    font-size: 1.4em;
+    padding-top: 5px;
   }
 
-@media ${device.desktop}{
-   font-size:30px;
-   padding-left:15px;
-   height: 10px;
+  @media ${device.tablet} {
+    font-size: 1.6em;
+    padding-left: 25px;
+  }
+
+  @media ${device.desktop} {
+    font-size: 30px;
+    padding-left: 15px;
+    height: 10px;
   }
 `;
 
 export const StyledButtonHP = styled(StyledButton)`
-@media ${device.mobileS}{
-   font-size:1em;
+  @media ${device.mobileS} {
+    font-size: 1em;
     padding: 5px 5px 5px 5px;
   }
 
-  @media ${device.mobileM}{
-   font-size:1.2em;
+  @media ${device.mobileM} {
+    font-size: 1.2em;
     padding: 8px 8px 8px 8px;
   }
- 
- @media ${device.tablet}{
-   font-size:1.3em;
-   padding: 10px 10px 10px 10px;
+
+  @media ${device.tablet} {
+    font-size: 1.3em;
+    padding: 10px 10px 10px 10px;
   }
 
-@media ${device.desktop}{
-   font-size:30px;
-   padding:15 15px 15px 15px;
+  @media ${device.desktop} {
+    font-size: 30px;
+    padding: 15 15px 15px 15px;
   }
 `;
 
