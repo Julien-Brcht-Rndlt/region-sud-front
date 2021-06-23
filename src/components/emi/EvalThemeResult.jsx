@@ -6,7 +6,6 @@ export default function EvalThemeResult() {
       <div>
         <EvalThemeScoring />
         <EvalThemeShouldList />
-        <p>Vous pourrez voir toutes les recommandations à la fin de l&#39;évaluation.</p>
       </div>
     );
 }

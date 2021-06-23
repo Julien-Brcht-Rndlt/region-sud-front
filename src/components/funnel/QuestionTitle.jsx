@@ -7,9 +7,7 @@ export const StyledH2 = styled.h2``;
 export default function QuestionTitle({ title }) {
   return (
     <StyledQuestionTitle>
-      <StyledH2>
-        {title}
-      </StyledH2>
+      <StyledH2>{title}</StyledH2>
     </StyledQuestionTitle>
   );
 }
