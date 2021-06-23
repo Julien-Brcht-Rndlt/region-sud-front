@@ -20,7 +20,7 @@ export const ImgProgressBar = styled.img`
   width: 70px;
 `;
 
-export default function ProgressBarScoring() {
+export default function QuickEvalNav() {
   return (
     <ContainerProgressBar>
       <ImgProgressBar src={soleil} alt="sun" />
