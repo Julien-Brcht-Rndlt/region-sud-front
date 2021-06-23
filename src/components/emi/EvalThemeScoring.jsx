@@ -4,11 +4,9 @@ import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
 import { StyledTitleH3, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 
 export const StyledEvalBox = styled(Flex)`
-  width: 300px;
+  width: 380px;
   height: 300px;
-  padding: 110px;
   border: solid 3px black;
-  position: absolute;
 `;
 
 export const ContainerEvalReco = styled(FlexCol)`
@@ -18,24 +16,22 @@ export const ContainerEvalReco = styled(FlexCol)`
 
 export const ImgCustom = styled.img``;
 
-export default function EvalThemeScoring({ title, themeScore, scoreIcone }) {
+export default function EvalThemeScoring({ themeTitle, themeScore, scoreIcone }) {
   return (
     <>
       <StyledEvalBox>
-        <StyledTitleH3>Votre indice</StyledTitleH3>
-        <StyledTitleH4>{title}</StyledTitleH4>
-        {themeScore > 0 && (
-          <div>
-            <img src={scoreIcone} alt="" />
-          </div>
-        )}
+        <ContainerEvalReco center>
+          <StyledTitleH3>Votre indice</StyledTitleH3>
+          <StyledTitleH4>{themeTitle}</StyledTitleH4>
+          {themeScore > 0 && <img src={scoreIcone} alt="" />}
+        </ContainerEvalReco>
       </StyledEvalBox>
     </>
   );
 }
 
 EvalThemeScoring.propTypes = {
-  title: PropTypes.string.isRequired,
+  themeTitle: PropTypes.string.isRequired,
   themeScore: PropTypes.number.isRequired,
   scoreIcone: PropTypes.string.isRequired,
 };
