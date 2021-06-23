@@ -7,7 +7,7 @@ export const Block = styled.div`
 export const Flex = styled.div`
   display: flex;
   justify-content: ${(props) => (props.start && 'flex-start') || (props.end && 'flex-end') || (props.center && 'center')};
-  align-items: ${(props) => (props.valign)};
+  align-items: ${(props) => props.valign};
 `;
 
 export const FlexWrap = styled(Flex)`
@@ -21,7 +21,7 @@ export const FlexSpace = styled(Flex)`
 export const FlexCol = styled(Flex)`
   flex-direction: column;
   align-items: ${(props) => (props.start && 'start') || (props.end && 'end') || (props.center && 'center') || (props.stretch && 'stretch')};
-  justify-content: ${(props) => (props.halign)};
+  justify-content: ${(props) => props.halign};
 `;
 
 export const Center = styled.div`
