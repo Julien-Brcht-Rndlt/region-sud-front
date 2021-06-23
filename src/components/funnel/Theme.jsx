@@ -101,10 +101,8 @@ export default function Theme({ title, questions, icon }) {
         <StyledSubtitleTheme>Evaluer mon événement</StyledSubtitleTheme>
       </ContainersubtitleTheme>
       <Flex end>
-        <EvalThemeResult />
-      </Flex>
-      <Flex end>
         <ProgressBarScoring />
+        <EvalThemeResult />
       </Flex>
       <FlexCol>
         <StyledContainerYellow>
