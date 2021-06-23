@@ -1,25 +1,36 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { StyledTitleH3 } from '../../styles/generics/GenericTitles';
 import { FlexCol } from '../../styles/generics/GenericContainers';
 
-export default function EvalThemeShouldList({ shouldTitle, shouldList }) {
-  const StyledShouldListContainer = styled(FlexCol)`
-    font-size: 2rem;
-  `;
+export const StyledShouldListLi = styled.li`
+  font-size: 18px;
+  line-height: 2.5em;
+`;
+export const StyledShouldListP = styled.p`
+  font-size: 16px;
+`;
+export const StyledShouldContainer = styled(FlexCol)`
+border: solid 5px red;
+width: 600px;
+`;
 
+export default function EvalThemeShouldList({ shouldTitle, shouldList }) {
   return (
-    <StyledShouldListContainer>
-      <h5>{shouldTitle}</h5>
+    <StyledShouldContainer center>
+      <StyledTitleH3>{shouldTitle}</StyledTitleH3>
       <ul>
         {shouldList.map(
           // eslint-disable-next-line comma-dangle
           (should) => (
-            <li>{should}</li>
+            <StyledShouldListLi>{should}</StyledShouldListLi>
           ),
         )}
       </ul>
-      <p>Vous pourrez voir toutes les recommandations à la fin de l'évaluations</p>
-    </StyledShouldListContainer>
+      <StyledShouldListP>
+        Vous pourrez voir toutes les recommandations à la fin de l&#39;évaluations
+      </StyledShouldListP>
+    </StyledShouldContainer>
   );
 }
 
