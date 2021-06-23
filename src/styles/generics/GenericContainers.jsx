@@ -15,7 +15,6 @@ export const FlexWrap = styled(Flex)`
 `;
 
 export const FlexSpace = styled(Flex)`
-  border: 5px solid red;
   justify-content: ${(props) => (props.between && 'space-between') || (props.around && 'space-around') || (props.evenly && 'space-evenly')};
 `;
 
