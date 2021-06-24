@@ -2,8 +2,10 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import AnswerList from './AnswerList';
 import { StyledTitleH3 } from '../../styles/generics/GenericTitles';
-import { Block } from '../../styles/generics/GenericContainers';
+import { Block, Flex } from '../../styles/generics/GenericContainers';
 import { device } from '../../styles/theme';
+import know from '../../assets/img/know.svg';
+import { IconeImg } from '../../styles/generics/GenericComponents';
 
 export const StyledQuestionContainer = styled(Block)`
   background-color: ${(props) => props.theme.whiteFeatureColor};
@@ -44,9 +46,21 @@ export const StyledQuestionContainer = styled(Block)`
   }
 `;
 
+export const IconeContainer = styled(Flex)`
+  height: 15px;
+`;
+
+export const IconImg = styled(IconeImg)`
+  height: 25px;
+  width: 25px;
+`;
+
 export default function Question({ title, answers }) {
   return (
     <StyledQuestionContainer>
+      <IconeContainer end>
+        <IconImg src={know} alt="?" />
+      </IconeContainer>
       <StyledTitleH3>{title}</StyledTitleH3>
       <AnswerList answers={answers} />
     </StyledQuestionContainer>
