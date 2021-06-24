@@ -1,30 +1,43 @@
-import { useContext } from 'react';
 import PropTypes from 'prop-types';
-import EvalContext from '../../contexts/EvalContext';
+import styled from 'styled-components';
+import { StyledTitleH3 } from '../../styles/generics/GenericTitles';
+import { FlexCol } from '../../styles/generics/GenericContainers';
 
-export default function ThemeEvalShouldList({ shouldTitle, shouldList }) {
-  const { evalContext } = useContext(EvalContext);
-  evalContext.score = 0;
+export const StyledShouldListLi = styled.li`
+  font-size: 18px;
+  line-height: 2.5em;
+`;
+export const StyledShouldListP = styled.p`
+  font-size: 16px;
+`;
+export const StyledShouldContainer = styled(FlexCol)`
+width: 600px;
+`;
+
+export default function EvalThemeShouldList({ shouldTitle, shouldList }) {
   return (
-    <div>
-      <h5>{shouldTitle}</h5>
+    <StyledShouldContainer center>
+      <StyledTitleH3>{shouldTitle}</StyledTitleH3>
       <ul>
-        {
-          shouldList.map(
-            // eslint-disable-next-line comma-dangle
-            (should) => <li>{should}</li>
-          )
-        }
+        {shouldList.map(
+          // eslint-disable-next-line comma-dangle
+          (should) => (
+            <StyledShouldListLi>{should}</StyledShouldListLi>
+          ),
+        )}
       </ul>
-    </div>
+      <StyledShouldListP>
+        Vous pourrez voir toutes les recommandations à la fin de l&#39;évaluations
+      </StyledShouldListP>
+    </StyledShouldContainer>
   );
 }
 
-ThemeEvalShouldList.propTypes = {
-    shouldTitle: PropTypes.string,
-    shouldList: PropTypes.arrayOf(PropTypes.string).isRequired,
+EvalThemeShouldList.propTypes = {
+  shouldTitle: PropTypes.string,
+  shouldList: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-ThemeEvalShouldList.defaultProps = {
-    shouldTitle: '',
+EvalThemeShouldList.defaultProps = {
+  shouldTitle: '',
 };

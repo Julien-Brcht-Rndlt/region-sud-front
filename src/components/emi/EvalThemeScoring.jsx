@@ -1,32 +1,55 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { StyledTitleH3, StyledTitleH4 } from '../../styles/generics/GenericTitles';
+import { StyledTitleH3 } from '../../styles/generics/GenericTitles';
+import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
 import EvalContext from '../../contexts/EvalContext';
 import Scoring from './scoring.json';
 
-export const StyledSubtitleH4 = styled.h4`
+export const StyledEvalBox = styled(Flex)`
+  width: 605px;
+  height: 100px;
+`;
+
+export const ContainerEvalReco = styled(FlexCol)`
+  height: 100%;
+  font-size: 13px;
+`;
+
+export const StyledLabel = styled.span`
+  font-size: 20px;
   color: ${(props) => props.theme.blueFeatureColor};
-  font-family: ${(props) => props.theme.fontFamilyNormal};
-  font-size: 1rem;
+`;
+
+export const ImgScoring = styled.img`
+  height: 150px;
+  width: 150px;
 `;
 
 export default function EvalThemeScoring({ themeId, themeTitle }) {
-  const { evalContext } = useContext(EvalContext);
-  const { score } = evalContext;
+  const { eventEval, score } = useContext(EvalContext);
+  // const {  } = evalContext;
+  console.log(eventEval);
+  console.log(themeId);
+  console.log(score);
+  console.log(Scoring.themes_scoring[themeId].scores_reprs);
 
-  const scoresReprs = Scoring.themes_scoring[themeId - 1].scores_reprs;
-  scoresReprs.filter((scoreRepr) => scoreRepr.min <= score && scoreRepr.max >= score);
+  let scoresReprs = Scoring.themes_scoring[themeId].scores_reprs;
+  scoresReprs = scoresReprs.filter((scoreRepr) => scoreRepr.min <= score && scoreRepr.max >= score);
+
   const [scoreRepr] = scoresReprs;
+  console.log(scoreRepr.icone);
 
     return (
-      <div>
-        <StyledTitleH3>Votre indice</StyledTitleH3>
-        <StyledTitleH4>{themeTitle}</StyledTitleH4>
-        {
-          scoreRepr && <div><img src={scoreRepr.icone} alt="" /></div>
-        }
-      </div>
+      <StyledEvalBox center>
+        <ContainerEvalReco center>
+          <StyledLabel>Votre indice</StyledLabel>
+          <StyledTitleH3>{themeTitle}</StyledTitleH3>
+          {
+            scoreRepr && <div><ImgScoring src={scoreRepr.icone} alt="" /></div>
+          }
+        </ContainerEvalReco>
+      </StyledEvalBox>
     );
 }
 

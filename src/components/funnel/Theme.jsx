@@ -7,8 +7,6 @@ import { IconeImg } from '../../styles/generics/GenericComponents';
 import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import help from '../../assets/img/help.png';
 import { device } from '../../styles/theme';
-import EvalThemeRecoBody from './EvalThemeReco';
-import ProgressBarScoring from './ProgressBar';
 
 export const ThemeContainer = styled.div`
   background-color: ${(props) => props.theme.secondaryFeatureColor};
@@ -100,12 +98,6 @@ export default function Theme({ title, questions, icon }) {
         <IconeImg src={icon} alt="logo" />
         <StyledSubtitleTheme>Evaluer mon événement</StyledSubtitleTheme>
       </ContainersubtitleTheme>
-      <Flex end>
-        <EvalThemeRecoBody />
-      </Flex>
-      <Flex end>
-        <ProgressBarScoring />
-      </Flex>
       <FlexCol>
         <StyledContainerYellow>
           <StyledTitleTheme>{title}</StyledTitleTheme>

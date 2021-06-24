@@ -14,6 +14,7 @@ function App() {
   const [organization] = useState({});
   const [orgEvent] = useState({});
   const [eventEval] = useState({});
+  const [score] = useState(5);
 
   const [formState, dispatch] = useReducer(formReducer, { org: organization, orgEvent });
 
@@ -24,7 +25,7 @@ function App() {
           <EventContext.Provider
             value={{ orgEvent: formState.orgEvent, dispatch }}
           >
-            <EvalContext.Provider value={{ eventEval }}>
+            <EvalContext.Provider value={{ eventEval, score }}>
               <EmiRouter />
             </EvalContext.Provider>
           </EventContext.Provider>

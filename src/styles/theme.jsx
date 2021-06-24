@@ -40,6 +40,8 @@ const theme = {
   fontFamilyFeature: "'Roboto','Fira Sans',sans-serif",
   fontFamilyNavBar: "'Roboto','Nunito',sans-serif",
 
+  // fonts size
+
   // fonts weight
   fontWeightFeature: 700,
 
