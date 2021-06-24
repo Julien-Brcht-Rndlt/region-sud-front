@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { Flex, FlexSpace, FlexCol } from '../../styles/generics/GenericContainers';
 import { IconeImg } from '../../styles/generics/GenericComponents';
 import clock from '../../assets/img/clockPictureEmi.png';
@@ -101,3 +102,7 @@ export default function RequireElmtsList() {
     </StyledRequireWrapper>
   );
 }
+
+RequireElmtsList.prototype = {
+contentList: PropTypes.array.isRequired,
+};
