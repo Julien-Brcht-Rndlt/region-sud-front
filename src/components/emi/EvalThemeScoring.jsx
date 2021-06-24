@@ -6,7 +6,6 @@ import { StyledTitleH3 } from '../../styles/generics/GenericTitles';
 export const StyledEvalBox = styled(Flex)`
   width: 605px;
   height: 100px;
-  border: solid 3px black;
 `;
 
 export const ContainerEvalReco = styled(FlexCol)`

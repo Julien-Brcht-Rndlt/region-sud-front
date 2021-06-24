@@ -4,21 +4,21 @@ import { FlexCol } from '../../styles/generics/GenericContainers';
 import EvalThemeScoring from './EvalThemeScoring';
 import EvalThemeShouldList from './EvalThemeShouldList';
 
-export const ScoreResultContainer = styled(FlexCol)`
-margin-left: 1300px;
-height: 0px;
-padding-bottom: 25px;
-margin-top: 0px;
-position: absolute;
+export const StyledThemeResultContainer = styled(FlexCol)`
+  width: auto;
+  margin-top: 150px;
+  height: 100%;
 `;
+
+export const SpaceBetween = styled.div``;
 
 export default function EvalThemeResult({ themeTitle }) {
   const shouldList = ['recommandation 1', 'recommandation 2', 'recommandation 3', 'recommandation 4', 'recommandation 5'];
   return (
-    <ScoreResultContainer end>
+    <StyledThemeResultContainer>
       <EvalThemeScoring themeTitle={themeTitle} themeScore={11} scoreIcone="" />
       <EvalThemeShouldList shouldList={shouldList} shouldTitle="Pour vous amiliorer :" />
-    </ScoreResultContainer>
+    </StyledThemeResultContainer>
   );
 }
 

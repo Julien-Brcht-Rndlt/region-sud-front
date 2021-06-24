@@ -11,7 +11,6 @@ export const StyledShouldListP = styled.p`
   font-size: 16px;
 `;
 export const StyledShouldContainer = styled(FlexCol)`
-border: solid 5px red;
 width: 600px;
 `;
 
