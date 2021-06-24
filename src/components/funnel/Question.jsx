@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import AnswerList from './AnswerList';
 import { StyledTitleH3 } from '../../styles/generics/GenericTitles';
-import { Block } from '../../styles/generics/GenericContainers';
+import { Block, Flex } from '../../styles/generics/GenericContainers';
 import { device } from '../../styles/theme';
 
 export const StyledQuestionContainer = styled(Block)`
@@ -42,6 +42,10 @@ export const StyledQuestionContainer = styled(Block)`
     width: 1200px;
     padding: 45px;
   }
+`;
+
+export const IconeContainer = styled(Flex)`
+  height: 5px;
 `;
 
 export default function Question({ title, answers }) {
