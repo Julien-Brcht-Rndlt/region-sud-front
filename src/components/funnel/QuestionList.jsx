@@ -6,7 +6,7 @@ export default function QuestionList({ questions }) {
     <>
       {questions.map((question) => (
         <Question key={question.id} {...question} />
-    ))}
+      ))}
     </>
   );
 }
