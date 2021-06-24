@@ -21,7 +21,7 @@ export default function NavBar() {
     {
       id: 4,
       content: "M'informer",
-      path: '/',
+      path: '/EmiResult',
     },
   ];
   return (
