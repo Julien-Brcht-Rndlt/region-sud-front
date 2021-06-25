@@ -1,7 +1,10 @@
-import ThemeList from './ThemeList';
+import { useParams } from 'react-router-dom';
+import Theme from './Theme';
 
 export default function EvalProcess() {
+const { id } = useParams();
+
   return (
-    <ThemeList />
+    <Theme id={id} />
   );
 }
