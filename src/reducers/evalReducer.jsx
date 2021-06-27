@@ -6,19 +6,40 @@ export default function evalReducer(state, action) {
 
     /* const { funnel } = useContext(FunnelContext); */
     /* console.log(funnel); */
-    let answer = null;
+
+    // TODO changer switch / case en plusieurs if/else
     switch (type) {
         case 'CHECKED_ANSWER':
+            let answerValue = null;
             if (payload.checked) {
                 console.log('add/update answer to eval state with yes');
             } else {
-                console.log('add/update answer to eval');
+                console.log('add/update answer to eval with no');
             }
             console.log('payload', payload);
             console.log('state', state);
+            const {
+                answer,
+                funnel,
+                questionId,
+                themeId,
+            } = payload;
+            const evalTheme = { ...funnel.themes[themeId] };
+            const evalQuestion = { ...evalTheme[questionId] };
             answer = payload.answer;
+            evalQuestion.givenAnswers[answer.id] = {
+                ...answer,
+                answer_value: true,
+            };
+            evalTheme.questions[questionId] = evalQuestion;
+            state.themes[themeId] = evalTheme;
             return { ...state, answer };
         case 'INPUT_ANSWER':
+            if (payload.value) {
+                console.log('add/update answer to eval state with value');
+            } else {
+                console.log('add/update answer to eval with no value / blank or null');
+            }
             console.log('payload', payload);
             return { ...state, answer };
        /*  case 'ADD_QUESTION_ANSWER':

@@ -87,9 +87,10 @@ export default function Answer({ answer, questionId, themeId }) {
         type: 'CHECKED_ANSWER',
         payload: {
           answer,
+          funnel,
           questionId,
           themeId,
-          choice: event.target.checked,
+          checked: event.target.checked,
         },
       });
     } else if (event.target.type === 'number') {
@@ -97,6 +98,7 @@ export default function Answer({ answer, questionId, themeId }) {
         type: 'INPUT_ANSWER',
         payload: {
           answer,
+          funnel,
           questionId,
           themeId,
           value: event.target.value,
