@@ -7,12 +7,14 @@
     "questions": [
             {
             "id": 0,
+            "theme_id": 0,
             "title": "Quelles actions de réduction des déchets sont mises en place? ",
             "answers": [
               {
                 "id": 0,
                 "label": "Bacon ipsum dolor amet short ribs brisket",
-                "answ_type": "multiple_choice"
+                "answ_type": "multiple_choice",
+                "question_id":0
               },
               {
                 "id": 1,

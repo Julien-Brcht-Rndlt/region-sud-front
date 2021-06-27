@@ -92,7 +92,12 @@ export const StyledContainerYellow = styled.div`
   }
 `;
 
-export default function Theme({ title, questions, icon }) {
+export default function Theme({
+  id,
+  title,
+  questions,
+  icon,
+}) {
   return (
     <>
       <ContainersubtitleTheme>
@@ -107,7 +112,7 @@ export default function Theme({ title, questions, icon }) {
           <StyledTitleTheme>{title}</StyledTitleTheme>
           <StyledBorderYellow />
         </StyledContainerYellow>
-        <QuestionList questions={questions} />
+        <QuestionList questions={questions} themeId={id} />
       </FlexCol>
       <CompButton>
         <StyledButton>
@@ -124,6 +129,7 @@ export default function Theme({ title, questions, icon }) {
 }
 
 Theme.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   questions: PropTypes.arrayOf(PropTypes.string).isRequired,
