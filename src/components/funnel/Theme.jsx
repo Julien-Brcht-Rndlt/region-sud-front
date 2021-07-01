@@ -37,8 +37,13 @@ export const StyledTitleTheme = styled(StyledTitleH1)`
 export const StyledSubtitleTheme = styled(StyledTitleH4)`
   margin-left: 5px;
 `;
-export const CompButton = styled.div`
+export const CompButton = styled(Flex)`
   margin-left: 40px;
+`;
+
+export const CompIconText = styled(Flex)`
+  align-items: center;
+  justify-content: space-around;
 `;
 
 export const MicroImg = styled.img`
@@ -111,9 +116,11 @@ export default function Theme({ id }) {
         <QuestionList questions={theme.questions} />
       </FlexCol>
       <CompButton>
-        <StyledButton>
-          <MicroImg src={help} />
-          Je ne m&#39;en sors pas !
+        <StyledButton glassy>
+          <CompIconText>
+            <MicroImg src={help} />
+            Je ne m&#39;en sors pas !
+          </CompIconText>
         </StyledButton>
       </CompButton>
       <Flex center>
