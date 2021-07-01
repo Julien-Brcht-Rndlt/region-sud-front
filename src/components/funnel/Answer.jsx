@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { StyledInfosInput } from '../../styles/StyledInfosForms';
 
@@ -22,12 +23,15 @@ const MultipleChoiceAnswer = ({ label }) => (
   </>
 );
 
-const OneChoiceAnswer = ({ label, questionId }) => (
-  <div>
-    <input id="oneansw" type="radio" name={questionId} value="" />
-    <StyledAnswerLabel htmlFor="oneansw">{label}</StyledAnswerLabel>
-  </div>
-);
+const OneChoiceAnswer = ({ label, questionId }) => {
+  const [selectedOption, setSelectedOption] = useState();
+  return (
+    <div>
+      <input id="oneansw" type="radio" name={`${questionId}`} checked={selectedOption === label} value={label} onChange={(event) => setSelectedOption(event.target.value)} />
+      <StyledAnswerLabel htmlFor="oneansw">{label}</StyledAnswerLabel>
+    </div>
+  );
+};
 
 const InputAnswer = ({ label }) => (
   <>
@@ -40,7 +44,7 @@ export default function Answer({ answer, questionId }) {
   return (
     <AnswerComponent>
       {answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer label={answer.label} />}
-      {answer.answ_type === 'one_choice' && <OneChoiceAnswer label={answer.label} questionid={questionId} />}
+      {answer.answ_type === 'one_choice' && <OneChoiceAnswer label={answer.label} questionId={questionId} />}
       {answer.answ_type === 'input_answ' && <InputAnswer label={answer.label} />}
     </AnswerComponent>
   );
