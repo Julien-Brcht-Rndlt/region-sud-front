@@ -8,6 +8,7 @@ import FooterText from './FooterText';
 import Logo from '../Logo';
 
 export default function Footer() {
+  let count = 0;
   const footerTextContent = [
     {
       title: 'CONTACT',
@@ -64,9 +65,12 @@ export default function Footer() {
           alt="Logo Région-Sud dans pieds de page"
         />
         <FooterTextsContainer>
-          {footerTextContent.map((content) => (
-            <FooterText title={content.title} lines={content.lines} />
-          ))}
+          {footerTextContent.map((content) => {
+            count += 1;
+            return (
+              <FooterText title={`${content.title}${count}`} lines={content.lines} />
+          );
+            })}
         </FooterTextsContainer>
       </FooterContWithBorder>
       <FooterLinks links={footerLinks} />
