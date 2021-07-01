@@ -1,5 +1,7 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import FunnelContext from '../../contexts/FunnelContext';
 import QuestionList from './QuestionList';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
@@ -7,7 +9,6 @@ import { IconeImg } from '../../styles/generics/GenericComponents';
 import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import help from '../../assets/img/help.png';
 import { device } from '../../styles/theme';
-import QuickEvalNav from '../emi/QuickEvalNav';
 
 export const ThemeContainer = styled.div`
   background-color: ${(props) => props.theme.secondaryFeatureColor};
@@ -92,24 +93,19 @@ export const StyledContainerYellow = styled.div`
   }
 `;
 
-export default function Theme({
-  id,
-  title,
-  questions,
-  icon,
-}) {
+export default function Theme({ id, questions }) {
+  const { funnel } = useContext(FunnelContext);
+  const theme = funnel.themes[id];
+
   return (
     <>
       <ContainersubtitleTheme>
-        <IconeImg src={icon} alt="logo" />
+        <IconeImg src={theme.icon} alt="logo" />
         <StyledSubtitleTheme>Evaluer mon événement</StyledSubtitleTheme>
       </ContainersubtitleTheme>
-      <Flex end>
-        <QuickEvalNav />
-      </Flex>
       <FlexCol>
         <StyledContainerYellow>
-          <StyledTitleTheme>{title}</StyledTitleTheme>
+          <StyledTitleTheme>{theme.title}</StyledTitleTheme>
           <StyledBorderYellow />
         </StyledContainerYellow>
         <QuestionList questions={questions} themeId={id} />
@@ -130,7 +126,5 @@ export default function Theme({
 
 Theme.propTypes = {
   id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
   questions: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

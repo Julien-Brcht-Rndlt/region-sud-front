@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import { FlexSpace } from '../../styles/generics/GenericContainers';
 import { StyledRoundedButton } from '../../styles/generics/GenericButtons';
@@ -69,7 +70,9 @@ export default function RequireInfos() {
         <RequireElmtsList />
         <StyledBoxButtonElement>
           <StyledRoundedButton>C&#39;est parti !</StyledRoundedButton>
-          <StyledRoundedButton glassy>Où trouver toutes ces pièces ?</StyledRoundedButton>
+          <Link to="/RequireModal">
+            <StyledRoundedButton glassy>Où trouver toutes ces pièces ?</StyledRoundedButton>
+          </Link>
         </StyledBoxButtonElement>
       </StyledColumnElmts>
     </>

@@ -14,7 +14,9 @@ function App() {
   const [funnel] = useState(datatest);
   const [organization] = useState({});
   const [orgEvent] = useState({});
-  const [eventEval] = useState({});
+  const [eventEval] = useState({
+    themes: [],
+  });
 
   const [formState, dispatch] = useReducer(formReducer, { org: organization, orgEvent });
   const [evalState, evalDispatch] = useReducer(evalReducer, { eval: eventEval });

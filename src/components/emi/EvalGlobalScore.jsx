@@ -6,7 +6,7 @@ import {
   FlexCol,
   FlexSpace,
   Block,
-} from '../../styles/generics/GenericContainers';
+ } from '../../styles/generics/GenericContainers';
 import Nuageux from '../../assets/img/nuageux.png';
 
 export const StyledEvalGlobalContainer = styled(FlexSpace)`
@@ -14,7 +14,7 @@ export const StyledEvalGlobalContainer = styled(FlexSpace)`
 `;
 
 const StyledEvalGlobalLeftCol = styled(Block)`
-  padding: 50px; 
+  padding: 50px;
   padding-left: 90px;
 `;
 
@@ -23,18 +23,18 @@ const StyledEvalGlobalRightCol = styled(Block)`
 `;
 
 const StyledImgContainer = styled(FlexSpace)`
-  width:400px;
-  border:blue solid 1px;
-  background-color :grey;
-  height:20rem;
-  justify-content:center;
+  width: 400px;
+  border: blue solid 1px;
+  background-color: grey;
+  height: 20rem;
+  justify-content: center;
   padding: 25px;
-  margin-top:20px;
+  margin-top: 20px;
 `;
 
 const StyledEvalGlobalButton = styled(StyledButton)`
-  width:250px;
-  margin-top:50px;
+  width: 250px;
+  margin-top: 50px;
 `;
 
 const StyledEvalGlobalImg = styled.img`
@@ -47,34 +47,44 @@ const StyledEvalGlobalMoreButton = styled(StyledButton)`
 `;
 
 const StyledShouldListContainer = styled(FlexCol)`
-  width:500px;
-  height:300px;
+  width: 500px;
+  height: 300px;
+`;
+
+const StyledYellowLine = styled.div`
+  border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+  width: 80px;
+  height: auto;
+`;
+const StyledTitleMyResult = styled(StyledTitleH1)`
+height: 15px;
 `;
 
 export default function EvalGlobalScore() {
-    return (
-      <StyledEvalGlobalContainer around>
-        <StyledEvalGlobalLeftCol>
-          <StyledTitleH1>Mon résultat</StyledTitleH1>
-          <StyledImgContainer>
-            <StyledEvalGlobalImg src={Nuageux} alt="des nuages..." />
-          </StyledImgContainer>
-          <Flex>
-            <StyledEvalGlobalButton>Envoyer par mail</StyledEvalGlobalButton>
-            <StyledEvalGlobalButton glassy> Imprimer </StyledEvalGlobalButton>
-          </Flex>
-        </StyledEvalGlobalLeftCol>
-        <StyledEvalGlobalRightCol>
-          <StyledShouldListContainer start halign="center">
-            <div>Afficher recap icones</div>
-            <span>Mes recommandations concernant</span>
-            <StyledTitleH2>theme props</StyledTitleH2>
-            <span>recommandations props blablabla </span>
-            <span>recommandations props blablabla </span>
-            <span>recommandations props blablabla </span>
-          </StyledShouldListContainer>
-          <StyledEvalGlobalMoreButton glassy>En savoir +</StyledEvalGlobalMoreButton>
-        </StyledEvalGlobalRightCol>
-      </StyledEvalGlobalContainer>
-    );
+  return (
+    <StyledEvalGlobalContainer around>
+      <StyledEvalGlobalLeftCol>
+        <StyledTitleMyResult>Mon résultat</StyledTitleMyResult>
+        <StyledYellowLine />
+        <StyledImgContainer>
+          <StyledEvalGlobalImg src={Nuageux} alt="des nuages..." />
+        </StyledImgContainer>
+        <Flex>
+          <StyledEvalGlobalButton>Envoyer par mail</StyledEvalGlobalButton>
+          <StyledEvalGlobalButton glassy> Imprimer </StyledEvalGlobalButton>
+        </Flex>
+      </StyledEvalGlobalLeftCol>
+      <StyledEvalGlobalRightCol>
+        <StyledShouldListContainer start halign="center">
+          <div>Afficher recap icones</div>
+          <span>Mes recommandations concernant</span>
+          <StyledTitleH2>theme props</StyledTitleH2>
+          <span>recommandations props blablabla </span>
+          <span>recommandations props blablabla </span>
+          <span>recommandations props blablabla </span>
+        </StyledShouldListContainer>
+        <StyledEvalGlobalMoreButton glassy>En savoir +</StyledEvalGlobalMoreButton>
+      </StyledEvalGlobalRightCol>
+    </StyledEvalGlobalContainer>
+  );
 }
