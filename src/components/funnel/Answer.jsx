@@ -22,9 +22,9 @@ const MultipleChoiceAnswer = ({ label }) => (
   </>
 );
 
-const OneChoiceAnswer = ({ label }) => (
+const OneChoiceAnswer = ({ label, questionId }) => (
   <div>
-    <input id="oneansw" type="radio" value="" />
+    <input id="oneansw" type="radio" name={questionId} value="" />
     <StyledAnswerLabel htmlFor="oneansw">{label}</StyledAnswerLabel>
   </div>
 );
@@ -36,11 +36,11 @@ const InputAnswer = ({ label }) => (
   </>
 );
 
-export default function Answer({ answer }) {
+export default function Answer({ answer, questionId }) {
   return (
     <AnswerComponent>
       {answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer label={answer.label} />}
-      {answer.answ_type === 'one_choice' && <OneChoiceAnswer label={answer.label} />}
+      {answer.answ_type === 'one_choice' && <OneChoiceAnswer label={answer.label} questionid={questionId} />}
       {answer.answ_type === 'input_answ' && <InputAnswer label={answer.label} />}
     </AnswerComponent>
   );
@@ -48,6 +48,7 @@ export default function Answer({ answer }) {
 
 Answer.propTypes = {
   answer: PropTypes.arrayOf(PropTypes.object).isRequired,
+  questionId: PropTypes.number.isRequired,
 };
 
 MultipleChoiceAnswer.propTypes = {
@@ -56,6 +57,7 @@ MultipleChoiceAnswer.propTypes = {
 
 OneChoiceAnswer.propTypes = {
   label: PropTypes.string.isRequired,
+  questionId: PropTypes.number.isRequired,
 };
 
 InputAnswer.propTypes = {
