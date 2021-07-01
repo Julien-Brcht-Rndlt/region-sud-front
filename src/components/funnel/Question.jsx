@@ -55,14 +55,14 @@ export const IconImg = styled(IconeImg)`
   width: 25px;
 `;
 
-export default function Question({ title, answers }) {
+export default function Question({ title, answers, questionId }) {
   return (
     <StyledQuestionContainer>
       <IconeContainer end>
         <IconImg src={know} alt="?" />
       </IconeContainer>
       <StyledTitleH3>{title}</StyledTitleH3>
-      <AnswerList answers={answers} />
+      <AnswerList answers={answers} questionId={questionId} />
     </StyledQuestionContainer>
   );
 }
@@ -70,4 +70,5 @@ export default function Question({ title, answers }) {
 Question.propTypes = {
   title: PropTypes.string.isRequired,
   answers: PropTypes.arrayOf(PropTypes.object).isRequired,
+  questionId: PropTypes.number.isRequired,
 };
