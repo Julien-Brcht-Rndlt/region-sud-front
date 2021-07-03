@@ -28,6 +28,9 @@ export default function evalReducer(state, action) {
         const evalQuestion = evalTheme.questions
         .find((question) => question.id === parseInt(questionId, 10));
 
+        if (!evalQuestion.givenAnswers) {
+            evalQuestion.givenAnswers = [];
+        }
         /* console.log('eval question', evalQuestion);
 
         console.log('payload', payload);
