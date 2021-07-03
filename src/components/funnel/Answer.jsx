@@ -36,17 +36,25 @@ const MultipleChoiceAnswer = ({ id, label, onChange }) => {
   );
 };
 
-const OneChoiceAnswer = ({ id, label, onChange }) => {
-  const [checked, setChecked] = useState(false);
+const OneChoiceAnswer = ({
+  id,
+  label,
+  questionId,
+  onChange,
+}) => {
+  /* const [checked, setChecked] = useState(false); */
+  const [selectedOption, setSelectedOption] = useState();
   return (
     <div>
       <input
         id={`oneansw-${id}`}
         type="radio"
-        checked={checked}
+        name={`${questionId}`}
+        checked={selectedOption === label}
+        value={label}
         onChange={(event) => {
+          setSelectedOption(event.target.value);
           onChange(event);
-          setChecked(!checked);
       }}
       />
       <StyledAnswerLabel htmlFor={`oneansw-${id}`}>{label}</StyledAnswerLabel>
@@ -101,7 +109,7 @@ export default function Answer({ answer, questionId, themeId }) {
           funnel,
           questionId,
           themeId,
-          value: event.target.checked,
+          checked: event.target.checked,
         },
       });
     } else if (event.target.type === 'number') {
@@ -143,6 +151,7 @@ OneChoiceAnswer.propTypes = {
   id: PropTypes.number.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  questionId: PropTypes.number.isRequired,
 };
 
 InputAnswer.propTypes = {
