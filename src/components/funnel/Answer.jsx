@@ -42,7 +42,7 @@ const OneChoiceAnswer = ({ id, label, onChange }) => {
     <div>
       <input
         id={`oneansw-${id}`}
-        type="checkbox"
+        type="radio"
         checked={checked}
         onChange={(event) => {
           onChange(event);
@@ -77,20 +77,31 @@ export default function Answer({ answer, questionId, themeId }) {
   const { funnel } = useContext(FunnelContext);
 
   const handleChange = (event) => {
-    console.log('type', event.target.type);
+    /* console.log('type', event.target.type);
     console.log('input', event.target.checked);
     console.log('input', event.target.value);
-    console.log('funnel', funnel);
+    console.log('funnel', funnel); */
 
     if (event.target.type === 'checkbox') {
       evalDispatch({
-        type: 'CHECKED_ANSWER',
+        type: 'MULTI_CHOICE',
         payload: {
           answer,
           funnel,
           questionId,
           themeId,
           checked: event.target.checked,
+        },
+      });
+    } else if (event.target.type === 'radio') {
+      evalDispatch({
+        type: 'ONE_CHOICE',
+        payload: {
+          answer,
+          funnel,
+          questionId,
+          themeId,
+          value: event.target.checked,
         },
       });
     } else if (event.target.type === 'number') {

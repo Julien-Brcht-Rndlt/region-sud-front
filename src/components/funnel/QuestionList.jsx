@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import Question from './Question';
 
 export default function QuestionList({ questions, themeId }) {
+  console.log('questions list', questions);
   return (
     <>
       {questions.map((question) => (

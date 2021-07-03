@@ -93,7 +93,7 @@ export const StyledContainerYellow = styled.div`
   }
 `;
 
-export default function Theme({ id, questions }) {
+export default function Theme({ id }) {
   const { funnel } = useContext(FunnelContext);
   const theme = funnel.themes[id];
 
@@ -108,7 +108,7 @@ export default function Theme({ id, questions }) {
           <StyledTitleTheme>{theme.title}</StyledTitleTheme>
           <StyledBorderYellow />
         </StyledContainerYellow>
-        <QuestionList questions={questions} themeId={id} />
+        <QuestionList questions={theme.questions} themeId={id} />
       </FlexCol>
       <CompButton>
         <StyledButton>
@@ -126,5 +126,4 @@ export default function Theme({ id, questions }) {
 
 Theme.propTypes = {
   id: PropTypes.number.isRequired,
-  questions: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

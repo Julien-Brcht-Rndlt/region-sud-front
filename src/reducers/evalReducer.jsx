@@ -6,39 +6,102 @@ export default function evalReducer(state, action) {
 
     /* const { funnel } = useContext(FunnelContext); */
     /* console.log(funnel); */
-    let evalState = null;
-    if (type === 'CHECKED_ANSWER' || type === 'INPUT_ANSWER') {
-        const answerValue = type === 'CHECKED_ANSWER' ? payload.checked : payload.value;
-        console.log('payload', payload);
-        console.log('answerValue', answerValue);
-        console.log('state', state);
+    const evalState = { ...state };
+
+    if (type === 'MULTI_CHOICE' || type === 'INPUT_ANSWER' || type === 'ONE_CHOICE') {
         const {
             answer,
             funnel,
             questionId,
             themeId,
         } = payload;
-        const evalTheme = { ...funnel.themes[themeId] };
-        const evalQuestion = { ...evalTheme[questionId] };
-        evalQuestion.givenAnswers[answer.id] = {
-            ...answer,
-            answer_value: true,
-        };
-        evalTheme.questions[questionId] = evalQuestion;
+        if (!evalState.themes) {
+            evalState.themes = [];
+        }
+        const evalStateTheme = evalState.themes.find((theme) => theme.id === parseInt(themeId, 10));
+        console.log('evalStateTheme', evalStateTheme);
+        const funnelTheme = funnel.themes.find((theme) => theme.id === parseInt(themeId, 10));
+        console.log(themeId);
+        console.log('funnelTheme', funnelTheme);
+        const evalTheme = evalStateTheme || { ...funnelTheme };
+        console.log('evalTheme', evalTheme);
+        const evalQuestion = evalTheme.questions
+        .find((question) => question.id === parseInt(questionId, 10));
 
-        evalState = { ...state, evalTheme };
-    } else if (type === 'COMPLETE') {
-        return state;
-    } else if (type === 'COMPUTE_SCORE') {
-        return state;
-    } else if (type === 'COMPUTE_TOTAL_SCORE') {
-        return state;
-    } else {
-        return state;
+        /* console.log('eval question', evalQuestion);
+
+        console.log('payload', payload);
+        console.log('answerValue', answer.label);
+        console.log('before state', state); */
+
+        if (type === 'MULTI_CHOICE') {
+            if (payload.checked && evalQuestion.givenAnswers
+                .find((givenAnswer) => givenAnswer.id === answer.id)) {
+                const filteredAnswers = evalQuestion.givenAnswers
+                .filter((givenAnswer) => givenAnswer.id !== answer.id);
+                evalQuestion.givenAnswers = [...filteredAnswers, {
+                    ...answer,
+                    answer_value: answer.label,
+                }];
+            } else if (payload.checked) {
+                evalQuestion.givenAnswers.push({
+                    ...answer,
+                    answer_value: answer.label,
+                });
+            } else {
+                const filteredAnswers = evalQuestion.givenAnswers
+                .filter((givenAnswer) => givenAnswer.id !== answer.id);
+                evalQuestion.givenAnswers = [...filteredAnswers];
+            }
+        }
+        if (type === 'INPUT_ANSWER') {
+            if (payload.value && evalQuestion.givenAnswers
+                .find((givenAnswer) => givenAnswer.id === answer.id)) {
+                    const filteredAnswers = evalQuestion.givenAnswers
+                .filter((givenAnswer) => givenAnswer.id !== answer.id);
+                evalQuestion.givenAnswers = [...filteredAnswers, {
+                    ...answer,
+                    answer_value: payload.value,
+                }];
+            } else if (payload.value) {
+                evalQuestion.givenAnswers.push({
+                    ...answer,
+                    answer_value: payload.value,
+                });
+            } else {
+                const filteredAnswers = evalQuestion.givenAnswers
+                .filter((givenAnswer) => givenAnswer.id !== answer.id);
+                evalQuestion.givenAnswers = [...filteredAnswers];
+            }
+        }
+        if (type === 'ONE_CHOICE') {
+            evalQuestion.givenAnswers = [];
+            evalQuestion.givenAnswers.push({
+                ...answer,
+                answer_value: answer.label,
+            });
+        }
+
+        if (evalState.themes.find((theme) => theme.id === evalTheme.id)) {
+            const filteredThemes = evalState.themes.filter((theme) => theme.id !== evalTheme.id);
+            evalState.themes = [...filteredThemes, evalTheme];
+        } else {
+            evalState.themes.push(evalTheme);
+        }
     }
+    if (type === 'COMPLETE') {
+        // ;
+    }
+    if (type === 'COMPUTE_SCORE') {
+        // ;
+    }
+    if (type === 'COMPUTE_TOTAL_SCORE') {
+        // ;
+    }
+    console.log('eval state', evalState);
+    return evalState;
     /*  case 'ADD_QUESTION_ANSWER':
         return { ...state }; */
-    return evalState;
 }
 
 // TODO: funnel context ou une copie de celui-ci doit être maintenu dans l'eval context..
