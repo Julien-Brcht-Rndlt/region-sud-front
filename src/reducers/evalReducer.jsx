@@ -19,12 +19,8 @@ export default function evalReducer(state, action) {
             evalState.themes = [];
         }
         const evalStateTheme = evalState.themes.find((theme) => theme.id === parseInt(themeId, 10));
-        console.log('evalStateTheme', evalStateTheme);
         const funnelTheme = funnel.themes.find((theme) => theme.id === parseInt(themeId, 10));
-        console.log(themeId);
-        console.log('funnelTheme', funnelTheme);
         const evalTheme = evalStateTheme || { ...funnelTheme };
-        console.log('evalTheme', evalTheme);
         const evalQuestion = evalTheme.questions
         .find((question) => question.id === parseInt(questionId, 10));
 

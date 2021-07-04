@@ -60,6 +60,7 @@ export default function Question({
   title,
   answers,
   themeId,
+  last,
  }) {
   return (
     <StyledQuestionContainer>
@@ -67,7 +68,7 @@ export default function Question({
         <IconImg src={know} alt="?" />
       </IconeContainer>
       <StyledTitleH3>{title}</StyledTitleH3>
-      <AnswerList answers={answers} questionId={id} themeId={themeId} />
+      <AnswerList answers={answers} questionId={id} themeId={themeId} last={last} />
     </StyledQuestionContainer>
   );
 }
@@ -77,4 +78,9 @@ Question.propTypes = {
   themeId: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   answers: PropTypes.arrayOf(PropTypes.object).isRequired,
+  last: PropTypes.bool,
+};
+
+Question.defaultProps = {
+  last: false,
 };

@@ -80,7 +80,12 @@ const InputAnswer = ({ id, label, onChange }) => {
   );
 };
 
-export default function Answer({ answer, questionId, themeId }) {
+export default function Answer({
+  answer,
+  questionId,
+  themeId,
+  last,
+}) {
   const { evalDispatch } = useContext(EvalContext);
   const { funnel } = useContext(FunnelContext);
 
@@ -124,7 +129,16 @@ export default function Answer({ answer, questionId, themeId }) {
         },
       });
     }
-  };
+
+    if (last) {
+      evalDispatch({
+        type: 'COMPUTE_SCORE',
+    });
+    evalDispatch({
+      type: 'COMPLETE',
+  });
+  }
+};
 
   return (
     <AnswerComponent>
@@ -139,6 +153,11 @@ Answer.propTypes = {
   answer: PropTypes.objectOf.isRequired,
   questionId: PropTypes.number.isRequired,
   themeId: PropTypes.number.isRequired,
+  last: PropTypes.bool,
+};
+
+Answer.defaultProps = {
+  last: false,
 };
 
 MultipleChoiceAnswer.propTypes = {
