@@ -32,7 +32,7 @@ const ThemeList = () => {
             <Theme key={theme.id} {...theme} />
           </StyledLeftColumn>
           <StyledRightColumn>
-            <EvalThemeResult themeTitle={theme.title} />
+            <EvalThemeResult themeId={theme.id} themeTitle={theme.title} />
           </StyledRightColumn>
         </StyledContainer>
       ))}

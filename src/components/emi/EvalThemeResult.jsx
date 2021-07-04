@@ -12,16 +12,17 @@ export const StyledThemeResultContainer = styled(FlexCol)`
 
 export const SpaceBetween = styled.div``;
 
-export default function EvalThemeResult({ themeTitle }) {
+export default function EvalThemeResult({ themeId, themeTitle }) {
   const shouldList = ['recommandation 1', 'recommandation 2', 'recommandation 3', 'recommandation 4', 'recommandation 5'];
   return (
     <StyledThemeResultContainer>
-      <EvalThemeScoring themeTitle={themeTitle} themeScore={11} scoreIcone="" />
+      <EvalThemeScoring themeId={themeId} themeTitle={themeTitle} />
       <EvalThemeShouldList shouldList={shouldList} shouldTitle="Pour vous amiliorer :" />
     </StyledThemeResultContainer>
   );
 }
 
 EvalThemeResult.propTypes = {
+  themeId: PropTypes.number.isRequired,
   themeTitle: PropTypes.string.isRequired,
 };
