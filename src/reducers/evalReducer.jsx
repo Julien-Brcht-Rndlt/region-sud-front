@@ -19,8 +19,10 @@ export default function evalReducer(state, action) {
         if (!evalState.themes) {
             evalState.themes = [];
         }
-        const evalStateTheme = evalState.themes.find((theme) => theme.id === parseInt(themeId, 10));
-        const funnelTheme = funnel.themes.find((theme) => theme.id === parseInt(themeId, 10));
+        const evalStateTheme = evalState.themes
+        .find((theme) => theme.id === parseInt(themeId, 10));
+        const funnelTheme = funnel.themes
+        .find((theme) => theme.id === parseInt(themeId, 10));
         const evalTheme = evalStateTheme || { ...funnelTheme };
         const evalQuestion = evalTheme.questions
         .find((question) => question.id === parseInt(questionId, 10));
@@ -99,20 +101,27 @@ export default function evalReducer(state, action) {
             if (!evalState.completedThemes) {
                 evalState.completedThemes = [];
             }
-            evalState.completedThemes.push(themeId);
+            if (!evalState.completedThemes.includes(themeId)) {
+              evalState.completedThemes.push(themeId);
+            }
         }
     }
     if (type === 'COMPUTE_SCORE') {
         const themeId = payload;
+        console.log('compute score');
+        console.log('themeId from payload', themeId);
         let score = 0;
         if (evalState) {
             const evalTheme = evalState.themes
             .find((theme) => theme.id === parseInt(themeId, 10));
+            console.log('evalTheme dans compute score', evalTheme);
             evalTheme.questions.forEach((question) => {
                 question.givenAnswers.forEach((givenAnswer) => {
                     score += givenAnswer.weight;
+                    console.log('givenAnswer.weight dans double loop', givenAnswer);
                 });
             });
+          console.log('score', score);
           evalTheme.score = score;
           const filteredThemes = evalState.themes
           .filter((theme) => theme.id !== parseInt(themeId, 10));

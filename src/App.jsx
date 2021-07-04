@@ -16,10 +16,11 @@ function App() {
   const [orgEvent] = useState({});
   const [eventEval] = useState({
     themes: [],
+    completedThemes: [],
   });
 
   const [formState, dispatch] = useReducer(formReducer, { org: organization, orgEvent });
-  const [evalState, evalDispatch] = useReducer(evalReducer, { eval: eventEval });
+  const [evalState, evalDispatch] = useReducer(evalReducer, { ...eventEval });
 
   return (
     <ThemeProvider theme={theme}>

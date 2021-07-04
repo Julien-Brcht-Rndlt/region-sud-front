@@ -93,7 +93,6 @@ export default function Answer({
     console.log('input', event.target.checked);
     console.log('input', event.target.value);
     console.log('funnel', funnel); */
-
     if (event.target.type === 'checkbox') {
       evalDispatch({
         type: 'MULTI_CHOICE',
@@ -134,7 +133,13 @@ export default function Answer({
       payload: themeId,
     });
 
-    const completedTheme = evalState.completedThemes.find(themeId);
+    const completedTheme = evalState.completedThemes.find((id) => {
+      console.log('id === parseInt(themeId, 10)', id === themeId);
+      console.log('id', id);
+      console.log('themeId', themeId);
+      return id === themeId;
+    });
+    console.log('completedTheme', completedTheme);
     if (completedTheme) {
       evalDispatch({
         type: 'COMPUTE_SCORE',
@@ -146,7 +151,7 @@ export default function Answer({
   return (
     <AnswerComponent>
       {answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer id={answer.id} label={answer.label} onChange={(event) => handleChange(event)} />}
-      {answer.answ_type === 'one_choice' && <OneChoiceAnswer id={answer.id} label={answer.label} onChange={(event) => handleChange(event)} />}
+      {answer.answ_type === 'one_choice' && <OneChoiceAnswer id={answer.id} label={answer.label} questionId={questionId} onChange={(event) => handleChange(event)} />}
       {answer.answ_type === 'input_answ' && <InputAnswer id={answer.id} label={answer.label} onChange={(event) => handleChange(event)} />}
     </AnswerComponent>
   );
