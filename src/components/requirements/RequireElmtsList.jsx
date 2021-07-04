@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { Flex, FlexSpace, FlexCol } from '../../styles/generics/GenericContainers';
 import { IconeImg } from '../../styles/generics/GenericComponents';
 import clock from '../../assets/img/clockPictureEmi.png';
@@ -63,8 +64,28 @@ export const StyledRequireWrapper = styled(FlexCol)`
     }
   }
 `;
+export const ContainerContent = styled.li`
+  width: 500px;
+`;
 
 export default function RequireElmtsList() {
+  const elementsList = [
+    {
+      content: 'Informations de base relatives à la structure organisatrice.',
+    },
+    {
+      content: 'Estimation consommation d’eau sur l’événement.',
+    },
+    {
+      content: 'Estimation consommation électrique sur l’événement.',
+    },
+    {
+      content: 'Connaissance des actions et dispositifs écoresponsables sur l’événement.',
+    },
+    {
+      content: 'Informations relatives à l’organisation sur l’eau.',
+    },
+  ];
   return (
     <StyledRequireWrapper halign="space-between">
       <StyledRequireIconesWrapper around>
@@ -73,14 +94,15 @@ export default function RequireElmtsList() {
         <IconeImg src={clock} alt="horloge" />
         <StyledRequireTime>15min</StyledRequireTime>
       </StyledRequireIconesWrapper>
-
       <ul>
-        <li>Estimation de la consommation d&#39;eau pendant la manifestation</li>
-        <li>Elément nécessaire</li>
-        <li>Elément nécessaire</li>
-        <li>Elément nécessaire</li>
-        <li>Elément nécessaire</li>
+        {elementsList.map((contentList) => (
+          <ContainerContent>{contentList.content}</ContainerContent>
+        ))}
       </ul>
     </StyledRequireWrapper>
   );
 }
+
+RequireElmtsList.prototype = {
+contentList: PropTypes.array.isRequired,
+};

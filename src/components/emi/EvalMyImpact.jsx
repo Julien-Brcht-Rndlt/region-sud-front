@@ -1,16 +1,19 @@
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import RequireContainer from '../requirements/RequireContainer';
 import InfosEvalForm from '../infosEvalForm/InfosEvalForm';
-import Funnel from '../funnel/Funnel';
+import EvalProcess from './EvalProcess';
 
 export const StyledEvaluateImpactContainer = styled.div``;
 
-export default function EvaluateImpact() {
+export default function EvalMyImpact() {
+  const { id } = useParams();
+
   return (
     <StyledEvaluateImpactContainer>
       <RequireContainer />
       <InfosEvalForm />
-      <Funnel />
+      <EvalProcess id={id} />
     </StyledEvaluateImpactContainer>
   );
 }

@@ -86,7 +86,7 @@ export const ContainerDatePicker = styled(Flex)`
   }
 `;
 
-const mandatoryFields = ['orgName', 'orgMembers', 'eventName', 'eventAddr', 'eventLoc', 'eventLoc', 'eventStart', 'eventEnd'];
+const mandatoryFields = ['orgName', 'eventName', 'eventAddr', 'eventLoc'/* , 'eventStart', 'eventEnd' */];
 
 export default function InfosForm() {
   const [active, setActive] = useState(false);
@@ -108,6 +108,7 @@ export default function InfosForm() {
     const filledFields = Object.keys(orgForm).concat(Object.keys(orgEventForm));
     if (mandatoryFields.every((field) => filledFields.includes(field))) {
       setActive(true);
+      console.log('button active');
     }
   }, [orgForm, orgEventForm]);
 

@@ -1,6 +1,9 @@
+import { useState, useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { StyledInfosInput } from '../../styles/StyledInfosForms';
+import EvalContext from '../../contexts/EvalContext';
+import FunnelContext from '../../contexts/FunnelContext';
 
 export const AnswerComponent = styled.div`
   margin: 10px;
@@ -15,49 +18,166 @@ export const StyledAnswerInput = styled(StyledInfosInput)`
   width: 60px;
 `;
 
-const MultipleChoiceAnswer = ({ label }) => (
-  <>
-    <input id="multiansw" type="checkbox" value="" />
-    <StyledAnswerLabel htmlFor="multiansw">{label}</StyledAnswerLabel>
-  </>
-);
+const MultipleChoiceAnswer = ({ id, label, onChange }) => {
+  const [checked, setChecked] = useState(false);
+  return (
+    <div>
+      <input
+        id={`multiansw-${id}`}
+        type="checkbox"
+        checked={checked}
+        onChange={(event) => {
+          onChange(event);
+          setChecked(!checked);
+      }}
+      />
+      <StyledAnswerLabel htmlFor={`multiansw-${id}`}>{label}</StyledAnswerLabel>
+    </div>
+  );
+};
 
-const OneChoiceAnswer = ({ label }) => (
-  <div>
-    <input id="oneansw" type="radio" value="" />
-    <StyledAnswerLabel htmlFor="oneansw">{label}</StyledAnswerLabel>
-  </div>
-);
+const OneChoiceAnswer = ({
+  id,
+  label,
+  questionId,
+  onChange,
+}) => {
+  /* const [checked, setChecked] = useState(false); */
+  const [selectedOption, setSelectedOption] = useState();
+  return (
+    <div>
+      <input
+        id={`oneansw-${id}`}
+        type="radio"
+        name={`${questionId}`}
+        checked={selectedOption === label}
+        value={label}
+        onChange={(event) => {
+          setSelectedOption(event.target.value);
+          onChange(event);
+      }}
+      />
+      <StyledAnswerLabel htmlFor={`oneansw-${id}`}>{label}</StyledAnswerLabel>
+    </div>
+  );
+};
 
-const InputAnswer = ({ label }) => (
-  <>
-    <StyledAnswerInput id="inansw" type="text" value="" />
-    <StyledAnswerLabel htmlFor="inansw">{label}</StyledAnswerLabel>
-  </>
-);
+const InputAnswer = ({ id, label, onChange }) => {
+  const [value, setValue] = useState('');
+  return (
+    <div>
+      <StyledAnswerInput
+        id={`inansw-${id}`}
+        type="number"
+        value={value}
+        onChange={(event) => {
+          onChange(event);
+          setValue(event.target.value);
+        }}
+      />
+      <StyledAnswerLabel htmlFor={`inansw-${id}`}>{label}</StyledAnswerLabel>
+    </div>
+  );
+};
 
-export default function Answer({ answer }) {
+export default function Answer({
+  answer,
+  questionId,
+  themeId,
+}) {
+  const { evalState, evalDispatch } = useContext(EvalContext);
+  const { funnel } = useContext(FunnelContext);
+
+  const handleChange = (event) => {
+    /* console.log('type', event.target.type);
+    console.log('input', event.target.checked);
+    console.log('input', event.target.value);
+    console.log('funnel', funnel); */
+    if (event.target.type === 'checkbox') {
+      evalDispatch({
+        type: 'MULTI_CHOICE',
+        payload: {
+          answer,
+          funnel,
+          questionId,
+          themeId,
+          checked: event.target.checked,
+        },
+      });
+    } else if (event.target.type === 'radio') {
+      evalDispatch({
+        type: 'ONE_CHOICE',
+        payload: {
+          answer,
+          funnel,
+          questionId,
+          themeId,
+          checked: event.target.checked,
+        },
+      });
+    } else if (event.target.type === 'number') {
+      evalDispatch({
+        type: 'INPUT_ANSWER',
+        payload: {
+          answer,
+          funnel,
+          questionId,
+          themeId,
+          value: event.target.value,
+        },
+      });
+    }
+
+    evalDispatch({
+      type: 'IS_COMPLETE',
+      payload: themeId,
+    });
+
+    const completedTheme = evalState.completedThemes.find((id) => {
+      console.log('id === parseInt(themeId, 10)', id === themeId);
+      console.log('id', id);
+      console.log('themeId', themeId);
+      return id === themeId;
+    });
+    console.log('completedTheme', completedTheme);
+    if (completedTheme) {
+      evalDispatch({
+        type: 'COMPUTE_SCORE',
+        payload: themeId,
+      });
+  }
+};
+
   return (
     <AnswerComponent>
-      {answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer label={answer.label} />}
-      {answer.answ_type === 'one_choice' && <OneChoiceAnswer label={answer.label} />}
-      {answer.answ_type === 'input_answ' && <InputAnswer label={answer.label} />}
+      {answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer id={answer.id} label={answer.label} onChange={(event) => handleChange(event)} />}
+      {answer.answ_type === 'one_choice' && <OneChoiceAnswer id={answer.id} label={answer.label} questionId={questionId} onChange={(event) => handleChange(event)} />}
+      {answer.answ_type === 'input_answ' && <InputAnswer id={answer.id} label={answer.label} onChange={(event) => handleChange(event)} />}
     </AnswerComponent>
   );
 }
 
 Answer.propTypes = {
-  answer: PropTypes.arrayOf(PropTypes.object).isRequired,
+  answer: PropTypes.objectOf.isRequired,
+  questionId: PropTypes.number.isRequired,
+  themeId: PropTypes.number.isRequired,
 };
 
 MultipleChoiceAnswer.propTypes = {
+  id: PropTypes.number.isRequired,
   label: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 OneChoiceAnswer.propTypes = {
+  id: PropTypes.number.isRequired,
   label: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  questionId: PropTypes.number.isRequired,
 };
 
 InputAnswer.propTypes = {
+  id: PropTypes.number.isRequired,
   label: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
