@@ -86,7 +86,7 @@ export default function Answer({
   themeId,
   last,
 }) {
-  const { evalDispatch } = useContext(EvalContext);
+  const { evalState, evalDispatch } = useContext(EvalContext);
   const { funnel } = useContext(FunnelContext);
 
   const handleChange = (event) => {
@@ -134,10 +134,11 @@ export default function Answer({
       evalDispatch({
         type: 'COMPUTE_SCORE',
         payload: themeId,
-    });
-    evalDispatch({
-      type: 'COMPLETE',
-  });
+      });
+      evalDispatch({
+        type: 'COMPLETE',
+        payload: themeId,
+      });
   }
 };
 
