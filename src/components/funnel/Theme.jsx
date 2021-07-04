@@ -111,7 +111,7 @@ export default function Theme({ id }) {
           <StyledTitleTheme>{theme.title}</StyledTitleTheme>
           <StyledBorderYellow />
         </StyledContainerYellow>
-        <QuestionList questions={theme.questions} />
+        <QuestionList questions={theme.questions} themeId={id} />
       </FlexCol>
       <CompButton>
         <ButtonHelp />
