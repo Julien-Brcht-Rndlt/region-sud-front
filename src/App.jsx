@@ -7,17 +7,23 @@ import OrgContext from './contexts/OrgContext';
 import EventContext from './contexts/EventContext';
 import EvalContext from './contexts/EvalContext';
 import formReducer from './reducers/formReducer';
+import evalReducer from './reducers/evalReducer';
 import datatest from './mockdata/datatest.json';
 
 function App() {
   const [funnel] = useState(datatest);
   const [organization] = useState({});
   const [orgEvent] = useState({});
-  const [eventEval] = useState({});
-  const [score] = useState(5);
+  const [eventEval] = useState({
+    themes: [],
+    completedThemes: [],
+  });
+  // const [eventEval] = useState({});
+  // const [score] = useState(5);
   // ok
 
   const [formState, dispatch] = useReducer(formReducer, { org: organization, orgEvent });
+  const [evalState, evalDispatch] = useReducer(evalReducer, { ...eventEval });
 
   return (
     <ThemeProvider theme={theme}>
@@ -26,7 +32,7 @@ function App() {
           <EventContext.Provider
             value={{ orgEvent: formState.orgEvent, dispatch }}
           >
-            <EvalContext.Provider value={{ eventEval, score }}>
+            <EvalContext.Provider value={{ evalState, evalDispatch }}>
               <EmiRouter />
             </EvalContext.Provider>
           </EventContext.Provider>
