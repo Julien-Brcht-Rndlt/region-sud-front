@@ -84,7 +84,6 @@ export default function Answer({
   answer,
   questionId,
   themeId,
-  last,
 }) {
   const { evalState, evalDispatch } = useContext(EvalContext);
   const { funnel } = useContext(FunnelContext);
@@ -130,13 +129,15 @@ export default function Answer({
       });
     }
 
-    if (last) {
+    evalDispatch({
+      type: 'IS_COMPLETE',
+      payload: themeId,
+    });
+
+    const completedTheme = evalState.completedThemes.find(themeId);
+    if (completedTheme) {
       evalDispatch({
         type: 'COMPUTE_SCORE',
-        payload: themeId,
-      });
-      evalDispatch({
-        type: 'COMPLETE',
         payload: themeId,
       });
   }
@@ -155,11 +156,6 @@ Answer.propTypes = {
   answer: PropTypes.objectOf.isRequired,
   questionId: PropTypes.number.isRequired,
   themeId: PropTypes.number.isRequired,
-  last: PropTypes.bool,
-};
-
-Answer.defaultProps = {
-  last: false,
 };
 
 MultipleChoiceAnswer.propTypes = {

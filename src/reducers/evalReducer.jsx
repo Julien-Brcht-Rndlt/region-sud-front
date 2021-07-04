@@ -89,14 +89,25 @@ export default function evalReducer(state, action) {
             evalState.themes.push(evalTheme);
         }
     }
-    if (type === 'COMPLETE') {
-        // ;
+    if (type === 'IS_COMPLETE') {
+        const themeId = payload;
+        const evalTheme = evalState.themes
+            .find((theme) => theme.id === parseInt(themeId, 10));
+        const filteredQuestions = evalTheme.questions
+        .filter((question) => question.givenAnswers && question.givenAnswers.length > 0);
+        if (filteredQuestions.length === evalTheme.questions.length) {
+            if (!evalState.completedThemes) {
+                evalState.completedThemes = [];
+            }
+            evalState.completedThemes.push(themeId);
+        }
     }
     if (type === 'COMPUTE_SCORE') {
         const themeId = payload;
         let score = 0;
         if (evalState) {
-            const evalTheme = evalState.themes.find(themeId);
+            const evalTheme = evalState.themes
+            .find((theme) => theme.id === parseInt(themeId, 10));
             evalTheme.questions.forEach((question) => {
                 question.givenAnswers.forEach((givenAnswer) => {
                     score += givenAnswer.weight;
