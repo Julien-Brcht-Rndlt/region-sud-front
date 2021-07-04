@@ -133,6 +133,7 @@ export default function Answer({
     if (last) {
       evalDispatch({
         type: 'COMPUTE_SCORE',
+        payload: themeId,
     });
     evalDispatch({
       type: 'COMPLETE',

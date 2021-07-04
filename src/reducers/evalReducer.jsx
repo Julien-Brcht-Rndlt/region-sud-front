@@ -6,7 +6,8 @@ export default function evalReducer(state, action) {
 
     /* const { funnel } = useContext(FunnelContext); */
     /* console.log(funnel); */
-    const evalState = { ...state };
+
+    const evalState = state; // const evalState = { ...state };
 
     if (type === 'MULTI_CHOICE' || type === 'INPUT_ANSWER' || type === 'ONE_CHOICE') {
         const {
@@ -92,7 +93,20 @@ export default function evalReducer(state, action) {
         // ;
     }
     if (type === 'COMPUTE_SCORE') {
-        // ;
+        const themeId = payload;
+        let score = 0;
+        if (evalState) {
+            const evalTheme = evalState.themes.find(themeId);
+            evalTheme.questions.forEach((question) => {
+                question.givenAnswers.forEach((givenAnswer) => {
+                    score += givenAnswer.weight;
+                });
+            });
+          evalTheme.score = score;
+          const filteredThemes = evalState.themes
+          .filter((theme) => theme.id !== parseInt(themeId, 10));
+          evalState.themes = [...filteredThemes, evalTheme];
+        }
     }
     if (type === 'COMPUTE_TOTAL_SCORE') {
         // ;
