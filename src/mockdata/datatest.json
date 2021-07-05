@@ -7,47 +7,56 @@
     "questions": [
             {
             "id": 0,
+            "theme_id": 0,
             "title": "Quelles actions de réduction des déchets sont mises en place? ",
             "answers": [
               {
                 "id": 0,
                 "label": "Bacon ipsum dolor amet short ribs brisket",
-                "answ_type": "multiple_choice"
+                "answ_type": "multiple_choice",
+                "weight": 1
               },
               {
                 "id": 1,
                 "label": "Bacon ipsum dolor amet short ribs",
-                "answ_type": "multiple_choice"
+                "answ_type": "multiple_choice",
+                "weight": 1
               },
               {
                 "id": 2,
                 "label": "Bacon ipsum dolor amet short ribs brisket",
-                "answ_type": "multiple_choice"
+                "answ_type": "multiple_choice",
+                "weight": 1
               },
               {
                 "id": 3,
                 "label": "Bacon ipsum dolor amet short ribs",
-                "answ_type": "multiple_choice"
+                "answ_type": "multiple_choice",
+                "weight": 1
               },
               {
                 "id": 4,
                 "label": "Bacon ipsum dolor amet short ribs brisket",
-                "answ_type": "multiple_choice"
+                "answ_type": "multiple_choice",
+                "weight": 1
               },
               {
                 "id": 5,
                 "label": "Bacon ipsum dolor amet",
-                "answ_type": "multiple_choice"
+                "answ_type": "multiple_choice",
+                "weight": 1
               },
               {
                 "id": 6,
                 "label": "Bacon ipsum dolor amet short ribs brisket",
-                "answ_type": "multiple_choice"
+                "answ_type": "multiple_choice",
+                "weight": 1
               },
               {
                 "id": 7,
                 "label": "aucune",
-                "answ_type": "multiple_choice"
+                "answ_type": "multiple_choice",
+                "weight": 0
               }
           ]
     
@@ -59,32 +68,38 @@
         {
           "id": 0,
           "label": "Yolo ipsum dolor sit amet, consectetur adipiscing",
-          "answ_type": "multiple_choice"
+          "answ_type": "multiple_choice",
+          "weight": 1
         },
         {
           "id": 1,
           "label": "Yolo ipsum dolor sit amet, consec",
-          "answ_type": "multiple_choice"
+          "answ_type": "multiple_choice",
+          "weight": 1
         },
         {
           "id": 2,
           "label": "Yolo ipsum dolor sit amet, consec",
-          "answ_type": "multiple_choice"
+          "answ_type": "multiple_choice",
+          "weight": 1
         },
         {
           "id": 3,
           "label": "Yolo ipsum dolor sit amet",
-          "answ_type": "multiple_choice"
+          "answ_type": "multiple_choice",
+          "weight": 1
         },
         {
           "id": 4,
           "label": "Yolo ipsum dolor sit amet",
-          "answ_type": "multiple_choice"
+          "answ_type": "multiple_choice",
+          "weight": 1
         },
         {
           "id": 5,
           "label": "aucune",
-          "answ_type": "multiple_choice"
+          "answ_type": "multiple_choice",
+          "weight": 0
         }
     ]
 
@@ -96,32 +111,38 @@
         {
           "id": 0,
           "label": "Yolo ipsum dolor sit amet, consectetur adipiscing",
-          "answ_type": "multiple_choice"
+          "answ_type": "multiple_choice",
+          "weight": 1
         },
         {
           "id": 1,
           "label": "Yolo ipsum dolor",
-          "answ_type": "multiple_choice"
+          "answ_type": "multiple_choice",
+          "weight": 1
         },
         {
           "id": 2,
           "label": "Yolo ipsum dolor sit amet, consectetur adipiscing",
-          "answ_type": "multiple_choice"
+          "answ_type": "multiple_choice",
+          "weight": 1
         },
         {
           "id": 3,
           "label": "Yolo ipsum dolor sit ",
-          "answ_type": "multiple_choice"
+          "answ_type": "multiple_choice",
+          "weight": 1
         },
         {
           "id": 4,
           "label": "Yolo ipsum dolor sit amet, consectetur",
-          "answ_type": "multiple_choice"
+          "answ_type": "multiple_choice",
+          "weight": 1
         },
         {
           "id": 5,
           "label": "aucune",
-          "answ_type": "multiple_choice"
+          "answ_type": "multiple_choice",
+          "weight": 0
         }
     ]
 
@@ -133,12 +154,14 @@
             {
               "id": 0,
               "label": "oui",
-              "answ_type": "one_choice"
+              "answ_type": "one_choice",
+              "weight": 1
             },
             {
               "id": 1,
               "label": "non",
-              "answ_type": "one_choice"
+              "answ_type": "one_choice",
+              "weight": 0
             }
           
         ]
@@ -152,12 +175,14 @@
         {
           "id": 0,
           "label": "oui",
-          "answ_type": "one_choice"
+          "answ_type": "one_choice",
+          "weight": 1
         },
         {
           "id": 1,
           "label": "non",
-          "answ_type": "one_choice"
+          "answ_type": "one_choice",
+          "weight": 0
         }
       
     ]
@@ -178,12 +203,14 @@
             {
               "id": 0,
               "label": "oui",
-              "answ_type": "one_choice"
+              "answ_type": "one_choice",
+              "weight": 1
             },
             {
               "id": 1,
               "label": "non",
-              "answ_type": "one_choice"
+              "answ_type": "one_choice",
+              "weight": 0
             }
             
         ]
@@ -196,12 +223,14 @@
       {
         "id": 0,
         "label": "oui",
-        "answ_type": "one_choice"
+        "answ_type": "one_choice",
+        "weight": 1
       },
       {
         "id": 1,
         "label": "non",
-        "answ_type": "one_choice"
+        "answ_type": "one_choice",
+        "weight": 0
       }
   ]
 
@@ -222,7 +251,8 @@
             {
               "id": 1,
               "label": "litres d'eau potable consommés",
-              "answ_type": "input_answ"
+              "answ_type": "input_answ",
+              "weight": 0
             }
             
             
@@ -237,33 +267,39 @@
       {
         "id": 0,
         "label": "Yolo ipsum dolor sit amet, consectetur adipiscing ",
-        "answ_type": "multiple_choice"
+        "answ_type": "multiple_choice",
+        "weight": 1
       },
 
       {
         "id": 1,
         "label": "Yolo ipsum dolor sit amet, consectetur adipiscing ",
-        "answ_type": "multiple_choice"
+        "answ_type": "multiple_choice",
+        "weight": 1
       },
       {
         "id": 2,
         "label": "Yolo ipsum dolor sit ",
-        "answ_type": "multiple_choice"
+        "answ_type": "multiple_choice",
+        "weight": 1
       },
       {
         "id": 3,
         "label": "Yolo ipsum dolor sit amet, consectetur adipiscing",
-        "answ_type": "multiple_choice"
+        "answ_type": "multiple_choice",
+        "weight": 1
       },
       {
         "id": 4,
         "label": "Yolo ipsum dolor sit ",
-        "answ_type": "multiple_choice"
+        "answ_type": "multiple_choice",
+        "weight": 1
       },
       {
         "id": 5,
         "label": "Aucune",
-        "answ_type": "multiple_choice"
+        "answ_type": "multiple_choice",
+        "weight": 0
       }
      
   ]
@@ -276,12 +312,14 @@
     {
       "id": 0,
       "label": "oui",
-      "answ_type": "one_choice"
+      "answ_type": "one_choice",
+      "weight": 1
     },
     {
       "id": 1,
       "label": "non",
-      "answ_type": "one_choice"
+      "answ_type": "one_choice",
+      "weight": 0
     }
    
 ]
@@ -303,7 +341,8 @@
             {
               "id": 1,
               "label": "kW.h",
-              "answ_type": "input_answ"
+              "answ_type": "input_answ",
+              "weight": 0
             }
             
             
@@ -318,12 +357,14 @@
       {
         "id": 0,
         "label": "oui",
-        "answ_type": "one_choice"
+        "answ_type": "one_choice",
+        "weight": 1
       },
       {
         "id": 1,
         "label": "non",
-        "answ_type": "one_choice"
+        "answ_type": "one_choice",
+        "weight": 0
       }
      
   ]
@@ -336,12 +377,14 @@
     {
       "id": 0,
       "label": "oui",
-      "answ_type": "one_choice"
+      "answ_type": "one_choice",
+      "weight": 1
     },
     {
       "id": 1,
       "label": "non",
-      "answ_type": "one_choice"
+      "answ_type": "one_choice",
+      "weight": 0
     }
    
 ]
@@ -354,12 +397,14 @@
     {
       "id": 0,
       "label": "oui",
-      "answ_type": "one_choice"
+      "answ_type": "one_choice",
+      "weight": 1
     },
     {
       "id": 1,
       "label": "non",
-      "answ_type": "one_choice"
+      "answ_type": "one_choice",
+      "weight": 0
     }
    
 ]

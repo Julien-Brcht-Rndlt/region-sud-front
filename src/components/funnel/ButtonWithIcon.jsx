@@ -1,0 +1,33 @@
+import { useState } from 'react';
+import styled from 'styled-components';
+import { StyledButton } from '../../styles/generics/GenericButtons';
+import { ReactComponent as Icon } from '../../assets/img/helphover.svg';
+import { Flex } from '../../styles/generics/GenericContainers';
+
+export const CompIconText = styled(Flex)`
+  align-items: center;
+  justify-content: space-around;
+`;
+
+const IconWrapper = styled.div`
+  svg {
+    width: 35px;
+    height: 35px;
+    fill: ${(props) => props.fill};
+  }
+`;
+
+export default function ButtonHelp() {
+  const [color, setColor] = useState('blue');
+
+  return (
+    <StyledButton glassy onMouseOver={() => setColor('#ffffff')} onMouseLeave={() => setColor('#005aff')}>
+      <CompIconText>
+        <IconWrapper fill={color}>
+          <Icon />
+        </IconWrapper>
+        Je ne m&#39;en sors pas !
+      </CompIconText>
+    </StyledButton>
+  );
+}

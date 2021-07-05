@@ -8,8 +8,8 @@ import { StyledButton } from '../../styles/generics/GenericButtons';
 import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
 import { IconeImg } from '../../styles/generics/GenericComponents';
 import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitles';
-import help from '../../assets/img/help.png';
 import { device } from '../../styles/theme';
+import ButtonHelp from './ButtonWithIcon';
 
 export const ThemeContainer = styled.div`
   background-color: ${(props) => props.theme.secondaryFeatureColor};
@@ -38,13 +38,16 @@ export const StyledTitleTheme = styled(StyledTitleH1)`
 export const StyledSubtitleTheme = styled(StyledTitleH4)`
   margin-left: 5px;
 `;
-export const CompButton = styled.div`
+export const CompButton = styled(Flex)`
   margin-left: 40px;
 `;
 
-export const MicroImg = styled.img`
-  height: 30px;
+export const CompIconText = styled(Flex)`
+  align-items: center;
+  justify-content: space-around;
 `;
+
+export const StyledButtonHelp = styled(StyledButton)``;
 
 export const ContainersubtitleTheme = styled(Flex)`
   @media ${device.mobileS} {
@@ -110,13 +113,10 @@ export default function Theme({ id }) {
           <StyledTitleTheme>{theme.title}</StyledTitleTheme>
           <StyledBorderYellow />
         </StyledContainerYellow>
-        <QuestionList questions={theme.questions} />
+        <QuestionList questions={theme.questions} themeId={id} />
       </FlexCol>
       <CompButton>
-        <StyledButton>
-          <MicroImg src={help} />
-          Je ne m&#39;en sors pas !
-        </StyledButton>
+        <ButtonHelp />
       </CompButton>
       <Flex center>
         <StyledButton>Précédent</StyledButton>

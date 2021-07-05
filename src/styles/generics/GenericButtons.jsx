@@ -14,7 +14,6 @@ export const StyledButton = styled.button`
   &:hover {
     background-color: ${(props) => (props.glassy ? props.theme.blueFeatureColor : props.theme.NavyBlueFeatureColor)};
     color: ${(props) => (props.glassy ? props.theme.secondaryFeatureColor : props.theme.yellowFeatureColor)};
-    transition: 0.4s;
   }
   @media ${device.mobileS} {
     width: 260px;
