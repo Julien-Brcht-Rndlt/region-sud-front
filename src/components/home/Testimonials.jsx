@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
 import Testimonial from './Testimonial';
 import { StyledButton } from '../../styles/generics/GenericButtons';
@@ -12,35 +13,35 @@ export const StyledButtonTestimonial = styled(Flex)`
   padding: 50px;
 `;
 export const StyledBorderYellowH1 = styled.div`
-  @media ${device.mobileS}{
+  @media ${device.mobileS} {
     border-bottom: 0;
   }
 
-  @media ${device.mobileL}{
+  @media ${device.mobileL} {
     border-bottom: 6px solid ${(props) => props.theme.yellowFeatureColor};
-    height:7px;
+    height: 7px;
     padding-right: 40px;
     margin: 65px;
     margin-left: 140px;
     position: absolute;
-    }
-  
-  @media ${device.tablet}{
+  }
+
+  @media ${device.tablet} {
     border-bottom: 8px solid ${(props) => props.theme.yellowFeatureColor};
-    height:6px;
+    height: 6px;
     padding-right: 90px;
     margin: 65px;
     margin-left: 145px;
     position: absolute;
   }
-  
-  @media ${device.desktop}{
-  border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
-  height: 10px;
-  padding-right: 90px;
-  margin: 65px;
-  margin-left: 145px;
-  position: absolute;
+
+  @media ${device.desktop} {
+    border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+    height: 10px;
+    padding-right: 90px;
+    margin: 65px;
+    margin-left: 145px;
+    position: absolute;
   }
 `;
 
@@ -82,9 +83,9 @@ export default function Testimonials() {
         ))}
       </TestimonialsContainer>
       <StyledButtonTestimonial center>
-        <StyledButton>
-          Je m&apos;engage moi aussi !
-        </StyledButton>
+        <Link to="/EmiStart">
+          <StyledButton>Je m&apos;engage moi aussi !</StyledButton>
+        </Link>
       </StyledButtonTestimonial>
     </>
   );

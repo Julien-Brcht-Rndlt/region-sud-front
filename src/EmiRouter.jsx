@@ -6,6 +6,7 @@ import EvalMyImpact from './components/emi/EvalMyImpact';
 import FaqHome from './components/faq/FaqHome';
 import EvalResult from './components/emi/EvalResult';
 import RequireModal from './components/requirements/RequireModal';
+import InfosEvalForm from './components/infosEvalForm/InfosEvalForm';
 
 export default function EmiRouter() {
   return (
@@ -14,6 +15,7 @@ export default function EmiRouter() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/EmiStart" component={EvalMyImpact} />
+        <Route path="/Form" component={InfosEvalForm} />
         <Route path="/EmiEval/:id" component={EvalMyImpact} />
         <Route path="/EmiResult" component={EvalResult} />
         <Route path="/FaqHome" component={FaqHome} />
