@@ -69,7 +69,9 @@ export default function RequireInfos() {
         <StyledTitleH4> J&#39;aurais besoin de :</StyledTitleH4>
         <RequireElmtsList />
         <StyledBoxButtonElement>
-          <StyledRoundedButton>C&#39;est parti !</StyledRoundedButton>
+          <Link to="/Form">
+            <StyledRoundedButton>C&#39;est parti !</StyledRoundedButton>
+          </Link>
           <Link to="/RequireModal">
             <StyledRoundedButton glassy>Où trouver toutes ces pièces ?</StyledRoundedButton>
           </Link>

@@ -16,7 +16,7 @@ export default function DynamicButton({ active }) {
   return (
     <>
       {active ? (
-        <Link to="/">
+        <Link to="/EmiEval/1">
           <StyledButton>Suivant</StyledButton>
         </Link>
       ) : (

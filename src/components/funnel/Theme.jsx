@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FunnelContext from '../../contexts/FunnelContext';
 import QuestionList from './QuestionList';
@@ -96,6 +97,7 @@ export const StyledContainerYellow = styled.div`
 export default function Theme({ id }) {
   const { funnel } = useContext(FunnelContext);
   const theme = funnel.themes[id];
+  const lengthThemes = funnel.themes.length - 1;
 
   return (
     <>
@@ -118,7 +120,15 @@ export default function Theme({ id }) {
       </CompButton>
       <Flex center>
         <StyledButton>Précédent</StyledButton>
-        <StyledButton>Suivant</StyledButton>
+        {id < lengthThemes ? (
+          <Link to={`/EmiEval/${parseInt(id, 10) + 1}`}>
+            <StyledButton>Suivant</StyledButton>
+          </Link>
+        ) : (
+          <Link to="/">
+            <StyledButton>Terminé</StyledButton>
+          </Link>
+        )}
       </Flex>
     </>
   );
