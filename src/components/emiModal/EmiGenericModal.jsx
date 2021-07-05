@@ -6,7 +6,7 @@ const StyledModalOverlay = styled.div``;
 const StyledModalContainer = styled.div``;
 
 function EmiGenericModal({
-    /* children, */
+    children,
     renderModalHeader,
     renderModalFooter,
     show,
@@ -23,22 +23,23 @@ function EmiGenericModal({
     return (
       <StyledModalOverlay onClick={() => closeModalHandler()}>
         <StyledModalContainer onClick={(event) => event.stopPropagation()}>
-          <EmiModalHeader
-            renderModalHeader={renderModalHeader}
-            closeModalHandler={closeModalHandler}
-          />
+          <EmiModalHeader closeModalHandler={closeModalHandler}>
+            {renderModalHeader()}
+          </EmiModalHeader>
           <EmiModalBody>
-            Coucou cest moi la petite Modal !
+            {children}
           </EmiModalBody>
-          <EmiModalFooter renderModalFooter={renderModalFooter} />
+          <EmiModalFooter>
+            {renderModalFooter()}
+          </EmiModalFooter>
         </StyledModalContainer>
       </StyledModalOverlay>
     );
 }
 
-const EmiModalHeader = ({ renderModalHeader, closeModalHandler }) => (
+const EmiModalHeader = ({ children, closeModalHandler }) => (
   <div>
-    {renderModalHeader}
+    { children }
     <button type="button" onClick={() => closeModalHandler()}>Close</button>
   </div>
     );
@@ -49,14 +50,14 @@ const EmiModalBody = ({ children }) => (
   </div>
       );
 
-const EmiModalFooter = ({ renderModalFooter }) => (
+const EmiModalFooter = ({ children }) => (
   <div>
-    {renderModalFooter}
+    { children }
   </div>
     );
 
 EmiGenericModal.propTypes = {
-    /* children: PropTypes.node.isRequired, */
+    children: PropTypes.node.isRequired,
     renderModalHeader: PropTypes.func.isRequired,
     renderModalFooter: PropTypes.func.isRequired,
     show: PropTypes.bool.isRequired,
@@ -64,7 +65,7 @@ EmiGenericModal.propTypes = {
 };
 
 EmiModalHeader.propTypes = {
-    renderModalHeader: PropTypes.func.isRequired,
+    children: PropTypes.node.isRequired,
     closeModalHandler: PropTypes.func.isRequired,
 };
 
@@ -73,7 +74,7 @@ EmiModalBody.propTypes = {
 };
 
 EmiModalFooter.propTypes = {
-    renderModalFooter: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default EmiGenericModal;

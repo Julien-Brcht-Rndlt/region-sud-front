@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { StyledTitleH6Black } from '../../styles/generics/GenericTitles';
 import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
-import FaqQuestionsList from './FaqQuestionsList';
+import FaqQuestionsList from './EmiFaqQuestionsList';
 import FaqHeadPicture from '../../assets/img/FaqHeadPicture.png';
 import Phone from '../../assets/img/FaqPhonePicture.png';
 import Mail from '../../assets/img/FaqLetterPicture.png';
