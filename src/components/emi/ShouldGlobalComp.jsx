@@ -15,11 +15,7 @@ import theme5 from '../../assets/img-temp/theme5.png';
 import theme6 from '../../assets/img-temp/theme6.png';
 import theme7 from '../../assets/img-temp/theme7.png';
 //  import should from '../../mockdata/should.json';
-
-const ContainerGlobalRecoParagraph = styled(FlexCol)`
-padding:10px;
-text-align:center;
-`;
+import ContainerGlobalRecoParagraph from './ContainerGlobalRecoParagraph';
 
 const GlobalReco = styled(Flex)`
 padding-top:20px;
@@ -34,7 +30,7 @@ width:100px;
 const ThemeReco = styled.img`
 width: 30px;
 height: 30px;
-padding-left:15px;
+padding-left:20px;
 `;
 
 export default function ShouldGlobalComp() {
@@ -46,7 +42,7 @@ export default function ShouldGlobalComp() {
   ];
 
   const [seeShould, setSeeShould] = useState(false);
-/*  const [containShould] = useState([should]); */
+/*  const [containShould] = useState({should}); */
   function handleClickShould() {
     setSeeShould(!seeShould);
   }
@@ -57,7 +53,7 @@ export default function ShouldGlobalComp() {
         <MiniContainerReco>
           <ThemeReco src={themea} alt="themea" />
           <ImgProgressBar src={soleil} alt="sun" onClick={handleClickShould} />
-          {should.filter((shouldItem) => !seeShould || shouldItem.id === 0)
+          {seeShould ? setSeeShould : should.filter((shouldItem) => shouldItem.id === 0)
             .map((content) => <ContainerGlobalRecoParagraph {...content} />)}
         </MiniContainerReco>
         <MiniContainerReco>
