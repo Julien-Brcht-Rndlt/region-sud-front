@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -10,6 +10,7 @@ import { IconeImg } from '../../styles/generics/GenericComponents';
 import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import { device } from '../../styles/theme';
 import ButtonHelp from './ButtonWithIcon';
+import EmiFaqModal from '../faq/EmiFaqModal';
 
 export const ThemeContainer = styled.div`
   background-color: ${(props) => props.theme.secondaryFeatureColor};
@@ -98,6 +99,7 @@ export const StyledContainerYellow = styled.div`
 `;
 
 export default function Theme({ id }) {
+  const [show, setShow] = useState(false);
   const { funnel } = useContext(FunnelContext);
   const theme = funnel.themes[id];
   const lengthThemes = funnel.themes.length - 1;
@@ -114,8 +116,17 @@ export default function Theme({ id }) {
           <StyledBorderYellow />
         </StyledContainerYellow>
         <QuestionList questions={theme.questions} themeId={id} />
+        <EmiFaqModal show={show} setShow={setShow} />
       </FlexCol>
       <CompButton>
+        <button
+          type="button"
+          onClick={() => {
+          console.log('click button help');
+          setShow(true);
+      }}>
+          Show Modal
+        </button>
         <ButtonHelp />
       </CompButton>
       <Flex center>

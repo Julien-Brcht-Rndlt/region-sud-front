@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FaqQuestionItem, { StyledContainerQuestions } from './FaqQuestionItem';
+import FaqQuestionItem, { StyledContainerQuestions } from './EmiFaqQuestionItem';
 
 export const StyledContainerQuestionsList = styled.div`
   width: 100%;
