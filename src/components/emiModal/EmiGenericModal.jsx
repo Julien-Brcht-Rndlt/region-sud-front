@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Flex } from '../../styles/generics/GenericContainers';
+import Close from '../../assets/img/close.png';
 
 const StyledModalOverlay = styled(Flex)`
   position: fixed;
@@ -11,7 +12,20 @@ const StyledModalOverlay = styled(Flex)`
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
-const StyledModalContainer = styled.div``;
+const StyledModalContainer = styled.div`
+background-color: ${(props) => props.theme.greyFeatureColor};
+`;
+
+const StyledHeaderContainer = styled(Flex)`
+width: auto;
+justify-content: space-between;
+`;
+
+const StyledClosePicture = styled.img`
+height: 25px;
+width: 25px;
+padding: 15px;
+`;
 
 function EmiGenericModal({
     children,
@@ -46,10 +60,12 @@ function EmiGenericModal({
 }
 
 const EmiModalHeader = ({ children, closeModalHandler }) => (
-  <div>
+  <StyledHeaderContainer>
     { children }
-    <button type="button" onClick={() => closeModalHandler()}>Close</button>
-  </div>
+    <button style={{ background: 'none', border: 'none' }} type="button" onClick={() => closeModalHandler()}>
+      <StyledClosePicture src={Close} alt="closed" />
+    </button>
+  </StyledHeaderContainer>
     );
 
 const EmiModalBody = ({ children }) => (

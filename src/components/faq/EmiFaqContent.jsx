@@ -12,10 +12,16 @@ export const StyledFaqHeaderContainer = styled(Flex)`
   margin-left: 50px;
 `;
 
+export const StyledFaqClosePicture = styled.img`
+  width: 35px;
+  height: 35px;
+`;
+
 export const StyledHeadPicture = styled.img`
   padding: 20px;
   height: 60px;
   width: 60px;
+  color: black;
 `;
 
 export const StyledTitleHelp = styled.h1`
@@ -24,12 +30,12 @@ export const StyledTitleHelp = styled.h1`
 
 export const FaqHeader = () => (
   <StyledFaqHeaderContainer start>
-    <StyledHeadPicture src={FaqHeadPicture} alt="HeadPciture" />
+    <StyledHeadPicture src={FaqHeadPicture} alt="HeadPicture" />
     <StyledTitleHelp>Aide</StyledTitleHelp>
   </StyledFaqHeaderContainer>
-      );
+);
 
-  export const StyledContainerCol = styled(Flex)`
+export const StyledContainerCol = styled(Flex)`
   width: auto;
   height: 300px;
   margin-left: 50px;
