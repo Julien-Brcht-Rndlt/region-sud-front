@@ -11,6 +11,7 @@ import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitle
 import { device } from '../../styles/theme';
 import ButtonHelp from './ButtonWithIcon';
 import EmiFaqModal from '../faq/EmiFaqModal';
+import { DisabledButton } from '../../styles/generics/DynamicButton';
 
 export const ThemeContainer = styled.div`
   background-color: ${(props) => props.theme.secondaryFeatureColor};
@@ -103,6 +104,7 @@ export default function Theme({ id }) {
   const { funnel } = useContext(FunnelContext);
   const theme = funnel.themes[id];
   const lengthThemes = funnel.themes.length - 1;
+  const lengthTheme = funnel.themes.length + 1;
 
   return (
     <>
@@ -122,15 +124,21 @@ export default function Theme({ id }) {
         <button
           type="button"
           onClick={() => {
-          console.log('click button help');
-          setShow(true);
+            console.log('click button help');
+            setShow(true);
       }}>
           Show Modal
         </button>
         <ButtonHelp />
       </CompButton>
       <Flex center>
-        <StyledButton>Précédent</StyledButton>
+        {id !== lengthTheme ? (
+          <Link to={`/EmiEval/${parseInt(id, 10) - 1}`}>
+            <StyledButton>Précédent</StyledButton>
+          </Link>
+        ) : (
+          <DisabledButton>Précédent</DisabledButton>
+        )}
         {id < lengthThemes ? (
           <Link to={`/EmiEval/${parseInt(id, 10) + 1}`}>
             <StyledButton>Suivant</StyledButton>
