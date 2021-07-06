@@ -5,18 +5,11 @@ import FaqQuestionsList from './EmiFaqQuestionsList';
 import FaqHeadPicture from '../../assets/img/FaqHeadPicture.png';
 import Phone from '../../assets/img/FaqPhonePicture.png';
 import Mail from '../../assets/img/FaqLetterPicture.png';
-import Close from '../../assets/img/close.png';
 
 export const StyledFaqHeaderContainer = styled(Flex)`
   width: auto;
   height: 80px;
   margin-left: 50px;
-`;
-
-export const StyledFaqClosePicContainer = styled(Flex)`
-padding: 15px;
-justify-content: end;
-width: 100%;
 `;
 
 export const StyledFaqClosePicture = styled.img`
@@ -39,9 +32,6 @@ export const FaqHeader = () => (
   <StyledFaqHeaderContainer start>
     <StyledHeadPicture src={FaqHeadPicture} alt="HeadPicture" />
     <StyledTitleHelp>Aide</StyledTitleHelp>
-    <StyledFaqClosePicContainer>
-      <StyledFaqClosePicture src={Close} alt="ClosePicture" />
-    </StyledFaqClosePicContainer>
   </StyledFaqHeaderContainer>
 );
 
