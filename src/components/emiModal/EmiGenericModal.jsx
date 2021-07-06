@@ -1,7 +1,15 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Flex } from '../../styles/generics/GenericContainers';
 
-const StyledModalOverlay = styled.div``;
+const StyledModalOverlay = styled(Flex)`
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+`;
 
 const StyledModalContainer = styled.div``;
 
@@ -21,7 +29,7 @@ function EmiGenericModal({
     }
 
     return (
-      <StyledModalOverlay onClick={() => closeModalHandler()}>
+      <StyledModalOverlay center valign="center" onClick={() => closeModalHandler()}>
         <StyledModalContainer onClick={(event) => event.stopPropagation()}>
           <EmiModalHeader closeModalHandler={closeModalHandler}>
             {renderModalHeader()}
