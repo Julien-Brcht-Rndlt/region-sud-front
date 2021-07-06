@@ -6,6 +6,7 @@ import EvalMyImpact from './components/emi/EvalMyImpact';
 import FaqHome from './components/faq/FaqHome';
 import EvalResult from './components/emi/EvalResult';
 import RequireModal from './components/requirements/RequireModal';
+import DisplayPdf from './components/emiPDF/DisplayPdf';
 
 export default function EmiRouter() {
   return (
@@ -18,6 +19,7 @@ export default function EmiRouter() {
         <Route path="/EmiResult" component={EvalResult} />
         <Route path="/FaqHome" component={FaqHome} />
         <Route path="/RequireModal" component={RequireModal} />
+        <Route path="/pdf" component={DisplayPdf} />
       </Switch>
       <Footer />
     </Router>
