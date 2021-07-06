@@ -104,7 +104,6 @@ export default function Theme({ id }) {
   const { funnel } = useContext(FunnelContext);
   const theme = funnel.themes[id];
   const lengthThemes = funnel.themes.length - 1;
-  const lengthTheme = funnel.themes.length + 1;
 
   return (
     <>
@@ -132,7 +131,7 @@ export default function Theme({ id }) {
         <ButtonHelp />
       </CompButton>
       <Flex center>
-        {id !== lengthTheme ? (
+        {id > 0 ? (
           <Link to={`/EmiEval/${parseInt(id, 10) - 1}`}>
             <StyledButton>Précédent</StyledButton>
           </Link>
