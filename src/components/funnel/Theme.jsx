@@ -120,14 +120,6 @@ export default function Theme({ id }) {
         <EmiFaqModal show={show} setShow={setShow} />
       </FlexCol>
       <CompButton>
-        <button
-          type="button"
-          onClick={() => {
-            console.log('click button help');
-            setShow(true);
-      }}>
-          Show Modal
-        </button>
         <ButtonHelp />
       </CompButton>
       <Flex center>
