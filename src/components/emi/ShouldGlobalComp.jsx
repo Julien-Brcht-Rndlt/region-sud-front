@@ -6,7 +6,6 @@ import vent from '../../assets/img/vent.PNG';
 import pluie from '../../assets/img/pluie.PNG';
 import orageux from '../../assets/img/orageux.PNG';
 import { ImgProgressBar } from './QuickEvalNav';
-//  import { StyledTitleP, StyledTitleH3 } from '../../styles/generics/GenericTitles';
 import themea from '../../assets/img-temp/themea.png';
 import theme1 from '../../assets/img-temp/theme1.png';
 import theme2 from '../../assets/img-temp/theme2.png';
@@ -15,14 +14,7 @@ import theme4 from '../../assets/img-temp/theme4.png';
 import theme5 from '../../assets/img-temp/theme5.png';
 import theme6 from '../../assets/img-temp/theme6.png';
 import theme7 from '../../assets/img-temp/theme7.png';
-
-/*  const StyledShouldListContainer = styled(FlexCol)`
-width: 500px;
-height: 300px;
-
-  <StyledShouldListContainer start halign="center">
-`;
-*/
+//  import should from '../../mockdata/should.json';
 
 const ContainerGlobalRecoParagraph = styled(FlexCol)`
 padding:10px;
@@ -42,15 +34,31 @@ width:100px;
 const ThemeReco = styled.img`
 width: 30px;
 height: 30px;
+padding-left:15px;
 `;
 
 export default function ShouldGlobalComp() {
+  const should = [
+          {
+              id: 0,
+              content: 'content 0 blablablabla',
+          },
+  ];
+
+  const [seeShould, setSeeShould] = useState(false);
+/*  const [containShould] = useState([should]); */
+  function handleClickShould() {
+    setSeeShould(!seeShould);
+  }
+
   return (
     <>
       <GlobalReco>
         <MiniContainerReco>
           <ThemeReco src={themea} alt="themea" />
-          <ImgProgressBar src={soleil} alt="sun" />
+          <ImgProgressBar src={soleil} alt="sun" onClick={handleClickShould} />
+          {should.filter((shouldItem) => !seeShould || shouldItem.id === 0)
+            .map((content) => <ContainerGlobalRecoParagraph {...content} />)}
         </MiniContainerReco>
         <MiniContainerReco>
           <ThemeReco src={theme1} alt="theme1" />
@@ -81,9 +89,6 @@ export default function ShouldGlobalComp() {
           <ImgProgressBar src={soleil} alt="sun" />
         </MiniContainerReco>
       </GlobalReco>
-      <ContainerGlobalRecoParagraph>
-        <p>blablabla</p>
-      </ContainerGlobalRecoParagraph>
     </>
     );
    }
