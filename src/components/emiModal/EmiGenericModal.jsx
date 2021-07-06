@@ -11,7 +11,9 @@ const StyledModalOverlay = styled(Flex)`
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
-const StyledModalContainer = styled.div``;
+const StyledModalContainer = styled.div`
+background-color: ${(props) => props.theme.greyFeatureColor};
+`;
 
 function EmiGenericModal({
     children,

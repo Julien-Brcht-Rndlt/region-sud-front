@@ -5,6 +5,7 @@ import FaqQuestionsList from './EmiFaqQuestionsList';
 import FaqHeadPicture from '../../assets/img/FaqHeadPicture.png';
 import Phone from '../../assets/img/FaqPhonePicture.png';
 import Mail from '../../assets/img/FaqLetterPicture.png';
+import Close from '../../assets/img/close.png';
 
 export const StyledFaqHeaderContainer = styled(Flex)`
   width: auto;
@@ -12,10 +13,22 @@ export const StyledFaqHeaderContainer = styled(Flex)`
   margin-left: 50px;
 `;
 
+export const StyledFaqClosePicContainer = styled(Flex)`
+padding: 15px;
+justify-content: end;
+width: 100%;
+`;
+
+export const StyledFaqClosePicture = styled.img`
+  width: 35px;
+  height: 35px;
+`;
+
 export const StyledHeadPicture = styled.img`
   padding: 20px;
   height: 60px;
   width: 60px;
+  color: black;
 `;
 
 export const StyledTitleHelp = styled.h1`
@@ -24,12 +37,15 @@ export const StyledTitleHelp = styled.h1`
 
 export const FaqHeader = () => (
   <StyledFaqHeaderContainer start>
-    <StyledHeadPicture src={FaqHeadPicture} alt="HeadPciture" />
+    <StyledHeadPicture src={FaqHeadPicture} alt="HeadPicture" />
     <StyledTitleHelp>Aide</StyledTitleHelp>
+    <StyledFaqClosePicContainer>
+      <StyledFaqClosePicture src={Close} alt="ClosePicture" />
+    </StyledFaqClosePicContainer>
   </StyledFaqHeaderContainer>
-      );
+);
 
-  export const StyledContainerCol = styled(Flex)`
+export const StyledContainerCol = styled(Flex)`
   width: auto;
   height: 300px;
   margin-left: 50px;
