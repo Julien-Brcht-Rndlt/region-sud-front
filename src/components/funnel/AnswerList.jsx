@@ -23,7 +23,7 @@ export default function AnswerList({ answers, questionId, themeId }) {
 }
 
 AnswerList.propTypes = {
-  answers: PropTypes.arrayOf(PropTypes.object).isRequired,
+  answers: PropTypes.func.isRequired,
   questionId: PropTypes.number.isRequired,
-  themeId: PropTypes.number.isRequired,
+  themeId: PropTypes.string.isRequired,
 };

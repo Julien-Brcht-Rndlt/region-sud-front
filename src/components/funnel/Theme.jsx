@@ -153,5 +153,5 @@ export default function Theme({ id }) {
 }
 
 Theme.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };

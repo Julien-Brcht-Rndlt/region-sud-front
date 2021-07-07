@@ -18,12 +18,18 @@ export const StyledAnswerInput = styled(StyledInfosInput)`
   width: 60px;
 `;
 
-const MultipleChoiceAnswer = ({ id, label, onChange }) => {
+const MultipleChoiceAnswer = ({
+  id,
+  label,
+  questionId,
+  themeId,
+  onChange,
+}) => {
   const [checked, setChecked] = useState(false);
   return (
     <div>
       <input
-        id={`multiansw-${id}`}
+        id={`multiansw-${themeId}-${questionId}-${id}`}
         type="checkbox"
         checked={checked}
         onChange={(event) => {
@@ -31,7 +37,7 @@ const MultipleChoiceAnswer = ({ id, label, onChange }) => {
           setChecked(!checked);
       }}
       />
-      <StyledAnswerLabel htmlFor={`multiansw-${id}`}>{label}</StyledAnswerLabel>
+      <StyledAnswerLabel htmlFor={`multiansw-${themeId}-${questionId}-${id}`}>{label}</StyledAnswerLabel>
     </div>
   );
 };
@@ -40,6 +46,7 @@ const OneChoiceAnswer = ({
   id,
   label,
   questionId,
+  themeId,
   onChange,
 }) => {
   /* const [checked, setChecked] = useState(false); */
@@ -47,7 +54,7 @@ const OneChoiceAnswer = ({
   return (
     <div>
       <input
-        id={`oneansw-${id}`}
+        id={`oneansw-${themeId}-${questionId}-${id}`}
         type="radio"
         name={`${questionId}`}
         checked={selectedOption === label}
@@ -57,17 +64,23 @@ const OneChoiceAnswer = ({
           onChange(event);
       }}
       />
-      <StyledAnswerLabel htmlFor={`oneansw-${id}`}>{label}</StyledAnswerLabel>
+      <StyledAnswerLabel htmlFor={`oneansw-${themeId}-${questionId}-${id}`}>{label}</StyledAnswerLabel>
     </div>
   );
 };
 
-const InputAnswer = ({ id, label, onChange }) => {
+const InputAnswer = ({
+  id,
+  label,
+  questionId,
+  themeId,
+  onChange,
+}) => {
   const [value, setValue] = useState('');
   return (
     <div>
       <StyledAnswerInput
-        id={`inansw-${id}`}
+        id={`inansw-${themeId}-${questionId}-${id}`}
         type="number"
         value={value}
         onChange={(event) => {
@@ -75,7 +88,7 @@ const InputAnswer = ({ id, label, onChange }) => {
           setValue(event.target.value);
         }}
       />
-      <StyledAnswerLabel htmlFor={`inansw-${id}`}>{label}</StyledAnswerLabel>
+      <StyledAnswerLabel htmlFor={`inansw-${themeId}-${questionId}-${id}`}>{label}</StyledAnswerLabel>
     </div>
   );
 };
@@ -150,23 +163,25 @@ export default function Answer({
 
   return (
     <AnswerComponent>
-      {answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer id={answer.id} label={answer.label} onChange={(event) => handleChange(event)} />}
-      {answer.answ_type === 'one_choice' && <OneChoiceAnswer id={answer.id} label={answer.label} questionId={questionId} onChange={(event) => handleChange(event)} />}
-      {answer.answ_type === 'input_answ' && <InputAnswer id={answer.id} label={answer.label} onChange={(event) => handleChange(event)} />}
+      {answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} />}
+      {answer.answ_type === 'one_choice' && <OneChoiceAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} />}
+      {answer.answ_type === 'input_answ' && <InputAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} />}
     </AnswerComponent>
   );
 }
 
 Answer.propTypes = {
-  answer: PropTypes.objectOf.isRequired,
+  answer: PropTypes.func.isRequired,
   questionId: PropTypes.number.isRequired,
-  themeId: PropTypes.number.isRequired,
+  themeId: PropTypes.string.isRequired,
 };
 
 MultipleChoiceAnswer.propTypes = {
   id: PropTypes.number.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  questionId: PropTypes.number.isRequired,
+  themeId: PropTypes.string.isRequired,
 };
 
 OneChoiceAnswer.propTypes = {
@@ -174,10 +189,13 @@ OneChoiceAnswer.propTypes = {
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   questionId: PropTypes.number.isRequired,
+  themeId: PropTypes.string.isRequired,
 };
 
 InputAnswer.propTypes = {
   id: PropTypes.number.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  questionId: PropTypes.number.isRequired,
+  themeId: PropTypes.string.isRequired,
 };
