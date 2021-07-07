@@ -69,7 +69,7 @@ export default function RequireInfos() {
         <StyledTitleH4> J&#39;aurais besoin de :</StyledTitleH4>
         <RequireElmtsList />
         <StyledBoxButtonElement>
-          <HashLink to="/Form#">
+          <HashLink to="/EmiStart#section-form">
             <StyledRoundedButton>C&#39;est parti !</StyledRoundedButton>
           </HashLink>
           <HashLink to="/RequireModal">

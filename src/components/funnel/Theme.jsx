@@ -107,7 +107,7 @@ export default function Theme({ id }) {
 
   return (
     <>
-      <ContainersubtitleTheme>
+      <ContainersubtitleTheme id="section-theme">
         <IconeImg src={theme.icon} alt="logo" />
         <StyledSubtitleTheme>Evaluer mon événement</StyledSubtitleTheme>
       </ContainersubtitleTheme>
@@ -124,14 +124,14 @@ export default function Theme({ id }) {
       </CompButton>
       <Flex center>
         {id > 0 ? (
-          <HashLink to={`/EmiEval/${parseInt(id, 10) - 1}`}>
+          <HashLink to={`/EmiEval/${parseInt(id, 10) - 1}#section-theme`}>
             <StyledButton>Précédent</StyledButton>
           </HashLink>
         ) : (
           <DisabledButton>Précédent</DisabledButton>
         )}
         {id < lengthThemes ? (
-          <HashLink to={`/EmiEval/${parseInt(id, 10) + 1}`}>
+          <HashLink to={`/EmiEval/${parseInt(id, 10) + 1}#section-theme`}>
             <StyledButton>Suivant</StyledButton>
           </HashLink>
         ) : (
