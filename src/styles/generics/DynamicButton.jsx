@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { StyledButton } from './GenericButtons';
 
 export const DisabledButton = styled(StyledButton)`
@@ -16,9 +16,9 @@ export default function DynamicButton({ active }) {
   return (
     <>
       {active ? (
-        <Link to="/EmiEval/0">
+        <HashLink to="/EmiEval/0#section-theme">
           <StyledButton>Suivant</StyledButton>
-        </Link>
+        </HashLink>
       ) : (
         <DisabledButton disabled>Suivant</DisabledButton>
       )}
