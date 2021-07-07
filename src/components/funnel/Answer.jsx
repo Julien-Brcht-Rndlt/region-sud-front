@@ -25,7 +25,25 @@ const MultipleChoiceAnswer = ({
   themeId,
   onChange,
 }) => {
-  const [checked, setChecked] = useState(false);
+  const localStKey = `multiansw-${themeId}-${questionId}-${id}`;
+
+  const initLocalSt = () => {
+    const localStValue = JSON.parse(localStorage.getItem(localStKey));
+    return localStValue;
+  };
+
+  const initState = initLocalSt(localStKey);
+  const [checked, setChecked] = useState(initState);
+
+  const handleLocalSt = () => {
+    setChecked(!checked);
+    if (checked) {
+      localStorage.removeItem(localStKey);
+    } else {
+      localStorage.setItem(localStKey, !checked);
+    }
+  };
+
   return (
     <div>
       <input
@@ -34,7 +52,7 @@ const MultipleChoiceAnswer = ({
         checked={checked}
         onChange={(event) => {
           onChange(event);
-          setChecked(!checked);
+          handleLocalSt(localStKey);
       }}
       />
       <StyledAnswerLabel htmlFor={`multiansw-${themeId}-${questionId}-${id}`}>{label}</StyledAnswerLabel>
@@ -49,8 +67,26 @@ const OneChoiceAnswer = ({
   themeId,
   onChange,
 }) => {
-  /* const [checked, setChecked] = useState(false); */
-  const [selectedOption, setSelectedOption] = useState();
+  const localStKey = `oneansw-${themeId}-${questionId}-${id}`;
+
+  const initLocalSt = () => {
+    const localStValue = localStorage.getItem(localStKey) || '';
+    return localStValue;
+  };
+
+  const initState = initLocalSt(); // localStorage.getItem(localStKey) || '';
+  console.log('one choice initState', initState);
+  const [selectedOption, setSelectedOption] = useState(initState);
+
+  const handleLocalSt = (value, checked) => {
+    setSelectedOption(value);
+    if (!checked) {
+      localStorage.removeItem(localStKey);
+    } else {
+      localStorage.setItem(localStKey, value);
+    }
+  };
+
   return (
     <div>
       <input
@@ -60,8 +96,8 @@ const OneChoiceAnswer = ({
         checked={selectedOption === label}
         value={label}
         onChange={(event) => {
-          setSelectedOption(event.target.value);
           onChange(event);
+          handleLocalSt(event.target.value, event.target.value === label);
       }}
       />
       <StyledAnswerLabel htmlFor={`oneansw-${themeId}-${questionId}-${id}`}>{label}</StyledAnswerLabel>
@@ -76,16 +112,36 @@ const InputAnswer = ({
   themeId,
   onChange,
 }) => {
-  const [value, setValue] = useState('');
+  const localStKey = `inansw-${themeId}-${questionId}-${id}`;
+  console.log(localStKey);
+  const initLocalSt = () => {
+    const localStValue = localStorage.getItem(localStKey) || '';
+    return localStValue;
+  };
+
+  const initState = initLocalSt();
+  console.log('input initState', initState);
+  const [input, setInput] = useState(initState);
+
+  const handleLocalSt = (value) => {
+    if (value === '') {
+      localStorage.removeItem(localStKey);
+    } else {
+      localStorage.setItem(localStKey, value);
+    }
+  };
+
   return (
     <div>
       <StyledAnswerInput
         id={`inansw-${themeId}-${questionId}-${id}`}
-        type="number"
-        value={value}
+        type="text"
+        value={input}
         onChange={(event) => {
+          const { value } = event.target;
+          setInput(value);
           onChange(event);
-          setValue(event.target.value);
+          handleLocalSt(value);
         }}
       />
       <StyledAnswerLabel htmlFor={`inansw-${themeId}-${questionId}-${id}`}>{label}</StyledAnswerLabel>
@@ -102,10 +158,6 @@ export default function Answer({
   const { funnel } = useContext(FunnelContext);
 
   const handleChange = (event) => {
-    /* console.log('type', event.target.type);
-    console.log('input', event.target.checked);
-    console.log('input', event.target.value);
-    console.log('funnel', funnel); */
     if (event.target.type === 'checkbox') {
       evalDispatch({
         type: 'MULTI_CHOICE',
@@ -146,12 +198,7 @@ export default function Answer({
       payload: themeId,
     });
 
-    const completedTheme = evalState.completedThemes.find((id) => {
-      console.log('id === parseInt(themeId, 10)', id === themeId);
-      console.log('id', id);
-      console.log('themeId', themeId);
-      return id === themeId;
-    });
+    const completedTheme = evalState.completedThemes.find((id) => id === themeId);
     console.log('completedTheme', completedTheme);
     if (completedTheme) {
       evalDispatch({
