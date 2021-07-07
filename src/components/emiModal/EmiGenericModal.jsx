@@ -14,6 +14,9 @@ const StyledModalOverlay = styled(Flex)`
 
 const StyledModalContainer = styled.div`
 background-color: ${(props) => props.theme.greyFeatureColor};
+width: 50%;
+padding-right: 65px;
+padding-left: 45px;
 `;
 
 const StyledHeaderContainer = styled(Flex)`
