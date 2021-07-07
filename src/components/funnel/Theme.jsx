@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import PropTypes from 'prop-types';
 import FunnelContext from '../../contexts/FunnelContext';
 import QuestionList from './QuestionList';
@@ -124,20 +124,20 @@ export default function Theme({ id }) {
       </CompButton>
       <Flex center>
         {id > 0 ? (
-          <Link to={`/EmiEval/${parseInt(id, 10) - 1}`}>
+          <HashLink to={`/EmiEval/${parseInt(id, 10) - 1}`}>
             <StyledButton>Précédent</StyledButton>
-          </Link>
+          </HashLink>
         ) : (
           <DisabledButton>Précédent</DisabledButton>
         )}
         {id < lengthThemes ? (
-          <Link to={`/EmiEval/${parseInt(id, 10) + 1}`}>
+          <HashLink to={`/EmiEval/${parseInt(id, 10) + 1}`}>
             <StyledButton>Suivant</StyledButton>
-          </Link>
+          </HashLink>
         ) : (
-          <Link to="/">
+          <HashLink to="/EmiResult">
             <StyledButton>Terminé</StyledButton>
-          </Link>
+          </HashLink>
         )}
       </Flex>
     </>

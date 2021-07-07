@@ -15,7 +15,7 @@ export default function EmiRouter() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/EmiStart" component={EvalMyImpact} />
-        <Route path="/Form" component={InfosEvalForm} />
+        <Route exact path="/Form" component={InfosEvalForm} />
         <Route path="/EmiEval/:id" component={EvalMyImpact} />
         <Route path="/EmiResult" component={EvalResult} />
         <Route path="/RequireModal" component={RequireModal} />
