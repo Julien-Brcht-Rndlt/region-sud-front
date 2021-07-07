@@ -18,20 +18,44 @@ export const StyledAnswerInput = styled(StyledInfosInput)`
   width: 60px;
 `;
 
-const MultipleChoiceAnswer = ({ id, label, onChange }) => {
-  const [checked, setChecked] = useState(false);
+const MultipleChoiceAnswer = ({
+  id,
+  label,
+  questionId,
+  themeId,
+  onChange,
+}) => {
+  const localStKey = `multiansw-${themeId}-${questionId}-${id}`;
+
+  const initLocalSt = () => {
+    const localStValue = JSON.parse(localStorage.getItem(localStKey));
+    return localStValue;
+  };
+
+  const initState = initLocalSt(localStKey);
+  const [checked, setChecked] = useState(initState);
+
+  const handleLocalSt = () => {
+    setChecked(!checked);
+    if (checked) {
+      localStorage.removeItem(localStKey);
+    } else {
+      localStorage.setItem(localStKey, !checked);
+    }
+  };
+
   return (
     <div>
       <input
-        id={`multiansw-${id}`}
+        id={`multiansw-${themeId}-${questionId}-${id}`}
         type="checkbox"
         checked={checked}
         onChange={(event) => {
           onChange(event);
-          setChecked(!checked);
+          handleLocalSt(localStKey);
       }}
       />
-      <StyledAnswerLabel htmlFor={`multiansw-${id}`}>{label}</StyledAnswerLabel>
+      <StyledAnswerLabel htmlFor={`multiansw-${themeId}-${questionId}-${id}`}>{label}</StyledAnswerLabel>
     </div>
   );
 };
@@ -40,42 +64,87 @@ const OneChoiceAnswer = ({
   id,
   label,
   questionId,
+  themeId,
   onChange,
 }) => {
-  /* const [checked, setChecked] = useState(false); */
-  const [selectedOption, setSelectedOption] = useState();
+  const localStKey = `oneansw-${themeId}-${questionId}-${id}`;
+
+  const initLocalSt = () => {
+    const localStValue = localStorage.getItem(localStKey) || '';
+    return localStValue;
+  };
+
+  const initState = initLocalSt(); // localStorage.getItem(localStKey) || '';
+  console.log('one choice initState', initState);
+  const [selectedOption, setSelectedOption] = useState(initState);
+
+  const handleLocalSt = (value, checked) => {
+    setSelectedOption(value);
+    if (!checked) {
+      localStorage.removeItem(localStKey);
+    } else {
+      localStorage.setItem(localStKey, value);
+    }
+  };
+
   return (
     <div>
       <input
-        id={`oneansw-${id}`}
+        id={`oneansw-${themeId}-${questionId}-${id}`}
         type="radio"
         name={`${questionId}`}
         checked={selectedOption === label}
         value={label}
         onChange={(event) => {
-          setSelectedOption(event.target.value);
           onChange(event);
+          handleLocalSt(event.target.value, event.target.value === label);
       }}
       />
-      <StyledAnswerLabel htmlFor={`oneansw-${id}`}>{label}</StyledAnswerLabel>
+      <StyledAnswerLabel htmlFor={`oneansw-${themeId}-${questionId}-${id}`}>{label}</StyledAnswerLabel>
     </div>
   );
 };
 
-const InputAnswer = ({ id, label, onChange }) => {
-  const [value, setValue] = useState('');
+const InputAnswer = ({
+  id,
+  label,
+  questionId,
+  themeId,
+  onChange,
+}) => {
+  const localStKey = `inansw-${themeId}-${questionId}-${id}`;
+  console.log(localStKey);
+  const initLocalSt = () => {
+    const localStValue = localStorage.getItem(localStKey) || '';
+    return localStValue;
+  };
+
+  const initState = initLocalSt();
+  console.log('input initState', initState);
+  const [input, setInput] = useState(initState);
+
+  const handleLocalSt = (value) => {
+    if (value === '') {
+      localStorage.removeItem(localStKey);
+    } else {
+      localStorage.setItem(localStKey, value);
+    }
+  };
+
   return (
     <div>
       <StyledAnswerInput
-        id={`inansw-${id}`}
-        type="number"
-        value={value}
+        id={`inansw-${themeId}-${questionId}-${id}`}
+        type="text"
+        value={input}
         onChange={(event) => {
+          const { value } = event.target;
+          setInput(value);
           onChange(event);
-          setValue(event.target.value);
+          handleLocalSt(value);
         }}
       />
-      <StyledAnswerLabel htmlFor={`inansw-${id}`}>{label}</StyledAnswerLabel>
+      <StyledAnswerLabel htmlFor={`inansw-${themeId}-${questionId}-${id}`}>{label}</StyledAnswerLabel>
     </div>
   );
 };
@@ -89,10 +158,6 @@ export default function Answer({
   const { funnel } = useContext(FunnelContext);
 
   const handleChange = (event) => {
-    /* console.log('type', event.target.type);
-    console.log('input', event.target.checked);
-    console.log('input', event.target.value);
-    console.log('funnel', funnel); */
     if (event.target.type === 'checkbox') {
       evalDispatch({
         type: 'MULTI_CHOICE',
@@ -133,12 +198,7 @@ export default function Answer({
       payload: themeId,
     });
 
-    const completedTheme = evalState.completedThemes.find((id) => {
-      console.log('id === parseInt(themeId, 10)', id === themeId);
-      console.log('id', id);
-      console.log('themeId', themeId);
-      return id === themeId;
-    });
+    const completedTheme = evalState.completedThemes.find((id) => id === themeId);
     console.log('completedTheme', completedTheme);
     if (completedTheme) {
       evalDispatch({
@@ -150,9 +210,9 @@ export default function Answer({
 
   return (
     <AnswerComponent>
-      {answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer id={answer.id} label={answer.label} onChange={(event) => handleChange(event)} />}
-      {answer.answ_type === 'one_choice' && <OneChoiceAnswer id={answer.id} label={answer.label} questionId={questionId} onChange={(event) => handleChange(event)} />}
-      {answer.answ_type === 'input_answ' && <InputAnswer id={answer.id} label={answer.label} onChange={(event) => handleChange(event)} />}
+      {answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} />}
+      {answer.answ_type === 'one_choice' && <OneChoiceAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} />}
+      {answer.answ_type === 'input_answ' && <InputAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} />}
     </AnswerComponent>
   );
 }
@@ -167,6 +227,8 @@ MultipleChoiceAnswer.propTypes = {
   id: PropTypes.number.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  questionId: PropTypes.number.isRequired,
+  themeId: PropTypes.number.isRequired,
 };
 
 OneChoiceAnswer.propTypes = {
@@ -174,10 +236,13 @@ OneChoiceAnswer.propTypes = {
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   questionId: PropTypes.number.isRequired,
+  themeId: PropTypes.number.isRequired,
 };
 
 InputAnswer.propTypes = {
   id: PropTypes.number.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  questionId: PropTypes.number.isRequired,
+  themeId: PropTypes.number.isRequired,
 };
