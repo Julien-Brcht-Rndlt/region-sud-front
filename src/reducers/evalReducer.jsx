@@ -95,14 +95,16 @@ export default function evalReducer(state, action) {
         const themeId = payload;
         const evalTheme = evalState.themes
             .find((theme) => theme.id === parseInt(themeId, 10));
-        const filteredQuestions = evalTheme.questions
+        if (evalTheme) {
+            const filteredQuestions = evalTheme.questions
         .filter((question) => question.givenAnswers && question.givenAnswers.length > 0);
-        if (filteredQuestions.length === evalTheme.questions.length) {
-            if (!evalState.completedThemes) {
-                evalState.completedThemes = [];
-            }
-            if (!evalState.completedThemes.includes(themeId)) {
-              evalState.completedThemes.push(themeId);
+            if (filteredQuestions.length === evalTheme.questions.length) {
+                if (!evalState.completedThemes) {
+                    evalState.completedThemes = [];
+                }
+                if (!evalState.completedThemes.includes(themeId)) {
+                evalState.completedThemes.push(themeId);
+                }
             }
         }
     }
