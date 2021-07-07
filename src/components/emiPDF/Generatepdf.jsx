@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Page,
   Text,
@@ -24,22 +23,14 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-export default function MyDocument({ EvalGlobalScore }) {
+export default function MyDocument() {
   return (
     <Document styles="width: 100%">
       <Page wrap size="A4" style={styles.page}>
         <View style={styles.section}>
-          <Text>{EvalGlobalScore}</Text>
+          <Text>Bientôt l&#39;affichage des résultats</Text>
         </View>
       </Page>
     </Document>
   );
 }
-
-MyDocument.propTypes = {
-  EvalGlobalScore: PropTypes.func,
-};
-
-MyDocument.defaultProps = {
-  EvalGlobalScore: null,
-};
