@@ -1,5 +1,4 @@
 import { useState, useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import {
   StyledInfosFormsContainer,
@@ -18,7 +17,6 @@ import InfosEvalInput from './InfosEvalInput';
 import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';
 import InfosEvalDatepicker from './InfosEvalDatepicker';
-import { StyledButton } from '../../styles/generics/GenericButtons';
 import { device } from '../../styles/theme';
 import {
   SPORT_AMATEUR,
@@ -110,7 +108,7 @@ export default function InfosForm() {
     const filledFields = Object.keys(orgForm).concat(Object.keys(orgEventForm));
     if (mandatoryFields.every((field) => filledFields.includes(field))) {
       setActive(true);
-      console.log('button active');
+      console.log(active);
     }
   }, [orgForm, orgEventForm]);
 
@@ -178,10 +176,7 @@ export default function InfosForm() {
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
         <StyledButtonContainer>
-          <Link to="/EmiEval/0">
-            <DynamicButton />
-            <StyledButton>Suivant</StyledButton>
-          </Link>
+          <DynamicButton active={active} />
         </StyledButtonContainer>
       </form>
     </StyledInfosFormsContainer>
