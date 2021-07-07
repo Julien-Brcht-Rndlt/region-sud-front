@@ -1,16 +1,12 @@
 [
     {
         "id": 0,
+        "score": 5,
         "should":[
             {
                 "id":0,
-                "content":"content 0",
+                "content":"content 0 of water reco",
                 "url":"url 0"
-            },
-            {
-                "id":1,
-                "content":"content 1",
-                "url":"url 1"
             },
             {
                 "id":1,
@@ -21,31 +17,37 @@
                 "id":2,
                 "content":"content 2",
                 "url":"url 2"
+            },
+            {
+                "id":3,
+                "content":"content super 3",
+                "url":"url 3"
             }
         ]
 
     },
     {
         "id": 1,
+        "score": 6,
         "should":[
             {
                 "id":0,
-                "content":"content 0",
+                "content":"content top0",
                 "url":"url 0"
             },
             {
                 "id":1,
-                "content":"content 1",
+                "content":"content super1",
                 "url":"url 1"
             },
             {
                 "id":1,
-                "content":"content 1",
+                "content":"content incroyable1",
                 "url":"url 1"
             },
             {
                 "id":2,
-                "content":"content 2",
+                "content":"content olélo2",
                 "url":"url 2"
             }
         ]
@@ -53,6 +55,7 @@
     },
     {
         "id": 2,
+        "score": 2,
         "should":[
             {
                 "id":0,
@@ -61,70 +64,45 @@
             },
             {
                 "id":1,
-                "content":"content 1",
-                "url":"url 1"
-            },
-            {
-                "id":1,
-                "content":"content 1",
+                "content":"content chose1",
                 "url":"url 1"
             },
             {
                 "id":2,
-                "content":"content 2",
+                "content":"content chose truc2",
                 "url":"url 2"
+            },
+            {
+                "id":3,
+                "content":"content bidule3",
+                "url":"url 3"
             }
         ]
 
     },
     {
         "id": 3,
+        "score": 7,
         "should":[
             {
                 "id":0,
-                "content":"content 0",
+                "content":"content eeee0",
                 "url":"url 0"
             },
             {
                 "id":1,
-                "content":"content 1",
-                "url":"url 1"
-            },
-            {
-                "id":1,
-                "content":"content 1",
+                "content":"content ddd1",
                 "url":"url 1"
             },
             {
                 "id":2,
-                "content":"content 2",
+                "content":"content zzz2",
                 "url":"url 2"
-            }
-        ]
-
-    },
-    {
-        "id": 4,
-        "should":[
-            {
-                "id":0,
-                "content":"content 0",
-                "url":"url 0"
             },
             {
-                "id":1,
-                "content":"content 1",
-                "url":"url 1"
-            },
-            {
-                "id":1,
-                "content":"content 1",
-                "url":"url 1"
-            },
-            {
-                "id":2,
-                "content":"content 2",
-                "url":"url 2"
+                "id":3,
+                "content":"content ddd3",
+                "url":"url 3"
             }
         ]
 
