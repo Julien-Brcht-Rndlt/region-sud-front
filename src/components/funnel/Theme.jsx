@@ -1,5 +1,6 @@
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FunnelContext from '../../contexts/FunnelContext';
 import QuestionList from './QuestionList';
@@ -7,8 +8,10 @@ import { StyledButton } from '../../styles/generics/GenericButtons';
 import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
 import { IconeImg } from '../../styles/generics/GenericComponents';
 import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitles';
-import help from '../../assets/img/help.png';
 import { device } from '../../styles/theme';
+import ButtonHelp from './ButtonWithIcon';
+import EmiFaqModal from '../faq/EmiFaqModal';
+import { DisabledButton } from '../../styles/generics/DynamicButton';
 
 export const ThemeContainer = styled.div`
   background-color: ${(props) => props.theme.secondaryFeatureColor};
@@ -37,13 +40,16 @@ export const StyledTitleTheme = styled(StyledTitleH1)`
 export const StyledSubtitleTheme = styled(StyledTitleH4)`
   margin-left: 5px;
 `;
-export const CompButton = styled.div`
+export const CompButton = styled(Flex)`
   margin-left: 40px;
 `;
 
-export const MicroImg = styled.img`
-  height: 30px;
+export const CompIconText = styled(Flex)`
+  align-items: center;
+  justify-content: space-around;
 `;
+
+export const StyledButtonHelp = styled(StyledButton)``;
 
 export const ContainersubtitleTheme = styled(Flex)`
   @media ${device.mobileS} {
@@ -94,8 +100,10 @@ export const StyledContainerYellow = styled.div`
 `;
 
 export default function Theme({ id }) {
+  const [show, setShow] = useState(false);
   const { funnel } = useContext(FunnelContext);
   const theme = funnel.themes[id];
+  const lengthThemes = funnel.themes.length - 1;
 
   return (
     <>
@@ -108,17 +116,29 @@ export default function Theme({ id }) {
           <StyledTitleTheme>{theme.title}</StyledTitleTheme>
           <StyledBorderYellow />
         </StyledContainerYellow>
-        <QuestionList questions={theme.questions} />
+        <QuestionList questions={theme.questions} themeId={id} />
+        <EmiFaqModal show={show} setShow={setShow} />
       </FlexCol>
       <CompButton>
-        <StyledButton>
-          <MicroImg src={help} />
-          Je ne m&#39;en sors pas !
-        </StyledButton>
+        <ButtonHelp />
       </CompButton>
       <Flex center>
-        <StyledButton>Précédent</StyledButton>
-        <StyledButton>Suivant</StyledButton>
+        {id > 0 ? (
+          <Link to={`/EmiEval/${parseInt(id, 10) - 1}`}>
+            <StyledButton>Précédent</StyledButton>
+          </Link>
+        ) : (
+          <DisabledButton>Précédent</DisabledButton>
+        )}
+        {id < lengthThemes ? (
+          <Link to={`/EmiEval/${parseInt(id, 10) + 1}`}>
+            <StyledButton>Suivant</StyledButton>
+          </Link>
+        ) : (
+          <Link to="/">
+            <StyledButton>Terminé</StyledButton>
+          </Link>
+        )}
       </Flex>
     </>
   );

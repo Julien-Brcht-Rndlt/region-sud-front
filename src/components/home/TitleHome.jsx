@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { FlexCol } from '../../styles/generics/GenericContainers';
 import { StyledTitleH1, StyledTitleP } from '../../styles/generics/GenericTitles';
 import { StyledButton } from '../../styles/generics/GenericButtons';
@@ -96,9 +97,11 @@ export default function TitleHome() {
           <li>Lorem ipsum dolor sit amet</li>
           <li>sit amet, consectetur adipiscing elit</li>
         </ul>
-        <StyledButtonHP width="11em" height="">
-          J&#39;évalue mon évènement
-        </StyledButtonHP>
+        <Link to="/EmiStart">
+          <StyledButtonHP width="11em" height="">
+            J&#39;évalue mon évènement
+          </StyledButtonHP>
+        </Link>
       </StyledTitleP>
     </StyledTitleWrapper>
   );

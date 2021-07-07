@@ -55,20 +55,26 @@ export const IconImg = styled(IconeImg)`
   width: 25px;
 `;
 
-export default function Question({ title, answers, questionId }) {
+export default function Question({
+  id,
+  title,
+  answers,
+  themeId,
+ }) {
   return (
     <StyledQuestionContainer>
       <IconeContainer end>
         <IconImg src={know} alt="?" />
       </IconeContainer>
       <StyledTitleH3>{title}</StyledTitleH3>
-      <AnswerList answers={answers} questionId={questionId} />
+      <AnswerList answers={answers} questionId={id} themeId={themeId} />
     </StyledQuestionContainer>
   );
 }
 
 Question.propTypes = {
+  id: PropTypes.number.isRequired,
+  themeId: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   answers: PropTypes.arrayOf(PropTypes.object).isRequired,
-  questionId: PropTypes.number.isRequired,
 };

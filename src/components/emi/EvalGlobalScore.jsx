@@ -7,7 +7,7 @@ import {
   FlexCol,
   FlexSpace,
   Block,
- } from '../../styles/generics/GenericContainers';
+} from '../../styles/generics/GenericContainers';
 import Nuageux from '../../assets/img/nuageux.png';
 
 export const StyledEvalGlobalContainer = styled(FlexSpace)`
@@ -58,7 +58,7 @@ const StyledYellowLine = styled.div`
   height: auto;
 `;
 const StyledTitleMyResult = styled(StyledTitleH1)`
-height: 15px;
+  height: 15px;
 `;
 
 export default function EvalGlobalScore() {

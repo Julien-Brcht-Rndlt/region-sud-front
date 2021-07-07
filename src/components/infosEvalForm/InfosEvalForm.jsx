@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import {
   StyledInfosFormsContainer,
@@ -7,9 +8,9 @@ import {
   StyledButtonContainer,
   StyledInfosFormsColLeftContainer,
 } from '../../styles/StyledInfosForms';
+import DynamicButton from '../../styles/generics/DynamicButton';
 import { Flex } from '../../styles/generics/GenericContainers';
 import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
-import { StyledButton } from '../../styles/generics/GenericButtons';
 import OrgContext from '../../contexts/OrgContext';
 import EventContext from '../../contexts/EventContext';
 import { ADD_INFOS } from '../../reducers/actions';
@@ -17,6 +18,7 @@ import InfosEvalInput from './InfosEvalInput';
 import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';
 import InfosEvalDatepicker from './InfosEvalDatepicker';
+import { StyledButton } from '../../styles/generics/GenericButtons';
 import { device } from '../../styles/theme';
 import {
   SPORT_AMATEUR,
@@ -86,7 +88,7 @@ export const ContainerDatePicker = styled(Flex)`
   }
 `;
 
-const mandatoryFields = ['orgName', 'orgMembers', 'eventName', 'eventAddr', 'eventLoc', 'eventLoc', 'eventStart', 'eventEnd'];
+const mandatoryFields = ['orgName', 'eventName', 'eventAddr', 'eventLoc'/* , 'eventStart', 'eventEnd' */];
 
 export default function InfosForm() {
   const [active, setActive] = useState(false);
@@ -108,6 +110,7 @@ export default function InfosForm() {
     const filledFields = Object.keys(orgForm).concat(Object.keys(orgEventForm));
     if (mandatoryFields.every((field) => filledFields.includes(field))) {
       setActive(true);
+      console.log('button active');
     }
   }, [orgForm, orgEventForm]);
 
@@ -128,20 +131,8 @@ export default function InfosForm() {
                 <StyledBorderYellowH1 />
               </StyledContainerYellow>
               <StyledSpaceBetween />
-              <InfosEvalInput
-                inputName="orgName"
-                infosForm={infosForm.org}
-                setInfosForm={setOrgForm}
-                label={ORG_NAME_LABEL}
-                wide
-              />
-              <InfosEvalInput
-                inputName="orgMembers"
-                infosForm={infosForm.org}
-                setInfosForm={setOrgForm}
-                label={ORG_STAFF_PAX_LABEL}
-                wide
-              />
+              <InfosEvalInput inputName="orgName" infosForm={infosForm.org} setInfosForm={setOrgForm} label={ORG_NAME_LABEL} wide />
+              <InfosEvalInput inputName="orgMembers" infosForm={infosForm.org} setInfosForm={setOrgForm} label={ORG_STAFF_PAX_LABEL} wide />
             </div>
           </StyledInfosFormsColLeftContainer>
           <StyledInfosFormsColContainer>
@@ -150,13 +141,7 @@ export default function InfosForm() {
               <StyledBorderYellowH1 />
             </StyledContainerYellow>
             <StyledSpaceBetween />
-            <InfosEvalInput
-              inputName="eventName"
-              infosForm={infosForm.orgEvent}
-              setInfosForm={setEventForm}
-              label={EVENT_NAME_LABEL}
-              wide
-            />
+            <InfosEvalInput inputName="eventName" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_NAME_LABEL} wide />
             <InfosEvalInput inputName="eventStaff" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_STAFF_PAX_LABEL} />
             <Flex start>
               <InfosEvalInput inputName="eventAddr" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_ADDR_LABEL} />
@@ -182,15 +167,21 @@ export default function InfosForm() {
               />
             </Flex>
             <ContainerDatePicker>
-              <InfosEvalDatepicker elmtFormName="eventStart" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_START_DATE_LABEL} />
+              <InfosEvalDatepicker
+                elmtFormName="eventStart"
+                infosForm={infosForm.orgEvent}
+                setInfosForm={setEventForm}
+                label={EVENT_START_DATE_LABEL}
+              />
               <InfosEvalDatepicker elmtFormName="eventEnd" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_END_DATE_LABEL} />
             </ContainerDatePicker>
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
         <StyledButtonContainer>
-          <StyledButton onClick={(event) => handleSubmit(event)} type="submit" width="25rem" height="4rem" disabled={!active}>
-            Suivant
-          </StyledButton>
+          <Link to="/EmiEval/0">
+            <DynamicButton />
+            <StyledButton>Suivant</StyledButton>
+          </Link>
         </StyledButtonContainer>
       </form>
     </StyledInfosFormsContainer>
