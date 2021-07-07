@@ -4,7 +4,7 @@
   "private": false,
   "dependencies": {
     "@datepicker-react/styled": "^2.8.0",
-    "@react-pdf/renderer": "^2.0.15",
+    "@react-pdf/renderer": "^2.0.16",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",

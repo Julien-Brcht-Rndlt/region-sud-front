@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { StyledTitleH1, StyledTitleH2 } from '../../styles/generics/GenericTitles';
 import { StyledButton } from '../../styles/generics/GenericButtons';
@@ -70,8 +71,10 @@ export default function EvalGlobalScore() {
           <StyledEvalGlobalImg src={Nuageux} alt="des nuages..." />
         </StyledImgContainer>
         <Flex>
-          <StyledEvalGlobalButton>Envoyer par mail</StyledEvalGlobalButton>
-          <StyledEvalGlobalButton glassy> Imprimer </StyledEvalGlobalButton>
+          <Link to="/pdf">
+            <StyledEvalGlobalButton>Envoyer par mail</StyledEvalGlobalButton>
+            <StyledEvalGlobalButton glassy> Imprimer </StyledEvalGlobalButton>
+          </Link>
         </Flex>
       </StyledEvalGlobalLeftCol>
       <StyledEvalGlobalRightCol>
