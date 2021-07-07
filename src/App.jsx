@@ -28,7 +28,6 @@ function App() {
       axios.get('http://localhost:8080/emi/funnels')
       .then((response) => response.data)
       .then((data) => {
-        console.log(data);
         setFunnel(data);
       })
       .catch((err) => {
