@@ -65,45 +65,25 @@ const OneChoiceAnswer = ({
   label,
   questionId,
   themeId,
+  selectedOption,
+  handleSelectedOption,
   onChange,
-}) => {
-  const localStKey = `oneansw-${themeId}-${questionId}-${id}`;
-
-  const initLocalSt = () => {
-    const localStValue = localStorage.getItem(localStKey) || '';
-    return localStValue;
-  };
-
-  const initState = initLocalSt(); // localStorage.getItem(localStKey) || '';
-  console.log('one choice initState', initState);
-  const [selectedOption, setSelectedOption] = useState(initState);
-
-  const handleLocalSt = (value, checked) => {
-    setSelectedOption(value);
-    if (!checked) {
-      localStorage.removeItem(localStKey);
-    } else {
-      localStorage.setItem(localStKey, value);
-    }
-  };
-
-  return (
-    <div>
-      <input
-        id={`oneansw-${themeId}-${questionId}-${id}`}
-        type="radio"
-        name={`${questionId}`}
-        checked={selectedOption === label}
-        value={label}
-        onChange={(event) => {
-          onChange(event);
-          handleLocalSt(event.target.value, event.target.value === label);
-      }}
-      />
-      <StyledAnswerLabel htmlFor={`oneansw-${themeId}-${questionId}-${id}`}>{label}</StyledAnswerLabel>
-    </div>
+}) => (
+  <div>
+    <input
+      id={`oneansw-${themeId}-${questionId}-${id}`}
+      type="radio"
+      name={`${questionId}`}
+      checked={selectedOption === label}
+      value={label}
+      onChange={(event) => {
+        handleSelectedOption(event.target.value, event.target.checked);
+        onChange(event);
+    }}
+    />
+    <StyledAnswerLabel htmlFor={`oneansw-${themeId}-${questionId}-${id}`}>{label}</StyledAnswerLabel>
+  </div>
   );
-};
 
 const InputAnswer = ({
   id,
@@ -153,6 +133,8 @@ export default function Answer({
   answer,
   questionId,
   themeId,
+  selectedOption,
+  handleSelectedOption,
 }) {
   const { evalState, evalDispatch } = useContext(EvalContext);
   const { funnel } = useContext(FunnelContext);
@@ -211,7 +193,7 @@ export default function Answer({
   return (
     <AnswerComponent>
       {answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} />}
-      {answer.answ_type === 'one_choice' && <OneChoiceAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} />}
+      {answer.answ_type === 'one_choice' && <OneChoiceAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} selectedOption={selectedOption} handleSelectedOption={handleSelectedOption} />}
       {answer.answ_type === 'input_answ' && <InputAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} />}
     </AnswerComponent>
   );
@@ -221,6 +203,8 @@ Answer.propTypes = {
   answer: PropTypes.func.isRequired,
   questionId: PropTypes.number.isRequired,
   themeId: PropTypes.string.isRequired,
+  selectedOption: PropTypes.string.isRequired,
+  handleSelectedOption: PropTypes.func.isRequired,
 };
 
 MultipleChoiceAnswer.propTypes = {
@@ -237,6 +221,8 @@ OneChoiceAnswer.propTypes = {
   onChange: PropTypes.func.isRequired,
   questionId: PropTypes.number.isRequired,
   themeId: PropTypes.string.isRequired,
+  selectedOption: PropTypes.string.isRequired,
+  handleSelectedOption: PropTypes.func.isRequired,
 };
 
 InputAnswer.propTypes = {
