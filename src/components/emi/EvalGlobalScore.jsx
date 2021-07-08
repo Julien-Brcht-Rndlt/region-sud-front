@@ -66,8 +66,6 @@ const StyledTitleMyResult = styled(StyledTitleH1)`
 `;
 
 export default function EvalGlobalScore() {
-  /* const [data, setData] = useState({});
- */
   // ToDo: adding Morgan for all xhr request
 
   const { org } = useContext(OrgContext);
@@ -75,31 +73,37 @@ export default function EvalGlobalScore() {
 
   useEffect(() => {
     const saveAboutOrgInfos = async () => {
-      const res = await axios('http://localhost:8080/emi/organizations', {
-        ...org,
-      });
-      return res;
+      try {
+        const response = await axios.post('http://localhost:8080/emi/organizations', {
+          ...org,
+        });
+        return response;
+      } catch (error) {
+        console.error(error);
+        return null;
+      }
     };
 
     const saveAboutEventInfos = async (id) => {
-      const res = await axios.post(`http://localhost:8080/emi/organizations/${id}/events`, {
-      ...orgEvent,
-      });
-      return res;
+      try {
+        const response = await axios.post(`http://localhost:8080/emi/organizations/${id}/events`, {
+          ...orgEvent,
+        });
+        return response;
+      } catch (error) {
+        console.error(error);
+        return null;
+      }
     };
 
-    try {
-      let response = saveAboutOrgInfos();
-      console.log(`response status code ${response.status} / ${response.statusText}`);
-      const organization = response.data;
-
-      response = saveAboutEventInfos(organization.id);
-      console.log(`response status code ${response.status} / ${response.statusText}`);
-      const organizationEvent = response.data;
+    const processDataSaving = async () => {
+      const orgResponse = await saveAboutOrgInfos();
+      const organization = orgResponse.data;
+      const orgEventResponse = await saveAboutEventInfos(organization.id);
+      const organizationEvent = orgEventResponse.data;
       console.log(organizationEvent);
-    } catch (err) {
-    console.log(err);
-    }
+    };
+    processDataSaving();
   }, []);
 
   return (

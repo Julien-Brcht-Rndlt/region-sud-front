@@ -113,16 +113,15 @@ export default function InfosForm() {
   }, [orgForm, orgEventForm]);
 
   const handleSubmit = (event) => {
-    console.log('submit infos form');
     event.preventDefault();
     console.log('submit infos form');
+    console.log(event);
     dispatch({ type: ADD_INFOS, payload: { org: orgForm, orgEvent: orgEventForm } });
   };
 
   return (
     <StyledInfosFormsContainer id="section-form">
-      <form>
-        {/* onSubmit={() => handleSubmit()} */}
+      <form onSubmit={(event) => handleSubmit(event)}>
         <StyledTitleH4>Informations préalables</StyledTitleH4>
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>
@@ -133,7 +132,7 @@ export default function InfosForm() {
               </StyledContainerYellow>
               <StyledSpaceBetween />
               <InfosEvalInput inputName="orgName" infosForm={infosForm.org} setInfosForm={setOrgForm} label={ORG_NAME_LABEL} wide />
-              <InfosEvalInput inputName="orgMembers" infosForm={infosForm.org} setInfosForm={setOrgForm} label={ORG_STAFF_PAX_LABEL} wide />
+              <InfosEvalInput inputName="orgStaff" infosForm={infosForm.org} setInfosForm={setOrgForm} label={ORG_STAFF_PAX_LABEL} wide />
             </div>
           </StyledInfosFormsColLeftContainer>
           <StyledInfosFormsColContainer>
@@ -160,7 +159,7 @@ export default function InfosForm() {
             <Flex start>
               <InfosEvalInput inputName="activity" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_ACTIVITY_LABEL} />
               <InfosEvalDropdown
-                elmtFormName="sportLevels"
+                elmtFormName="sportLevel"
                 infosForm={infosForm.orgEvent}
                 setInfosForm={setEventForm}
                 label={EVENT_SPORT_LEVEL}
@@ -181,9 +180,11 @@ export default function InfosForm() {
         <StyledButtonContainer>
           <DynamicButton
             active={active}
-            action={(event) => {
-              handleSubmit(event);
-            }}
+            type="submit"
+            /* action={(event) => {
+              alert(event.type, event.name);
+               handleSubmit(event);
+            }} */
           />
         </StyledButtonContainer>
       </form>
