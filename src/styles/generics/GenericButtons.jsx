@@ -51,10 +51,6 @@ export const StyledButton = styled.button`
   }
 `;
 
-export const StyledRoundedButton = styled(StyledButton)`
-  border-radius: 10px;
-`;
-
 export const StyledInactiveButton = styled(StyledButton)`
   color: ${(props) => (props.inactive ? props.theme.secondaryFeatureColor : props.theme.secondaryFeatureColor)};
   background-color: ${(props) => (props.inactive ? props.theme.blackFeatureColor : props.theme.blueFeatureColor)};
