@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react';
 import styled from 'styled-components';
+// eslint-disable-next-line import/no-unresolved
 import { HashLink } from 'react-router-hash-link';
 import PropTypes from 'prop-types';
 import FunnelContext from '../../contexts/FunnelContext';
@@ -145,5 +146,5 @@ export default function Theme({ id }) {
 }
 
 Theme.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };

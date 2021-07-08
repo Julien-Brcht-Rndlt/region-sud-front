@@ -74,7 +74,7 @@ export default function Question({
 
 Question.propTypes = {
   id: PropTypes.number.isRequired,
-  themeId: PropTypes.number.isRequired,
+  themeId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  answers: PropTypes.arrayOf(PropTypes.object).isRequired,
+  answers: PropTypes.func.isRequired,
 };
