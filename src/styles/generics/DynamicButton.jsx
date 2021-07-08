@@ -12,13 +12,16 @@ export const DisabledButton = styled(StyledButton)`
   }
 `;
 
-export default function DynamicButton({ active }) {
+export default function DynamicButton({ type, action, active }) {
   return (
     <>
       {active ? (
-        <HashLink to="/EmiEval/0#section-theme">
-          <StyledButton>Suivant</StyledButton>
-        </HashLink>
+        <>
+          <StyledButton type={type} onClick={action}>Suivant</StyledButton>
+          <HashLink to="/EmiEval/0#section-theme">
+            ici
+          </HashLink>
+        </>
       ) : (
         <DisabledButton disabled>Suivant</DisabledButton>
       )}
@@ -27,9 +30,13 @@ export default function DynamicButton({ active }) {
 }
 
 DynamicButton.propTypes = {
+  type: PropTypes.string,
+  action: PropTypes.func,
   active: PropTypes.bool,
 };
 
 DynamicButton.defaultProps = {
+  type: '',
+  action: null,
   active: '',
 };

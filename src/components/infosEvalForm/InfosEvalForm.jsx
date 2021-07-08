@@ -113,13 +113,16 @@ export default function InfosForm() {
   }, [orgForm, orgEventForm]);
 
   const handleSubmit = (event) => {
+    console.log('submit infos form');
     event.preventDefault();
+    console.log('submit infos form');
     dispatch({ type: ADD_INFOS, payload: { org: orgForm, orgEvent: orgEventForm } });
   };
 
   return (
     <StyledInfosFormsContainer id="section-form">
-      <form onSubmit={() => handleSubmit()}>
+      <form>
+        {/* onSubmit={() => handleSubmit()} */}
         <StyledTitleH4>Informations préalables</StyledTitleH4>
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>
@@ -176,7 +179,12 @@ export default function InfosForm() {
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
         <StyledButtonContainer>
-          <DynamicButton active={active} />
+          <DynamicButton
+            active={active}
+            action={(event) => {
+              handleSubmit(event);
+            }}
+          />
         </StyledButtonContainer>
       </form>
     </StyledInfosFormsContainer>
