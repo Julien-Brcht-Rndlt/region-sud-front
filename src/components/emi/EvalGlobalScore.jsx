@@ -1,5 +1,7 @@
+import { /* useState,  */useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import axios from 'axios';
 import { StyledTitleH1, StyledTitleH2 } from '../../styles/generics/GenericTitles';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import {
@@ -9,6 +11,8 @@ import {
   Block,
 } from '../../styles/generics/GenericContainers';
 import Nuageux from '../../assets/img/nuageux.png';
+import OrgContext from '../../contexts/OrgContext';
+import EventContext from '../../contexts/EventContext';
 
 export const StyledEvalGlobalContainer = styled(FlexSpace)`
   height: 45rem;
@@ -62,6 +66,46 @@ const StyledTitleMyResult = styled(StyledTitleH1)`
 `;
 
 export default function EvalGlobalScore() {
+  // ToDo: adding Morgan for all xhr request
+
+  const { org } = useContext(OrgContext);
+  const { orgEvent } = useContext(EventContext);
+
+  useEffect(() => {
+    const saveAboutOrgInfos = async () => {
+      try {
+        const response = await axios.post('http://localhost:8080/emi/organizations', {
+          ...org,
+        });
+        return response;
+      } catch (error) {
+        console.error(error);
+        return null;
+      }
+    };
+
+    const saveAboutEventInfos = async (id) => {
+      try {
+        const response = await axios.post(`http://localhost:8080/emi/organizations/${id}/events`, {
+          ...orgEvent,
+        });
+        return response;
+      } catch (error) {
+        console.error(error);
+        return null;
+      }
+    };
+
+    const processDataSaving = async () => {
+      const orgResponse = await saveAboutOrgInfos();
+      const organization = orgResponse.data;
+      const orgEventResponse = await saveAboutEventInfos(organization.id);
+      const organizationEvent = orgEventResponse.data;
+      console.log(organizationEvent);
+    };
+    processDataSaving();
+  }, []);
+
   return (
     <StyledEvalGlobalContainer around>
       <StyledEvalGlobalLeftCol>
