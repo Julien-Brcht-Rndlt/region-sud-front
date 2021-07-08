@@ -93,14 +93,12 @@ const InputAnswer = ({
   onChange,
 }) => {
   const localStKey = `inansw-${themeId}-${questionId}-${id}`;
-  console.log(localStKey);
   const initLocalSt = () => {
     const localStValue = localStorage.getItem(localStKey) || '';
     return localStValue;
   };
 
   const initState = initLocalSt();
-  console.log('input initState', initState);
   const [input, setInput] = useState(initState);
 
   const handleLocalSt = (value) => {
@@ -162,7 +160,7 @@ export default function Answer({
           checked: event.target.checked,
         },
       });
-    } else if (event.target.type === 'number') {
+    } else if (event.target.type === 'text' || event.target.type === 'number') {
       evalDispatch({
         type: 'INPUT_ANSWER',
         payload: {
