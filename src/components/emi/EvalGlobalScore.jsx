@@ -13,6 +13,7 @@ import {
 import Nuageux from '../../assets/img/nuageux.png';
 import OrgContext from '../../contexts/OrgContext';
 import EventContext from '../../contexts/EventContext';
+import EvalContext from '../../contexts/EvalContext';
 
 export const StyledEvalGlobalContainer = styled(FlexSpace)`
   height: 45rem;
@@ -71,6 +72,8 @@ export default function EvalGlobalScore() {
   const { org } = useContext(OrgContext);
   const { orgEvent } = useContext(EventContext);
 
+  const { evalState } = useContext(EvalContext);
+
   useEffect(() => {
     const saveAboutOrgInfos = async () => {
       try {
@@ -104,6 +107,31 @@ export default function EvalGlobalScore() {
       console.log(organizationEvent);
     };
     processDataSaving();
+
+    // adding axios silmutaneous post request saving data
+
+    // scores post prepared array
+    const scoresPostSaving = evalState.themes.map((theme) => {
+      axios.post(`http://localhost:8080/emi/evals/0/events/:eventId/themes/${theme.id}/scores`, {
+        score: theme.score,  // ToDo: revoir URI des endpoints car pas trop REST: themeId + answerid doivent être passés dans le body
+      })
+    });
+
+    // eval answers post prepared array
+    const evalAnswerPostSaving = null;
+    axios.post(`http://localhost:8080/emi/evals/0/events/:eventId/answers/:answerId`, {
+      evalValue: '',
+      }),
+    });
+
+    // fusion des deux tableaux
+    const axiosPostRequests = scoresPostSaving.concat(evalAnswerPostSaving);
+
+    axios.all([...axiosPostRequests])
+    .then((postResponses) => {
+      postResponses.foreach((response) => console.log(response));
+    })
+    .catch((errors) => console.error(errors));
   }, []);
 
   return (
