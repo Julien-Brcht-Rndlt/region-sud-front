@@ -106,6 +106,9 @@ export default function evalReducer(state, action) {
                 if (!evalState.completedThemes.includes(themeId)) {
                 evalState.completedThemes.push(themeId);
                 }
+            } else if (evalState.completedThemes.includes(themeId)) {
+              evalState.completedThemes = evalState.completedThemes
+              .filter((completedId) => completedId !== themeId);
             }
         }
     }
