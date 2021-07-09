@@ -86,7 +86,7 @@ export const ContainerDatePicker = styled(Flex)`
   }
 `;
 
-const mandatoryFields = ['orgName', 'eventName', 'eventAddr', 'eventLoc'/* , 'eventStart', 'eventEnd' */];
+const mandatoryFields = ['orgName', 'eventName', 'eventAddr', 'eventLoc'];
 
 export default function InfosForm() {
   const [active, setActive] = useState(false);
@@ -108,14 +108,11 @@ export default function InfosForm() {
     const filledFields = Object.keys(orgForm).concat(Object.keys(orgEventForm));
     if (mandatoryFields.every((field) => filledFields.includes(field))) {
       setActive(true);
-      console.log(active);
     }
   }, [orgForm, orgEventForm]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('submit infos form');
-    console.log(event);
     dispatch({ type: ADD_INFOS, payload: { org: orgForm, orgEvent: orgEventForm } });
   };
 
@@ -181,10 +178,6 @@ export default function InfosForm() {
           <DynamicButton
             active={active}
             type="submit"
-            /* action={(event) => {
-              alert(event.type, event.name);
-               handleSubmit(event);
-            }} */
           />
         </StyledButtonContainer>
       </form>

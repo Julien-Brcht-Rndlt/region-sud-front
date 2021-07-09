@@ -27,18 +27,12 @@ export const ImgScoring = styled.img`
 `;
 
 export default function EvalThemeScoring({ themeId, themeTitle }) {
-  const { eventEval, score } = useContext(EvalContext);
-  // const {  } = evalContext;
-  console.log(eventEval);
-  console.log(themeId);
-  console.log(score);
-  console.log(Scoring.themes_scoring[themeId].scores_reprs);
+  const { score } = useContext(EvalContext);
 
   let scoresReprs = Scoring.themes_scoring[themeId].scores_reprs;
   scoresReprs = scoresReprs.filter((scoreRepr) => scoreRepr.min <= score && scoreRepr.max >= score);
 
   const [scoreRepr] = scoresReprs;
-  console.log(scoreRepr.icone);
 
     return (
       <StyledEvalBox center>
