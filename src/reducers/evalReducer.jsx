@@ -1,3 +1,4 @@
+import { COMPUTE_TOTAL_SCORE } from './actions';
 /* import { useContext } from 'react'; */
 /* import FunnelContext from '../contexts/FunnelContext'; */
 
@@ -130,8 +131,16 @@ export default function evalReducer(state, action) {
           evalState.themes = [...filteredThemes, evalTheme];
         }
     }
-    if (type === 'COMPUTE_TOTAL_SCORE') {
-        // ;
+    if (type === COMPUTE_TOTAL_SCORE) {
+        console.log('compute total score');
+        let evalScore = 0;
+        evalState.themes.forEach((theme) => {
+            if (theme.score) {
+                evalScore += theme.score;
+            }
+        });
+        evalState.scoring = evalScore;
+        console.log('evalState.scoring', evalState.scoring);
     }
     console.log('eval state', evalState);
     return evalState;
