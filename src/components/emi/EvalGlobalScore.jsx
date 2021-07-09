@@ -1,4 +1,4 @@
-import { /* useState,  */useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
@@ -66,8 +66,6 @@ const StyledTitleMyResult = styled(StyledTitleH1)`
 `;
 
 export default function EvalGlobalScore() {
-  // ToDo: adding Morgan for all xhr request
-
   const { org } = useContext(OrgContext);
   const { orgEvent } = useContext(EventContext);
 
@@ -99,9 +97,7 @@ export default function EvalGlobalScore() {
     const processDataSaving = async () => {
       const orgResponse = await saveAboutOrgInfos();
       const organization = orgResponse.data;
-      const orgEventResponse = await saveAboutEventInfos(organization.id);
-      const organizationEvent = orgEventResponse.data;
-      console.log(organizationEvent);
+      saveAboutEventInfos(organization.id);
     };
     processDataSaving();
   }, []);
