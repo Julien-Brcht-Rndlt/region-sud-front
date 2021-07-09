@@ -179,7 +179,6 @@ export default function Answer({
     });
 
     const completedTheme = evalState.completedThemes.find((id) => id === themeId);
-    console.log('completedTheme', completedTheme);
     if (completedTheme) {
       evalDispatch({
         type: 'COMPUTE_SCORE',
