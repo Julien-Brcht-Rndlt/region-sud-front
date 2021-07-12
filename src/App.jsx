@@ -11,6 +11,17 @@ import formReducer from './reducers/formReducer';
 import evalReducer from './reducers/evalReducer';
 
 function App() {
+  const handleUnload = () => {
+    localStorage.clear();
+  };
+
+  useEffect(() => {
+    window.addEventListener('beforeunload', handleUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleUnload);
+    };
+  }, []);
+
   const [funnel, setFunnel] = useState({});
   const [organization] = useState({});
   const [orgEvent] = useState({});
