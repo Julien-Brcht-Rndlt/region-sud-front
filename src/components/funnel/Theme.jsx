@@ -14,7 +14,7 @@ import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitle
 import { device } from '../../styles/theme';
 import ButtonHelp from './ButtonWithIcon';
 import EmiFaqModal from '../faq/EmiFaqModal';
-import { DisabledButton } from '../../styles/generics/DynamicButton';
+import { DisabledButton } from '../infosEvalForm/InfosEvalDynamicButton';
 
 export const ThemeContainer = styled.div`
   background-color: ${(props) => props.theme.secondaryFeatureColor};

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { HashLink } from 'react-router-hash-link';
-import { StyledButton } from './GenericButtons';
+import { StyledButton } from '../../styles/generics/GenericButtons';
 
 export const DisabledButton = styled(StyledButton)`
   background-color: ${(props) => (props.glassy ? props.theme.blueFeatureColor : props.theme.greycendreColor)};
@@ -12,7 +12,7 @@ export const DisabledButton = styled(StyledButton)`
   }
 `;
 
-export default function DynamicButton({
+export default function InfosEvalDynamicButton({
   type,
   active,
   action,
@@ -34,13 +34,13 @@ export default function DynamicButton({
   );
 }
 
-DynamicButton.propTypes = {
+InfosEvalDynamicButton.propTypes = {
   type: PropTypes.string,
   action: PropTypes.func,
   active: PropTypes.bool,
 };
 
-DynamicButton.defaultProps = {
+InfosEvalDynamicButton.defaultProps = {
   type: '',
   action: null,
   active: '',

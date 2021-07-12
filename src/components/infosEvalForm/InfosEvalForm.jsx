@@ -7,7 +7,7 @@ import {
   StyledButtonContainer,
   StyledInfosFormsColLeftContainer,
 } from '../../styles/StyledInfosForms';
-import DynamicButton from '../../styles/generics/DynamicButton';
+import InfosEvalDynamicButton from './InfosEvalDynamicButton';
 import { Flex } from '../../styles/generics/GenericContainers';
 import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import OrgContext from '../../contexts/OrgContext';
@@ -174,7 +174,7 @@ export default function InfosForm() {
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
         <StyledButtonContainer>
-          <DynamicButton active={active} action={handleSubmit} />
+          <InfosEvalDynamicButton active={active} action={handleSubmit} />
         </StyledButtonContainer>
       </form>
     </StyledInfosFormsContainer>
