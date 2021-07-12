@@ -1,0 +1,12 @@
+          {/* <Image src={theme.icone} /> */}
+          {/* <TitleContain>{theme.title}</TitleContain>
+          {theme.questions.map((question) => (
+            <>
+              <h3>{question.title}</h3>
+              <ContentContain>
+                {question.answers.map((answer) => (
+                  <>
+                    <ContentContain>{answer.label}</ContentContain>
+                  </>
+                ))}
+              </ContentContain> */

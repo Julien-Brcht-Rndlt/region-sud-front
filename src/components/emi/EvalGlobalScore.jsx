@@ -1,5 +1,4 @@
 import { useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 import { StyledTitleH1, StyledTitleH2 } from '../../styles/generics/GenericTitles';
@@ -111,10 +110,8 @@ export default function EvalGlobalScore() {
           <StyledEvalGlobalImg src={Nuageux} alt="des nuages..." />
         </StyledImgContainer>
         <Flex>
-          <Link to="/pdf">
-            <StyledEvalGlobalButton>Envoyer par mail</StyledEvalGlobalButton>
-            <StyledEvalGlobalButton glassy> Imprimer </StyledEvalGlobalButton>
-          </Link>
+          <StyledEvalGlobalButton>Envoyer par mail</StyledEvalGlobalButton>
+          <StyledEvalGlobalButton glassy> Imprimer </StyledEvalGlobalButton>
         </Flex>
       </StyledEvalGlobalLeftCol>
       <StyledEvalGlobalRightCol>

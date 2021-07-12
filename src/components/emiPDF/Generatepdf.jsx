@@ -6,6 +6,8 @@ import {
   Document,
   StyleSheet,
 } from '@react-pdf/renderer';
+import { DocumentTitle, TitleContain } from './DocumentList';
+import EvalData from '../../mockdata/datatest.json';
 
 // Create styles
 const styles = StyleSheet.create({
@@ -28,7 +30,15 @@ export default function MyDocument() {
     <Document styles="width: 100%">
       <Page wrap size="A4" style={styles.page}>
         <View style={styles.section}>
-          <Text>Bientôt l&#39;affichage des résultats</Text>
+          <Text>
+            {EvalData.themes.map((theme) => (
+              <>
+                <DocumentTitle />
+                <TitleContain theme={theme} />
+              </>
+            ))}
+          </Text>
+          <Text>test</Text>
         </View>
       </Page>
     </Document>
