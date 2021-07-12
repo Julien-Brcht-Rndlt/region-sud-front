@@ -1,28 +1,50 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Flex, Block } from '../../styles/generics/GenericContainers';
+import { Flex } from '../../styles/generics/GenericContainers';
 import { StyledTitleP } from '../../styles/generics/GenericTitles';
-/*
 import themea from '../../assets/img-temp/themea.png';
 import theme1 from '../../assets/img-temp/theme1.png';
 import theme2 from '../../assets/img-temp/theme2.png';
 import theme3 from '../../assets/img-temp/theme3.png';
-import theme4 from '../../assets/img-temp/theme4.png';
-import theme5 from '../../assets/img-temp/theme5.png';
-import theme6 from '../../assets/img-temp/theme6.png';
-import theme7 from '../../assets/img-temp/theme7.png';  */
 import Should from '../../mockdata/should.json';
 import Scoring from './scoring.json';
 
 const GlobalReco = styled(Flex)`
 padding-top:20px;
-flex-direction: row;
+flex-direction:column;
 display:flex;
+width:700px;
+height:700px;
 `;
 
-const StyledScore = styled(Block)`
-height:50px;
+const StyledScore = styled(Flex)`
+width:100px;
+flex-direction: row;
+`;
+
+const ShouldItemContainer = styled(Flex)`
+width: 500px;
+background-color:#f0ecec;
+padding-left:15px;
+flex-direction: row;
+
+`;
+
+const ImageTheme = styled.img`
+width: 40px;
+height:40px;
+margin: 30px;
+`;
+
+const ImageScore = styled.img`
+width: 80px;
+height:80px;
+`;
+
+const ButtonScore = styled.button`
+width:100px;
+height:100px;
 margin:10px;
 `;
 
@@ -36,9 +58,13 @@ const DisplayThemesScores = ({ handleClickTheme, themeId }) => {
   }
 
   return (
-    <button type="button" onClick={() => handleClickTheme(themeId)}><img src={scoreRepr.icone} alt={`score-${score}`} /></button>
+    <ButtonScore type="button" onClick={() => handleClickTheme(themeId)}><ImageScore src={scoreRepr.icone} alt={`score-${score}`} /></ButtonScore>
   );
 };
+
+const DisplayThemeIcones = styled(Flex)`
+background-color:blue;
+height: 90px;`;
 
 const DisplayRecoList = ({ should, themeId }) => (
   <div>
@@ -48,10 +74,10 @@ const DisplayRecoList = ({ should, themeId }) => (
     </p>
     {
       should.map((item) => (
-        <div>
+        <ShouldItemContainer>
           <StyledTitleP>{item.content}</StyledTitleP>
           <a href={item.url}>{item.url}</a>
-        </div>
+        </ShouldItemContainer>
         ))
       }
   </div>
@@ -69,17 +95,25 @@ export default function ShouldGlobalComp() {
 
   return (
     <GlobalReco>
-      {
+      <DisplayThemeIcones>
+        <ImageTheme src={themea} alt="theme 1" />
+        <ImageTheme src={theme1} alt="theme 2" />
+        <ImageTheme src={theme2} alt="theme 3" />
+        <ImageTheme src={theme3} alt="theme 4" />
+      </DisplayThemeIcones>
+      <StyledScore>
+        {
         Should.map((item) => (
-          <StyledScore>
+          <>
             <DisplayThemesScores
               key={item.id}
               handleClickTheme={handleClickTheme}
               themeId={item.id}
             />
-          </StyledScore>
+          </>
           ))
       }
+      </StyledScore>
       <DisplayRecoList should={should} themeId={currId} />
     </GlobalReco>
   );
