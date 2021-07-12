@@ -16,14 +16,13 @@ export default function InfosEvalDynamicButton({
   type,
   action,
   active,
-  handleSubmit,
 }) {
   return (
     <>
       {active ? (
         <>
-          <HashLink to="/EmiEval/1#section-theme" onChange={(event) => handleSubmit(event)}>
-            <StyledButton type={type} onClick={action}>
+          <HashLink to="/EmiEval/1#section-theme" onClick={() => action()}>
+            <StyledButton type={type}>
               Suivant
             </StyledButton>
           </HashLink>
@@ -39,12 +38,10 @@ InfosEvalDynamicButton.propTypes = {
   type: PropTypes.string,
   action: PropTypes.func,
   active: PropTypes.bool,
-  handleSubmit: PropTypes.func,
 };
 
 InfosEvalDynamicButton.defaultProps = {
   type: '',
   action: null,
   active: '',
-  handleSubmit: '',
 };

@@ -111,8 +111,7 @@ export default function InfosForm() {
     }
   }, [orgForm, orgEventForm]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
     dispatch({ type: ADD_INFOS, payload: { org: orgForm, orgEvent: orgEventForm } });
   };
 
@@ -175,7 +174,7 @@ export default function InfosForm() {
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
         <StyledButtonContainer>
-          <InfosEvalDynamicButton active={active} type="submit" handleSubmit={handleSubmit} />
+          <InfosEvalDynamicButton active={active} action={handleSubmit} />
         </StyledButtonContainer>
       </form>
     </StyledInfosFormsContainer>
