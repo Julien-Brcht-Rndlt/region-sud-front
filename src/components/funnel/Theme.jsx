@@ -106,21 +106,21 @@ export default function Theme({ id }) {
   const [show, setShow] = useState(false);
   const { funnel } = useContext(FunnelContext);
   const { evalDispatch } = useContext(EvalContext);
-  const theme = funnel.themes[id];
-  const lengthThemes = funnel.themes.length - 1;
+  const currTheme = funnel.themes.find((theme) => theme.id === parseInt(id, 10));
+  const nbThemes = funnel.themes.length;
 
   return (
     <>
       <ContainersubtitleTheme id="section-theme">
-        <IconeImg src={theme.icon} alt="logo" />
+        <IconeImg src={currTheme.icon} alt="logo" />
         <StyledSubtitleTheme>Evaluer mon événement</StyledSubtitleTheme>
       </ContainersubtitleTheme>
       <FlexCol>
         <StyledContainerYellow>
-          <StyledTitleTheme>{theme.title}</StyledTitleTheme>
+          <StyledTitleTheme>{currTheme.title}</StyledTitleTheme>
           <StyledBorderYellow />
         </StyledContainerYellow>
-        <QuestionList questions={theme.questions} themeId={id} />
+        <QuestionList questions={currTheme.questions} themeId={id} />
         <EmiFaqModal show={show} setShow={setShow} />
       </FlexCol>
       <CompButton>
@@ -134,7 +134,7 @@ export default function Theme({ id }) {
         ) : (
           <DisabledButton>Précédent</DisabledButton>
         )}
-        {id < lengthThemes ? (
+        {id < nbThemes ? (
           <HashLink to={`/EmiEval/${parseInt(id, 10) + 1}#section-theme`}>
             <StyledButton>Suivant</StyledButton>
           </HashLink>

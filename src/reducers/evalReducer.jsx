@@ -12,6 +12,8 @@ export default function evalReducer(state, action) {
 
     const evalState = state;
 
+    console.log('evalState', evalState);
+
     if (type === MULTIPLE_CHOICE || type === INPUT_ANSWER || type === ONE_CHOICE) {
         const {
             answer,
