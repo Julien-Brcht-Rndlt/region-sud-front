@@ -22,7 +22,7 @@ export default function DynamicButton({
     <>
       {active ? (
         <>
-          <HashLink to="/EmiEval/0#section-theme" onChange={(event) => handleSubmit(event)}>
+          <HashLink to="/EmiEval/1#section-theme" onChange={(event) => handleSubmit(event)}>
             <StyledButton type={type} onClick={action}>
               Suivant
             </StyledButton>
