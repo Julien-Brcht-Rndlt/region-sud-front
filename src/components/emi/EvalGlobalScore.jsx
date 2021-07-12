@@ -13,6 +13,8 @@ import {
 import Nuageux from '../../assets/img/nuageux.png';
 import OrgContext from '../../contexts/OrgContext';
 import EventContext from '../../contexts/EventContext';
+import EvalContext from '../../contexts/EvalContext';
+import { INPUT_ANSWER } from '../../constants';
 
 export const StyledEvalGlobalContainer = styled(FlexSpace)`
   height: 45rem;
@@ -69,6 +71,8 @@ export default function EvalGlobalScore() {
   const { org } = useContext(OrgContext);
   const { orgEvent } = useContext(EventContext);
 
+  const { evalState } = useContext(EvalContext);
+
   useEffect(() => {
     const saveAboutOrgInfos = async () => {
       try {
@@ -94,10 +98,54 @@ export default function EvalGlobalScore() {
       }
     };
 
+    const saveResultEvals = async (eventId) => {
+      try {
+        const scoresPostSaving = evalState.themes.map((theme) => (
+            axios.post(`http://localhost:8080/emi/evals/events/${eventId}/themes/${theme.id}/scores`, {
+            score: theme.score,
+            })
+        ));
+
+        let evalAnswers = [];
+        evalState.themes.forEach((theme) => theme.questions
+          .forEach((question) => {
+            if (question.givenAnswers) {
+              evalAnswers = evalAnswers
+                .concat(question.givenAnswers.map((givenAnswer) => givenAnswer));
+            }
+          }));
+
+        const evalAnswerPostSaving = evalAnswers.map((evalAnswer) => {
+          const answId = evalAnswer.id;
+          const evalValue = evalAnswer.type === INPUT_ANSWER
+            ? evalAnswer.answer_value : evalAnswer.label;
+          return axios.post(`http://localhost:8080/emi/evals/0/events/${eventId}/answers/${answId}`, {
+            evalValue,
+            });
+        });
+
+        const axiosPostRequests = scoresPostSaving.concat(evalAnswerPostSaving);
+
+        return Promise.all(axiosPostRequests).then((postResponses) => postResponses);
+      } catch (error) {
+        console.error(error);
+        return null;
+      }
+    };
+
     const processDataSaving = async () => {
       const orgResponse = await saveAboutOrgInfos();
-      const organization = orgResponse.data;
-      saveAboutEventInfos(organization.id);
+      if (orgResponse) {
+        const organization = orgResponse.data;
+        const orgEventResponse = await saveAboutEventInfos(organization.id);
+        if (orgEventResponse) {
+          const organizationEvent = orgEventResponse.data;
+          const postResponses = saveResultEvals(organizationEvent.id);
+          if (postResponses) {
+            postResponses.then((responses) => console.log('responses: ', responses));
+          }
+        }
+      }
     };
     processDataSaving();
   }, []);

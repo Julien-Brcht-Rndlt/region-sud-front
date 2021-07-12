@@ -14,8 +14,8 @@ export const DisabledButton = styled(StyledButton)`
 
 export default function InfosEvalDynamicButton({
   type,
-  action,
   active,
+  action,
 }) {
   return (
     <>

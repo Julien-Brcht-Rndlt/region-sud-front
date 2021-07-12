@@ -117,7 +117,7 @@ export default function InfosForm() {
 
   return (
     <StyledInfosFormsContainer id="section-form">
-      <form onSubmit={(event) => handleSubmit(event)}>
+      <form/* onSubmit={(event) => handleSubmit(event)} */>
         <StyledTitleH4>Informations préalables</StyledTitleH4>
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>

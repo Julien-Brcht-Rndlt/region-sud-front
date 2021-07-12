@@ -1,4 +1,4 @@
-export const MULTI_CHOICE = 'MULTIPLE_CHOICE';
+export const MULTIPLE_CHOICE = 'MULTIPLE_CHOICE';
 export const ONE_CHOICE = 'ONE_CHOICE';
 export const INPUT_ANSWER = 'INPUT_ANSWER';
 

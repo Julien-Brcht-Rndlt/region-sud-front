@@ -1,5 +1,5 @@
 import {
-    MULTI_CHOICE,
+    MULTIPLE_CHOICE,
     ONE_CHOICE,
     INPUT_ANSWER,
     IS_COMPLETE,
@@ -12,7 +12,9 @@ export default function evalReducer(state, action) {
 
     const evalState = state;
 
-    if (type === MULTI_CHOICE || type === INPUT_ANSWER || type === ONE_CHOICE) {
+    console.log('evalState', evalState);
+
+    if (type === MULTIPLE_CHOICE || type === INPUT_ANSWER || type === ONE_CHOICE) {
         const {
             answer,
             funnel,
@@ -34,7 +36,7 @@ export default function evalReducer(state, action) {
             evalQuestion.givenAnswers = [];
         }
 
-        if (type === MULTI_CHOICE) {
+        if (type === MULTIPLE_CHOICE) {
             if (payload.checked && evalQuestion.givenAnswers
                 .find((givenAnswer) => givenAnswer.id === answer.id)) {
                 const filteredAnswers = evalQuestion.givenAnswers

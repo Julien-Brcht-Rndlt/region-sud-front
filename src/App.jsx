@@ -9,10 +9,9 @@ import EventContext from './contexts/EventContext';
 import EvalContext from './contexts/EvalContext';
 import formReducer from './reducers/formReducer';
 import evalReducer from './reducers/evalReducer';
-import datatest from './mockdata/datatest.json';
 
 function App() {
-  const [funnel, setFunnel] = useState(datatest);
+  const [funnel, setFunnel] = useState({});
   const [organization] = useState({});
   const [orgEvent] = useState({});
   const [eventEval] = useState({
@@ -36,7 +35,6 @@ function App() {
 
   const [formState, dispatch] = useReducer(formReducer, { org: organization, orgEvent });
   const [evalState, evalDispatch] = useReducer(evalReducer, { ...eventEval });
-
   return (
     <ThemeProvider theme={theme}>
       <FunnelContext.Provider value={{ funnel }}>
