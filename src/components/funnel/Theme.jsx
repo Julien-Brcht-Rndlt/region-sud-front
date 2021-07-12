@@ -5,8 +5,6 @@ import { HashLink } from 'react-router-hash-link';
 import PropTypes from 'prop-types';
 import FunnelContext from '../../contexts/FunnelContext';
 import EvalContext from '../../contexts/EvalContext';
-import OrgContext from '../../contexts/OrgContext';
-import EventContext from '../../contexts/EventContext';
 import { COMPUTE_TOTAL_SCORE } from '../../reducers/actions';
 import QuestionList from './QuestionList';
 import { StyledButton } from '../../styles/generics/GenericButtons';
