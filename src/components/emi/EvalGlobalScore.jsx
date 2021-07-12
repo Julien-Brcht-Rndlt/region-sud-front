@@ -100,36 +100,33 @@ export default function EvalGlobalScore() {
 
     const saveResultEvals = async (eventId) => {
       try {
-        // scores post prepared array
-        const scoresPostSaving = evalState.themes.map((theme) => (() => axios.post(`http://localhost:8080/emi/evals/0/events/${eventId}/themes/${theme.id}/scores`, {
-            score: theme.score, // ToDo: revoir URI des endpoints car pas trop REST:
-            // themeId + answerid doivent être passés dans le body
-          })));
+        const scoresPostSaving = evalState.themes.map((theme) => (
+            axios.post(`http://localhost:8080/emi/evals/events/${eventId}/themes/${theme.id}/scores`, {
+            score: theme.score,
+            })
+        ));
 
-        // eval answers post prepared array
         let evalAnswers = [];
         evalState.themes.forEach((theme) => theme.questions
           .forEach((question) => {
-            evalAnswers = evalAnswers
-              .concat(question.givenAnswers.map((givenAnswer) => givenAnswer));
+            if (question.givenAnswers) {
+              evalAnswers = evalAnswers
+                .concat(question.givenAnswers.map((givenAnswer) => givenAnswer));
+            }
           }));
-        console.log(evalAnswers);
 
         const evalAnswerPostSaving = evalAnswers.map((evalAnswer) => {
           const answId = evalAnswer.id;
           const evalValue = evalAnswer.type === INPUT_ANSWER
             ? evalAnswer.answer_value : evalAnswer.label;
-          return (() => axios.post(`http://localhost:8080/emi/evals/0/events/${eventId}/answers/${answId}`, {
+          return axios.post(`http://localhost:8080/emi/evals/0/events/${eventId}/answers/${answId}`, {
             evalValue,
-            })
-          );
+            });
         });
 
-        // fusion des deux tableaux
         const axiosPostRequests = scoresPostSaving.concat(evalAnswerPostSaving);
 
-        // adding axios silmutaneous post request saving data
-        return await axios.all([...axiosPostRequests]);
+        return Promise.all(axiosPostRequests).then((postResponses) => postResponses);
       } catch (error) {
         console.error(error);
         return null;
@@ -138,15 +135,17 @@ export default function EvalGlobalScore() {
 
     const processDataSaving = async () => {
       const orgResponse = await saveAboutOrgInfos();
-      console.log('orgResponse', orgResponse);
-      const organization = orgResponse.data;
-      console.log('orgResponse.data', orgResponse.data);
-      const orgEventResponse = await saveAboutEventInfos(organization.id);
-      console.log('orgEventResponse', orgEventResponse);
-      const organizationEvent = orgEventResponse.data;
-      console.log('organizationEvent', organizationEvent);
-      const postResponses = await saveResultEvals(organizationEvent.id);
-      postResponses.foreach((response) => console.log(response));
+      if (orgResponse) {
+        const organization = orgResponse.data;
+        const orgEventResponse = await saveAboutEventInfos(organization.id);
+        if (orgEventResponse) {
+          const organizationEvent = orgEventResponse.data;
+          const postResponses = saveResultEvals(organizationEvent.id);
+          if (postResponses) {
+            postResponses.then((responses) => console.log('responses: ', responses));
+          }
+        }
+      }
     };
     processDataSaving();
   }, []);
