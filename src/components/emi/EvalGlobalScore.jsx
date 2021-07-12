@@ -138,9 +138,13 @@ export default function EvalGlobalScore() {
 
     const processDataSaving = async () => {
       const orgResponse = await saveAboutOrgInfos();
+      console.log('orgResponse', orgResponse);
       const organization = orgResponse.data;
+      console.log('orgResponse.data', orgResponse.data);
       const orgEventResponse = await saveAboutEventInfos(organization.id);
+      console.log('orgEventResponse', orgEventResponse);
       const organizationEvent = orgEventResponse.data;
+      console.log('organizationEvent', organizationEvent);
       const postResponses = await saveResultEvals(organizationEvent.id);
       postResponses.foreach((response) => console.log(response));
     };

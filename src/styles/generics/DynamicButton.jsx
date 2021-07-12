@@ -14,16 +14,15 @@ export const DisabledButton = styled(StyledButton)`
 
 export default function DynamicButton({
   type,
-  action,
   active,
-  handleSubmit,
+  action,
 }) {
   return (
     <>
       {active ? (
         <>
-          <HashLink to="/EmiEval/1#section-theme" onChange={(event) => handleSubmit(event)}>
-            <StyledButton type={type} onClick={action}>
+          <HashLink to="/EmiEval/1#section-theme" onClick={() => action()}>
+            <StyledButton type={type}>
               Suivant
             </StyledButton>
           </HashLink>
@@ -39,12 +38,10 @@ DynamicButton.propTypes = {
   type: PropTypes.string,
   action: PropTypes.func,
   active: PropTypes.bool,
-  handleSubmit: PropTypes.func,
 };
 
 DynamicButton.defaultProps = {
   type: '',
   action: null,
   active: '',
-  handleSubmit: '',
 };
