@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { HashLink } from 'react-router-hash-link';
 import PropTypes from 'prop-types';
 import FunnelContext from '../../contexts/FunnelContext';
+import EvalContext from '../../contexts/EvalContext';
+import { COMPUTE_TOTAL_SCORE } from '../../reducers/actions';
 import QuestionList from './QuestionList';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
@@ -103,6 +105,7 @@ export const StyledContainerYellow = styled.div`
 export default function Theme({ id }) {
   const [show, setShow] = useState(false);
   const { funnel } = useContext(FunnelContext);
+  const { evalDispatch } = useContext(EvalContext);
   const theme = funnel.themes[id];
   const lengthThemes = funnel.themes.length - 1;
 
@@ -136,7 +139,10 @@ export default function Theme({ id }) {
             <StyledButton>Suivant</StyledButton>
           </HashLink>
         ) : (
-          <HashLink to="/EmiResult">
+          <HashLink
+            to="/EmiResult"
+            onClick={() => evalDispatch({ type: COMPUTE_TOTAL_SCORE })}
+          >
             <StyledButton>Terminé</StyledButton>
           </HashLink>
         )}

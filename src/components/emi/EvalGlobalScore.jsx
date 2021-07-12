@@ -68,8 +68,6 @@ const StyledTitleMyResult = styled(StyledTitleH1)`
 `;
 
 export default function EvalGlobalScore() {
-  // ToDo: adding Morgan for all xhr request
-
   const { org } = useContext(OrgContext);
   const { orgEvent } = useContext(EventContext);
 

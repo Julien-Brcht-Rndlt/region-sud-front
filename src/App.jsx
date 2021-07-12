@@ -19,9 +19,6 @@ function App() {
     themes: [],
     completedThemes: [],
   });
-  // const [eventEval] = useState({});
-  // const [score] = useState(5);
-  // ok
 
   useEffect(() => {
     const getEmiFunnel = () => {
