@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { StyledInfosInput } from '../../styles/StyledInfosForms';
 import EvalContext from '../../contexts/EvalContext';
 import FunnelContext from '../../contexts/FunnelContext';
+import { MULTI_CHOICE, ONE_CHOICE, INPUT_ANSWER } from '../../constants';
 
 export const AnswerComponent = styled.div`
   margin: 10px;
@@ -140,7 +141,7 @@ export default function Answer({
   const handleChange = (event) => {
     if (event.target.type === 'checkbox') {
       evalDispatch({
-        type: 'MULTI_CHOICE',
+        type: MULTI_CHOICE,
         payload: {
           answer,
           funnel,
@@ -151,7 +152,7 @@ export default function Answer({
       });
     } else if (event.target.type === 'radio') {
       evalDispatch({
-        type: 'ONE_CHOICE',
+        type: ONE_CHOICE,
         payload: {
           answer,
           funnel,
@@ -162,7 +163,7 @@ export default function Answer({
       });
     } else if (event.target.type === 'text' || event.target.type === 'number') {
       evalDispatch({
-        type: 'INPUT_ANSWER',
+        type: INPUT_ANSWER,
         payload: {
           answer,
           funnel,
@@ -189,9 +190,35 @@ export default function Answer({
 
   return (
     <AnswerComponent>
-      {answer.answ_type === 'multiple_choice' && <MultipleChoiceAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} />}
-      {answer.answ_type === 'one_choice' && <OneChoiceAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} selectedOption={selectedOption} handleSelectedOption={handleSelectedOption} />}
-      {answer.answ_type === 'input_answ' && <InputAnswer id={answer.id} label={answer.label} themeId={themeId} questionId={questionId} onChange={(event) => handleChange(event)} />}
+      {answer.answ_type === MULTI_CHOICE && (
+      <MultipleChoiceAnswer
+        id={answer.id}
+        label={answer.label}
+        themeId={themeId}
+        questionId={questionId}
+        onChange={(event) => handleChange(event)}
+      />
+      )}
+      {answer.answ_type === ONE_CHOICE && (
+      <OneChoiceAnswer
+        id={answer.id}
+        label={answer.label}
+        themeId={themeId}
+        questionId={questionId}
+        onChange={(event) => handleChange(event)}
+        selectedOption={selectedOption}
+        handleSelectedOption={handleSelectedOption}
+      />
+      )}
+      {answer.answ_type === INPUT_ANSWER && (
+      <InputAnswer
+        id={answer.id}
+        label={answer.label}
+        themeId={themeId}
+        questionId={questionId}
+        onChange={(event) => handleChange(event)}
+      />
+      )}
     </AnswerComponent>
   );
 }

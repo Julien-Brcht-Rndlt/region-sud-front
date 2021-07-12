@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import Answer from './Answer';
 import { FlexCol, FlexWrap } from '../../styles/generics/GenericContainers';
+import { ONE_CHOICE } from '../../constants';
 
 export default function AnswerList({ answers, questionId, themeId }) {
     const localStKey = `oneansw-${themeId}-${questionId}`;
@@ -30,7 +31,7 @@ export default function AnswerList({ answers, questionId, themeId }) {
 
   return (
     <>
-      {answers.length === 2 && answers[0].answ_type === 'one_choice' ? (
+      {answers.length === 2 && answers[0].answ_type === ONE_CHOICE ? (
         <FlexCol>
           {answers.map((answer) => (
             <Answer
