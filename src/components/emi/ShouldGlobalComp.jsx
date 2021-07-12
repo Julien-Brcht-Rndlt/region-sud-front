@@ -11,11 +11,9 @@ import Should from '../../mockdata/should.json';
 import Scoring from './scoring.json';
 
 const GlobalReco = styled(Flex)`
-padding-top:20px;
+padding-top:47px;
 flex-direction:column;
 display:flex;
-width:700px;
-height:700px;
 `;
 
 const StyledScore = styled(Flex)`
@@ -27,14 +25,15 @@ const ShouldItemContainer = styled(Flex)`
 width: 500px;
 background-color:#f0ecec;
 padding-left:15px;
-flex-direction: row;
+flex-direction: column;
+padding-bottom: 10px;
 
 `;
 
 const ImageTheme = styled.img`
 width: 40px;
 height:40px;
-margin: 30px;
+margin: 30px 45px 30px 30px;
 `;
 
 const ImageScore = styled.img`
@@ -63,7 +62,6 @@ const DisplayThemesScores = ({ handleClickTheme, themeId }) => {
 };
 
 const DisplayThemeIcones = styled(Flex)`
-background-color:blue;
 height: 90px;`;
 
 const DisplayRecoList = ({ should, themeId }) => (
