@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { StyledInfosInput } from '../../styles/StyledInfosForms';
 import EvalContext from '../../contexts/EvalContext';
 import FunnelContext from '../../contexts/FunnelContext';
-import { MULTI_CHOICE, ONE_CHOICE, INPUT_ANSWER } from '../../constants';
+import { MULTIPLE_CHOICE, ONE_CHOICE, INPUT_ANSWER } from '../../constants';
 
 export const AnswerComponent = styled.div`
   margin: 10px;
@@ -141,7 +141,7 @@ export default function Answer({
   const handleChange = (event) => {
     if (event.target.type === 'checkbox') {
       evalDispatch({
-        type: MULTI_CHOICE,
+        type: MULTIPLE_CHOICE,
         payload: {
           answer,
           funnel,
@@ -190,7 +190,7 @@ export default function Answer({
 
   return (
     <AnswerComponent>
-      {answer.answ_type === MULTI_CHOICE && (
+      {answer.answ_type === MULTIPLE_CHOICE && (
       <MultipleChoiceAnswer
         id={answer.id}
         label={answer.label}
