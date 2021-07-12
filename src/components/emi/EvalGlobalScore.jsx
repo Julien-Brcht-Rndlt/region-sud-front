@@ -39,11 +39,6 @@ const StyledEvalGlobalImg = styled.img`
   padding: 30px;
 `;
 
-const StyledEvalGlobalMoreButton = styled(StyledButton)`
-  width: 250px;
-  margin-top: 250px;
-`;
-
 const StyledYellowLine = styled.div`
   border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
   width: 80px;
@@ -64,14 +59,12 @@ export default function EvalGlobalScore() {
         </StyledImgContainer>
         <Flex>
           <StyledEvalGlobalButton>Envoyer par mail</StyledEvalGlobalButton>
-          <StyledEvalGlobalButton glassy> Imprimer </StyledEvalGlobalButton>
+          <StyledEvalGlobalButton glassy> Imprimer</StyledEvalGlobalButton>
+          <StyledEvalGlobalButton glassy> En savoir +</StyledEvalGlobalButton>
         </Flex>
       </StyledEvalGlobalLeftCol>
       <StyledEvalGlobalRightCol>
         <ShouldGlobalComp />
-        <StyledEvalGlobalMoreButton glassy>
-          En savoir +
-        </StyledEvalGlobalMoreButton>
       </StyledEvalGlobalRightCol>
     </StyledEvalGlobalContainer>
   );
