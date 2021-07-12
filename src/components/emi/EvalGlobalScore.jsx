@@ -1,4 +1,4 @@
-import { /* useState,  */useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
@@ -14,6 +14,7 @@ import Nuageux from '../../assets/img/nuageux.png';
 import OrgContext from '../../contexts/OrgContext';
 import EventContext from '../../contexts/EventContext';
 import EvalContext from '../../contexts/EvalContext';
+import { INPUT_ANSWER } from '../../constants';
 
 export const StyledEvalGlobalContainer = styled(FlexSpace)`
   height: 45rem;
@@ -99,39 +100,53 @@ export default function EvalGlobalScore() {
       }
     };
 
+    const saveResultEvals = async (eventId) => {
+      try {
+        // scores post prepared array
+        const scoresPostSaving = evalState.themes.map((theme) => (() => axios.post(`http://localhost:8080/emi/evals/0/events/${eventId}/themes/${theme.id}/scores`, {
+            score: theme.score, // ToDo: revoir URI des endpoints car pas trop REST:
+            // themeId + answerid doivent être passés dans le body
+          })));
+
+        // eval answers post prepared array
+        let evalAnswers = [];
+        evalState.themes.forEach((theme) => theme.questions
+          .forEach((question) => {
+            evalAnswers = evalAnswers
+              .concat(question.givenAnswers.map((givenAnswer) => givenAnswer));
+          }));
+        console.log(evalAnswers);
+
+        const evalAnswerPostSaving = evalAnswers.map((evalAnswer) => {
+          const answId = evalAnswer.id;
+          const evalValue = evalAnswer.type === INPUT_ANSWER
+            ? evalAnswer.answer_value : evalAnswer.label;
+          return (() => axios.post(`http://localhost:8080/emi/evals/0/events/${eventId}/answers/${answId}`, {
+            evalValue,
+            })
+          );
+        });
+
+        // fusion des deux tableaux
+        const axiosPostRequests = scoresPostSaving.concat(evalAnswerPostSaving);
+
+        // adding axios silmutaneous post request saving data
+        return await axios.all([...axiosPostRequests]);
+      } catch (error) {
+        console.error(error);
+        return null;
+      }
+    };
+
     const processDataSaving = async () => {
       const orgResponse = await saveAboutOrgInfos();
       const organization = orgResponse.data;
       const orgEventResponse = await saveAboutEventInfos(organization.id);
       const organizationEvent = orgEventResponse.data;
-      console.log(organizationEvent);
+      const postResponses = await saveResultEvals(organizationEvent.id);
+      postResponses.foreach((response) => console.log(response));
     };
     processDataSaving();
-
-    // adding axios silmutaneous post request saving data
-
-    // scores post prepared array
-    const scoresPostSaving = evalState.themes.map((theme) => {
-      axios.post(`http://localhost:8080/emi/evals/0/events/:eventId/themes/${theme.id}/scores`, {
-        score: theme.score,  // ToDo: revoir URI des endpoints car pas trop REST: themeId + answerid doivent être passés dans le body
-      })
-    });
-
-    // eval answers post prepared array
-    const evalAnswerPostSaving = null;
-    axios.post(`http://localhost:8080/emi/evals/0/events/:eventId/answers/:answerId`, {
-      evalValue: '',
-      }),
-    });
-
-    // fusion des deux tableaux
-    const axiosPostRequests = scoresPostSaving.concat(evalAnswerPostSaving);
-
-    axios.all([...axiosPostRequests])
-    .then((postResponses) => {
-      postResponses.foreach((response) => console.log(response));
-    })
-    .catch((errors) => console.error(errors));
   }, []);
 
   return (
