@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 // eslint-disable-next-line import/no-unresolved
 import { HashLink } from 'react-router-hash-link';
@@ -103,11 +103,23 @@ export const StyledContainerYellow = styled.div`
 `;
 
 export default function Theme({ id }) {
+  const [complete, setComplete] = useState(false);
   const [show, setShow] = useState(false);
   const { funnel } = useContext(FunnelContext);
   const { evalDispatch } = useContext(EvalContext);
   const currTheme = funnel.themes.find((theme) => theme.id === parseInt(id, 10));
   const nbThemes = funnel.themes.length;
+
+  const handleComplete = () => {
+    setComplete(true);
+    evalDispatch({ type: COMPUTE_TOTAL_SCORE });
+  };
+
+  useEffect(() => {
+    if (complete) {
+      localStorage.clear();
+    }
+  }, [complete]);
 
   return (
     <>
@@ -141,7 +153,7 @@ export default function Theme({ id }) {
         ) : (
           <HashLink
             to="/EmiResult"
-            onClick={() => evalDispatch({ type: COMPUTE_TOTAL_SCORE })}
+            onClick={() => handleComplete()}
           >
             <StyledButton>Terminé</StyledButton>
           </HashLink>
