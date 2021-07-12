@@ -175,10 +175,7 @@ export default function InfosForm() {
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
         <StyledButtonContainer>
-          <DynamicButton
-            active={active}
-            type="submit"
-          />
+          <DynamicButton active={active} type="submit" handleSubmit={handleSubmit} />
         </StyledButtonContainer>
       </form>
     </StyledInfosFormsContainer>
