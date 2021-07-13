@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
 import { StyledTitleH2, StyledTitleH1 } from '../../styles/generics/GenericTitles';
-import soleil from '../../assets/img/soleil.PNG';
+import soleil from '../../assets/img/soleil.png';
 
 export const StyledEvalBox = styled(Flex)`
   width: 675px;
