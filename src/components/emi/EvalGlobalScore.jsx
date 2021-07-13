@@ -38,8 +38,15 @@ const StyledImgContainer = styled(FlexSpace)`
 `;
 
 const StyledEvalGlobalButton = styled(StyledButton)`
-  width: 250px;
+  width: 240px;
   margin-top: 50px;
+`;
+
+const StyledEvalGlobalButtonKnowMore = styled(StyledButton)`
+width:240px;
+height:60px;
+margin-left:140px;
+margin-top:10px;
 `;
 
 const StyledEvalGlobalImg = styled.img`
@@ -147,17 +154,15 @@ export default function EvalGlobalScore() {
           <StyledEvalGlobalImg src={sunny} alt="des nuages..." />
         </StyledImgContainer>
         <Flex>
-
           <Link to="/pdf">
             <StyledEvalGlobalButton>Envoyer par mail</StyledEvalGlobalButton>
             <StyledEvalGlobalButton glassy> Imprimer </StyledEvalGlobalButton>
-            <StyledEvalGlobalButton glassy> En savoir +</StyledEvalGlobalButton>
           </Link>
-
         </Flex>
       </StyledEvalGlobalLeftCol>
       <StyledEvalGlobalRightCol>
         <ShouldGlobalComp />
+        <StyledEvalGlobalButtonKnowMore glassy> En savoir +</StyledEvalGlobalButtonKnowMore>
       </StyledEvalGlobalRightCol>
     </StyledEvalGlobalContainer>
   );
