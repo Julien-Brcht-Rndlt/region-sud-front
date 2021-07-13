@@ -1,11 +1,13 @@
 import {
-    MULTIPLE_CHOICE,
-    ONE_CHOICE,
-    INPUT_ANSWER,
+    ADD_MULTIPLE_CHOICE,
+    ADD_ONE_CHOICE,
+    ADD_INPUT_ANSWER,
     IS_COMPLETE,
     COMPUTE_SCORE,
+    DISPLAY_RECOS,
     COMPUTE_TOTAL_SCORE,
 } from './actions';
+import { NO_CHOICE } from '../constants';
 
 export default function evalReducer(state, action) {
     const { type, payload } = action;
@@ -14,7 +16,7 @@ export default function evalReducer(state, action) {
 
     console.log('evalState', evalState);
 
-    if (type === MULTIPLE_CHOICE || type === INPUT_ANSWER || type === ONE_CHOICE) {
+    if (type === ADD_MULTIPLE_CHOICE || type === ADD_INPUT_ANSWER || type === ADD_ONE_CHOICE) {
         const {
             answer,
             funnel,
@@ -36,7 +38,7 @@ export default function evalReducer(state, action) {
             evalQuestion.givenAnswers = [];
         }
 
-        if (type === MULTIPLE_CHOICE) {
+        if (type === ADD_MULTIPLE_CHOICE) {
             if (payload.checked && evalQuestion.givenAnswers
                 .find((givenAnswer) => givenAnswer.id === answer.id)) {
                 const filteredAnswers = evalQuestion.givenAnswers
@@ -56,7 +58,7 @@ export default function evalReducer(state, action) {
                 evalQuestion.givenAnswers = [...filteredAnswers];
             }
         }
-        if (type === INPUT_ANSWER) {
+        if (type === ADD_INPUT_ANSWER) {
             if (payload.value && evalQuestion.givenAnswers
                 .find((givenAnswer) => givenAnswer.id === answer.id)) {
                     const filteredAnswers = evalQuestion.givenAnswers
@@ -76,7 +78,7 @@ export default function evalReducer(state, action) {
                 evalQuestion.givenAnswers = [...filteredAnswers];
             }
         }
-        if (type === ONE_CHOICE) {
+        if (type === ADD_ONE_CHOICE) {
             evalQuestion.givenAnswers = [];
             evalQuestion.givenAnswers.push({
                 ...answer,
@@ -110,6 +112,31 @@ export default function evalReducer(state, action) {
               .filter((completedId) => completedId !== themeId);
             }
         }
+    }
+    if (type === DISPLAY_RECOS) {
+      const themeId = payload;
+      let negativAnswers = [];
+      let notAnswered = [];
+      let shouldList = [];
+      const evalTheme = evalState.themes
+            .find((theme) => theme.id === parseInt(themeId, 10));
+      if (evalTheme) {
+        evalTheme.questions.forEach((evalQuestion) => {
+          negativAnswers = [...negativAnswers, ...evalQuestion.givenAnswers
+            .filter((answer) => answer.answ_type === NO_CHOICE)];
+          notAnswered = [...notAnswered, ...evalQuestion.answers
+            .filter((answer) => !evalQuestion.givenAnswers
+              .find((givenAnswer) => givenAnswer.id === answer.id))];
+        });
+        const shouldAnswers = notAnswered.concat(negativAnswers);
+        shouldAnswers.forEach((shouldAnswer) => {
+        shouldList = [...shouldList, ...shouldAnswer.shouldList];
+        });
+        evalTheme.shouldList = shouldList;
+        const filteredThemes = evalState.themes
+          .filter((theme) => theme.id !== parseInt(themeId, 10));
+        evalState.themes = [...filteredThemes, evalTheme];
+      }
     }
     if (type === COMPUTE_SCORE) {
         const themeId = payload;
