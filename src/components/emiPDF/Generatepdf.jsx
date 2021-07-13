@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import {
   Page,
   Text,
@@ -54,3 +54,4 @@ export default function MyDocument() {
     </Document>
   );
 }
+ */
