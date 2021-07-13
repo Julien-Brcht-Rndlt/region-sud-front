@@ -1,8 +1,7 @@
 import { useEffect, useContext } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { StyledTitleH1 } from '../../styles/generics/GenericTitles';
-import axios from 'axios';
 import { StyledTitleH1 } from '../../styles/generics/GenericTitles';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import {
