@@ -6,17 +6,18 @@ import {
   Document,
   StyleSheet,
 } from '@react-pdf/renderer';
-import { DocumentTitle, TitleContain } from './DocumentList';
 import EvalData from '../../mockdata/datatest.json';
+import { TitleTheme } from './DocumentList';
 
 // Create styles
 const styles = StyleSheet.create({
   page: {
     justifyContent: 'center',
-    flexDirection: 'row',
+    flexDirection: 'column',
     backgroundColor: '#E4E4E4',
   },
   section: {
+
     textAlign: 'center',
     margin: 10,
     padding: 10,
@@ -32,13 +33,9 @@ export default function MyDocument() {
         <View style={styles.section}>
           <Text>
             {EvalData.themes.map((theme) => (
-              <>
-                <DocumentTitle />
-                <TitleContain theme={theme} />
-              </>
+              <TitleTheme title={theme.title} />
             ))}
           </Text>
-          <Text>test</Text>
         </View>
       </Page>
     </Document>

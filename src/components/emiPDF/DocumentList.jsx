@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Text, View } from '@react-pdf/renderer';
 
 export const TitleH2 = styled.h2``;
+
+export const TitleH3 = styled.h3``;
 
 export const TitleTheme = (theme) => {
   const { title } = theme;
@@ -13,20 +14,14 @@ export const TitleTheme = (theme) => {
   );
 };
 
-export const TitleContain = (theme) => {
-  <View>
-    <Text>
-      <TitleTheme theme={theme} />
-    </Text>
-  </View>;
+export const TitleContain = (title) => {
+  <TitleH3>
+    {title}
+  </TitleH3>;
 };
 
 export const DocumentTitle = () => {
-  <View>
-    <Text>
-      <h1>Evaluer mon Impact: Résultats du sondage</h1>
-    </Text>
-  </View>;
+  <h1>Evaluer mon Impact: Résultats du sondage</h1>;
 };
 
 export default function EvalResultDocument() {
