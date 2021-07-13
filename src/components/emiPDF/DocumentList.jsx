@@ -14,9 +14,9 @@ export const TitleTheme = (theme) => {
   );
 };
 
-export const TitleContain = (title) => {
+export const TitleContain = (questions) => {
   <TitleH3>
-    {title}
+    {questions}
   </TitleH3>;
 };
 
