@@ -1,15 +1,20 @@
-/* import { useContext } from 'react'; */
-/* import FunnelContext from '../contexts/FunnelContext'; */
+import {
+    MULTIPLE_CHOICE,
+    ONE_CHOICE,
+    INPUT_ANSWER,
+    IS_COMPLETE,
+    COMPUTE_SCORE,
+    COMPUTE_TOTAL_SCORE,
+} from './actions';
 
 export default function evalReducer(state, action) {
     const { type, payload } = action;
 
-    /* const { funnel } = useContext(FunnelContext); */
-    /* console.log(funnel); */
+    const evalState = state;
 
-    const evalState = state; // const evalState = { ...state };
+    console.log('evalState', evalState);
 
-    if (type === 'MULTI_CHOICE' || type === 'INPUT_ANSWER' || type === 'ONE_CHOICE') {
+    if (type === MULTIPLE_CHOICE || type === INPUT_ANSWER || type === ONE_CHOICE) {
         const {
             answer,
             funnel,
@@ -30,13 +35,8 @@ export default function evalReducer(state, action) {
         if (!evalQuestion.givenAnswers) {
             evalQuestion.givenAnswers = [];
         }
-        /* console.log('eval question', evalQuestion);
 
-        console.log('payload', payload);
-        console.log('answerValue', answer.label);
-        console.log('before state', state); */
-
-        if (type === 'MULTI_CHOICE') {
+        if (type === MULTIPLE_CHOICE) {
             if (payload.checked && evalQuestion.givenAnswers
                 .find((givenAnswer) => givenAnswer.id === answer.id)) {
                 const filteredAnswers = evalQuestion.givenAnswers
@@ -56,7 +56,7 @@ export default function evalReducer(state, action) {
                 evalQuestion.givenAnswers = [...filteredAnswers];
             }
         }
-        if (type === 'INPUT_ANSWER') {
+        if (type === INPUT_ANSWER) {
             if (payload.value && evalQuestion.givenAnswers
                 .find((givenAnswer) => givenAnswer.id === answer.id)) {
                     const filteredAnswers = evalQuestion.givenAnswers
@@ -76,7 +76,7 @@ export default function evalReducer(state, action) {
                 evalQuestion.givenAnswers = [...filteredAnswers];
             }
         }
-        if (type === 'ONE_CHOICE') {
+        if (type === ONE_CHOICE) {
             evalQuestion.givenAnswers = [];
             evalQuestion.givenAnswers.push({
                 ...answer,
@@ -91,60 +91,51 @@ export default function evalReducer(state, action) {
             evalState.themes.push(evalTheme);
         }
     }
-    if (type === 'IS_COMPLETE') {
+    if (type === IS_COMPLETE) {
         const themeId = payload;
         const evalTheme = evalState.themes
             .find((theme) => theme.id === parseInt(themeId, 10));
-        const filteredQuestions = evalTheme.questions
+        if (evalTheme) {
+            const filteredQuestions = evalTheme.questions
         .filter((question) => question.givenAnswers && question.givenAnswers.length > 0);
-        if (filteredQuestions.length === evalTheme.questions.length) {
-            if (!evalState.completedThemes) {
-                evalState.completedThemes = [];
-            }
-            if (!evalState.completedThemes.includes(themeId)) {
-              evalState.completedThemes.push(themeId);
+            if (filteredQuestions.length === evalTheme.questions.length) {
+                if (!evalState.completedThemes) {
+                    evalState.completedThemes = [];
+                }
+                if (!evalState.completedThemes.includes(themeId)) {
+                evalState.completedThemes.push(themeId);
+                }
+            } else if (evalState.completedThemes.includes(themeId)) {
+              evalState.completedThemes = evalState.completedThemes
+              .filter((completedId) => completedId !== themeId);
             }
         }
     }
-    if (type === 'COMPUTE_SCORE') {
+    if (type === COMPUTE_SCORE) {
         const themeId = payload;
-        console.log('compute score');
-        console.log('themeId from payload', themeId);
         let score = 0;
         if (evalState) {
             const evalTheme = evalState.themes
             .find((theme) => theme.id === parseInt(themeId, 10));
-            console.log('evalTheme dans compute score', evalTheme);
             evalTheme.questions.forEach((question) => {
                 question.givenAnswers.forEach((givenAnswer) => {
                     score += givenAnswer.weight;
-                    console.log('givenAnswer.weight dans double loop', givenAnswer);
                 });
             });
-          console.log('score', score);
           evalTheme.score = score;
           const filteredThemes = evalState.themes
           .filter((theme) => theme.id !== parseInt(themeId, 10));
           evalState.themes = [...filteredThemes, evalTheme];
         }
     }
-    if (type === 'COMPUTE_TOTAL_SCORE') {
-        // ;
+    if (type === COMPUTE_TOTAL_SCORE) {
+        let evalScore = 0;
+        evalState.themes.forEach((theme) => {
+            if (theme.score) {
+                evalScore += theme.score;
+            }
+        });
+        evalState.scoring = evalScore;
     }
-    console.log('eval state', evalState);
     return evalState;
-    /*  case 'ADD_QUESTION_ANSWER':
-        return { ...state }; */
 }
-
-// TODO: funnel context ou une copie de celui-ci doit être maintenu dans l'eval context..
-// ainsi la structure de l'objet global représentant les liens entre themes/questions/answers
-// est déjà créé..
-// initialiser funnel context comme propriété de l'evalcontext
-// puis selon le type de réponse (answer_type)
-// pré-remplir l'eval context avec des valeurs par défaut
-// qui seront changées  via le reducer
-// les reco sont aussi récupérées depuis le funnel context et assigné selon les réponses données
-// comme une liste de reco pour un thème
-// idem le score est calculé en fonction
-// des réponses et stocké pour un thème

@@ -1,8 +1,11 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+// eslint-disable-next-line import/no-unresolved
+import { HashLink } from 'react-router-hash-link';
 import PropTypes from 'prop-types';
 import FunnelContext from '../../contexts/FunnelContext';
+import EvalContext from '../../contexts/EvalContext';
+import { COMPUTE_TOTAL_SCORE } from '../../reducers/actions';
 import QuestionList from './QuestionList';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
@@ -11,6 +14,7 @@ import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitle
 import { device } from '../../styles/theme';
 import ButtonHelp from './ButtonWithIcon';
 import EmiFaqModal from '../faq/EmiFaqModal';
+import { DisabledButton } from '../infosEvalForm/InfosEvalDynamicButton';
 
 export const ThemeContainer = styled.div`
   background-color: ${(props) => props.theme.secondaryFeatureColor};
@@ -99,46 +103,60 @@ export const StyledContainerYellow = styled.div`
 `;
 
 export default function Theme({ id }) {
+  const [complete, setComplete] = useState(false);
   const [show, setShow] = useState(false);
   const { funnel } = useContext(FunnelContext);
-  const theme = funnel.themes[id];
-  const lengthThemes = funnel.themes.length - 1;
+  const { evalDispatch } = useContext(EvalContext);
+  const currTheme = funnel.themes.find((theme) => theme.id === parseInt(id, 10));
+  const nbThemes = funnel.themes.length;
+
+  const handleComplete = () => {
+    setComplete(true);
+    evalDispatch({ type: COMPUTE_TOTAL_SCORE });
+  };
+
+  useEffect(() => {
+    if (complete) {
+      localStorage.clear();
+    }
+  }, [complete]);
 
   return (
     <>
-      <ContainersubtitleTheme>
-        <IconeImg src={theme.icon} alt="logo" />
+      <ContainersubtitleTheme id="section-theme">
+        <IconeImg src={currTheme.icon} alt="logo" />
         <StyledSubtitleTheme>Evaluer mon événement</StyledSubtitleTheme>
       </ContainersubtitleTheme>
       <FlexCol>
         <StyledContainerYellow>
-          <StyledTitleTheme>{theme.title}</StyledTitleTheme>
+          <StyledTitleTheme>{currTheme.title}</StyledTitleTheme>
           <StyledBorderYellow />
         </StyledContainerYellow>
-        <QuestionList questions={theme.questions} themeId={id} />
+        <QuestionList questions={currTheme.questions} themeId={id} />
         <EmiFaqModal show={show} setShow={setShow} />
       </FlexCol>
       <CompButton>
-        <button
-          type="button"
-          onClick={() => {
-          console.log('click button help');
-          setShow(true);
-      }}>
-          Show Modal
-        </button>
         <ButtonHelp />
       </CompButton>
       <Flex center>
-        <StyledButton>Précédent</StyledButton>
-        {id < lengthThemes ? (
-          <Link to={`/EmiEval/${parseInt(id, 10) + 1}`}>
-            <StyledButton>Suivant</StyledButton>
-          </Link>
+        {id > 0 ? (
+          <HashLink to={`/EmiEval/${parseInt(id, 10) - 1}#section-theme`}>
+            <StyledButton>Précédent</StyledButton>
+          </HashLink>
         ) : (
-          <Link to="/">
+          <DisabledButton>Précédent</DisabledButton>
+        )}
+        {id < nbThemes ? (
+          <HashLink to={`/EmiEval/${parseInt(id, 10) + 1}#section-theme`}>
+            <StyledButton>Suivant</StyledButton>
+          </HashLink>
+        ) : (
+          <HashLink
+            to="/EmiResult"
+            onClick={() => handleComplete()}
+          >
             <StyledButton>Terminé</StyledButton>
-          </Link>
+          </HashLink>
         )}
       </Flex>
     </>
@@ -146,5 +164,5 @@ export default function Theme({ id }) {
 }
 
 Theme.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };

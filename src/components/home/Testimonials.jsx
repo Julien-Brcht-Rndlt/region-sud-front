@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
 import Testimonial from './Testimonial';
 import { StyledButton } from '../../styles/generics/GenericButtons';
@@ -83,9 +83,9 @@ export default function Testimonials() {
         ))}
       </TestimonialsContainer>
       <StyledButtonTestimonial center>
-        <Link to="/EmiStart">
+        <HashLink to="/EmiStart#">
           <StyledButton>Je m&apos;engage moi aussi !</StyledButton>
-        </Link>
+        </HashLink>
       </StyledButtonTestimonial>
     </>
   );

@@ -22,13 +22,6 @@ export const StyledTitleH3 = styled.h3`
   font-size:18px;
 `;
 
-/* export const StyledSubTitleH3 = styled.h3`
-
-  font-size: 1rem;
-  width: 70rem;
-  height: 30px;
-`; */
-
 export const StyledTitleH4 = styled.h4`
   color: ${(props) => props.theme.blueFeatureColor};
   font-family: ${(props) => props.theme.fontFamilyNormal};

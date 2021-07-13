@@ -1,5 +1,4 @@
 import { useState, useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import {
   StyledInfosFormsContainer,
@@ -8,7 +7,7 @@ import {
   StyledButtonContainer,
   StyledInfosFormsColLeftContainer,
 } from '../../styles/StyledInfosForms';
-import DynamicButton from '../../styles/generics/DynamicButton';
+import InfosEvalDynamicButton from './InfosEvalDynamicButton';
 import { Flex } from '../../styles/generics/GenericContainers';
 import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import OrgContext from '../../contexts/OrgContext';
@@ -18,7 +17,6 @@ import InfosEvalInput from './InfosEvalInput';
 import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';
 import InfosEvalDatepicker from './InfosEvalDatepicker';
-import { StyledButton } from '../../styles/generics/GenericButtons';
 import { device } from '../../styles/theme';
 import {
   SPORT_AMATEUR,
@@ -88,7 +86,7 @@ export const ContainerDatePicker = styled(Flex)`
   }
 `;
 
-const mandatoryFields = ['orgName', 'eventName', 'eventAddr', 'eventLoc'/* , 'eventStart', 'eventEnd' */];
+const mandatoryFields = ['orgName', 'eventName', 'eventAddr', 'eventLoc'];
 
 export default function InfosForm() {
   const [active, setActive] = useState(false);
@@ -110,18 +108,16 @@ export default function InfosForm() {
     const filledFields = Object.keys(orgForm).concat(Object.keys(orgEventForm));
     if (mandatoryFields.every((field) => filledFields.includes(field))) {
       setActive(true);
-      console.log('button active');
     }
   }, [orgForm, orgEventForm]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
     dispatch({ type: ADD_INFOS, payload: { org: orgForm, orgEvent: orgEventForm } });
   };
 
   return (
-    <StyledInfosFormsContainer>
-      <form onSubmit={() => handleSubmit()}>
+    <StyledInfosFormsContainer id="section-form">
+      <form/* onSubmit={(event) => handleSubmit(event)} */>
         <StyledTitleH4>Informations préalables</StyledTitleH4>
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>
@@ -132,7 +128,7 @@ export default function InfosForm() {
               </StyledContainerYellow>
               <StyledSpaceBetween />
               <InfosEvalInput inputName="orgName" infosForm={infosForm.org} setInfosForm={setOrgForm} label={ORG_NAME_LABEL} wide />
-              <InfosEvalInput inputName="orgMembers" infosForm={infosForm.org} setInfosForm={setOrgForm} label={ORG_STAFF_PAX_LABEL} wide />
+              <InfosEvalInput inputName="orgStaff" infosForm={infosForm.org} setInfosForm={setOrgForm} label={ORG_STAFF_PAX_LABEL} wide />
             </div>
           </StyledInfosFormsColLeftContainer>
           <StyledInfosFormsColContainer>
@@ -159,7 +155,7 @@ export default function InfosForm() {
             <Flex start>
               <InfosEvalInput inputName="activity" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_ACTIVITY_LABEL} />
               <InfosEvalDropdown
-                elmtFormName="sportLevels"
+                elmtFormName="sportLevel"
                 infosForm={infosForm.orgEvent}
                 setInfosForm={setEventForm}
                 label={EVENT_SPORT_LEVEL}
@@ -178,10 +174,7 @@ export default function InfosForm() {
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
         <StyledButtonContainer>
-          <Link to="/EmiEval/0">
-            <DynamicButton />
-            <StyledButton>Suivant</StyledButton>
-          </Link>
+          <InfosEvalDynamicButton active={active} action={handleSubmit} />
         </StyledButtonContainer>
       </form>
     </StyledInfosFormsContainer>

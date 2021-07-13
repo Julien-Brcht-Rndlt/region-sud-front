@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { StyledButton } from './GenericButtons';
+import { HashLink } from 'react-router-hash-link';
+import { StyledButton } from '../../styles/generics/GenericButtons';
 
 export const DisabledButton = styled(StyledButton)`
   background-color: ${(props) => (props.glassy ? props.theme.blueFeatureColor : props.theme.greycendreColor)};
@@ -12,13 +12,21 @@ export const DisabledButton = styled(StyledButton)`
   }
 `;
 
-export default function DynamicButton({ active }) {
+export default function InfosEvalDynamicButton({
+  type,
+  active,
+  action,
+}) {
   return (
     <>
       {active ? (
-        <Link to="/EmiEval/1">
-          <StyledButton>Suivant</StyledButton>
-        </Link>
+        <>
+          <HashLink to="/EmiEval/1#section-theme" onClick={() => action()}>
+            <StyledButton type={type}>
+              Suivant
+            </StyledButton>
+          </HashLink>
+        </>
       ) : (
         <DisabledButton disabled>Suivant</DisabledButton>
       )}
@@ -26,10 +34,14 @@ export default function DynamicButton({ active }) {
   );
 }
 
-DynamicButton.propTypes = {
+InfosEvalDynamicButton.propTypes = {
+  type: PropTypes.string,
+  action: PropTypes.func,
   active: PropTypes.bool,
 };
 
-DynamicButton.defaultProps = {
+InfosEvalDynamicButton.defaultProps = {
+  type: '',
+  action: null,
   active: '',
 };

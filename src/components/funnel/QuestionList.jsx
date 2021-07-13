@@ -12,6 +12,6 @@ export default function QuestionList({ questions, themeId }) {
 }
 
 QuestionList.propTypes = {
-  questions: PropTypes.arrayOf(PropTypes.object).isRequired,
-  themeId: PropTypes.number.isRequired,
+  questions: PropTypes.arrayOf(PropTypes.func).isRequired,
+  themeId: PropTypes.string.isRequired,
 };
