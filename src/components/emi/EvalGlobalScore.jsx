@@ -1,16 +1,16 @@
 import { useEffect, useContext } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import axios from 'axios';
-import { StyledTitleH1, StyledTitleH2 } from '../../styles/generics/GenericTitles';
+import { StyledTitleH1 } from '../../styles/generics/GenericTitles';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import {
   Flex,
-  FlexCol,
   FlexSpace,
   Block,
 } from '../../styles/generics/GenericContainers';
-import Nuageux from '../../assets/img/nuageux.png';
+import ShouldGlobalComp from './ShouldGlobalComp';
+import sunny from '../../assets/img/sunny.png';
 import OrgContext from '../../contexts/OrgContext';
 import EventContext from '../../contexts/EventContext';
 import EvalContext from '../../contexts/EvalContext';
@@ -31,8 +31,6 @@ const StyledEvalGlobalRightCol = styled(Block)`
 
 const StyledImgContainer = styled(FlexSpace)`
   width: 400px;
-  border: blue solid 1px;
-  background-color: grey;
   height: 20rem;
   justify-content: center;
   padding: 25px;
@@ -40,22 +38,19 @@ const StyledImgContainer = styled(FlexSpace)`
 `;
 
 const StyledEvalGlobalButton = styled(StyledButton)`
-  width: 250px;
+  width: 240px;
   margin-top: 50px;
+`;
+
+const StyledEvalGlobalButtonKnowMore = styled(StyledButton)`
+width:240px;
+height:60px;
+margin-left:140px;
+margin-top:10px;
 `;
 
 const StyledEvalGlobalImg = styled.img`
   padding: 30px;
-`;
-
-const StyledEvalGlobalMoreButton = styled(StyledButton)`
-  width: 250px;
-  margin-top: 250px;
-`;
-
-const StyledShouldListContainer = styled(FlexCol)`
-  width: 500px;
-  height: 300px;
 `;
 
 const StyledYellowLine = styled.div`
@@ -156,7 +151,7 @@ export default function EvalGlobalScore() {
         <StyledTitleMyResult>Mon résultat</StyledTitleMyResult>
         <StyledYellowLine />
         <StyledImgContainer>
-          <StyledEvalGlobalImg src={Nuageux} alt="des nuages..." />
+          <StyledEvalGlobalImg src={sunny} alt="des nuages..." />
         </StyledImgContainer>
         <Flex>
           <Link to="/pdf">
@@ -166,17 +161,8 @@ export default function EvalGlobalScore() {
         </Flex>
       </StyledEvalGlobalLeftCol>
       <StyledEvalGlobalRightCol>
-        <StyledShouldListContainer start halign="center">
-          <div>Afficher recap icones</div>
-          <span>Mes recommandations concernant</span>
-          <StyledTitleH2>theme props</StyledTitleH2>
-          <span>recommandations props blablabla </span>
-          <span>recommandations props blablabla </span>
-          <span>recommandations props blablabla </span>
-        </StyledShouldListContainer>
-        <StyledEvalGlobalMoreButton glassy>
-          En savoir +
-        </StyledEvalGlobalMoreButton>
+        <ShouldGlobalComp />
+        <StyledEvalGlobalButtonKnowMore glassy> En savoir +</StyledEvalGlobalButtonKnowMore>
       </StyledEvalGlobalRightCol>
     </StyledEvalGlobalContainer>
   );
