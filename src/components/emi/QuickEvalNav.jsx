@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { FlexCol } from '../../styles/generics/GenericContainers';
-import soleil from '../../assets/img/soleil.PNG';
-import vent from '../../assets/img/vent.PNG';
-import pluie from '../../assets/img/pluie.PNG';
-import orageux from '../../assets/img/orageux.PNG';
+import soleil from '../../assets/img/soleil.png';
+import vent from '../../assets/img/vent.png';
+import pluie from '../../assets/img/pluie.png';
+import orageux from '../../assets/img/orageux.png';
 
 export const ContainerProgressBar = styled(FlexCol)`
   border-top-left-radius: 8px;
