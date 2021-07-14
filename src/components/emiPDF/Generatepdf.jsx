@@ -1,4 +1,4 @@
-/* import React from 'react';
+import React from 'react';
 import {
   Page,
   Text,
@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from '@react-pdf/renderer';
 import EvalData from '../../mockdata/datatest.json';
-import { TitleTheme, TitleContain } from './DocumentList';
+import { TitleTheme } from './DocumentList';
 
 // Create styles
 const styles = StyleSheet.create({
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#E4E4E4',
   },
   section: {
-    flexDirection: 'column',
+    alignItems: 'center',
     margin: 10,
     padding: 10,
     flexGrow: 1,
@@ -30,28 +30,18 @@ export default function MyDocument() {
     <Document styles="width: 100%">
       <Page wrap size="A4" style={styles.page}>
         <View style={styles.section}>
-          <Text>Pour l&#39;ensemble de l&#39;évaluation, voici les résultats :</Text>
-          <Text>
-            {EvalData.themes.map((theme) => (
-              <TitleTheme title={theme.title} />
-            ))}
-          </Text>
+          <Text>Evaluer mon Impact: Résultats du sondage !</Text>
         </View>
         <View style={styles.section}>
           <Text>
-            <>
-              {EvalData.themes.map((questions) => (
-                <Text>
-                  {questions.map((list) => (
-                    <TitleContain questions={list.questions} />
-                  ))}
-                </Text>
+            {EvalData.themes.map((theme) => (
+              <>
+                <TitleTheme title={theme.title} question={theme.questions} />
+              </>
             ))}
-            </>
           </Text>
         </View>
       </Page>
     </Document>
   );
 }
- */

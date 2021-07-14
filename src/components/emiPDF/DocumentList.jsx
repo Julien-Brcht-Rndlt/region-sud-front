@@ -1,10 +1,11 @@
-/* import React from 'react';
-import { Image } from '@react-pdf/renderer';
+import React from 'react';
 import styled from 'styled-components';
 
 export const TitleH2 = styled.h2``;
 
 export const TitleH3 = styled.h3``;
+
+export const ContainMap = styled.div``;
 
 export const TitleTheme = (theme) => {
   const { title } = theme;
@@ -15,14 +16,8 @@ export const TitleTheme = (theme) => {
   );
 };
 
-export const TitleContain = (theme) => {
-  <>
-    <Image src={theme.icone} />
-    <TitleContain>{theme.title}</TitleContain>
-    {theme.questions.map((question) => {
-      <h3>{question.title}</h3>;
-    })}
-  </>;
+export const TitleContain = () => {
+
 };
 
 export const DocumentTitle = () => {
@@ -32,4 +27,3 @@ export const DocumentTitle = () => {
 export default function EvalResultDocument() {
   return <></>;
 }
- */

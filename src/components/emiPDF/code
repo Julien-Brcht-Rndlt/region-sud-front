@@ -10,3 +10,15 @@
                   </>
                 ))}
               </ContentContain> */
+
+
+
+
+
+              export const TitleContain = (questions) => {
+                  {theme.questions.map((question) => (
+                    <ContainMap>
+                      {question}
+                    </ContainMap>
+                  ))}
+};
