@@ -4,7 +4,18 @@ import PropTypes from 'prop-types';
 import { StyledInfosInput } from '../../styles/StyledInfosForms';
 import EvalContext from '../../contexts/EvalContext';
 import FunnelContext from '../../contexts/FunnelContext';
-import { MULTIPLE_CHOICE, ONE_CHOICE, INPUT_ANSWER } from '../../constants';
+import {
+  MULTIPLE_CHOICE,
+  ONE_CHOICE,
+  INPUT_ANSWER,
+  /* NO_CHOICE, */
+} from '../../constants';
+import {
+  ADD_MULTIPLE_CHOICE,
+  ADD_ONE_CHOICE,
+  ADD_INPUT_ANSWER,
+  DISPLAY_RECOS,
+} from '../../reducers/actions';
 
 export const AnswerComponent = styled.div`
   margin: 10px;
@@ -49,6 +60,7 @@ const MultipleChoiceAnswer = ({
     <div>
       <input
         id={`multiansw-${themeId}-${questionId}-${id}`}
+        name={`multiansw-${themeId}-${questionId}`}
         type="checkbox"
         checked={checked}
         onChange={(event) => {
@@ -141,7 +153,7 @@ export default function Answer({
   const handleChange = (event) => {
     if (event.target.type === 'checkbox') {
       evalDispatch({
-        type: MULTIPLE_CHOICE,
+        type: ADD_MULTIPLE_CHOICE,
         payload: {
           answer,
           funnel,
@@ -152,7 +164,7 @@ export default function Answer({
       });
     } else if (event.target.type === 'radio') {
       evalDispatch({
-        type: ONE_CHOICE,
+        type: ADD_ONE_CHOICE,
         payload: {
           answer,
           funnel,
@@ -163,7 +175,7 @@ export default function Answer({
       });
     } else if (event.target.type === 'text' || event.target.type === 'number') {
       evalDispatch({
-        type: INPUT_ANSWER,
+        type: ADD_INPUT_ANSWER,
         payload: {
           answer,
           funnel,
@@ -185,7 +197,11 @@ export default function Answer({
         type: 'COMPUTE_SCORE',
         payload: themeId,
       });
-  }
+      evalDispatch({
+        type: DISPLAY_RECOS,
+        payload: themeId,
+      });
+    }
 };
 
   return (

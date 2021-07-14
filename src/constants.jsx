@@ -1,6 +1,9 @@
 export const MULTIPLE_CHOICE = 'MULTIPLE_CHOICE';
 export const ONE_CHOICE = 'ONE_CHOICE';
 export const INPUT_ANSWER = 'INPUT_ANSWER';
+export const NO_CHOICE = 'NO_CHOICE';
+
+export const DISPLAY_RECOS = 'DISPLAY_RECOS';
 
 export const SPORT_AMATEUR = 'Amateur';
 export const SPORT_EXPERT = 'Expert';
