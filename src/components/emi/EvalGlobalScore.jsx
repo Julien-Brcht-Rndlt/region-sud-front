@@ -10,11 +10,11 @@ import {
   Block,
 } from '../../styles/generics/GenericContainers';
 import ShouldGlobalComp from './ShouldGlobalComp';
-import sunny from '../../assets/img/sunny.png';
 import OrgContext from '../../contexts/OrgContext';
 import EventContext from '../../contexts/EventContext';
 import EvalContext from '../../contexts/EvalContext';
 import { INPUT_ANSWER } from '../../constants';
+import Scoring from './scoring.json';
 
 export const StyledEvalGlobalContainer = styled(FlexSpace)`
   height: 45rem;
@@ -145,13 +145,19 @@ export default function EvalGlobalScore() {
     processDataSaving();
   }, []);
 
+  const globalScoreRepr = Scoring.global_scoring
+    .find((scoreRepr) => scoreRepr.min <= evalState.scoring
+    && scoreRepr.max >= evalState.scoring);
+
   return (
     <StyledEvalGlobalContainer around>
       <StyledEvalGlobalLeftCol>
         <StyledTitleMyResult>Mon résultat</StyledTitleMyResult>
         <StyledYellowLine />
         <StyledImgContainer>
-          <StyledEvalGlobalImg src={sunny} alt="des nuages..." />
+          Scoring:
+          {evalState.scoring}
+          <StyledEvalGlobalImg src={globalScoreRepr.icone} alt={globalScoreRepr.level} />
         </StyledImgContainer>
         <Flex>
           <Link to="/pdf">
