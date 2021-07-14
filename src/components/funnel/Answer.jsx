@@ -197,7 +197,6 @@ export default function Answer({
         type: 'COMPUTE_SCORE',
         payload: themeId,
       });
-      console.log('load recos true');
       evalDispatch({
         type: DISPLAY_RECOS,
         payload: themeId,

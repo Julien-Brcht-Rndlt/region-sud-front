@@ -7,7 +7,7 @@ import {
     DISPLAY_RECOS,
     COMPUTE_TOTAL_SCORE,
 } from './actions';
-import { NO_CHOICE } from '../constants';
+import { MULTIPLE_CHOICE, NO_CHOICE, ONE_CHOICE } from '../constants';
 
 export default function evalReducer(state, action) {
     const { type, payload } = action;
@@ -115,23 +115,31 @@ export default function evalReducer(state, action) {
     }
     if (type === DISPLAY_RECOS) {
       const themeId = payload;
-      let negativAnswers = [];
-      let notAnswered = [];
-      let shouldList = [];
       const evalTheme = evalState.themes
             .find((theme) => theme.id === parseInt(themeId, 10));
+
       if (evalTheme) {
+        let negativAnswers = [];
+        let notAnswered = [];
+        let shouldList = [];
+
         evalTheme.questions.forEach((evalQuestion) => {
           negativAnswers = [...negativAnswers, ...evalQuestion.givenAnswers
-            .filter((answer) => answer.answ_type === NO_CHOICE)];
+            .filter((answer) => answer.answ_type === NO_CHOICE
+            || (answer.answ_type === ONE_CHOICE && answer.label.toUpperCase() === 'NON'))];
+
           notAnswered = [...notAnswered, ...evalQuestion.answers
-            .filter((answer) => !evalQuestion.givenAnswers
-              .find((givenAnswer) => givenAnswer.id === answer.id))];
+            .filter((answer) => answer.answ_type === MULTIPLE_CHOICE && !(evalQuestion.givenAnswers
+                .find((givenAnswer) => givenAnswer.id === answer.id)) && answer.label.toUpperCase() !== 'NON')];
         });
+
         const shouldAnswers = notAnswered.concat(negativAnswers);
+
         shouldAnswers.forEach((shouldAnswer) => {
-        shouldList = [...shouldList, ...shouldAnswer.shouldList];
+          shouldList = [...shouldList, ...shouldAnswer.shouldList
+            .filter((reco) => !shouldList.find((should) => should.id === reco.id))];
         });
+
         evalTheme.shouldList = shouldList;
         const filteredThemes = evalState.themes
           .filter((theme) => theme.id !== parseInt(themeId, 10));
