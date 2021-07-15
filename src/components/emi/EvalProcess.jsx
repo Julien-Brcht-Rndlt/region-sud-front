@@ -1,8 +1,9 @@
-import { useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { HashLink } from 'react-router-hash-link';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import { Flex } from '../../styles/generics/GenericContainers';
+import FunnelDynamicButton from './FunnelDynamicButton';
 import Theme from '../funnel/Theme';
 import EvalThemeResult from './EvalThemeResult';
 import QuickEvalNav from './QuickEvalNav';
@@ -12,13 +13,20 @@ import { COMPUTE_TOTAL_SCORE } from '../../reducers/actions';
 import { DisabledButton } from '../infosEvalForm/InfosEvalDynamicButton';
 
 export default function EvalProcess({ id }) {
+  const [active, setActive] = useState(false);
   const { funnel } = useContext(FunnelContext);
-  const { evalDispatch } = useContext(EvalContext);
+  const { evalState, evalDispatch } = useContext(EvalContext);
   const nbThemes = funnel.themes.length;
 
   const handleComplete = () => {
     evalDispatch({ type: COMPUTE_TOTAL_SCORE });
   };
+
+  useEffect(() => {
+    if (evalState && evalState.completedThemes) {
+      setActive(evalState.completedThemes.find((themeId) => themeId === id));
+    }
+  });
 
   return (
     <>
@@ -39,18 +47,9 @@ export default function EvalProcess({ id }) {
                 <DisabledButton>Précédent</DisabledButton>
               )}
               {id < nbThemes ? (
-                <HashLink to={`/EmiEval/${parseInt(id, 10) + 1}#section-theme`}>
-                  <StyledButton>Suivant</StyledButton>
-                </HashLink>
+                <FunnelDynamicButton target={`/EmiEval/${parseInt(id, 10) + 1}#section-theme`} active={active}>Suivant</FunnelDynamicButton>
               ) : (
-                <HashLink
-                  to="/EmiResult"
-                  onClick={() => {
-                  handleComplete();
-                  }}
-                >
-                  <StyledButton>Terminé</StyledButton>
-                </HashLink>
+                <FunnelDynamicButton target="/EmiResult" active={active} action={handleComplete}>Terminé</FunnelDynamicButton>
               )}
             </Flex>
           </>

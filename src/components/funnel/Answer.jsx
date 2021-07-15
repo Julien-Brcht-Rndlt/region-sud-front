@@ -202,8 +202,8 @@ export default function Answer({
         type: DISPLAY_RECOS,
         payload: themeId,
       });
-      updateDisplay();
     }
+    updateDisplay();
 };
 
   return (
