@@ -1,9 +1,19 @@
 import PropTypes from 'prop-types';
 import Theme from '../funnel/Theme';
+import EvalThemeResult from './EvalThemeResult';
 
 export default function EvalProcess({ id }) {
   return (
-    id && <Theme id={id} />
+    <>
+      {
+        id && (
+          <>
+            <Theme id={id} />
+            <EvalThemeResult themeId={id} />
+          </>
+        )
+      }
+    </>
   );
 }
 

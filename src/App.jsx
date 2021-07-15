@@ -29,6 +29,11 @@ function App() {
     themes: [],
     completedThemes: [],
   });
+  const [loadScoring, setLoadScoring] = useState(0);
+
+  const displayScoring = () => {
+    setLoadScoring((prevState) => prevState + 1);
+  };
 
   useEffect(() => {
     const getEmiFunnel = () => {
@@ -53,7 +58,13 @@ function App() {
           <EventContext.Provider
             value={{ orgEvent: formState.orgEvent, dispatch }}
           >
-            <EvalContext.Provider value={{ evalState, evalDispatch }}>
+            <EvalContext.Provider value={{
+              evalState,
+              evalDispatch,
+              loadScoring,
+              displayScoring,
+              }}
+            >
               <EmiRouter />
             </EvalContext.Provider>
           </EventContext.Provider>
