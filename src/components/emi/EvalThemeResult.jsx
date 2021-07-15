@@ -30,6 +30,10 @@ export default function EvalThemeResult({ themeId }) {
     }
   });
 
+  useEffect(() => {
+    setShouldList([]);
+  }, [themeId]);
+
   return (
     <StyledThemeResultContainer>
       <EvalThemeScoring themeId={themeId} themeTitle={currTheme.title} />

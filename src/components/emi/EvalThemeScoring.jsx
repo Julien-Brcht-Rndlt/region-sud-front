@@ -35,7 +35,7 @@ export default function EvalThemeScoring({ themeId, themeTitle }) {
       const evalTheme = evalState.themes.find((theme) => theme.id === parseInt(themeId, 10));
       if (evalTheme) {
         const { score } = evalTheme;
-        if (score) {
+        if (score !== undefined || score !== 0) {
           let scaleReprs = Scoring.themes_scoring
           .find((themeScoring) => themeScoring.id === parseInt(themeId, 10)).scores_reprs;
           scaleReprs = scaleReprs
@@ -45,6 +45,10 @@ export default function EvalThemeScoring({ themeId, themeTitle }) {
       }
     }
   });
+
+  useEffect(() => {
+    setScoreRepr(null);
+  }, [themeId]);
 
     return (
       <StyledEvalBox center>
