@@ -148,7 +148,7 @@ export default function Answer({
   selectedOption,
   handleSelectedOption,
 }) {
-  const { evalState, evalDispatch, displayScoring } = useContext(EvalContext);
+  const { evalState, evalDispatch, updateDisplay } = useContext(EvalContext);
   const { funnel } = useContext(FunnelContext);
 
   const handleChange = (event) => {
@@ -202,7 +202,7 @@ export default function Answer({
         type: DISPLAY_RECOS,
         payload: themeId,
       });
-      displayScoring();
+      updateDisplay();
     }
 };
 

@@ -29,10 +29,10 @@ function App() {
     themes: [],
     completedThemes: [],
   });
-  const [loadScoring, setLoadScoring] = useState(0);
+  const [loadUpdate, setLoadUpdate] = useState(0);
 
-  const displayScoring = () => {
-    setLoadScoring((prevState) => prevState + 1);
+  const updateDisplay = () => {
+    setLoadUpdate((prevState) => prevState + 1);
   };
 
   useEffect(() => {
@@ -61,8 +61,8 @@ function App() {
             <EvalContext.Provider value={{
               evalState,
               evalDispatch,
-              loadScoring,
-              displayScoring,
+              loadUpdate,
+              updateDisplay,
               }}
             >
               <EmiRouter />
