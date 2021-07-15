@@ -105,10 +105,19 @@ export default function InfosForm() {
   };
 
   useEffect(() => {
-    const filledFields = Object.keys(orgForm).concat(Object.keys(orgEventForm));
-    if (mandatoryFields.every((field) => filledFields.includes(field))) {
-      setActive(true);
-    }
+    const filledFields = [];
+    Object.keys(orgForm).forEach((key) => {
+      if (orgForm[key] && orgForm[key] !== '') {
+        filledFields.push(key);
+      }
+    });
+    Object.keys(orgEventForm).forEach((key) => {
+      if (orgEventForm[key] && orgEventForm[key] !== '') {
+        filledFields.push(key);
+      }
+    });
+
+    setActive(mandatoryFields.every((field) => filledFields.includes(field)));
   }, [orgForm, orgEventForm]);
 
   const handleSubmit = () => {
