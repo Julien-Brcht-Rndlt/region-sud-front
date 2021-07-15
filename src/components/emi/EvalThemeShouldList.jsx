@@ -27,7 +27,7 @@ export default function EvalThemeShouldList({ shouldTitle, shouldList }) {
         )}
       </ul>
       <StyledShouldListP>
-        Vous pourrez voir toutes les recommandations à la fin de l&#39;évaluations
+        Vous pourrez voir toutes les recommandations à la fin de l&#39;évaluation
       </StyledShouldListP>
     </StyledShouldContainer>
   );

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { StyledTitleH3 } from '../../styles/generics/GenericTitles';
@@ -27,12 +27,24 @@ export const ImgScoring = styled.img`
 `;
 
 export default function EvalThemeScoring({ themeId, themeTitle }) {
-  const { score } = useContext(EvalContext);
+  const [scoreRepr, setScoreRepr] = useState({});
+  const { evalState } = useContext(EvalContext);
 
-  let scoresReprs = Scoring.themes_scoring[themeId].scores_reprs;
-  scoresReprs = scoresReprs.filter((scoreRepr) => scoreRepr.min <= score && scoreRepr.max >= score);
-
-  const [scoreRepr] = scoresReprs;
+  useEffect(() => {
+    if (evalState && evalState.themes) {
+      const evalTheme = evalState.themes.find((theme) => theme.id === parseInt(themeId, 10));
+      if (evalTheme) {
+        const { score } = evalTheme;
+        if (score) {
+          let scaleReprs = Scoring.themes_scoring
+          .find((themeScoring) => themeScoring.id === parseInt(themeId, 10)).scores_reprs;
+          scaleReprs = scaleReprs
+          .filter((scaleRepr) => scaleRepr.min <= score && scaleRepr.max >= score);
+        setScoreRepr(scaleReprs[0]);
+        }
+      }
+    }
+  });
 
     return (
       <StyledEvalBox center>
@@ -40,7 +52,11 @@ export default function EvalThemeScoring({ themeId, themeTitle }) {
           <StyledLabel>Votre indice</StyledLabel>
           <StyledTitleH3>{themeTitle}</StyledTitleH3>
           {
-            scoreRepr && <div><ImgScoring src={scoreRepr.icone} alt="" /></div>
+            scoreRepr && (
+            <div>
+              <ImgScoring src={scoreRepr.icone} alt={scoreRepr.level} />
+            </div>
+            )
           }
         </ContainerEvalReco>
       </StyledEvalBox>
@@ -48,6 +64,6 @@ export default function EvalThemeScoring({ themeId, themeTitle }) {
 }
 
 EvalThemeScoring.propTypes = {
-    themeId: PropTypes.number.isRequired,
+    themeId: PropTypes.string.isRequired,
     themeTitle: PropTypes.string.isRequired,
 };

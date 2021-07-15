@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { StyledInfosInput } from '../../styles/StyledInfosForms';
 import EvalContext from '../../contexts/EvalContext';
 import FunnelContext from '../../contexts/FunnelContext';
+
 import {
   MULTIPLE_CHOICE,
   ONE_CHOICE,
@@ -147,7 +148,7 @@ export default function Answer({
   selectedOption,
   handleSelectedOption,
 }) {
-  const { evalState, evalDispatch } = useContext(EvalContext);
+  const { evalState, evalDispatch, displayScoring } = useContext(EvalContext);
   const { funnel } = useContext(FunnelContext);
 
   const handleChange = (event) => {
@@ -201,6 +202,7 @@ export default function Answer({
         type: DISPLAY_RECOS,
         payload: themeId,
       });
+      displayScoring();
     }
 };
 
