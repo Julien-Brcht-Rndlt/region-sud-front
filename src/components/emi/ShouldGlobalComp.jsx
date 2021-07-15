@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Flex } from '../../styles/generics/GenericContainers';
 import { StyledTitleP } from '../../styles/generics/GenericTitles';
+import EvalContext from '../../contexts/EvalContext';
 import themea from '../../assets/img-temp/themea.png';
 import theme1 from '../../assets/img-temp/theme1.png';
 import theme2 from '../../assets/img-temp/theme2.png';
 import theme3 from '../../assets/img-temp/theme3.png';
-import Should from '../../mockdata/should.json';
 import Scoring from './scoring.json';
 
 const GlobalReco = styled(Flex)`
@@ -47,8 +47,7 @@ height:100px;
 margin:10px;
 `;
 
-const DisplayThemesScores = ({ handleClickTheme, themeId }) => {
-  const { score } = Should.find((item) => item.id === themeId);
+const DisplayThemesScores = ({ score, handleClickTheme, themeId }) => {
   let scoreRepr = null;
   if (Scoring.themes_scoring.find((scoring) => scoring.id === themeId)) {
     const themeScoring = Scoring.themes_scoring.find((scoring) => scoring.id === themeId);
@@ -57,7 +56,11 @@ const DisplayThemesScores = ({ handleClickTheme, themeId }) => {
   }
 
   return (
-    <ButtonScore type="button" onClick={() => handleClickTheme(themeId)}><ImageScore src={scoreRepr.icone} alt={`score-${score}`} /></ButtonScore>
+    scoreRepr && (
+      <ButtonScore type="button" onClick={() => handleClickTheme(themeId)}>
+        <ImageScore src={scoreRepr.icone} alt={`score-${score}`} />
+      </ButtonScore>
+    )
   );
 };
 
@@ -85,9 +88,22 @@ export default function ShouldGlobalComp() {
   const [currId, setCurrId] = useState(0);
   const [should, setShould] = useState([]);
 
+  const { evalState } = useContext(EvalContext);
+
+  let globalEval = [];
+  if (evalState) {
+    globalEval = evalState.themes.map((theme) => ({
+      id: theme.id,
+      score: theme.score,
+      should: theme.shouldList,
+    }));
+  }
+
+  console.log('globalEval', globalEval);
+
   const handleClickTheme = (id) => {
     setCurrId(parseInt(id, 10));
-    const shouldList = Should.find((item) => item.id === id).should;
+    const shouldList = globalEval.find((item) => item.id === id).should;
     setShould(shouldList);
   };
 
@@ -101,12 +117,13 @@ export default function ShouldGlobalComp() {
       </DisplayThemeIcones>
       <StyledScore>
         {
-        Should.map((item) => (
+        globalEval.map((item) => (
           <>
             <DisplayThemesScores
               key={item.id}
               handleClickTheme={handleClickTheme}
               themeId={item.id}
+              score={globalEval.find((theme) => theme.id === item.id).score}
             />
           </>
           ))
@@ -120,6 +137,7 @@ export default function ShouldGlobalComp() {
 DisplayThemesScores.propTypes = {
   themeId: PropTypes.number.isRequired,
   handleClickTheme: PropTypes.func.isRequired,
+  score: PropTypes.number.isRequired,
 };
 
 DisplayRecoList.propTypes = {
