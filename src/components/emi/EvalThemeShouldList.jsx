@@ -22,7 +22,7 @@ export default function EvalThemeShouldList({ shouldTitle, shouldList }) {
         {shouldList.map(
           // eslint-disable-next-line comma-dangle
           (should) => (
-            <StyledShouldListLi>{should}</StyledShouldListLi>
+            <StyledShouldListLi>{should.title}</StyledShouldListLi>
           ),
         )}
       </ul>
