@@ -145,6 +145,10 @@ export default function EvalGlobalScore() {
     processDataSaving();
   }, []);
 
+  useEffect(() => {
+    localStorage.clear();
+  });
+
   const globalScoreRepr = Scoring.global_scoring
     .find((scoreRepr) => scoreRepr.min <= evalState.scoring
     && scoreRepr.max >= evalState.scoring);

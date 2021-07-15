@@ -47,7 +47,7 @@ export default function EvalThemeScoring({ themeId, themeTitle }) {
   });
 
   useEffect(() => {
-    setScoreRepr({});
+    setScoreRepr(null);
   }, [themeId]);
 
     return (
