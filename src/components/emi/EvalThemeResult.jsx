@@ -1,9 +1,10 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { FlexCol } from '../../styles/generics/GenericContainers';
 import EvalThemeScoring from './EvalThemeScoring';
 import EvalThemeShouldList from './EvalThemeShouldList';
+import EvalContext from '../../contexts/EvalContext';
 import FunnelContext from '../../contexts/FunnelContext';
 
 export const StyledThemeResultContainer = styled(FlexCol)`
@@ -15,9 +16,19 @@ export const StyledThemeResultContainer = styled(FlexCol)`
 export const SpaceBetween = styled.div``;
 
 export default function EvalThemeResult({ themeId }) {
-  const [shouldList/* , setShouldList */] = useState([]);
+  const [shouldList, setShouldList] = useState([]);
+  const { evalState } = useContext(EvalContext);
   const { funnel } = useContext(FunnelContext);
   const currTheme = funnel.themes.find((theme) => theme.id === parseInt(themeId, 10));
+
+  useEffect(() => {
+    if (evalState && evalState.themes) {
+      const evalTheme = evalState.themes.find((theme) => theme.id === parseInt(themeId, 10));
+      if (evalTheme && evalTheme.shouldList) {
+        setShouldList(evalTheme.shouldList);
+      }
+    }
+  });
 
   return (
     <StyledThemeResultContainer>
