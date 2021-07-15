@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { HashLink } from 'react-router-hash-link';
 import { StyledButton } from '../../styles/generics/GenericButtons';
-import { Flex } from '../../styles/generics/GenericContainers';
+import { Flex, FlexSpace } from '../../styles/generics/GenericContainers';
 import Theme from '../funnel/Theme';
 import EvalThemeResult from './EvalThemeResult';
 import FunnelContext from '../../contexts/FunnelContext';
@@ -24,8 +24,10 @@ export default function EvalProcess({ id }) {
       {
         id && (
           <>
-            <Theme id={id} />
-            <EvalThemeResult themeId={id} />
+            <FlexSpace around>
+              <Theme id={id} />
+              <EvalThemeResult themeId={id} />
+            </FlexSpace>
             <Flex center>
               {id > 1 ? (
                 <HashLink to={`/EmiEval/${parseInt(id, 10) - 1}#section-theme`}>

@@ -104,23 +104,21 @@ export default function Theme({ id }) {
   const currTheme = funnel.themes.find((theme) => theme.id === parseInt(id, 10));
 
   return (
-    <>
+    <FlexCol>
       <ContainersubtitleTheme id="section-theme">
         <IconeImg src={currTheme.icon} alt="logo" />
         <StyledSubtitleTheme>Evaluer mon événement</StyledSubtitleTheme>
       </ContainersubtitleTheme>
-      <FlexCol>
-        <StyledContainerYellow>
-          <StyledTitleTheme>{currTheme.title}</StyledTitleTheme>
-          <StyledBorderYellow />
-        </StyledContainerYellow>
-        <QuestionList questions={currTheme.questions} themeId={id} />
-        <EmiFaqModal show={show} setShow={setShow} />
-      </FlexCol>
+      <StyledContainerYellow>
+        <StyledTitleTheme>{currTheme.title}</StyledTitleTheme>
+        <StyledBorderYellow />
+      </StyledContainerYellow>
+      <QuestionList questions={currTheme.questions} themeId={id} />
+      <EmiFaqModal show={show} setShow={setShow} />
       <CompButton>
         <ButtonHelp />
       </CompButton>
-    </>
+    </FlexCol>
   );
 }
 
