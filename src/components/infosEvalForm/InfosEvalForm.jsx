@@ -117,13 +117,7 @@ export default function InfosForm() {
       }
     });
 
-    if (mandatoryFields.every((field) => filledFields.includes(field))) {
-      console.log('active true');
-      setActive(true);
-    } else {
-      console.log('active false');
-      setActive(false);
-    }
+    setActive(mandatoryFields.every((field) => filledFields.includes(field)));
   }, [orgForm, orgEventForm]);
 
   const handleSubmit = () => {
