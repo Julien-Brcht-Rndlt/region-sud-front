@@ -1,9 +1,8 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
 import { FlexCol } from '../../styles/generics/GenericContainers';
-import soleil from '../../assets/img/soleil.png';
-import vent from '../../assets/img/vent.png';
-import pluie from '../../assets/img/pluie.png';
-import orageux from '../../assets/img/orageux.png';
+import EvalContext from '../../contexts/EvalContext';
+import Scoring from './scoring.json';
 
 export const ContainerProgressBar = styled(FlexCol)`
   border-top-left-radius: 8px;
@@ -11,8 +10,8 @@ export const ContainerProgressBar = styled(FlexCol)`
   height: 475px;
   width: 70px;
   padding: 25px;
-  position: absolute;
-  border: solid 2px black;
+  margin-top: 10rem;
+  border: solid 2px ${(props) => props.theme.lightGreyFeatureColor};
 `;
 
 export const ImgProgressBar = styled.img`
@@ -21,15 +20,39 @@ export const ImgProgressBar = styled.img`
 `;
 
 export default function QuickEvalNav() {
+  const { evalState } = useContext(EvalContext);
+
+  const getScoreRepr = (themeId, score) => {
+    if (score !== undefined || score !== null) {
+      let scaleReprs = Scoring.themes_scoring
+      .find((themeScoring) => themeScoring.id === parseInt(themeId, 10)).scores_reprs;
+      scaleReprs = scaleReprs
+      .filter((scaleRepr) => scaleRepr.min <= score && scaleRepr.max >= score);
+    return scaleReprs[0];
+    }
+    return null;
+  };
+
   return (
     <ContainerProgressBar>
-      <ImgProgressBar src={soleil} alt="sun" />
-      <ImgProgressBar src={vent} alt="sun" />
-      <ImgProgressBar src={soleil} alt="sun" />
-      <ImgProgressBar src={pluie} alt="sun" />
-      <ImgProgressBar src={soleil} alt="sun" />
-      <ImgProgressBar src={orageux} alt="sun" />
-      <ImgProgressBar src={soleil} alt="sun" />
+      {
+        evalState && evalState.themes && (
+          evalState.themes.map((theme) => {
+            const scoreRepr = getScoreRepr(theme.id, theme.score);
+            return (
+              <>
+                <div>
+                  Scoring:
+                  {theme.score}
+                </div>
+                {
+                  scoreRepr && <ImgProgressBar src={scoreRepr.icone} alt={scoreRepr.level} />
+                }
+              </>
+            );
+          })
+        )
+      }
     </ContainerProgressBar>
   );
 }

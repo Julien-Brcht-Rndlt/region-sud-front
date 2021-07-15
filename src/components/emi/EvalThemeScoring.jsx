@@ -35,7 +35,7 @@ export default function EvalThemeScoring({ themeId, themeTitle }) {
       const evalTheme = evalState.themes.find((theme) => theme.id === parseInt(themeId, 10));
       if (evalTheme) {
         const { score } = evalTheme;
-        if (score !== undefined || score !== 0) {
+        if (score !== undefined || score !== null) {
           let scaleReprs = Scoring.themes_scoring
           .find((themeScoring) => themeScoring.id === parseInt(themeId, 10)).scores_reprs;
           scaleReprs = scaleReprs
