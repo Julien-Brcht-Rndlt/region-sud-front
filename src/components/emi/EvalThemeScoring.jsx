@@ -44,10 +44,11 @@ export default function EvalThemeScoring({ themeId, themeTitle }) {
         }
       }
     }
-    return () => {
-      setScoreRepr({});
-    };
   });
+
+  useEffect(() => {
+    setScoreRepr({});
+  }, [themeId]);
 
     return (
       <StyledEvalBox center>
