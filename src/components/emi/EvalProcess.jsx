@@ -2,9 +2,10 @@ import { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { HashLink } from 'react-router-hash-link';
 import { StyledButton } from '../../styles/generics/GenericButtons';
-import { Flex, FlexSpace } from '../../styles/generics/GenericContainers';
+import { Flex } from '../../styles/generics/GenericContainers';
 import Theme from '../funnel/Theme';
 import EvalThemeResult from './EvalThemeResult';
+import QuickEvalNav from './QuickEvalNav';
 import FunnelContext from '../../contexts/FunnelContext';
 import EvalContext from '../../contexts/EvalContext';
 import { COMPUTE_TOTAL_SCORE } from '../../reducers/actions';
@@ -24,10 +25,11 @@ export default function EvalProcess({ id }) {
       {
         id && (
           <>
-            <FlexSpace around>
+            <Flex centre>
               <Theme id={id} />
               <EvalThemeResult themeId={id} />
-            </FlexSpace>
+              <QuickEvalNav />
+            </Flex>
             <Flex center>
               {id > 1 ? (
                 <HashLink to={`/EmiEval/${parseInt(id, 10) - 1}#section-theme`}>
