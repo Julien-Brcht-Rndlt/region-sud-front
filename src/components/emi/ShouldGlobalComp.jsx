@@ -99,8 +99,6 @@ export default function ShouldGlobalComp() {
     }));
   }
 
-  console.log('globalEval', globalEval);
-
   const handleClickTheme = (id) => {
     setCurrId(parseInt(id, 10));
     const shouldList = globalEval.find((item) => item.id === id).should;

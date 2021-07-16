@@ -19,7 +19,7 @@ export default function EmiRouter() {
         <Route path="/EmiEval/:id" component={EvalMyImpact} />
         <Route path="/EmiResult" component={EvalResult} />
         <Route path="/RequireModal" component={RequireModal} />
-        <Route path="/pdf" component={DisplayPdf} />
+        <Route path="/EmiPDF" component={DisplayPdf} />
       </Switch>
       <Footer />
     </Router>

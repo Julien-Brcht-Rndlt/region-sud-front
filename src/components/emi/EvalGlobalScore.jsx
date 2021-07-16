@@ -1,6 +1,6 @@
 import { useEffect, useContext } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import styled from 'styled-components';
 import { StyledTitleH1 } from '../../styles/generics/GenericTitles';
 import { StyledButton } from '../../styles/generics/GenericButtons';
@@ -164,8 +164,8 @@ export default function EvalGlobalScore() {
           <StyledEvalGlobalImg src={globalScoreRepr.icone} alt={globalScoreRepr.level} />
         </StyledImgContainer>
         <Flex>
-          <Link to="/pdf">
-            <StyledEvalGlobalButton>Envoyer par mail</StyledEvalGlobalButton>
+          <StyledEvalGlobalButton>Envoyer par mail</StyledEvalGlobalButton>
+          <Link to="/EmiPDF">
             <StyledEvalGlobalButton glassy> Imprimer </StyledEvalGlobalButton>
           </Link>
         </Flex>
