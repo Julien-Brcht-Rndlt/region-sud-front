@@ -16,7 +16,7 @@ export default function EvalProcess({ id }) {
   const [active, setActive] = useState(false);
   const { funnel } = useContext(FunnelContext);
   const { evalState, evalDispatch } = useContext(EvalContext);
-  const nbThemes = funnel.themes.length;
+  const nbThemes = (funnel.themes && funnel.themes.length) || 0;
 
   const handleComplete = () => {
     evalDispatch({ type: COMPUTE_TOTAL_SCORE });
