@@ -114,7 +114,7 @@ export default function EvalGlobalScore() {
           const answId = evalAnswer.id;
           const evalValue = evalAnswer.type === INPUT_ANSWER
             ? evalAnswer.answer_value : evalAnswer.label;
-          return axios.post(`http://localhost:8080/emi/evals/0/events/${eventId}/answers/${answId}`, {
+          return axios.post(`http://localhost:8080/emi/evals/events/${eventId}/answers/${answId}`, {
             evalValue,
             });
         });
