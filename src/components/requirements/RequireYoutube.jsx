@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FlexCol } from '../../styles/generics/GenericContainers';
-import { StyledRoundedButton } from '../../styles/generics/GenericButtons';
+import { StyledButton } from '../../styles/generics/GenericButtons';
 import { StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import { device } from '../../styles/theme';
 
@@ -63,7 +63,7 @@ export default function RequireYoutube() {
     <StyledYoutubeBox hline="center">
       <StyledTitleH4> Comment cela va se passer :</StyledTitleH4>
       <FrameContainer title="This is a unique title" src="https://www.youtube.com/embed/aP0_xJE_bgU" />
-      <StyledRoundedButton glassy>Voir les questions fréquentes</StyledRoundedButton>
+      <StyledButton glassy>Voir les questions fréquentes</StyledButton>
     </StyledYoutubeBox>
   );
 }

@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { HashLink } from 'react-router-hash-link';
 import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
 import Testimonial from './Testimonial';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import { TestimonialsContainer, TestimonialsTitle } from '../../styles/StyledTestimonials';
+import { device } from '../../styles/theme';
 
 export const StyledButtonTestimonial = styled(Flex)`
   height: 90px;
@@ -11,12 +13,36 @@ export const StyledButtonTestimonial = styled(Flex)`
   padding: 50px;
 `;
 export const StyledBorderYellowH1 = styled.div`
-  border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
-  height: 10px;
-  padding-right: 90px;
-  margin: 65px;
-  margin-left: 145px;
-  position: absolute;
+  @media ${device.mobileS} {
+    border-bottom: 0;
+  }
+
+  @media ${device.mobileL} {
+    border-bottom: 6px solid ${(props) => props.theme.yellowFeatureColor};
+    height: 7px;
+    padding-right: 40px;
+    margin: 65px;
+    margin-left: 140px;
+    position: absolute;
+  }
+
+  @media ${device.tablet} {
+    border-bottom: 8px solid ${(props) => props.theme.yellowFeatureColor};
+    height: 6px;
+    padding-right: 90px;
+    margin: 65px;
+    margin-left: 145px;
+    position: absolute;
+  }
+
+  @media ${device.desktop} {
+    border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+    height: 10px;
+    padding-right: 90px;
+    margin: 65px;
+    margin-left: 145px;
+    position: absolute;
+  }
 `;
 
 export const StyledContainerYellow = styled(FlexCol)`
@@ -57,9 +83,9 @@ export default function Testimonials() {
         ))}
       </TestimonialsContainer>
       <StyledButtonTestimonial center>
-        <StyledButton width="15%" height="70%">
-          Je m&apos;engage moi aussi !
-        </StyledButton>
+        <HashLink to="/EmiStart#">
+          <StyledButton>Je m&apos;engage moi aussi !</StyledButton>
+        </HashLink>
       </StyledButtonTestimonial>
     </>
   );

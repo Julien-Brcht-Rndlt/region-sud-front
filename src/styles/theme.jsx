@@ -40,6 +40,8 @@ const theme = {
   fontFamilyFeature: "'Roboto','Fira Sans',sans-serif",
   fontFamilyNavBar: "'Roboto','Nunito',sans-serif",
 
+  // fonts size
+
   // fonts weight
   fontWeightFeature: 700,
 
@@ -54,6 +56,7 @@ const theme = {
   NavyBlueFeatureColor: '#000080',
   blackFeatureColor: '#000000',
   whiteFeatureColor: '#e7ecf4',
+  greycendreColor: '#706B69',
 
   // lines
   lineHeight: 1.5,

@@ -7,9 +7,9 @@ import {
   StyledButtonContainer,
   StyledInfosFormsColLeftContainer,
 } from '../../styles/StyledInfosForms';
+import InfosEvalDynamicButton from './InfosEvalDynamicButton';
 import { Flex } from '../../styles/generics/GenericContainers';
 import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
-import { StyledButton } from '../../styles/generics/GenericButtons';
 import OrgContext from '../../contexts/OrgContext';
 import EventContext from '../../contexts/EventContext';
 import { ADD_INFOS } from '../../reducers/actions';
@@ -18,6 +18,22 @@ import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';
 import InfosEvalDatepicker from './InfosEvalDatepicker';
 import { device } from '../../styles/theme';
+import {
+  SPORT_AMATEUR,
+  SPORT_EXPERT,
+  ORG_TITLE_FORM,
+  EVENT_TITLE_FORM,
+  ORG_NAME_LABEL,
+  ORG_STAFF_PAX_LABEL,
+  EVENT_NAME_LABEL,
+  EVENT_STAFF_PAX_LABEL,
+  EVENT_ADDR_LABEL,
+  EVENT_LOC_LABEL,
+  EVENT_ACTIVITY_LABEL,
+  EVENT_SPORT_LEVEL,
+  EVENT_START_DATE_LABEL,
+  EVENT_END_DATE_LABEL,
+} from '../../constants';
 
 export const StyledBorderYellowH1 = styled.div`
   border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
@@ -70,12 +86,12 @@ export const ContainerDatePicker = styled(Flex)`
   }
 `;
 
-const mandatoryFields = ['orgName', 'orgMembers', 'eventName', 'eventAddr', 'eventLoc', 'eventLoc', 'eventStart', 'eventEnd'];
+const mandatoryFields = ['orgName', 'eventName', 'eventAddr', 'eventLoc'];
 
 export default function InfosForm() {
   const [active, setActive] = useState(false);
   const locations = ['Abries', 'Marseille', 'Toulon', 'Hyeres'];
-  const sportLevels = ['Amateur', 'Expert'];
+  const sportLevels = [SPORT_AMATEUR, SPORT_EXPERT];
   const { org, dispatch } = useContext(OrgContext);
   const { orgEvent } = useContext(EventContext);
   const [orgForm, setOrgForm] = useState(org);
@@ -89,86 +105,85 @@ export default function InfosForm() {
   };
 
   useEffect(() => {
-    const filledFields = Object.keys(orgForm).concat(Object.keys(orgEventForm));
-    if (mandatoryFields.every((field) => filledFields.includes(field))) {
-      setActive(true);
-    }
+    const filledFields = [];
+    Object.keys(orgForm).forEach((key) => {
+      if (orgForm[key] && orgForm[key] !== '') {
+        filledFields.push(key);
+      }
+    });
+    Object.keys(orgEventForm).forEach((key) => {
+      if (orgEventForm[key] && orgEventForm[key] !== '') {
+        filledFields.push(key);
+      }
+    });
+
+    setActive(mandatoryFields.every((field) => filledFields.includes(field)));
   }, [orgForm, orgEventForm]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
     dispatch({ type: ADD_INFOS, payload: { org: orgForm, orgEvent: orgEventForm } });
   };
 
   return (
-    <StyledInfosFormsContainer>
-      <form onSubmit={() => handleSubmit()}>
+    <StyledInfosFormsContainer id="section-form">
+      <form/* onSubmit={(event) => handleSubmit(event)} */>
         <StyledTitleH4>Informations préalables</StyledTitleH4>
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>
             <div>
               <StyledContainerYellow>
-                <StyledTitleH2Form>LA STRUCTURE ORGANISATRICE</StyledTitleH2Form>
+                <StyledTitleH2Form>{ORG_TITLE_FORM}</StyledTitleH2Form>
                 <StyledBorderYellowH1 />
               </StyledContainerYellow>
               <StyledSpaceBetween />
-              <InfosEvalInput inputName="orgName" infosForm={infosForm.org} setInfosForm={setOrgForm} label="Nom de la structure" wide />
-              <InfosEvalInput
-                inputName="orgMembers"
-                infosForm={infosForm.org}
-                setInfosForm={setOrgForm}
-                label="Nombre de personnes composant la structure"
-                wide
-              />
+              <InfosEvalInput inputName="orgName" infosForm={infosForm.org} setInfosForm={setOrgForm} label={ORG_NAME_LABEL} wide />
+              <InfosEvalInput inputName="orgStaff" infosForm={infosForm.org} setInfosForm={setOrgForm} label={ORG_STAFF_PAX_LABEL} wide />
             </div>
           </StyledInfosFormsColLeftContainer>
           <StyledInfosFormsColContainer>
             <StyledContainerYellow>
-              <StyledTitleH2Form>LA MANIFESTATION SPORTIVE</StyledTitleH2Form>
+              <StyledTitleH2Form>{EVENT_TITLE_FORM}</StyledTitleH2Form>
               <StyledBorderYellowH1 />
             </StyledContainerYellow>
             <StyledSpaceBetween />
-            <InfosEvalInput
-              inputName="eventName"
-              infosForm={infosForm.orgEvent}
-              setInfosForm={setEventForm}
-              label="Nom de la manisfestation sportive"
-              wide
-            />
-            <InfosEvalInput inputName="eventStaff" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label="Nombre de participants" />
+            <InfosEvalInput inputName="eventName" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_NAME_LABEL} wide />
+            <InfosEvalInput inputName="eventStaff" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_STAFF_PAX_LABEL} />
             <Flex start>
-              <InfosEvalInput inputName="eventAddr" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label="Adresse de la manifestation" />
+              <InfosEvalInput inputName="eventAddr" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_ADDR_LABEL} />
             </Flex>
             <Flex start>
               <InfosEvalDropdown
                 elmtFormName="eventLoc"
                 infosForm={infosForm.orgEvent}
                 setInfosForm={setEventForm}
-                label="Lieu"
+                label={EVENT_LOC_LABEL}
                 options={locations}
               />
               <InfosEvalCheckbox label="Montrer la carte" />
             </Flex>
             <Flex start>
-              <InfosEvalInput inputName="activity" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label="Type d'activité sportive" />
+              <InfosEvalInput inputName="activity" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_ACTIVITY_LABEL} />
               <InfosEvalDropdown
-                elmtFormName="sportLevels"
+                elmtFormName="sportLevel"
                 infosForm={infosForm.orgEvent}
                 setInfosForm={setEventForm}
-                label="Niveau sportif"
+                label={EVENT_SPORT_LEVEL}
                 options={sportLevels}
               />
             </Flex>
             <ContainerDatePicker>
-              <InfosEvalDatepicker elmtFormName="eventStart" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label="Date de début" />
-              <InfosEvalDatepicker elmtFormName="eventEnd" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label="Date de fin" />
+              <InfosEvalDatepicker
+                elmtFormName="eventStart"
+                infosForm={infosForm.orgEvent}
+                setInfosForm={setEventForm}
+                label={EVENT_START_DATE_LABEL}
+              />
+              <InfosEvalDatepicker elmtFormName="eventEnd" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_END_DATE_LABEL} />
             </ContainerDatePicker>
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
         <StyledButtonContainer>
-          <StyledButton onClick={(event) => handleSubmit(event)} type="submit" width="25rem" height="4rem" disabled={!active}>
-            Suivant
-          </StyledButton>
+          <InfosEvalDynamicButton active={active} action={handleSubmit} />
         </StyledButtonContainer>
       </form>
     </StyledInfosFormsContainer>

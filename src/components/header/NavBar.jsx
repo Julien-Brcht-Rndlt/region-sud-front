@@ -11,7 +11,7 @@ export default function NavBar() {
     {
       id: 2,
       content: 'Evaluer mon impact environnemental',
-      path: '/EmiHome',
+      path: '/EmiStart',
     },
     {
       id: 3,
@@ -21,7 +21,7 @@ export default function NavBar() {
     {
       id: 4,
       content: "M'informer",
-      path: '/',
+      path: '/EmiResult',
     },
   ];
   return (

@@ -14,7 +14,6 @@ export const StyledButton = styled.button`
   &:hover {
     background-color: ${(props) => (props.glassy ? props.theme.blueFeatureColor : props.theme.NavyBlueFeatureColor)};
     color: ${(props) => (props.glassy ? props.theme.secondaryFeatureColor : props.theme.yellowFeatureColor)};
-    transition: 0.4s;
   }
   @media ${device.mobileS} {
     width: 260px;
@@ -52,6 +51,12 @@ export const StyledButton = styled.button`
   }
 `;
 
-export const StyledRoundedButton = styled(StyledButton)`
-  border-radius: 10px;
+export const StyledInactiveButton = styled(StyledButton)`
+  color: ${(props) => (props.inactive ? props.theme.secondaryFeatureColor : props.theme.secondaryFeatureColor)};
+  background-color: ${(props) => (props.inactive ? props.theme.blackFeatureColor : props.theme.blueFeatureColor)};
+  &:hover {
+    background-color: ${(props) => (props.inactive ? props.theme.greyFeatureColor : props.theme.NavyBlueFeatureColor)};
+    color: ${(props) => (props.inactive ? props.theme.blackFeatureColor : props.theme.yellowFeatureColor)};
+    transition: 0.4s;
+  }
 `;

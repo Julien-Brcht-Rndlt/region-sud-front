@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { HashLink } from 'react-router-hash-link';
 import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import { FlexSpace } from '../../styles/generics/GenericContainers';
-import { StyledRoundedButton } from '../../styles/generics/GenericButtons';
+import { StyledButton } from '../../styles/generics/GenericButtons';
 import RequireElmtsList from './RequireElmtsList';
 import { device } from '../../styles/theme';
 
@@ -68,8 +69,12 @@ export default function RequireInfos() {
         <StyledTitleH4> J&#39;aurais besoin de :</StyledTitleH4>
         <RequireElmtsList />
         <StyledBoxButtonElement>
-          <StyledRoundedButton>C&#39;est parti !</StyledRoundedButton>
-          <StyledRoundedButton glassy>Où trouver toutes ces pièces ?</StyledRoundedButton>
+          <HashLink to="/EmiStart#section-form">
+            <StyledButton>C&#39;est parti !</StyledButton>
+          </HashLink>
+          <HashLink to="/RequireModal">
+            <StyledButton glassy>Où trouver toutes ces pièces ?</StyledButton>
+          </HashLink>
         </StyledBoxButtonElement>
       </StyledColumnElmts>
     </>

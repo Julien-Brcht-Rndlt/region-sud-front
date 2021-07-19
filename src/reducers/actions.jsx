@@ -1,2 +1,9 @@
-export const ADD_INFOS = 'add-infos';
-export const COMPLETE = 'complete';
+export const ADD_INFOS = 'ADD-INFOS';
+export const COMPLETE = 'COMPLETE';
+export const ADD_MULTIPLE_CHOICE = 'MULTIPLE_CHOICE';
+export const ADD_ONE_CHOICE = 'ONE_CHOICE';
+export const ADD_INPUT_ANSWER = 'INPUT_ANSWER';
+export const IS_COMPLETE = 'IS_COMPLETE';
+export const COMPUTE_SCORE = 'COMPUTE_SCORE';
+export const DISPLAY_RECOS = 'DISPLAY_RECOS';
+export const COMPUTE_TOTAL_SCORE = 'COMPUTE_TOTAL_SCORE';

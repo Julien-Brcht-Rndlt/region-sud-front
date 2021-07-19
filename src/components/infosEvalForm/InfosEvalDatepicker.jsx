@@ -18,7 +18,12 @@ const StyledDatePickerInfosForm = styled(DatePicker)`
   }
 `;
 
-export default function InfosEvalDatePicker({ label, elmtFormName, infosForm, setInfosForm }) {
+export default function InfosEvalDatePicker({
+  label,
+  elmtFormName,
+  infosForm,
+  setInfosForm,
+}) {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleChange = (date) => {

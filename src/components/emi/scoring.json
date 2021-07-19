@@ -1,0 +1,177 @@
+{
+    "themes_scoring": [
+        {
+            "id": 1,
+            "scores_reprs": [
+                {
+                    "level": "TRES BIEN",
+                    "min": 12,
+                    "max": 15,
+                    "icone": "/assets/soleil.png"
+                },
+                {
+                    "level": "BIEN",
+                    "min": 9,
+                    "max": 11,
+                    "icone": "/assets/nuages.png"
+                },
+                {
+                    "level": "SATISFAISANT",
+                    "min": 6,
+                    "max": 8,
+                    "icone": "/assets/vent.png"
+                },
+                {
+                    "level": "PEUT MIEUX FAIRE",
+                    "min": 3,
+                    "max": 5,
+                    "icone": "/assets/pluie.png"
+                },
+                {
+                    "level": "MAUVAIS ELEVE",
+                    "min": 0,
+                    "max": 2,
+                    "icone": "/assets/orageux.png"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "scores_reprs": [
+                {
+                    "level": "TRES BIEN",
+                    "min": 6,
+                    "max": 7,
+                    "icone": "/assets/soleil.png"
+                },
+                {
+                    "level": "BIEN",
+                    "min": 5,
+                    "max": 5,
+                    "icone": "/assets/nuages.png"
+                },
+                {
+                    "level": "SATISFAISANT",
+                    "min": 3,
+                    "max": 4,
+                    "icone": "/assets/vent.png"
+                },
+                {
+                    "level": "PEUT MIEUX FAIRE",
+                    "min": 1,
+                    "max": 2,
+                    "icone": "/assets/pluie.png"
+                },
+                {
+                    "level": "MAUVAIS ELEVE",
+                    "min": 0,
+                    "max": 0,
+                    "icone": "/assets/orageux.png"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "scores_reprs": [
+                {
+                    "level": "TRES BIEN",
+                    "min": 5,
+                    "max": 5,
+                    "icone": "/assets/soleil.png"
+                },
+                {
+                    "level": "BIEN",
+                    "min": 4,
+                    "max": 4,
+                    "icone": "/assets/nuages.png"
+                },
+                {
+                    "level": "SATISFAISANT",
+                    "min": 2,
+                    "max": 3,
+                    "icone": "/assets/vent.png"
+                },
+                {
+                    "level": "PEUT MIEUX FAIRE",
+                    "min": 1,
+                    "max": 1,
+                    "icone": "/assets/pluie.png"
+                },
+                {
+                    "level": "MAUVAIS ELEVE",
+                    "min": 0,
+                    "max": 0,
+                    "icone": "/assets/orageux.png"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "scores_reprs": [
+                {
+                    "level": "TRES BIEN",
+                    "min": 9,
+                    "max": 10,
+                    "icone": "/assets/soleil.png"
+                },
+                {
+                    "level": "BIEN",
+                    "min": 7,
+                    "max": 8,
+                    "icone": "/assets/nuages.png"
+                },
+                {
+                    "level": "SATISFAISANT",
+                    "min": 4,
+                    "max": 6,
+                    "icone": "/assets/vent.png"
+                },
+                {
+                    "level": "PEUT MIEUX FAIRE",
+                    "min": 2,
+                    "max": 3,
+                    "icone": "/assets/pluie.png"
+                },
+                {
+                    "level": "MAUVAIS ELEVE",
+                    "min": 0,
+                    "max": 1,
+                    "icone": "/assets/orageux.png"
+                }
+            ]
+        }
+    ],
+    "global_scoring": [
+        {
+            "level": "TRES BIEN",
+            "min": 30,
+            "max": 36,
+            "icone": "/assets/soleil.png"
+        },
+        {
+            "level": "BIEN",
+            "min": 22,
+            "max": 29,
+            "icone": "/assets/nuages.png"
+        },
+        {
+            "level": "SATISFAISANT",
+            "min": 15,
+            "max": 21,
+            "icone": "/assets/vent.png"
+        },
+        {
+            "level": "PEUT MIEUX FAIRE",
+            "min": 7,
+            "max": 14,
+            "icone": "/assets/pluie.png"
+        },
+        {
+            "level": "MAUVAIS ELEVE",
+            "min": 0,
+            "max": 6,
+            "icone": "/assets/orageux.png"
+        }
+    ]
+
+}
