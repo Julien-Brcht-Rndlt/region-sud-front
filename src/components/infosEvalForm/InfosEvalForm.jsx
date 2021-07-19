@@ -16,7 +16,7 @@ import { ADD_INFOS } from '../../reducers/actions';
 import InfosEvalInput from './InfosEvalInput';
 import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';
-import InfosEvalDatepicker from './InfosEvalDatepicker';
+import InfosEvalTableDatePicker from './InfosEvalTableDatePicker';
 import { device } from '../../styles/theme';
 import {
   SPORT_AMATEUR,
@@ -31,8 +31,6 @@ import {
   EVENT_LOC_LABEL,
   EVENT_ACTIVITY_LABEL,
   EVENT_SPORT_LEVEL,
-  EVENT_START_DATE_LABEL,
-  EVENT_END_DATE_LABEL,
 } from '../../constants';
 
 export const StyledBorderYellowH1 = styled.div`
@@ -172,13 +170,10 @@ export default function InfosForm() {
               />
             </Flex>
             <ContainerDatePicker>
-              <InfosEvalDatepicker
-                elmtFormName="eventStart"
+              <InfosEvalTableDatePicker
                 infosForm={infosForm.orgEvent}
                 setInfosForm={setEventForm}
-                label={EVENT_START_DATE_LABEL}
               />
-              <InfosEvalDatepicker elmtFormName="eventEnd" infosForm={infosForm.orgEvent} setInfosForm={setEventForm} label={EVENT_END_DATE_LABEL} />
             </ContainerDatePicker>
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
