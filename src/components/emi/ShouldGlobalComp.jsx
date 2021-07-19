@@ -22,7 +22,7 @@ flex-direction: row;
 `;
 
 const ShouldItemContainer = styled(Flex)`
-width: 500px;
+width:80%;
 background-color:#f0ecec;
 padding-left:15px;
 flex-direction: column;
