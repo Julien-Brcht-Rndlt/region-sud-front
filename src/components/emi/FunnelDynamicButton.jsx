@@ -17,6 +17,7 @@ export default function FunnelDynamicButton({
   active,
   target,
   action,
+  label,
 }) {
   const handleClick = () => {
     if (action) {
@@ -30,12 +31,12 @@ export default function FunnelDynamicButton({
         <>
           <HashLink to={target} onClick={() => handleClick()}>
             <StyledButton type={type}>
-              Suivant
+              {label}
             </StyledButton>
           </HashLink>
         </>
       ) : (
-        <DisabledButton disabled>Suivant</DisabledButton>
+        <DisabledButton disabled>{label}</DisabledButton>
       )}
     </>
   );
@@ -46,6 +47,7 @@ FunnelDynamicButton.propTypes = {
   action: PropTypes.func,
   active: PropTypes.bool,
   target: PropTypes.string,
+  label: PropTypes.string.isRequired,
 };
 
 FunnelDynamicButton.defaultProps = {
