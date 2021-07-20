@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FlexCol, Center } from './generics/GenericContainers';
+import { device } from './theme';
 
 export const FooterContainer = styled(FlexCol)`
   justify-content: space-around;
@@ -8,6 +9,10 @@ export const FooterContainer = styled(FlexCol)`
   height: 577px;
   padding: 15px;
   color: #fff;
+  @media ${device.mobileS} {
+    font-size: 10px;
+    width: auto;
+  }
 `;
 
 export const FooterContWithBorder = styled(Center)`
@@ -16,11 +21,21 @@ export const FooterContWithBorder = styled(Center)`
   height: 424px;
   width: 60%;
   padding: 25px;
+  @media ${device.mobileS} {
+    font-size: 10px;
+    width: auto;
+  }
 `;
 
 export const FooterTextsContainer = styled.div`
   display: flex;
   justify-content: space-around;
+  @media ${device.mobileS} {
+    font-size: 10px;
+    width: 250px;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const FooterLinksList = styled.ul`
@@ -30,9 +45,20 @@ export const FooterLinksList = styled.ul`
   background-color: rgb(0, 90, 255);
   list-style-type: none;
   transform: translate(0, -55px);
+  @media ${device.mobileS} {
+    font-size: 10px;
+    width: 160px;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const FooterLinksALink = styled.a`
   color: #fff;
   text-decoration: none;
+  @media ${device.mobileS} {
+    font-size: 10px;
+    width: 200px;
+  }
 `;
