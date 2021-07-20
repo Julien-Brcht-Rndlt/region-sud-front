@@ -11,9 +11,28 @@ const StyledLogoImg = styled.img`
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
   @media ${device.mobileS} {
-    font-size: 10px;
-    width: 110px;
-    height: 75px;
+    width: 55px;
+    height: 35px;
+  }
+  @media ${device.mobileL} {
+    width: 60px;
+    height: 40px
+  }
+  @media ${device.tablet} {
+    width: 70px;
+    height: 50px
+  }
+  @media ${device.laptop} {
+    width: 80px;
+    height: 65px
+  }
+  @media ${device.laptopL} {
+    width: 130px;
+    height: 100px;
+  }
+  @media ${device.desktop} {
+    width: 150px;
+    height: 100px;
   }
 `;
 
