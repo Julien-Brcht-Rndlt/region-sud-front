@@ -17,16 +17,17 @@ import { INPUT_ANSWER } from '../../constants';
 import Scoring from './scoring.json';
 
 export const StyledEvalGlobalContainer = styled(FlexSpace)`
-  height: 45rem;
+  height: 72rem;
 `;
 
 const StyledEvalGlobalLeftCol = styled(Block)`
   padding: 50px;
   padding-left: 90px;
+  width:30%;
 `;
 
 const StyledEvalGlobalRightCol = styled(Block)`
-  width: 50%;
+  width: 70%;
 `;
 
 const StyledImgContainer = styled(FlexSpace)`

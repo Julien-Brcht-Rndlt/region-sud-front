@@ -19,7 +19,8 @@ export default function EvalThemeResult({ themeId }) {
   const [shouldList, setShouldList] = useState([]);
   const { evalState } = useContext(EvalContext);
   const { funnel } = useContext(FunnelContext);
-  const currTheme = funnel.themes.find((theme) => theme.id === parseInt(themeId, 10));
+  const currTheme = funnel.themes && funnel.themes
+    .find((theme) => theme.id === parseInt(themeId, 10));
 
   useEffect(() => {
     if (evalState && evalState.themes) {
@@ -35,10 +36,16 @@ export default function EvalThemeResult({ themeId }) {
   }, [themeId]);
 
   return (
-    <StyledThemeResultContainer>
-      <EvalThemeScoring themeId={themeId} themeTitle={currTheme.title} />
-      <EvalThemeShouldList shouldList={shouldList} shouldTitle="Pour vous améliorer :" />
-    </StyledThemeResultContainer>
+    <>
+      {
+        currTheme && (
+          <StyledThemeResultContainer>
+            <EvalThemeScoring themeId={themeId} themeTitle={currTheme.title} />
+            <EvalThemeShouldList shouldList={shouldList} shouldTitle="Pour vous améliorer :" />
+          </StyledThemeResultContainer>
+        )
+      }
+    </>
   );
 }
 

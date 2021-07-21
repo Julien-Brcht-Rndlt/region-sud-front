@@ -101,24 +101,30 @@ export const StyledContainerYellow = styled.div`
 export default function Theme({ id }) {
   const [show, setShow] = useState(false);
   const { funnel } = useContext(FunnelContext);
-  const currTheme = funnel.themes.find((theme) => theme.id === parseInt(id, 10));
+  const currTheme = funnel.themes && funnel.themes.find((theme) => theme.id === parseInt(id, 10));
 
   return (
-    <FlexCol>
-      <ContainersubtitleTheme id="section-theme">
-        <IconeImg src={currTheme.icon} alt="logo" />
-        <StyledSubtitleTheme>Evaluer mon événement</StyledSubtitleTheme>
-      </ContainersubtitleTheme>
-      <StyledContainerYellow>
-        <StyledTitleTheme>{currTheme.title}</StyledTitleTheme>
-        <StyledBorderYellow />
-      </StyledContainerYellow>
-      <QuestionList questions={currTheme.questions} themeId={id} />
-      <EmiFaqModal show={show} setShow={setShow} />
-      <CompButton>
-        <ButtonHelp />
-      </CompButton>
-    </FlexCol>
+    <>
+      {
+        currTheme && (
+        <FlexCol>
+          <ContainersubtitleTheme id="section-theme">
+            <IconeImg src={currTheme.icon} alt="logo" />
+            <StyledSubtitleTheme>Evaluer mon événement</StyledSubtitleTheme>
+          </ContainersubtitleTheme>
+          <StyledContainerYellow>
+            <StyledTitleTheme>{currTheme.title}</StyledTitleTheme>
+            <StyledBorderYellow />
+          </StyledContainerYellow>
+          <QuestionList questions={currTheme.questions} themeId={id} />
+          <EmiFaqModal show={show} setShow={setShow} />
+          <CompButton>
+            <ButtonHelp />
+          </CompButton>
+        </FlexCol>
+        )
+      }
+    </>
   );
 }
 
