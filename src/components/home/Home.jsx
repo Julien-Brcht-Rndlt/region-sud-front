@@ -17,12 +17,14 @@ export const StyledHome = styled(FlexSpace)`
     justify-content: space-around;
     align-items: stretch;
     align-content: space-around;
+    padding: 4rem 10rem;
   }
-  
+
   @media ${device.desktop}{
-  flex-direction:row;
-  align-items: stretch;
-  align-content: space-around;
+    flex-direction:row;
+    align-items: stretch;
+    align-content: space-around;
+    padding: 7rem 8rem;
   }
 `;
 

@@ -27,11 +27,11 @@ const StyledLogoImg = styled.img`
     height: 65px
   }
   @media ${device.laptopL} {
-    width: 130px;
-    height: 100px;
+    width: 180px;
+    height: 105px;
   }
   @media ${device.desktop} {
-    width: 150px;
+    width: 180px;
     height: 100px;
   }
 `;

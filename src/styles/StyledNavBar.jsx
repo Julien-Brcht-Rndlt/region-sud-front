@@ -15,10 +15,14 @@ export const StyledNavBar = styled.nav`
     display: flex;
     justify-content: space-between;
     list-style: none;
-    color: ${(props) => props.theme.secondaryFeatureColor};
+  }
+
   }
 `;
 export const StyledLink = styled(Link)`
   color: ${(props) => props.theme.secondaryFeatureColor};
   text-decoration: none;
+  &:hover {
+    color: #FECA5A;
+  }
 `;

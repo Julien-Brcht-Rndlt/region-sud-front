@@ -28,9 +28,10 @@ export const TestimonialsContainer = styled(Flex)`
       justify-content: space-around;
       background-color: ${(props) => props.theme.lightGreyFeatureColor};
       padding: 40px, 20px, 70px, 0;
+      padding: 40px, 20px, 70px, 0;
       padding-bottom: 70px;
       align-items: center;
-    }  
+    }
 `;
 
 export const TestimonialsTitle = styled.h2`
@@ -38,7 +39,7 @@ export const TestimonialsTitle = styled.h2`
   background-color: ${(props) => props.theme.lightGreyFeatureColor};
   height: 50px;
   margin: 0;
-  padding-left: 9rem;
-  padding-top: 40px;
+  padding: 110px 0 0 9rem;
   font-family: ${(props) => props.theme.fontFamilyNormal};
+  position: relative;
 `;
