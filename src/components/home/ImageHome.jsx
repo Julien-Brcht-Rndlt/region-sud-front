@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { Flex } from '../../styles/generics/GenericContainers';
-import image from '../../assets/img/top_image.jpg';
+import image from '../../assets/img/michael-held-unsplash.jpg';
 
 export const StyledImageHome = styled.img`
-  height: 340px;
+  height: 620px;
   width: 100%;
 `;
 

@@ -21,7 +21,7 @@ export const FlexSpace = styled(Flex)`
 export const FlexCol = styled(Flex)`
   flex-direction: column;
   align-items: ${(props) => (props.start && 'start') || (props.end && 'end') || (props.center && 'center') || (props.stretch && 'stretch')};
-  justify-content: ${(props) => props.halign};
+  justify-content: ${(props) => props.align};
 `;
 
 export const Center = styled.div`

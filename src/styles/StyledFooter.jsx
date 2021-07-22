@@ -6,7 +6,6 @@ export const FooterContainer = styled(FlexCol)`
   justify-content: space-around;
   align-items: center;
   background-color: rgb(0, 90, 255);
-  height: 577px;
   padding: 15px;
   color: #fff;
    @media ${device.mobileS} {
@@ -32,9 +31,8 @@ export const FooterContainer = styled(FlexCol)`
 export const FooterContWithBorder = styled(Center)`
   border: 2px solid white;
   outline-offset: 0.1rem;
-  height: 424px;
-  width: 60%;
   padding: 25px;
+
   @media ${device.mobileS} {
     width: auto;
   }
@@ -42,37 +40,34 @@ export const FooterContWithBorder = styled(Center)`
     width: auto;
   }
   @media ${device.tablet} {
-    width: 650px;
+    width: auto;
   }
   @media ${device.laptop} {
-    width: 900px;
+    width: auto;
   }
   @media ${device.laptopL} {
-    width: 1350px;
+    width: auto;
   }
   @media ${device.desktop} {
-    width: 2400px;
+    width: auto;
   }
 `;
 
 export const FooterTextsContainer = styled.div`
+  background-color: ${(props) => props.theme.secondaryTextColor};
   display: flex;
   justify-content: space-around;
   @media ${device.mobileS} {
     font-size: 10px;
-    width: 250px;
     flex-direction: column;
     align-items: center;
   }
   @media ${device.mobileL} {
     font-size: 12px;
-    width: 325px;
-    height: auto;
   }
   @media ${device.tablet} {
     width: auto;
     display: flex;
-    height: 150px;
     justify-content: space-around;
     flex-direction: row;
   }
@@ -90,23 +85,19 @@ export const FooterTextsContainer = styled.div`
 export const FooterLinksList = styled.ul`
   display: flex;
   justify-content: space-around;
-  width: 60%;
   background-color: rgb(0, 90, 255);
   list-style-type: none;
   transform: translate(0, -55px);
   @media ${device.mobileS} {
-    width: 160px;
     padding: 5px;
     flex-direction: column;
     align-items: center;
   }
   @media ${device.mobileL} {
     font-size: 8px;
-    width: 225px;
   }
   @media ${device.tablet} {
     font-size: 8px;
-    width: 500px;
     justify-content: space-around;
     flex-direction: row;
   }
@@ -118,7 +109,6 @@ export const FooterLinksList = styled.ul`
   }
   @media ${device.desktop} {
     height: auto;
-    width: 750px;
   }
 `;
 

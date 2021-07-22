@@ -5,22 +5,22 @@ export default function NavBar() {
   const navbarLinks = [
     {
       id: 1,
-      content: 'Accueil',
+      content: 'ACCUEIL',
       path: '/',
     },
     {
       id: 2,
-      content: 'Evaluer mon impact environnemental',
+      content: 'ÉVALUER MON IMPACT',
       path: '/EmiStart',
     },
     {
       id: 3,
-      content: 'Etre accompagné',
+      content: 'ÊTRE ACCOMPAGNÉ',
       path: '/FaqHome',
     },
     {
       id: 4,
-      content: "M'informer",
+      content: "M'INFORMER",
       path: '/EmiResult',
     },
   ];
