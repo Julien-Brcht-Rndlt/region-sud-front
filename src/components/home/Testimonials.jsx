@@ -58,7 +58,7 @@ const Title = styled(StyledTitleHomeH1)`
 export const StyledContainerYellow = styled(FlexCol)`
   width: 100%;
   background-color: #ebebeb;
-  transform: translate(0px, -230px);
+  transform: translate(0px, -180px);
 `;
 
 export default function Testimonials() {

@@ -5,7 +5,7 @@ import { device } from './theme';
 export const FooterContainer = styled(FlexCol)`
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(0, 90, 255);
+  background-color: ${(props) => props.theme.blueFeatureColor};
   padding: 15px;
   color: #fff;
    @media ${device.mobileS} {
@@ -32,29 +32,11 @@ export const FooterContWithBorder = styled(Center)`
   border: 2px solid white;
   outline-offset: 0.1rem;
   padding: 25px;
-
-  @media ${device.mobileS} {
-    width: auto;
-  }
-  @media ${device.mobileL} {
-    width: auto;
-  }
-  @media ${device.tablet} {
-    width: auto;
-  }
-  @media ${device.laptop} {
-    width: auto;
-  }
-  @media ${device.laptopL} {
-    width: auto;
-  }
-  @media ${device.desktop} {
-    width: auto;
-  }
+  margin: 3rem;
 `;
 
 export const FooterTextsContainer = styled.div`
-  background-color: ${(props) => props.theme.secondaryTextColor};
+
   display: flex;
   justify-content: space-around;
   @media ${device.mobileS} {
@@ -85,9 +67,8 @@ export const FooterTextsContainer = styled.div`
 export const FooterLinksList = styled.ul`
   display: flex;
   justify-content: space-around;
-  background-color: rgb(0, 90, 255);
   list-style-type: none;
-  transform: translate(0, -55px);
+  transform: translate(0, -79px);
   @media ${device.mobileS} {
     padding: 5px;
     flex-direction: column;
@@ -115,13 +96,14 @@ export const FooterLinksList = styled.ul`
 export const FooterLinksALink = styled.a`
   color: #fff;
   text-decoration: none;
+  background-color: ${(props) => props.theme.blueFeatureColor};
+  font-family: ${(props) => props.theme.fontFamilyNormal};
+  padding: 1rem;
   @media ${device.mobileS} {
     font-size: 10px;
-    width: 200px;
   }
   @media ${device.mobileL} {
     font-size: 11px;
-    width: 325px;
     height: auto;
   }
   @media ${device.tablet} {
@@ -131,7 +113,7 @@ export const FooterLinksALink = styled.a`
     font-size: 12px;
   }
   @media ${device.laptopL} {
-    font-size: 13px;
+    font-size: 1.3rem;
     height: auto;
   }
   @media ${device.desktop} {

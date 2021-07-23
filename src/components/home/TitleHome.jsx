@@ -92,7 +92,6 @@ export const StyledButtonHP = styled(StyledButton)`
     padding: 15px 30px;
     margin: 30px 0;
     border-radius: 5px;
-    border-radius: 2px;
     margin: 30px 0;
     background: ${(props) => props.theme.secondaryTextColor};
   }
@@ -103,7 +102,7 @@ export const StyledButtonHP = styled(StyledButton)`
   }
 
   @media ${device.tablet} {
-    font-size: 1.3em;
+    font-size: 1.6em;
     padding: 20px 40px;
   }
 

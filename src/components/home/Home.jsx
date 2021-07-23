@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FlexSpace, FlexCol } from '../../styles/generics/GenericContainers';
+import { FlexSpace } from '../../styles/generics/GenericContainers';
 import ImageHome from './ImageHome';
 import TitleHome from './TitleHome';
 import MapHome from './MapHome';
@@ -7,7 +7,6 @@ import Testimonials from './Testimonials';
 import { device } from '../../styles/theme';
 
 export const StyledHome = styled(FlexSpace)`
-
  @media ${device.mobileS}{
     flex-direction: column;
   }
@@ -28,18 +27,15 @@ export const StyledHome = styled(FlexSpace)`
   }
 `;
 
-export const WrapperHome = styled(FlexCol)`
-  `;
-
 export default function Home() {
   return (
-    <WrapperHome>
+    <div>
       <ImageHome />
       <StyledHome space-around>
         <TitleHome />
         <MapHome />
       </StyledHome>
       <Testimonials />
-    </WrapperHome>
+    </div>
   );
 }
