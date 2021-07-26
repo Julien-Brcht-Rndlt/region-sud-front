@@ -10,6 +10,7 @@ const StyledModalOverlay = styled(Flex)`
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 `;
 
 const StyledModalContainer = styled.div`
@@ -31,35 +32,29 @@ const StyledClosePicture = styled.img`
 `;
 
 function EmiGenericModal({
-    children,
-    renderModalHeader,
-    renderModalFooter,
-    show,
-    setShow,
-    }) {
-    const closeModalHandler = () => {
-        setShow(false);
-    };
+  children,
+  renderModalHeader,
+  renderModalFooter,
+  show,
+  setShow,
+}) {
+  const closeModalHandler = () => {
+    setShow(false);
+  };
 
-    if (!show) {
-        return null;
-    }
+  if (!show) {
+    return null;
+  }
 
-    return (
-      <StyledModalOverlay center valign="center" onClick={() => closeModalHandler()}>
-        <StyledModalContainer onClick={(event) => event.stopPropagation()}>
-          <EmiModalHeader closeModalHandler={closeModalHandler}>
-            {renderModalHeader()}
-          </EmiModalHeader>
-          <EmiModalBody>
-            {children}
-          </EmiModalBody>
-          <EmiModalFooter>
-            {renderModalFooter()}
-          </EmiModalFooter>
-        </StyledModalContainer>
-      </StyledModalOverlay>
-    );
+  return (
+    <StyledModalOverlay center valign="center" onClick={() => closeModalHandler()}>
+      <StyledModalContainer onClick={(event) => event.stopPropagation()}>
+        <EmiModalHeader closeModalHandler={closeModalHandler}>{renderModalHeader()}</EmiModalHeader>
+        <EmiModalBody>{children}</EmiModalBody>
+        <EmiModalFooter>{renderModalFooter()}</EmiModalFooter>
+      </StyledModalContainer>
+    </StyledModalOverlay>
+  );
 }
 
 const EmiModalHeader = ({ children, closeModalHandler }) => (
@@ -69,35 +64,27 @@ const EmiModalHeader = ({ children, closeModalHandler }) => (
       <StyledClosePicture src={Close} alt="closed" />
     </button>
   </StyledHeaderContainer>
-    );
+);
 
-const EmiModalBody = ({ children }) => (
-  <div>
-    {children}
-  </div>
-      );
+const EmiModalBody = ({ children }) => <div>{children}</div>;
 
-const EmiModalFooter = ({ children }) => (
-  <div>
-    {children}
-  </div>
-    );
+const EmiModalFooter = ({ children }) => <div>{children}</div>;
 
 EmiGenericModal.propTypes = {
-    children: PropTypes.node.isRequired,
-    renderModalHeader: PropTypes.func.isRequired,
-    renderModalFooter: PropTypes.func.isRequired,
-    show: PropTypes.bool.isRequired,
-    setShow: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  renderModalHeader: PropTypes.func.isRequired,
+  renderModalFooter: PropTypes.func.isRequired,
+  show: PropTypes.bool.isRequired,
+  setShow: PropTypes.func.isRequired,
 };
 
 EmiModalHeader.propTypes = {
-    children: PropTypes.node.isRequired,
-    closeModalHandler: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+  closeModalHandler: PropTypes.func.isRequired,
 };
 
 EmiModalBody.propTypes = {
-    children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 EmiModalFooter.propTypes = {
