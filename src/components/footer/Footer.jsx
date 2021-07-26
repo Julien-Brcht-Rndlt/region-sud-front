@@ -59,7 +59,7 @@ export default function Footer() {
     <FooterContainer>
       <FooterContWithBorder>
         <Logo
-          src="./logo_region_footer.png"
+          src="assets/logo_region_footer.png"
           width={240}
           height={100}
           alt="Logo Région-Sud dans pieds de page"
