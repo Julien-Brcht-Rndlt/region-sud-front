@@ -7,6 +7,7 @@ export const StyledInfosFormsContainer = styled(Block)`
   padding-left: 70px;
   padding-top: 30px;
   padding-bottom: 7rem;
+  margin: 4rem 2rem;
 `;
 
 export const StyledInfosFormsColsContainer = styled(Flex)`
