@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { StyledLink } from '../../styles/StyledNavBar';
+import { device } from '../../styles/theme';
 
 export const StyledNavBarItem = styled.div`
+@media ${device.mobileL} {
+  font-size: 1rem;
+  font-weight:bolder;
+  letter-spacing:0.5px;
+}
+
+@media ${device.laptop} {
   display: inline-block;
   font-family: ${(props) => props.theme.fontFamilyFeature};
   font-size: 1.6rem;
@@ -10,6 +18,7 @@ export const StyledNavBarItem = styled.div`
   padding: 10px 45px;
   font-weight: lighter;
   text-align: center;
+}
 `;
 
 export default function NavBarItem({ id, content, path }) {
