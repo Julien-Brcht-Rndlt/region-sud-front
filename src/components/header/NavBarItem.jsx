@@ -4,10 +4,17 @@ import { StyledLink } from '../../styles/StyledNavBar';
 import { device } from '../../styles/theme';
 
 export const StyledNavBarItem = styled.div`
+@media ${device.mobileS} {
+  font-size: 0.8rem;
+  font-weight:normal;
+  letter-spacing:0.5px;
+}
 @media ${device.mobileL} {
   font-size: 1rem;
-  font-weight:bolder;
-  letter-spacing:0.5px;
+}
+@media ${device.tablet} {
+  font-size: 1.3rem;
+  letter-spacing:1px;
 }
 
 @media ${device.laptop} {

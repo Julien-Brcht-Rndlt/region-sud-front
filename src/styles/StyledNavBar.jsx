@@ -4,10 +4,10 @@ import { device } from './theme';
 
 export const StyledNavBar = styled.nav`
 
-@media ${device.mobileL} {
+@media ${device.mobileS} {
   ul {
-
     display:block;
+    list-style:none;
   }
 }
 
@@ -31,9 +31,19 @@ export const StyledNavBar = styled.nav`
 
 `;
 export const StyledLink = styled(Link)`
+@media ${device.mobileS} {
   color: ${(props) => props.theme.secondaryFeatureColor};
   text-decoration: none;
   &:hover {
     color: #FECA5A;
   }
+}
+
+@media ${device.laptop} {
+  color: ${(props) => props.theme.secondaryFeatureColor};
+  text-decoration: none;
+  &:hover {
+    color: #FECA5A;
+  }
+}
 `;
