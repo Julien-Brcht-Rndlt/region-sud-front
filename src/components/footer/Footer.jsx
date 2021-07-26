@@ -60,15 +60,18 @@ export default function Footer() {
       <FooterContWithBorder>
         <Logo
           src="./logo_region_footer.png"
-          width={174}
-          height={94}
+          width={240}
+          height={100}
           alt="Logo Région-Sud dans pieds de page"
         />
         <FooterTextsContainer>
           {footerTextContent.map((content) => {
             count += 1;
             return (
-              <FooterText title={`${content.title}${count}`} lines={content.lines} />
+              <>
+                <FooterText title={`${content.title}`} lines={content.lines} />
+                <div style={{ display: 'none' }}>{count}</div>
+              </>
           );
             })}
         </FooterTextsContainer>

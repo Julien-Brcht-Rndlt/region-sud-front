@@ -2,23 +2,25 @@ import styled from 'styled-components';
 import { HashLink } from 'react-router-hash-link';
 import { Flex, FlexCol } from '../../styles/generics/GenericContainers';
 import Testimonial from './Testimonial';
-import { StyledButton } from '../../styles/generics/GenericButtons';
-import { TestimonialsContainer, TestimonialsTitle } from '../../styles/StyledTestimonials';
+import { TestimonialsContainer } from '../../styles/StyledTestimonials';
 import { device } from '../../styles/theme';
+import { StyledTitleHomeH1, StyledButtonHP } from './TitleHome';
 
 export const StyledButtonTestimonial = styled(Flex)`
-  height: 90px;
   width: auto;
   background-color: ${(props) => props.theme.lightGreyFeatureColor};
   padding: 50px;
 `;
-export const StyledBorderYellowH1 = styled.div`
+
+export const StyledBorderYellowH1 = styled.hr`
+  border: none;
+
   @media ${device.mobileS} {
     border-bottom: 0;
   }
 
   @media ${device.mobileL} {
-    border-bottom: 6px solid ${(props) => props.theme.yellowFeatureColor};
+    border-bottom: 4px solid ${(props) => props.theme.yellowFeatureColor};
     height: 7px;
     padding-right: 40px;
     margin: 65px;
@@ -27,26 +29,36 @@ export const StyledBorderYellowH1 = styled.div`
   }
 
   @media ${device.tablet} {
-    border-bottom: 8px solid ${(props) => props.theme.yellowFeatureColor};
-    height: 6px;
+    border-bottom: 4px solid ${(props) => props.theme.yellowFeatureColor};
+    height: 4px;
     padding-right: 90px;
-    margin: 65px;
+    margin: 158px;
     margin-left: 145px;
     position: absolute;
   }
 
   @media ${device.desktop} {
-    border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
+    border-bottom: 4px solid ${(props) => props.theme.yellowFeatureColor};
     height: 10px;
     padding-right: 90px;
-    margin: 65px;
+    margin: 158px;
     margin-left: 145px;
     position: absolute;
   }
 `;
 
+const Title = styled(StyledTitleHomeH1)`
+  height: 50px;
+  margin: 0;
+  padding: 110px 0 0 9rem;
+  font-family: ${(props) => props.theme.fontFamilyNormal};
+  position: relative;
+`;
+
 export const StyledContainerYellow = styled(FlexCol)`
   width: 100%;
+  background-color: #ebebeb;
+  transform: translate(0px, -180px);
 `;
 
 export default function Testimonials() {
@@ -72,11 +84,9 @@ export default function Testimonials() {
   ];
 
   return (
-    <>
-      <StyledContainerYellow>
-        <TestimonialsTitle>ILS L&apos;ONT UTILIS&Eacute;</TestimonialsTitle>
-        <StyledBorderYellowH1 />
-      </StyledContainerYellow>
+    <StyledContainerYellow>
+      <Title>ILS L&apos;ONT UTILIS&Eacute;</Title>
+      <StyledBorderYellowH1 />
       <TestimonialsContainer>
         {testimonials.map((testimony) => (
           <Testimonial {...testimony} />
@@ -84,9 +94,9 @@ export default function Testimonials() {
       </TestimonialsContainer>
       <StyledButtonTestimonial center>
         <HashLink to="/EmiStart#">
-          <StyledButton>Je m&apos;engage moi aussi !</StyledButton>
+          <StyledButtonHP>Je m&apos;engage moi aussi !</StyledButtonHP>
         </HashLink>
       </StyledButtonTestimonial>
-    </>
+    </StyledContainerYellow>
   );
 }

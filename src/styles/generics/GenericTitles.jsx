@@ -31,5 +31,7 @@ export const StyledTitleH4 = styled.h4`
 
 export const StyledTitleP = styled.p`
   font-family: ${(props) => props.theme.fontFamilyNormal};
-  font-size: 1rem;
+  font-size: 1.3rem;
+  margin: 20px 0;
+  font-weight: lighter;
 `;

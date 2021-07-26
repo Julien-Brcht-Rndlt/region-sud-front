@@ -25,20 +25,21 @@ export const device = {
 
 // setup fonts
 
-export const fontFamilyNormal = "'Roboto','Dosis',sans-serif";
-export const fontFamilyFeature = "'Roboto','Fira Sans',sans-serif";
-export const fontFamilyNavBar = "'Roboto','Nunito',sans-serif";
+export const fontFamilyNormal = "'Open Sans', sans-serif";
+export const fontFamilyFeature = "'Lato', sans-serif";
+export const fontFamilyNavBar = "'Roboto Mono', monospace, sans serif";
 
 export const fontWeightNormal = 400;
 export const fontWeightBold = 700;
-const mainTextColor = '#005aff';
+const mainTextColor = '#3566d6';
+const secondaryTextColor = '#0a40a2';
 
 const theme = {
   // fonts
 
-  fontFamilyNormal: "'Roboto','Dosis',sans-serif",
-  fontFamilyFeature: "'Roboto','Fira Sans',sans-serif",
-  fontFamilyNavBar: "'Roboto','Nunito',sans-serif",
+  fontFamilyNormal: "'Open Sans', sans-serif",
+  fontFamilyFeature: "'Lato', sans-serif",
+  fontFamilyNavBar: "'Roboto Mono', monospace, sans serif",
 
   // fonts size
 
@@ -46,17 +47,18 @@ const theme = {
   fontWeightFeature: 700,
 
   // color
-  blueFeatureColor: '#005aff',
+  blueFeatureColor: '#3566d6',
   secondaryFeatureColor: '#fff',
   lightGreyFeatureColor: '#ebebeb',
   greyFeatureColor: '#e5e5e5',
   darkGreyFeatureColor: '#1d1d1d',
   darkBlueGreyFeatureColor: '#2f4f4f',
   yellowFeatureColor: '#feca5a',
-  NavyBlueFeatureColor: '#000080',
+  NavyBlueFeatureColor: '#08378c',
   blackFeatureColor: '#000000',
   whiteFeatureColor: '#e7ecf4',
   greycendreColor: '#706B69',
+  secondaryTextColor,
 
   // lines
   lineHeight: 1.5,

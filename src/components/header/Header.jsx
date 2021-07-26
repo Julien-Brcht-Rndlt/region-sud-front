@@ -8,7 +8,6 @@ import logoRegion from '../../assets/img/logoRegion.png';
 export const StyledHeader = styled(Flex)`
   width: auto;
   border: solid 5px ${(props) => props.theme.blueFeatureColor};
-  height: 95px;
   padding: 15px;
   background-color: ${(props) => props.theme.blueFeatureColor};
   font-family: ${(props) => props.theme.fontFamilyNormal};

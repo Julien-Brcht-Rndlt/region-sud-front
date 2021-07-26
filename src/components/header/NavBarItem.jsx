@@ -4,6 +4,12 @@ import { StyledLink } from '../../styles/StyledNavBar';
 
 export const StyledNavBarItem = styled.div`
   display: inline-block;
+  font-family: ${(props) => props.theme.fontFamilyFeature};
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  padding: 10px 45px;
+  font-weight: lighter;
+  text-align: center;
 `;
 
 export default function NavBarItem({ id, content, path }) {

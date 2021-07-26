@@ -6,7 +6,6 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     font-size : 62.5%;
     cursor: default !important;
-    min-height: 100vh;
   }
 `;
 
