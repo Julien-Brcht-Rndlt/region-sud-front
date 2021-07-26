@@ -76,8 +76,8 @@ export default function Footer() {
           );
             })}
         </FooterTextsContainer>
+        <FooterLinks links={footerLinks} />
       </FooterContWithBorder>
-      <FooterLinks links={footerLinks} />
     </FooterContainer>
   );
 }
