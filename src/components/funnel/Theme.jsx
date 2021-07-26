@@ -119,7 +119,7 @@ export default function Theme({ id }) {
           <QuestionList questions={currTheme.questions} themeId={id} />
           <EmiFaqModal show={show} setShow={setShow} />
           <CompButton>
-            <ButtonHelp />
+            <ButtonHelp setShow={setShow} />
           </CompButton>
         </FlexCol>
         )

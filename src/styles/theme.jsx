@@ -25,7 +25,7 @@ export const device = {
 
 // setup fonts
 
-export const fontFamilyNormal = "Open Sans', sans-serif";
+export const fontFamilyNormal = "'Open Sans', sans-serif";
 export const fontFamilyFeature = "'Lato', sans-serif";
 export const fontFamilyNavBar = "'Roboto Mono', monospace, sans serif";
 
