@@ -64,7 +64,7 @@ function EmiGenericModal({
 
 const EmiModalHeader = ({ children, closeModalHandler }) => (
   <StyledHeaderContainer>
-    { children }
+    {children}
     <button style={{ background: 'none', border: 'none' }} type="button" onClick={() => closeModalHandler()}>
       <StyledClosePicture src={Close} alt="closed" />
     </button>
@@ -79,7 +79,7 @@ const EmiModalBody = ({ children }) => (
 
 const EmiModalFooter = ({ children }) => (
   <div>
-    { children }
+    {children}
   </div>
     );
 
