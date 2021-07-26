@@ -6,6 +6,9 @@ import { StyledInfosInput } from '../../styles/StyledInfosForms';
 import { device } from '../../styles/theme';
 
 export const StyledInfosInputLabel = styled(StyledFormItemLabel)`
+  border-radius: 3px;
+  margin: 1.3rem 0;
+  color: ${(props) => props.theme.NavyBlueFeatureColor};
   @media ${device.mobileS}{
       font-size:13px;
       width:200px;
@@ -25,11 +28,11 @@ export const StyledInfosInputLabel = styled(StyledFormItemLabel)`
     }
 
     @media ${device.desktop}{
-      color: ${(props) => props.theme.blueFeatureColor};
+      color: ${(props) => props.theme.NavyBlueFeatureColor};
       font-family: ${(props) => props.theme.fontFamilyNormal};
       font-weight: 600;
       width: 30rem;
-      font-size:18px;
+      font-size: 1.3rem;
     }
 `;
 

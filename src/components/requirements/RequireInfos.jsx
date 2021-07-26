@@ -69,6 +69,7 @@ const Title = styled.h1`
 `;
 
 const SubTitle = styled(StyledReqTitleH1)`
+  color: #0a40a2;
   font-family: ${(props) => props.theme.fontFamilyNormal};
 `;
 

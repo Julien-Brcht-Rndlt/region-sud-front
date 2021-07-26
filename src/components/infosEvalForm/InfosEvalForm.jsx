@@ -9,7 +9,7 @@ import {
 } from '../../styles/StyledInfosForms';
 import InfosEvalDynamicButton from './InfosEvalDynamicButton';
 import { Flex } from '../../styles/generics/GenericContainers';
-import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
+import { StyledTitleH2 } from '../../styles/generics/GenericTitles';
 import OrgContext from '../../contexts/OrgContext';
 import EventContext from '../../contexts/EventContext';
 import { ADD_INFOS } from '../../reducers/actions';
@@ -18,6 +18,8 @@ import InfosEvalCheckbox from './InfosEvalCheckbox';
 import InfosEvalDropdown from './InfosEvalDropdown';
 import InfosEvalTableDatePicker from './InfosEvalTableDatePicker';
 import { device } from '../../styles/theme';
+import { StyledTitleHomeH2 } from '../home/TitleHome';
+
 import {
   SPORT_AMATEUR,
   SPORT_EXPERT,
@@ -84,6 +86,24 @@ export const ContainerDatePicker = styled(Flex)`
   }
 `;
 
+const Title = styled.h1`
+  font-family: ${(props) => props.theme.fontFamilyFeature};
+  color: #0a40a2;
+  font-weight: 400;
+  font-size: 1.6rem;
+`;
+
+export const BlackTitle = styled.h3`
+  font-family: ${(props) => props.theme.fontFamilyFeature};
+  color: black;
+  font-weight: 400;
+  margin: 5px 0;
+`;
+
+const Button = styled(StyledButtonContainer)`
+  padding: 1rem 1.5rem;
+`;
+
 const mandatoryFields = ['orgName', 'eventName', 'eventAddr', 'eventLoc'];
 
 export default function InfosForm() {
@@ -125,12 +145,12 @@ export default function InfosForm() {
   return (
     <StyledInfosFormsContainer id="section-form">
       <form/* onSubmit={(event) => handleSubmit(event)} */>
-        <StyledTitleH4>Informations préalables</StyledTitleH4>
+        <Title>Informations préalables</Title>
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>
             <div>
               <StyledContainerYellow>
-                <StyledTitleH2Form>{ORG_TITLE_FORM}</StyledTitleH2Form>
+                <StyledTitleHomeH2 style={{ color: 'black' }}>{ORG_TITLE_FORM}</StyledTitleHomeH2>
                 <StyledBorderYellowH1 />
               </StyledContainerYellow>
               <StyledSpaceBetween />
@@ -140,7 +160,8 @@ export default function InfosForm() {
           </StyledInfosFormsColLeftContainer>
           <StyledInfosFormsColContainer>
             <StyledContainerYellow>
-              <StyledTitleH2Form>{EVENT_TITLE_FORM}</StyledTitleH2Form>
+              <StyledTitleHomeH2 style={{ color: 'black' }}>{EVENT_TITLE_FORM}</StyledTitleHomeH2>
+              <StyledTitleH2Form style={{ display: 'none' }}>{EVENT_TITLE_FORM}</StyledTitleH2Form>
               <StyledBorderYellowH1 />
             </StyledContainerYellow>
             <StyledSpaceBetween />
@@ -177,9 +198,9 @@ export default function InfosForm() {
             </ContainerDatePicker>
           </StyledInfosFormsColContainer>
         </StyledInfosFormsColsContainer>
-        <StyledButtonContainer>
+        <Button>
           <InfosEvalDynamicButton active={active} action={handleSubmit} />
-        </StyledButtonContainer>
+        </Button>
       </form>
     </StyledInfosFormsContainer>
   );
