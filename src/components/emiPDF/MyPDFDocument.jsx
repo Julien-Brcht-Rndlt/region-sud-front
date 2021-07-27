@@ -8,12 +8,9 @@ import {
   Document,
   StyleSheet,
 } from '@react-pdf/renderer';
-/* import { TitleTheme, QuestionTheme } from './DocumentList'; */
 
-// Create styles
 const styles = StyleSheet.create({
   page: {
-/*     justifyContent: 'center', */
     flexDirection: 'column',
     backgroundColor: '#E4E4E4',
   },
@@ -58,9 +55,7 @@ const styles = StyleSheet.create({
   },
 });
 
-// Create Document Component
 export default function MyPDFDocument({ evalPDF }) {
-  console.log('pdf data to display', evalPDF);
   return (
     <Document styles="width: 100%">
       <Page wrap size="A4" style={styles.page}>

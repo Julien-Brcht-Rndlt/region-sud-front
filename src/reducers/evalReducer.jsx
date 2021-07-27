@@ -14,8 +14,6 @@ export default function evalReducer(state, action) {
 
     const evalState = state;
 
-    console.log('evalState', evalState);
-
     if (type === ADD_MULTIPLE_CHOICE || type === ADD_INPUT_ANSWER || type === ADD_ONE_CHOICE) {
         const {
             answer,
@@ -102,10 +100,10 @@ export default function evalReducer(state, action) {
         .filter((question) => question.givenAnswers && question.givenAnswers.length > 0);
             if (filteredQuestions.length === evalTheme.questions.length) {
                 if (!evalState.completedThemes) {
-                    evalState.completedThemes = [];
+                  evalState.completedThemes = [];
                 }
                 if (!evalState.completedThemes.includes(themeId)) {
-                evalState.completedThemes.push(themeId);
+                  evalState.completedThemes.push(themeId);
                 }
             } else if (evalState.completedThemes.includes(themeId)) {
               evalState.completedThemes = evalState.completedThemes

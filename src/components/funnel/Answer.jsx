@@ -4,12 +4,10 @@ import PropTypes from 'prop-types';
 import { StyledInfosInput } from '../../styles/StyledInfosForms';
 import EvalContext from '../../contexts/EvalContext';
 import FunnelContext from '../../contexts/FunnelContext';
-
 import {
   MULTIPLE_CHOICE,
   ONE_CHOICE,
   INPUT_ANSWER,
-  /* NO_CHOICE, */
 } from '../../constants';
 import {
   ADD_MULTIPLE_CHOICE,

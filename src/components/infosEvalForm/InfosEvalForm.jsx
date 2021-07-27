@@ -88,7 +88,7 @@ const mandatoryFields = ['orgName', 'eventName', 'eventAddr', 'eventLoc'];
 
 export default function InfosForm() {
   const [active, setActive] = useState(false);
-  const locations = ['Abries', 'Marseille', 'Toulon', 'Hyeres'];
+  const locations = ['Abries', 'Aix en Provence', 'Aubagne', 'Auch', 'Apt', 'Avignon', 'Bandol', 'Cassis', 'La Ciotat', 'Fréjus', 'Hyeres', 'Marignane', 'Marseille', 'Martigues', 'Sanary/mer', 'Toulon'];
   const sportLevels = [SPORT_AMATEUR, SPORT_EXPERT];
   const { org, dispatch } = useContext(OrgContext);
   const { orgEvent } = useContext(EventContext);
@@ -124,7 +124,7 @@ export default function InfosForm() {
 
   return (
     <StyledInfosFormsContainer id="section-form">
-      <form/* onSubmit={(event) => handleSubmit(event)} */>
+      <form>
         <StyledTitleH4>Informations préalables</StyledTitleH4>
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>

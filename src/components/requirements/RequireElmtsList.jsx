@@ -104,5 +104,5 @@ export default function RequireElmtsList() {
 }
 
 RequireElmtsList.prototype = {
-contentList: PropTypes.array.isRequired,
+  contentList: PropTypes.array.isRequired,
 };

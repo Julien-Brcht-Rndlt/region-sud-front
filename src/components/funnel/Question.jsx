@@ -60,11 +60,11 @@ export default function Question({
   title,
   answers,
   themeId,
- }) {
+}) {
   return (
     <StyledQuestionContainer>
       <IconeContainer end>
-        <IconImg src={know} alt="?" />
+        <IconImg src={know} alt={`know-faq-${id}`} />
       </IconeContainer>
       <StyledTitleH3>{title}</StyledTitleH3>
       <AnswerList answers={answers} questionId={id} themeId={themeId} />

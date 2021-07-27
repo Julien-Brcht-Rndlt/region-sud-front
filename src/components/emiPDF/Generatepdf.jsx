@@ -9,7 +9,6 @@ import {
 import EvalData from '../../mockdata/datatest.json';
 import { TitleTheme } from './DocumentList';
 
-// Create styles
 const styles = StyleSheet.create({
   page: {
     justifyContent: 'center',
@@ -24,7 +23,6 @@ const styles = StyleSheet.create({
   },
 });
 
-// Create Document Component
 export default function MyDocument() {
   return (
     <Document styles="width: 100%">

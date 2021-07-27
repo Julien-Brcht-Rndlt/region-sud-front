@@ -10,7 +10,6 @@ export const StyledContainerPdf = styled.div`
 
 export default function DisplayPdf() {
   const { evalState } = useContext(EvalContext);
-  console.log('evalState', evalState);
   return (
     <>
       <StyledContainerPdf>
