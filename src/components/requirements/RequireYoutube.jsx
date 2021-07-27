@@ -70,8 +70,8 @@ const Button = styled(StyledButton)`
 export default function RequireYoutube() {
   return (
     <StyledYoutubeBox hline="center">
-      <Title> En savoir plus</Title>
-      <FrameContainer title="This is a unique title" src="https://www.youtube.com/embed/aP0_xJE_bgU" />
+      <Title> Comment cela va se passer :</Title>
+      <FrameContainer title="youtube video" src="https://www.youtube.com/embed/aP0_xJE_bgU" />
       <Button glassy>Voir les questions fréquentes</Button>
     </StyledYoutubeBox>
   );

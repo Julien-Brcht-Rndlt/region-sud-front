@@ -1,9 +1,9 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import { ReactComponent as Icon } from '../../assets/img/helphover.svg';
 import { Flex } from '../../styles/generics/GenericContainers';
-import EmiFaqModal from '../faq/EmiFaqModal';
 
 export const CompIconText = styled(Flex)`
   align-items: center;
@@ -18,9 +18,8 @@ const IconWrapper = styled.div`
   }
 `;
 
-export default function ButtonHelp() {
+export default function ButtonHelp({ setShow }) {
   const [color, setColor] = useState('blue');
-  const [show, setShow] = useState(false);
 
   return (
     <>
@@ -32,7 +31,10 @@ export default function ButtonHelp() {
           Je ne m&#39;en sors pas !
         </CompIconText>
       </StyledButton>
-      <EmiFaqModal show={show} setShow={setShow} />
     </>
   );
 }
+
+ButtonHelp.propTypes = {
+  setShow: PropTypes.func.isRequired,
+};

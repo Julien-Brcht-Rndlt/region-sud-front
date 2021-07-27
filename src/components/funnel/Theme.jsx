@@ -1,6 +1,5 @@
 import { useState, useContext } from 'react';
 import styled from 'styled-components';
-// eslint-disable-next-line import/no-unresolved
 import PropTypes from 'prop-types';
 import FunnelContext from '../../contexts/FunnelContext';
 import QuestionList from './QuestionList';
@@ -105,8 +104,7 @@ export default function Theme({ id }) {
 
   return (
     <>
-      {
-        currTheme && (
+      {currTheme && (
         <FlexCol>
           <ContainersubtitleTheme id="section-theme">
             <IconeImg src={currTheme.icon} alt="logo" />
@@ -119,11 +117,10 @@ export default function Theme({ id }) {
           <QuestionList questions={currTheme.questions} themeId={id} />
           <EmiFaqModal show={show} setShow={setShow} />
           <CompButton>
-            <ButtonHelp />
+            <ButtonHelp setShow={setShow} />
           </CompButton>
         </FlexCol>
-        )
-      }
+      )}
     </>
   );
 }

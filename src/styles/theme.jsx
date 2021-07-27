@@ -1,7 +1,5 @@
 import { css } from 'styled-components';
 
-// setup responsive breakpoints
-
 export const size = {
   mobileS: '320px',
   mobileM: '375px',
@@ -23,9 +21,7 @@ export const device = {
   desktopL: `(min-width: ${size.desktop})`,
 };
 
-// setup fonts
-
-export const fontFamilyNormal = "Open Sans', sans-serif";
+export const fontFamilyNormal = "'Open Sans', sans-serif";
 export const fontFamilyFeature = "'Lato', sans-serif";
 export const fontFamilyNavBar = "'Roboto Mono', monospace, sans serif";
 
@@ -35,18 +31,13 @@ const mainTextColor = '#3566d6';
 const secondaryTextColor = '#0a40a2';
 
 const theme = {
-  // fonts
 
   fontFamilyNormal: "'Open Sans', sans-serif",
   fontFamilyFeature: "'Lato', sans-serif",
   fontFamilyNavBar: "'Roboto Mono', monospace, sans serif",
 
-  // fonts size
-
-  // fonts weight
   fontWeightFeature: 700,
 
-  // color
   blueFeatureColor: '#3566d6',
   secondaryFeatureColor: '#fff',
   lightGreyFeatureColor: '#ebebeb',
@@ -60,7 +51,6 @@ const theme = {
   greycendreColor: '#706B69',
   secondaryTextColor,
 
-  // lines
   lineHeight: 1.5,
   smallLineHeight: 1.15,
 

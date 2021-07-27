@@ -1,10 +1,21 @@
 import styled from 'styled-components';
 import { Flex } from '../../styles/generics/GenericContainers';
 import image from '../../assets/img/michael-held-unsplash.jpg';
+import { device } from '../../styles/theme';
 
 export const StyledImageHome = styled.img`
+@media ${device.mobileS}{
+      height:200px;
+      width:100%;
+    }
+
+    @media ${device.tablet}{
+      height:400px;
+    }
+
+    @media ${device.laptop}{    
   height: 620px;
-  width: 100%;
+    }
 `;
 
 export default function ImageHome() {

@@ -6,6 +6,7 @@ import {
 import FooterLinks from './FooterLinks';
 import FooterText from './FooterText';
 import Logo from '../Logo';
+import logoRegion from '../../assets/img/logoRegion.png';
 
 export default function Footer() {
   let count = 0;
@@ -59,7 +60,7 @@ export default function Footer() {
     <FooterContainer>
       <FooterContWithBorder>
         <Logo
-          src="./logo_region_footer.png"
+          src={logoRegion}
           width={240}
           height={100}
           alt="Logo Région-Sud dans pieds de page"
@@ -75,8 +76,8 @@ export default function Footer() {
           );
             })}
         </FooterTextsContainer>
+        <FooterLinks links={footerLinks} />
       </FooterContWithBorder>
-      <FooterLinks links={footerLinks} />
     </FooterContainer>
   );
 }

@@ -8,7 +8,7 @@ export const FooterContainer = styled(FlexCol)`
   background-color: ${(props) => props.theme.blueFeatureColor};
   padding: 15px;
   color: #fff;
-   @media ${device.mobileS} {
+  @media ${device.mobileS} {
     width: auto;
   }
   @media ${device.mobileL} {
@@ -36,7 +36,6 @@ export const FooterContWithBorder = styled(Center)`
 `;
 
 export const FooterTextsContainer = styled.div`
-
   display: flex;
   justify-content: space-around;
   @media ${device.mobileS} {
@@ -67,8 +66,9 @@ export const FooterTextsContainer = styled.div`
 export const FooterLinksList = styled.ul`
   display: flex;
   justify-content: space-around;
+  position: absolute;
+  margin-left: 75px;
   list-style-type: none;
-  transform: translate(0, -79px);
   @media ${device.mobileS} {
     padding: 5px;
     flex-direction: column;

@@ -24,7 +24,7 @@ export const StyledBorderH1 = styled.div`
 `;
 
 export const StyledColumnElmts = styled.div`
-  padding: 5rem 20rem 8rem 20rem;
+  padding: 5rem 10rem 8rem 10rem;
   margin: 1rem 3rem;
   background: #e5e5e5;
 `;

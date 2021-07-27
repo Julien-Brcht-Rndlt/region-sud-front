@@ -9,7 +9,7 @@ import {
 } from '../../styles/StyledInfosForms';
 import InfosEvalDynamicButton from './InfosEvalDynamicButton';
 import { Flex } from '../../styles/generics/GenericContainers';
-import { StyledTitleH2 } from '../../styles/generics/GenericTitles';
+import { StyledTitleH2, StyledTitleH4 } from '../../styles/generics/GenericTitles';
 import OrgContext from '../../contexts/OrgContext';
 import EventContext from '../../contexts/EventContext';
 import { ADD_INFOS } from '../../reducers/actions';
@@ -86,13 +86,6 @@ export const ContainerDatePicker = styled(Flex)`
   }
 `;
 
-const Title = styled.h1`
-  font-family: ${(props) => props.theme.fontFamilyFeature};
-  color: #0a40a2;
-  font-weight: 400;
-  font-size: 1.6rem;
-`;
-
 export const BlackTitle = styled.h3`
   font-family: ${(props) => props.theme.fontFamilyFeature};
   color: black;
@@ -108,7 +101,7 @@ const mandatoryFields = ['orgName', 'eventName', 'eventAddr', 'eventLoc'];
 
 export default function InfosForm() {
   const [active, setActive] = useState(false);
-  const locations = ['Abries', 'Marseille', 'Toulon', 'Hyeres'];
+  const locations = ['Abries', 'Aix en Provence', 'Aubagne', 'Auch', 'Apt', 'Avignon', 'Bandol', 'Cassis', 'La Ciotat', 'Fréjus', 'Hyeres', 'Marignane', 'Marseille', 'Martigues', 'Sanary/mer', 'Toulon'];
   const sportLevels = [SPORT_AMATEUR, SPORT_EXPERT];
   const { org, dispatch } = useContext(OrgContext);
   const { orgEvent } = useContext(EventContext);
@@ -144,8 +137,8 @@ export default function InfosForm() {
 
   return (
     <StyledInfosFormsContainer id="section-form">
-      <form/* onSubmit={(event) => handleSubmit(event)} */>
-        <Title>Informations préalables</Title>
+      <form>
+        <StyledTitleH4>Informations préalables</StyledTitleH4>
         <StyledInfosFormsColsContainer>
           <StyledInfosFormsColLeftContainer>
             <div>

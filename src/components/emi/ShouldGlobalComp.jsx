@@ -11,40 +11,39 @@ import theme3 from '../../assets/img-temp/theme3.png';
 import Scoring from './scoring.json';
 
 const GlobalReco = styled(Flex)`
-padding-top:47px;
-flex-direction:column;
-display:flex;
+  padding-top: 47px;
+  flex-direction: column;
+  display: flex;
 `;
 
 const StyledScore = styled(Flex)`
-width:100px;
-flex-direction: row;
+  width: 100px;
+  flex-direction: row;
 `;
 
 const ShouldItemContainer = styled(Flex)`
-width:80%;
-background-color:#f0ecec;
-padding-left:15px;
-flex-direction: column;
-padding-bottom: 10px;
-
+  width: 80%;
+  background-color: #f0ecec;
+  padding-left: 15px;
+  flex-direction: column;
+  padding-bottom: 10px;
 `;
 
 const ImageTheme = styled.img`
-width: 40px;
-height:40px;
-margin: 30px 45px 30px 30px;
+  width: 40px;
+  height: 40px;
+  margin: 30px 45px 30px 30px;
 `;
 
 const ImageScore = styled.img`
-width: 80px;
-height:80px;
+  width: 80px;
+  height: 80px;
 `;
 
 const ButtonScore = styled.button`
-width:100px;
-height:100px;
-margin:10px;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
 `;
 
 const DisplayThemesScores = ({ score, handleClickTheme, themeId }) => {
@@ -65,24 +64,23 @@ const DisplayThemesScores = ({ score, handleClickTheme, themeId }) => {
 };
 
 const DisplayThemeIcones = styled(Flex)`
-height: 90px;`;
+  height: 90px;
+`;
 
 const DisplayRecoList = ({ should, themeId }) => (
   <div>
     <p>
-      recommandation du thème :
+      Recommandation du thème :
       {themeId}
     </p>
-    {
-      should.map((item) => (
-        <ShouldItemContainer>
-          <StyledTitleP>{item.content}</StyledTitleP>
-          <a href={item.url}>{item.url}</a>
-        </ShouldItemContainer>
-        ))
-      }
+    {should.map((item) => (
+      <ShouldItemContainer>
+        <StyledTitleP>{item.content}</StyledTitleP>
+        <a href={item.url}>{item.url}</a>
+      </ShouldItemContainer>
+    ))}
   </div>
-  );
+);
 
 export default function ShouldGlobalComp() {
   const [currId, setCurrId] = useState(0);
@@ -114,8 +112,7 @@ export default function ShouldGlobalComp() {
         <ImageTheme src={theme3} alt="theme 4" />
       </DisplayThemeIcones>
       <StyledScore>
-        {
-        globalEval.map((item) => (
+        {globalEval.map((item) => (
           <>
             <DisplayThemesScores
               key={item.id}
@@ -124,8 +121,7 @@ export default function ShouldGlobalComp() {
               score={globalEval.find((theme) => theme.id === item.id).score}
             />
           </>
-          ))
-      }
+        ))}
       </StyledScore>
       <DisplayRecoList should={should} themeId={currId} />
     </GlobalReco>
