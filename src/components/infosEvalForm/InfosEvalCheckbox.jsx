@@ -10,7 +10,7 @@ export const StyledInfosCheckBoxLabel = styled(StyledFormItemLabel)`
 `;
 
 export const StyledInfosCheckBox = styled.input.attrs({ type: 'checkbox' })`
-  border: 1px solid ${(props) => props.theme.blueFeatureColor};
+  border: 1px solid ${(props) => props.theme.NavyBlueFeatureColor};
 `;
 
 export default function InfosEvalCheckBox({ label, checked }) {
@@ -18,7 +18,7 @@ export default function InfosEvalCheckBox({ label, checked }) {
 
   return (
     <StyledFormItem>
-      <StyledInfosCheckBoxLabel>
+      <StyledInfosCheckBoxLabel style={{ color: '#08378c' }}>
         <StyledInfosCheckBox
           type="checkbox"
           checked={isChecked}

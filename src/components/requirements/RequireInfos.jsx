@@ -1,31 +1,32 @@
 import styled from 'styled-components';
 import { HashLink } from 'react-router-hash-link';
-import { StyledTitleH1, StyledTitleH4 } from '../../styles/generics/GenericTitles';
+import { StyledTitleH1 } from '../../styles/generics/GenericTitles';
 import { FlexSpace } from '../../styles/generics/GenericContainers';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 import RequireElmtsList from './RequireElmtsList';
 import { device } from '../../styles/theme';
 
 export const StyledBorderH1 = styled.div`
+  border-bottom: 3px solid ${(props) => props.theme.yellowFeatureColor};
   @media ${device.mobileS} {
     width: 10px;
   }
 
   @media ${device.tablet} {
-    border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
     width: 80px;
     margin-top: 50px;
   }
 
   @media ${device.laptop} {
-    border-bottom: 10px solid ${(props) => props.theme.yellowFeatureColor};
     width: 80px;
     margin-top: 50px;
   }
 `;
 
 export const StyledColumnElmts = styled.div`
-  padding: 25px;
+  padding: 5rem 20rem 8rem 20rem;
+  margin: 1rem 3rem;
+  background: #e5e5e5;
 `;
 
 export const StyledBoxButtonElement = styled(FlexSpace)`
@@ -60,20 +61,43 @@ export const StyledReqTitleH1 = styled(StyledTitleH1)`
   }
 `;
 
+const Title = styled.h1`
+  font-family: ${(props) => props.theme.fontFamilyFeature};
+  color: #0a40a2;
+  font-weight: 400;
+  font-size: 1.6rem;
+`;
+
+const SubTitle = styled(StyledReqTitleH1)`
+  color: #0a40a2;
+  font-family: ${(props) => props.theme.fontFamilyNormal};
+`;
+
+const TitleH2 = styled(Title)`
+  margin: 2rem 0;
+  font-size: 1.5rem;
+`;
+
+const Button = styled(StyledButton)`
+  font-family: ${(props) => props.theme.fontFamilyNormal};
+  padding: 1rem 1.5rem;
+  border-radius: 3px;
+`;
+
 export default function RequireInfos() {
   return (
     <>
       <StyledColumnElmts>
-        <StyledReqTitleH1>Avant de commencer l&#39;évaluation de mon évènement :</StyledReqTitleH1>
+        <SubTitle>Avant de commencer l&#39;évaluation de mon évènement :</SubTitle>
         <StyledBorderH1 />
-        <StyledTitleH4> J&#39;aurais besoin de :</StyledTitleH4>
+        <TitleH2> J&#39;aurais besoin de :</TitleH2>
         <RequireElmtsList />
         <StyledBoxButtonElement>
           <HashLink to="/EmiStart#section-form">
-            <StyledButton>C&#39;est parti !</StyledButton>
+            <Button>C&#39;est parti !</Button>
           </HashLink>
           <HashLink to="/RequireModal">
-            <StyledButton glassy>Où trouver toutes ces pièces ?</StyledButton>
+            <Button glassy>Où trouver toutes ces pièces ?</Button>
           </HashLink>
         </StyledBoxButtonElement>
       </StyledColumnElmts>

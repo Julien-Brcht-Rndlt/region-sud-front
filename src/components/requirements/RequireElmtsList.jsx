@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Flex, FlexSpace, FlexCol } from '../../styles/generics/GenericContainers';
 import { IconeImg } from '../../styles/generics/GenericComponents';
+import { StyledTitleP } from '../../styles/generics/GenericTitles';
 import clock from '../../assets/img/clockPictureEmi.png';
 import folder from '../../assets/img/folderPictureEmi.png';
 import plus from '../../assets/img/plusPictureEmi.png';
@@ -92,13 +93,15 @@ export default function RequireElmtsList() {
         <IconeImg src={folder} alt="dossier" />
         <StyledRequirePlus src={plus} alt="plus" />
         <IconeImg src={clock} alt="horloge" />
-        <StyledRequireTime>15min</StyledRequireTime>
+        <StyledTitleP>15 min</StyledTitleP>
       </StyledRequireIconesWrapper>
-      <ul>
-        {elementsList.map((contentList) => (
-          <ContainerContent>{contentList.content}</ContainerContent>
-        ))}
-      </ul>
+      <StyledTitleP>
+        <ul>
+          {elementsList.map((contentList) => (
+            <ContainerContent>{contentList.content}</ContainerContent>
+          ))}
+        </ul>
+      </StyledTitleP>
     </StyledRequireWrapper>
   );
 }

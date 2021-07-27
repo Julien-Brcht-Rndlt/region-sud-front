@@ -50,7 +50,7 @@ export const StyledIframe = styled.iframe`
     }
 `;
 
-const Title = styled(StyledTitleHomeH1)`
+export const Title = styled(StyledTitleHomeH1)`
   margin: 50px 0 0 0;
 `;
 

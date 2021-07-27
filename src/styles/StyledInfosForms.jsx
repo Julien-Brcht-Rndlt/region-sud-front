@@ -7,6 +7,7 @@ export const StyledInfosFormsContainer = styled(Block)`
   padding-left: 70px;
   padding-top: 30px;
   padding-bottom: 7rem;
+  margin: 4rem 2rem;
 `;
 
 export const StyledInfosFormsColsContainer = styled(Flex)`
@@ -34,7 +35,7 @@ export const StyledInfosFormsColContainer = styled.div`
 
 export const StyledInfosFormsColLeftContainer = styled(StyledInfosFormsColContainer)`
   @media ${device.mobileS} {
-    width: 300px;
+    width: 100%;
   }
 
   @media ${device.tablet} {
@@ -42,7 +43,7 @@ export const StyledInfosFormsColLeftContainer = styled(StyledInfosFormsColContai
   }
 
   @media ${device.laptop} {
-    width: 55%;
+    width: 50%;
   }
 `;
 
