@@ -44,10 +44,10 @@ const StyledEvalGlobalButton = styled(StyledButton)`
 `;
 
 const StyledEvalGlobalButtonKnowMore = styled(StyledButton)`
-width:240px;
-height:60px;
-margin-left:140px;
-margin-top:10px;
+  width:240px;
+  height:60px;
+  margin-left:140px;
+  margin-top:10px;
 `;
 
 const StyledEvalGlobalImg = styled.img`
@@ -136,10 +136,7 @@ export default function EvalGlobalScore() {
         const orgEventResponse = await saveAboutEventInfos(organization.id);
         if (orgEventResponse) {
           const organizationEvent = orgEventResponse.data;
-          const postResponses = saveResultEvals(organizationEvent.id);
-          if (postResponses) {
-            postResponses.then((responses) => console.log('responses: ', responses));
-          }
+          saveResultEvals(organizationEvent.id);
         }
       }
     };

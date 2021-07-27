@@ -11,7 +11,7 @@ export const StyledShouldListP = styled.p`
   font-size: 16px;
 `;
 export const StyledShouldContainer = styled(FlexCol)`
-width: 600px;
+  width: 600px;
 `;
 
 export default function EvalThemeShouldList({ shouldTitle, shouldList }) {
@@ -20,7 +20,6 @@ export default function EvalThemeShouldList({ shouldTitle, shouldList }) {
       <StyledTitleH3>{shouldTitle}</StyledTitleH3>
       <ul>
         {shouldList.map(
-          // eslint-disable-next-line comma-dangle
           (should) => (
             <StyledShouldListLi>{should.title}</StyledShouldListLi>
           ),

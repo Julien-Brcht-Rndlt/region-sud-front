@@ -62,7 +62,7 @@ export default function RequireYoutube() {
   return (
     <StyledYoutubeBox hline="center">
       <StyledTitleH4> Comment cela va se passer :</StyledTitleH4>
-      <FrameContainer title="This is a unique title" src="https://www.youtube.com/embed/aP0_xJE_bgU" />
+      <FrameContainer title="youtube video" src="https://www.youtube.com/embed/aP0_xJE_bgU" />
       <StyledButton glassy>Voir les questions fréquentes</StyledButton>
     </StyledYoutubeBox>
   );
