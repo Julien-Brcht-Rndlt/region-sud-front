@@ -4,6 +4,9 @@ import { HashLink } from 'react-router-hash-link';
 import { StyledButton } from '../../styles/generics/GenericButtons';
 
 export const DisabledButton = styled(StyledButton)`
+  padding: 1rem 1.6rem;
+  border-radius: 3px;
+  font-size: 1.3rem;
   background-color: ${(props) => (props.glassy ? props.theme.blueFeatureColor : props.theme.greycendreColor)};
   color: ${(props) => (props.glassy ? props.theme.blueFeatureColor : props.theme.blackFeatureColor)};
   &:hover {

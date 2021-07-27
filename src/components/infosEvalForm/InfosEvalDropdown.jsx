@@ -8,10 +8,11 @@ export const StyledInfosDropdownLabel = styled(StyledFormItemLabel)`
   font-family: ${(props) => props.theme.fontFamilyNormal};
   margin-bottom: 0px;
   padding-bottom: 10px;
+  color: 1px solid ${(props) => props.theme.NavyBlueFeatureColor};
 `;
 
 export const StyledInfosDropdown = styled.select`
-  border: 1px solid ${(props) => props.theme.blueFeatureColor};
+  border: 1px solid ${(props) => props.theme.NavyBlueFeatureColor};
   background-color: ${(props) => props.theme.secondaryFeatureColor};
   padding: 10px 15px 15px 15px;
   width: 60%;
