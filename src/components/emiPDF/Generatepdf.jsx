@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function MyDocument() {
+export default function MyDocument(EvalData) {
   return (
     <Document styles="width: 100%">
       <Page wrap size="A4" style={styles.page}>
