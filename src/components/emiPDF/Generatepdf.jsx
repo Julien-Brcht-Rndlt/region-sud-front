@@ -6,7 +6,6 @@ import {
   Document,
   StyleSheet,
 } from '@react-pdf/renderer';
-import { TitleTheme } from './DocumentList';
 
 const styles = StyleSheet.create({
   page: {
