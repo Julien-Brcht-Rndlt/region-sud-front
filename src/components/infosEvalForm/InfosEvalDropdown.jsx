@@ -8,7 +8,7 @@ export const StyledInfosDropdownLabel = styled(StyledFormItemLabel)`
   font-family: ${(props) => props.theme.fontFamilyNormal};
   margin-bottom: 0px;
   padding-bottom: 10px;
-  color: 1px solid ${(props) => props.theme.NavyBlueFeatureColor};
+  color: 1px solid #08378c;
 `;
 
 export const StyledInfosDropdown = styled.select`
@@ -35,7 +35,7 @@ export default function InfosEvalDropdown({
 
   return (
     <StyledFormItem>
-      <StyledInfosDropdownLabel htmlFor={label}>
+      <StyledInfosDropdownLabel style={{ color: '#08378c' }} htmlFor={label}>
         {label}
       </StyledInfosDropdownLabel>
       <StyledInfosDropdown

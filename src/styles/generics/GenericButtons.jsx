@@ -31,12 +31,24 @@ export const StyledButton = styled.button`
   }
   @media ${device.laptop} {
     font-size: 20px;
+    padding-right:60px;
+    padding-left:60px;
+    padding-top:10px;
+    padding-bottom:10px;
   }
   @media ${device.laptopL} {
-    font-size: 20px;
+    font-size: 15px;
+    padding-right:60px;
+    padding-left:60px;
+    padding-top:10px;
+    padding-bottom:10px;
   }
   @media ${device.desktop} {
-    font-size: 20px;
+    font-size: 15px;
+    padding-right:60px;
+    padding-left:60px;
+    padding-top:10px;
+    padding-bottom:10px;
   }
 `;
 
