@@ -10,7 +10,6 @@ export const StyledTitleWrapper = styled(FlexCol)`
   justify-content: flex-start;
   flex-wrap: nowrap;
   align-content: stretch;
-  width: 600px;
 `;
 
 export const StyledBorderYellowH1 = styled.hr`
@@ -54,10 +53,12 @@ export const StyledTitleHomeH1 = styled.h3`
   @media ${device.mobileS} {
     font-size: 1.6em;
     padding-top: 5px;
+    padding-left:5px;
   }
 
   @media ${device.tablet} {
     font-size: 2em;
+    padding-left:5px;
   }
 
   @media ${device.desktop} {
@@ -75,10 +76,12 @@ export const StyledTitleHomeH2 = styled.h3`
 
   @media ${device.mobileS} {
     font-size: 1.4em;
+    padding-left:5px;
   }
 
   @media ${device.tablet} {
     font-size: 1.6em;
+    padding-left:5px;
   }
 
   @media ${device.desktop} {
@@ -89,16 +92,16 @@ export const StyledTitleHomeH2 = styled.h3`
 export const StyledButtonHP = styled(StyledButton)`
   @media ${device.mobileS} {
     font-size: 1em;
-    padding: 15px 30px;
-    margin: 30px 0;
+    padding: 15px 35px;
+    margin: 30px 40px;
     border-radius: 5px;
-    margin: 30px 0;
     background: ${(props) => props.theme.secondaryTextColor};
   }
 
   @media ${device.mobileM} {
     font-size: 1.2em;
     padding: 10px 35px;
+    margin: 30px 70px;
   }
 
   @media ${device.tablet} {
