@@ -29,15 +29,6 @@ export default function MyDocument() {
         <View style={styles.section}>
           <Text>Evaluer mon Impact: Résultats du sondage !</Text>
         </View>
-        <View style={styles.section}>
-          <Text>
-            {EvalData.map((theme) => (
-              <>
-                <TitleTheme title={theme.title} question={theme.questions} />
-              </>
-            ))}
-          </Text>
-        </View>
       </Page>
     </Document>
   );
