@@ -10,7 +10,6 @@ import { EVENT_START_DATE_LABEL, EVENT_END_DATE_LABEL } from '../../constants';
 
 const StyledDatePickerInfosForm = styled(DatePicker)`
   border: 1px solid ${(props) => props.theme.blueFeatureColor};
-
   @media ${device.mobileS} {
     padding: 5px;
   }
@@ -43,6 +42,7 @@ export default function InfosEvalTableDatePicker({
     <>
       <StyledFormItem>
         <StyledFormItemLabel
+          style={{ color: '#08378c' }}
           htmlFor={EVENT_START_DATE_LABEL}
         >
           {EVENT_START_DATE_LABEL}
@@ -62,6 +62,7 @@ export default function InfosEvalTableDatePicker({
       </StyledFormItem>
       <StyledFormItem>
         <StyledFormItemLabel
+          style={{ color: '#08378c' }}
           htmlFor={EVENT_END_DATE_LABEL}
         >
           {EVENT_END_DATE_LABEL}
