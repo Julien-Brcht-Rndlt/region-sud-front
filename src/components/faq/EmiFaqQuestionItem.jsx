@@ -19,7 +19,7 @@ export const StyledLinesQuestions = styled.div`
   border: solid 1px black;
 `;
 
-export default function FaqQuestionItem({ title }) {
+export default function FaqQuestionItem({ title, content }) {
   return (
     <Block>
       <Accordion allowZeroExpanded>
@@ -28,7 +28,7 @@ export default function FaqQuestionItem({ title }) {
             <AccordionItemButton>{title}</AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel>
-            <p>Exercitation in fugiat est ut ad ea cupida.</p>
+            <p>{content}</p>
           </AccordionItemPanel>
         </AccordionItem>
       </Accordion>
@@ -37,8 +37,10 @@ export default function FaqQuestionItem({ title }) {
 }
 FaqQuestionItem.propTypes = {
   title: PropTypes.string,
+  content: PropTypes.string,
 };
 
 FaqQuestionItem.defaultProps = {
   title: '',
+  content: '',
 };

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../theme';
 
 export const StyledTitleH1 = styled.h1`
   ${(props) => props.theme.titleFont};
@@ -30,8 +31,19 @@ export const StyledTitleH4 = styled.h4`
 `;
 
 export const StyledTitleP = styled.p`
+@media ${device.mobileS} {
   font-family: ${(props) => props.theme.fontFamilyNormal};
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   margin: 20px 0;
   font-weight: lighter;
+  }
+  @media ${device.tablet} {
+    font-size: 1.1em;
+  }
+
+  @media ${device.laptop} {
+    font-size: 1.2em;
+  }
+
+
 `;
