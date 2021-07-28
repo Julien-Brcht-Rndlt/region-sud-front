@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function MyDocument({EvalData}) {
+export default function MyDocument() {
   return (
     <Document styles="width: 100%">
       <Page wrap size="A4" style={styles.page}>
@@ -31,7 +31,7 @@ export default function MyDocument({EvalData}) {
         </View>
         <View style={styles.section}>
           <Text>
-            {EvalData.themes.map((theme) => (
+            {EvalData.map((theme) => (
               <>
                 <TitleTheme title={theme.title} question={theme.questions} />
               </>
