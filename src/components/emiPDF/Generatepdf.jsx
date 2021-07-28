@@ -6,7 +6,6 @@ import {
   Document,
   StyleSheet,
 } from '@react-pdf/renderer';
-import { TitleTheme } from './DocumentList';
 
 const styles = StyleSheet.create({
   page: {
@@ -28,15 +27,6 @@ export default function MyDocument() {
       <Page wrap size="A4" style={styles.page}>
         <View style={styles.section}>
           <Text>Evaluer mon Impact: Résultats du sondage !</Text>
-        </View>
-        <View style={styles.section}>
-          <Text>
-            {EvalData.themes.map((theme) => (
-              <>
-                <TitleTheme title={theme.title} question={theme.questions} />
-              </>
-            ))}
-          </Text>
         </View>
       </Page>
     </Document>
